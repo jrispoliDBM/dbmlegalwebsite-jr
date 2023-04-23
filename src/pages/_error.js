@@ -1,6 +1,6 @@
-import React from 'react';
-import Main from 'layouts/Main';
-import Container from 'components/Container';
+import React from "react";
+import Main from "layouts/Main";
+import Container from "components/core/Container";
 
 const ErrorPage = () => {
   return (
@@ -9,6 +9,5 @@ const ErrorPage = () => {
     </Main>
   );
 };
-
 
 export default ErrorPage;

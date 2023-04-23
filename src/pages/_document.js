@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link
             rel="shortcut icon"
-            href="/images/favicon.ico"
+            href="/favicon.ico"
           />
           <meta name="theme-color" content="#ffffff" />
           <meta
@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
     );
   }
 }
+
 
 // `getInitialProps` belongs to `_document` (instead of `_app`),
 // it's compatible with static-site generation (SSG).

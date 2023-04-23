@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Typography from '@mui/material/Typography';
-import NoSsr from '@mui/material/NoSsr';
-import { useTheme } from '@mui/material/styles';
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Typography from "@mui/material/Typography";
+import NoSsr from "@mui/material/NoSsr";
+import { useTheme } from "@mui/material/styles";
 
-import Container from 'components/Container';
+import Container from "components/core/Container";
 
 const viewportWidthMap = {
-  desktop: '100%',
+  desktop: "100%",
   tablet: 850,
   mobile: 480,
 };
@@ -20,7 +20,7 @@ const viewportInitialHeight = 600;
 const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
   const theme = useTheme();
   const iframeEl = useRef(null);
-  const [viewportWidth, setViewportWidth] = useState('desktop');
+  const [viewportWidth, setViewportWidth] = useState("desktop");
   const [viewportHeight, setViewportHeight] = useState(600);
   const [random, setRandom] = useState(0);
 
@@ -64,12 +64,12 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
     <Container maxWidth={1500} {...rest}>
       <Box>
         <Box marginBottom={2}>
-          <Typography variant={'h5'} fontWeight={900} gutterBottom>
+          <Typography variant={"h5"} fontWeight={900} gutterBottom>
             {title}
           </Typography>
-          <Box display={{ xs: 'none', md: 'flex' }} alignItems={'center'}>
+          <Box display={{ xs: "none", md: "flex" }} alignItems={"center"}>
             <Box
-              component={'svg'}
+              component={"svg"}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -85,8 +85,8 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
               />
             </Box>
             <Typography
-              variant={'caption'}
-              color={'text.secondary'}
+              variant={"caption"}
+              color={"text.secondary"}
               marginLeft={1}
             >
               {path}
@@ -99,23 +99,23 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
           borderRadius={2}
         >
           <Box
-            display={'flex'}
-            alignItems={'center'}
-            justifyContent={'space-between'}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"space-between"}
             padding={2}
             borderBottom={`1px solid ${theme.palette.divider}`}
           >
             <Button
-              component={'a'}
+              component={"a"}
               href={
-                'https://material-ui.com/store/items/the-front-landing-page/'
+                "https://material-ui.com/store/items/the-front-landing-page/"
               }
-              target={'_blank'}
-              variant={'contained'}
+              target={"_blank"}
+              variant={"contained"}
               size="large"
               endIcon={
                 <Box
-                  component={'svg'}
+                  component={"svg"}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -134,23 +134,23 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
             >
               Get the code
             </Button>
-            <Box display={'flex'} alignItems={'center'}>
+            <Box display={"flex"} alignItems={"center"}>
               <ButtonGroup
                 variant="outlined"
                 aria-label="divise screen resize"
                 sx={{
-                  display: { xs: 'none', md: 'inline-flex' },
+                  display: { xs: "none", md: "inline-flex" },
                 }}
               >
                 <Button
                   variant={
-                    viewportWidth === 'mobile' ? 'contained' : 'outlined'
+                    viewportWidth === "mobile" ? "contained" : "outlined"
                   }
-                  title={'Mobile view'}
-                  onClick={() => handleResizeBtnClick('mobile')}
+                  title={"Mobile view"}
+                  onClick={() => handleResizeBtnClick("mobile")}
                 >
                   <Box
-                    component={'svg'}
+                    component={"svg"}
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
                     height={24}
@@ -168,13 +168,13 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
                 </Button>
                 <Button
                   variant={
-                    viewportWidth === 'tablet' ? 'contained' : 'outlined'
+                    viewportWidth === "tablet" ? "contained" : "outlined"
                   }
-                  title={'Tablet view'}
-                  onClick={() => handleResizeBtnClick('tablet')}
+                  title={"Tablet view"}
+                  onClick={() => handleResizeBtnClick("tablet")}
                 >
                   <Box
-                    component={'svg'}
+                    component={"svg"}
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
                     height={24}
@@ -192,13 +192,13 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
                 </Button>
                 <Button
                   variant={
-                    viewportWidth === 'desktop' ? 'contained' : 'outlined'
+                    viewportWidth === "desktop" ? "contained" : "outlined"
                   }
-                  title={'Desktop view'}
-                  onClick={() => handleResizeBtnClick('desktop')}
+                  title={"Desktop view"}
+                  onClick={() => handleResizeBtnClick("desktop")}
                 >
                   <Box
-                    component={'svg'}
+                    component={"svg"}
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
                     height={24}
@@ -216,14 +216,14 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
                 </Button>
               </ButtonGroup>
               <Button
-                component={'a'}
+                component={"a"}
                 href={src}
-                target={'_blank'}
-                variant={'outlined'}
+                target={"_blank"}
+                variant={"outlined"}
                 sx={{ marginLeft: 2 }}
               >
                 <Box
-                  component={'svg'}
+                  component={"svg"}
                   xmlns="http://www.w3.org/2000/svg"
                   width={24}
                   height={24}
@@ -241,12 +241,12 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
               </Button>
             </Box>
           </Box>
-          <Box bgcolor={'alternate.dark'}>
+          <Box bgcolor={"alternate.dark"}>
             <NoSsr>
               <Box
                 maxWidth={viewportWidthMap[viewportWidth]}
                 width={1}
-                display={'flex'}
+                display={"flex"}
               >
                 <iframe
                   ref={iframeEl}
@@ -254,10 +254,10 @@ const ResizableFrame = ({ src, title, path, iframeStyles = {}, ...rest }) => {
                   src={src}
                   onLoad={() => setTimeout(() => setIframeHeight())}
                   style={{
-                    height: viewportHeight || '100%',
+                    height: viewportHeight || "100%",
                     minHeight: 400,
-                    width: '100%',
-                    border: 'none',
+                    width: "100%",
+                    border: "none",
                     borderBottomLeftRadius: 8,
                     borderBottomRightRadius: 8,
                     ...iframeStyles,
