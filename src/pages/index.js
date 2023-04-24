@@ -5,8 +5,7 @@ import Main from 'layouts/Main';
 import Container from 'components/core/Container';
 import Hero from 'components/Hero';
 import Head from 'next/head';
-import OurServices from 'components/OldServicesBlock';
-import ServicesGrid from 'components/ServicesGrid';
+import OurServices from 'components/OurServices';
 import OurTeam from 'components/OurTeam';
 
 export default function Home() {
@@ -27,7 +26,7 @@ export default function Home() {
                         <OurServices />
                     </Container> */}
                     <Container>
-                        <ServicesGrid />
+                        <OurServices />
                     </Container>
                     <Container>
                         <OurTeam />

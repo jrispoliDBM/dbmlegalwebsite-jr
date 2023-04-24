@@ -1,16 +1,39 @@
+import React, { useState } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
-import { Button, CardActions, CardContent, Stack } from '@mui/material';
+import {
+    Backdrop,
+    Button,
+    CardActions,
+    CardContent,
+    Dialog,
+    Stack,
+    DialogTitle,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    Grid,
+    Card,
+    Avatar,
+    Typography,
+    CardMedia
+} from '@mui/material';
 import { services } from 'content/services';
+import ServicePage from 'components/ServicePage';
 
-
-const ServiceGrid = () => {
+const OurServices = () => {
     const theme = useTheme();
+    const [open, setOpen] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
+
+    const handleClickOpen = (service) => {
+        setSelectedService(service);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
         <Box>
             <Grid item xs={12} alignItems="center">
@@ -46,9 +69,9 @@ const ServiceGrid = () => {
                             href={''}
                             display={'block'}
                             width={1}
-                            height={1}
+                            
                             // data-aos={'fade-up'}
-                            // data-aos-delay={i * 100}                            
+                            // data-aos-delay={i * 100}
                             sx={{
                                 textDecoration: 'none',
                                 transition: 'all .2s ease-in-out',
@@ -86,6 +109,7 @@ const ServiceGrid = () => {
                             <Box component={CardActions} justifyContent={'flex-start'}>
                                 <Button
                                     size="large"
+                                    onClick={() => handleClickOpen(service)}
                                     endIcon={
                                         <svg
                                             width={16}
@@ -111,8 +135,24 @@ const ServiceGrid = () => {
                     </Grid>
                 ))}
             </Grid>
+            <Dialog onClose={handleClose} open={open} fullWidth maxWidth="lg">
+                {/* <DialogTitle>
+                    <Typography variant={'h6'} fontWeight={700} gutterBottom>
+                        {selectedService && selectedService.title}
+                    </Typography>
+                </DialogTitle> */}
+                <DialogContent>
+                    <ServicePage service={selectedService} />
+                    {/* <DialogContentText></DialogContentText> */}
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary">
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Box>
     );
 };
 
-export default ServiceGrid;
+export default OurServices;
