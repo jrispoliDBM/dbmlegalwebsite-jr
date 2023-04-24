@@ -17,7 +17,8 @@ export default function App({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
         <title>DBM Legal Services</title>
       </Head>
       <Page>

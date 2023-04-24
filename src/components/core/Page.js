@@ -47,7 +47,7 @@ export default function Page({ children }) {
     }
 
     AOS.init({
-      once: true,
+      once: false,
       delay: 0,
       duration: 800,
       offset: 0,
