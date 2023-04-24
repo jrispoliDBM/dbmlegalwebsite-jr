@@ -65,7 +65,7 @@ export default function ContactUs() {
     return (
         <Box sx={{ overflowX: 'hidden' }}>
             <Main bgcolor={'background.paper'}>
-              <Box mx={10} mt={2} mb={5} >
+              <Box mx={isMd ? 10 : 0} mt={2} mb={5} >
                 <Card >
                     <Box position={'relative'}  display={'flex'} marginTop={-13}>
                         {isMd ? <Sidebar /> : null}
