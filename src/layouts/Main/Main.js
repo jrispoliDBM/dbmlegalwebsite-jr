@@ -11,7 +11,9 @@ import Container from "components/core/Container";
 
 import { Topbar, Sidebar, Footer } from "./components";
 
-import pages from "../navigation";
+import {pages, simplePages} from "../navigation";
+import { navigationMenu } from "content/navigation-menu";
+
 
 const Main = ({ children, colorInvert = false, bgcolor = "transparent" }) => {
   const theme = useTheme();
@@ -60,6 +62,7 @@ const Main = ({ children, colorInvert = false, bgcolor = "transparent" }) => {
         open={open}
         variant="temporary"
         pages={pages}
+        simplePages = {navigationMenu}
       />
       <main>
         {children}

@@ -4,7 +4,7 @@ import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import { SidebarNav } from './components';
 
-const Sidebar = ({ pages, open, variant, onClose }) => {
+const Sidebar = ({ pages, simplePages, open, variant, onClose }) => {
   return (
     <Drawer
       anchor="left"
@@ -24,7 +24,7 @@ const Sidebar = ({ pages, open, variant, onClose }) => {
           padding: 1,
         }}
       >
-        <SidebarNav pages={pages} />
+        <SidebarNav pages={pages} simplePages={simplePages}/>
       </Box>
     </Drawer>
   );

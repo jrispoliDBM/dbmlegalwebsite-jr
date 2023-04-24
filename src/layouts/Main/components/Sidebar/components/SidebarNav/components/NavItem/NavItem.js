@@ -18,7 +18,7 @@ const NavItem = ({ title, items }) => {
   }, []);
 
   const hasActiveLink =  () => items.find((i) => i.href === activeLink);
-  console.log(items)
+  // console.log(items)
 
   return (
     <Box>
