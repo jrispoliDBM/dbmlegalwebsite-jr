@@ -271,54 +271,6 @@ const intellectualPropertyDetails = [
         ]
     }
 ];
-// CLOUD COMPUTING SERVICES AND TECHNOLOGIES
-// Cloud computing has become the most effective way to scale, transform, and grow your business. DBM can help your work through the complex legal, regulatory, and commercial implications. DBM attorneys will counsel you through the complexities of negotiating Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS) agreements. We will ensure you receive the well-established contractual protections – standards of performance, clear scope of services and deliverables, confidentiality, remedies, and rights.
-
-// FINANCIAL TECHNOLOGY
-// DBM will help clients navigate the critical and ever-changing business, legal and regulatory issues associated with the technological disruption of financial services, including:
-// A comprehensive understanding of financial products and market infrastructure
-// Structure and document financial products
-// Advise on regulatory and compliance issues
-// Mitigating future regulatory, privacy, and credit risks
-// BLOCKCHAIN
-// DBM’s attorneys provide valuable and thoughtful legal advice grounded in how blockchain ecosystems operate and the goals they seek to achieve. Our capabilities include advising on:
-// Technology
-// Corporate structure
-// Intellectual property
-// Regulatory issues that companies must address when working with blockchain-based platforms and digital assets, such as virtual currencies and NFTs
-// Specific state and federal regulations governing banking and trust operations and relationships, patent matters, anti-money laundering, and foreign asset controls, holding company issues, privacy, trading and market regulation, taxation, and consumer protections
-// CRYPTOCURRENCY
-// DBM can assist developers, investors, and organizations in navigating the legal intricacies of cryptocurrency and blockchain technology, including:
-// Helping cryptocurrency projects gain and maintain compliance with U.S. securities laws
-// Assisting cryptocurrency exchanges of all sizes in complying with the Bank Secrecy Act and state money transmitter laws
-// Guiding a variety of other businesses in compliance matters as they interact with the crypto-sphere.
-
-// Token Sales & Exchange Listings:
-
-// Token and Coin Compliance with Securities Laws
-// Decentralized Finance (DeFi) Launch and Compliance
-// SEC No-Action relief and FinHUB engagement
-// Offshore Entity Formation
-// Initial Decentralized Exchange Offerings (IDOs)
-// Exchange Licensing & Compliance:
-// General Counsel and Legal Advisory Services
-// Money services business (MSB) registration with FinCEN
-// State Money Transmitter Licenses (MTLs) and No-Action Letters for Bitcoin ATMs, Brokers, OTCs, and Crypto Exchanges
-// Preparation of Anti-Money Laundering (AML) and Know-Your-Customer (KYC) Compliance Programs
-// Office of Foreign Assets Control (OFAC) Screening and Reporting
-// Patents & Intellectual Property:
-// Patents (licensing agreements)
-// Trademarks (filing and registration, search and opinions)
-// Copyrights (acquisition and assignment agreements, applications and registration, royalties, Fair Use)
-// Internet and Digital Media (content licensing, domain acquisition, online service agreements)
-// INTERNET AND E-COMMERCE
-// DBM can help retailers, franchisers, and distributors launch or use e-commerce platforms to grow market share, globalize their brands, and capitalize on digital purchasing trends. We provide legal and commercial insight regarding the new business models that have disrupted the retail industry.
-
-// DBM address all aspects of establishing and maintaining online platforms, including:
-// Service agreements
-// Vendor contracts
-// Data security and privacy compliance
-// Intellectual property and licensing issues
 
 const technologyDetails = [
     {
@@ -455,27 +407,11 @@ const realEstateDetails = [
     }
 ];
 
-// EMPLOYEE BENEFIT PLANS:
-// Defined benefit, including ESOPs
-// Group health plans, including self-insured, fully-insured and funded and collectively bargained group health plans
-// We also assist employers in complying with the Affordable Care Act requirements and provide advice on compliance with COBRA, HIPAA, and other welfare benefit laws
-// We also have experience with dependent care plans, flexible spending accounts, group life insurance, and other welfare benefits
-// EXECUTIVE COMPENSATION:
-// Equity and equity-based programs,
-// Non-qualified deferred compensation plans,
-// Short-term and long-term incentive and performance compensation programs
-// Change-in-control programs and “rabbi” trusts.
-// As well as golden parachute, section 162(m) and section 409A matters.
-// HUMAN RESOURCES:
-// Employment Agreements
-// Consulting Agreements
-// Employee Handbooks
-// Non-Compete and other Restrictive Covenant Agreements
-
 const employtmentAndLaborLawDetails = [
     {
         title: 'Employment and Labor Law',
-        intro_text: 'DBM assists in navigating the legal complexities and the practical and business issues associated with employee benefits and executive compensation decisions. We draw on our expertise to efficiently develop commercial and practical workforce solutions with our clients. Areas we advise on include:',
+        intro_text:
+            'DBM assists in navigating the legal complexities and the practical and business issues associated with employee benefits and executive compensation decisions. We draw on our expertise to efficiently develop commercial and practical workforce solutions with our clients. Areas we advise on include:',
         lists: [
             {
                 heading: 'Employment Benefit Plans',
@@ -508,6 +444,92 @@ const employtmentAndLaborLawDetails = [
         ]
     }
 ];
+
+const trustsAndEstateDetails = [
+    {
+        title: '',
+        intro_text:
+            'DBM counsels in estate planning for high-net-worth individuals, including entrepreneurs, executives, owners of closely-held businesses, real estate developers, and physicians.',
+
+        lists: [
+            {
+                heading:
+                    'Our team’s success is built upon an authentic client-first approach, as our attorneys help clients prepare customized estate plans involving:',
+                list: [
+                    'Generation-skipping trusts',
+                    'Charitable remainder trusts',
+                    'Charitable lead trusts',
+                    'Family limited partnerships',
+                    'Family limited liability companies',
+                    'Grantor retained annuity trusts (GRATs)',
+                    'Irrevocable insurance trusts',
+                    'Private family foundations',
+                    'And many additional related matters'
+                ]
+            }
+        ]
+    }
+];
+
+const taxDetails = [
+    {
+        title: 'Tax',
+        intro_text:'',
+        lists: [
+            {
+                heading: 'DBM creates innovative structures and solves complex tax issues for a full spectrum of clients, including:',
+                list: [
+                    'Multinational corporations',
+                    'Financial institutions',
+                    'Private equity funds',
+                    'Domestic corporations',
+                    'Joint ventures',
+                    'Emerging companies',
+                    'Special Purpose Acquisition Companies (SPACs)',
+                    'Tax-exempt organizations'
+                ]
+            },
+            {
+                heading: 'DBM’s Tax Group addresses a wide range of business tax issues, including:',
+                list: [
+                    'Corporate Tax',
+                    'Mergers and acquisitions',
+                    'Partnership/LLC issues including complex LLC operating agreements',
+                    'Real estate transactions and ownership structures',
+                    'Executive compensation',
+                    'Non-profit organizations, and',
+                    'International tax issues, including transfer pricing compliance'
+                ]
+            }
+        ]
+    }
+
+]
+
+const familyOfficeDetails = [
+    {
+        title: 'Family Office',
+        intro_text: '',
+        lists: [
+            {
+                heading: 'DBM’s Family Office Group provides a full range of legal services to family offices, including:',
+                list: [
+                    'Entity formation and structuring',
+                    'Governance and succession planning',
+                    'Investment and asset management',
+                    'Tax planning and compliance',
+                    'Estate planning',
+                    'Philanthropy',
+                    'Risk management',
+                    'Employment matters',
+                    'Real estate matters',
+                    'Litigation and dispute resolution',
+                    'And other legal services as needed'
+                ]
+            }
+        ]
+    }
+]
 
 export const services = [
     {
@@ -555,16 +577,19 @@ export const services = [
     {
         image: '/images/services/estate.jpeg',
         description: 'Secure your legacy and protect your assets with our expert estate planning services.',
-        title: 'Trusts & Estates'
+        title: 'Trusts & Estates',
+        details: trustsAndEstateDetails
     },
     {
         image: '/images/services/tax2023.jpeg',
         description: 'Optimize your tax strategy and minimize risk with our knowledgeable tax attorneys.',
-        title: 'Tax'
+        title: 'Tax',
+        details: taxDetails
     },
     {
         image: '/images/services/familyoffice2023.jpeg',
         description: 'Maximize your investment potential with our sophisticated legal solutions and personalized approach.',
-        title: 'Family Office'
+        title: 'Family Office',
+        details: familyOfficeDetails
     }
 ];
