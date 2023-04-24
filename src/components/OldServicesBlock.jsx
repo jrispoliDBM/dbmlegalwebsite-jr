@@ -27,7 +27,7 @@ const mock = [
     }
 ];
 
-const OurServices = () => {
+const OldServicesBlock = () => {
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
@@ -99,4 +99,4 @@ const OurServices = () => {
     );
 };
 
-export default OurServices;
+export default OldServicesBlock;

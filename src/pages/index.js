@@ -5,7 +5,7 @@ import Main from 'layouts/Main';
 import Container from 'components/core/Container';
 import Hero from 'components/Hero';
 import Head from 'next/head';
-import OurServices from 'components/OurServices';
+import OurServices from 'components/OldServicesBlock';
 import ServicesGrid from 'components/ServicesGrid';
 import OurTeam from 'components/OurTeam';
 
@@ -23,9 +23,9 @@ export default function Home() {
             <Box sx={{ overflowX: 'hidden' }}>
                 <Main bgcolor={'background.paper'}>
                     <Hero />
-                    <Container>
+                    {/* <Container>
                         <OurServices />
-                    </Container>
+                    </Container> */}
                     <Container>
                         <ServicesGrid />
                     </Container>
