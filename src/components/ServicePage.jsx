@@ -43,7 +43,7 @@ const ServicePage = ({ service }) => {
                             {detail.lists && (
                                 <Grid container spacing={10}>
                                     {detail.lists.map((detailList, i) => (
-                                        <Grid item xs={12} sm={12} md={detail.lists.length > 1 ? 6 : 12} key={i}>
+                                        <Grid item xs={12} sm={12} md={detail.lists.length > 1 ? 12 : 12} key={i}>
                                             <Stack direction="column">
                                                 <Typography key={i} color="primary" fontSize={16} fontWeight="bold">
                                                     {detailList.heading}
