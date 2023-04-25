@@ -2,7 +2,7 @@ export const team = [
     {
         name: 'Michelle Bergman',
         title: 'Co-Founder and CEO',
-        image: '/images/team/Michelle-Bergman-BW.png',
+        image: '/images/team/michelle-bergman-bw.png',
         founder: true,
         bio: "Michelle D. Bergman has over 30 years of legal and business experience. She has served in multiple C-Suite roles, including General Counsel, at companies such as Duane Reade Inc. (the New York-based drug store chain), Barneys (the upscale department store chain), and MediMedia Health (a multidisciplinary health services company). She began her career at Latham & Watkins and, from there, moved in-house to several investment banks and private equity firms. In 2011, Ms. Bergman founded Bergman Law, a corporate law boutique law firm. Ms. Bergman and Ms. Mandell joined forces in 2019 to create an expanded and rebranded distributed law firm model, focusing solely on corporate law, and in 2021 launched DBM."
     },
@@ -16,7 +16,7 @@ export const team = [
     {
         name: 'Counsel McCullen',
         title: 'Senior Partner',
-        image: '/images/team/Counsel-McCullen-BW.png',
+        image: '/images/team/counsel-mccullen-bw.png',
         founder: false,
         bio : "Counsel McCullen is a corporate and securities attorney with substantial experience representing emerging companies and investment firms throughout their entire life cycle. Specifically, he specializes in business and fund formations, founder agreements, equity, debt financing, mergers and acquisitions, incentive equity programs, and private credit transactions. His clients include entrepreneurs, emerging and established companies, executives, angel and venture investors, and investment firms. With a focus on negotiated transactions, Counsel strives to ensure that business goals are achieved, and deals are closed quickly and efficiently.\n\nCounsel is admitted to practice law in New York and Georgia. He currently serves on the Advisory Board of Georgia Lawyers for the Arts, a non-profit organization that provides legal assistance to artists and arts organizations. Counsel earned his B.A. in Political Science and Philosophy from Georgia State University and his J.D. from Georgia State University College of Law, where he clerked for Georgia Supreme Court Presiding Justice P. Harris Hines."
     },
@@ -30,7 +30,7 @@ export const team = [
     {
         name: 'Kevin McGraw',
         title: 'Senior Partner',
-        image: '/images/team/Kevin-McGraw-BW.png',
+        image: '/images/team/kevin-mcgraw-bw.png',
         founder: false,
         bio : "Kevin McGraw is a highly accomplished corporate and business attorney, with demonstrated success in complex transaction management, litigation management, dispute resolution, government contracting, regulatory compliance, and policy development, and has a proven ability to negotiate complex business transactions.\n\nDuring a 21-year career serving as in-house counsel (Assistant Geneneral Counsel and ad hoc General Counsel) for several mid-to-large size domestic and multi-national corporations, Kevin acted primarily as a corporate generalist, but also supported specific departments at various times, including but not limited to National Accounts (sales), Procurement, Finance and Accounting, Facilities, Human Resources, Marketing, and InfoSec departments.  One of the areas he has enjoyed most has been working on divestitures, and mergers and acquisitions, helping to facilitate transactions including due diligence, ancillary agreements, drafting and negotiation of representations and warranties, and managing outside M&A counsel.\n\nIn his free time, Kevin volunteers through the State Bar of Texas with the Texas Lawyers for Texas Veterans Pro Bono Initiative. Kevin has been happily married to his wife Nancy for almost 35 years. He also loves golfing, hunting, and watching sports, especially with his three sons."
     },
@@ -44,28 +44,28 @@ export const team = [
     {
         name: 'Stephanie Mongelluzzo',
         title: 'Senior Counsel',
-        image: '/images/team/Stephanie-Ann-Michael-BW.png',
+        image: '/images/team/stephanie-ann-michael-bw.png',
         founder: false,
         bio : null
     },
     {
         name: 'Lori Ann Fox',
         title: 'Senior Counsel',
-        image: '/images/team/lori-ann-fox-BW.png',
+        image: '/images/team/lori-ann-fox-bw.png',
         founder: false,
         bio : null
     },
     {
         name: 'Joseph Rispoli',
         title: 'Senior Director People & Business Strategy',
-        image: '/images/team/Joseph-Rispoli-BW.jpg',
+        image: '/images/team/joseph-rispoli-bw.jpg',
         founder: false,
         bio : null
     },
     {
         name: 'Jenna Carr',
         title: 'Executive Assistant',
-        image: '/images/team/jenna-carr-BW.png',
+        image: '/images/team/jenna-carr-bw.png',
         founder: false,
         bio : null
     }
