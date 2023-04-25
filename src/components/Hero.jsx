@@ -23,7 +23,7 @@ const Hero = () => {
                 position: "relative",
             }}
         >
-            <Box paddingY={{ xs: 0, sm: "2rem", md: "4rem" }}>
+            <Box paddingY={{ xs: 0, sm: 0, md: 0 }}>
                 <Container>
                     <Box maxWidth={{ xs: 1, sm: "100%" }}>
                         <Typography
@@ -50,16 +50,18 @@ const Hero = () => {
                                 Business.
                             </Typography>
                         </Typography>
+                        <Box data-aos={'fade-right'}>
                         <Typography
-                            variant="h6"
+                            variant="h5"
                             component="p"
-                            color="text.secondary"
-                            sx={{ fontWeight: 400 }}
+                            color={theme.palette.grey[700]}
+                            sx={{ fontWeight: 700, width: "70%" }}
                         >
                             Exceptional talent, cost-effective service, and
                             custom-tailored solutions to complex business
                             transactions and legal issues.
                         </Typography>
+                        </Box>
                         <Box
                             display="flex"
                             flexDirection={{ xs: "column", sm: "row" }}

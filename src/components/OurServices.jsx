@@ -37,7 +37,9 @@ const OurServices = () => {
     return (
         <Box>
             <Grid item xs={12} alignItems="center">
-                <Stack direction="row" spacing={2} justifyContent="center" data-aos={'fade-right'}>
+                <Stack direction="row" spacing={2} justifyContent="center" 
+                // data-aos={'fade-right'}
+                >
                     <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                         <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
                             Our{' '}

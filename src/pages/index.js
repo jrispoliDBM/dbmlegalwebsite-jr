@@ -7,6 +7,7 @@ import Hero from 'components/Hero';
 import Head from 'next/head';
 import OurServices from 'components/OurServices';
 import OurTeam from 'components/OurTeam';
+import CoreValues from 'components/CoreValues';
 
 export default function Home() {
     const theme = useTheme();
@@ -22,9 +23,9 @@ export default function Home() {
             <Box sx={{ overflowX: 'hidden' }}>
                 <Main bgcolor={'background.paper'}>
                     <Hero />
-                    {/* <Container>
-                        <OurServices />
-                    </Container> */}
+                    <Container>
+                        <CoreValues />
+                    </Container>
                     <Container>
                         <OurServices />
                     </Container>
