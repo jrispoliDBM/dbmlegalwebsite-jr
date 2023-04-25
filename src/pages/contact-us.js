@@ -10,7 +10,6 @@ import { info } from 'content/contact-info';
 
 // info@dbmlegalservices.com
 // (646) 809-8000
-// Comprehensive Legal Solutions Tailored to Your Business Needs
 export default function ContactUs() {
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
