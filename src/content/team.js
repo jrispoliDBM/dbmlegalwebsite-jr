@@ -16,7 +16,7 @@ export const team = [
     {
         name: 'Counsel McCullen',
         title: 'Senior Partner',
-        image: 'https://eufpxyq6xdx.exactdn.com/wp-content/uploads/2021/12/3.png?strip=all&lossy=1&ssl=1',
+        image: '/images/team/Counsel-McCullen-BW.png',
         founder: false,
         bio : "Counsel McCullen is a corporate and securities attorney with substantial experience representing emerging companies and investment firms throughout their entire life cycle. Specifically, he specializes in business and fund formations, founder agreements, equity, debt financing, mergers and acquisitions, incentive equity programs, and private credit transactions. His clients include entrepreneurs, emerging and established companies, executives, angel and venture investors, and investment firms. With a focus on negotiated transactions, Counsel strives to ensure that business goals are achieved, and deals are closed quickly and efficiently.\n\nCounsel is admitted to practice law in New York and Georgia. He currently serves on the Advisory Board of Georgia Lawyers for the Arts, a non-profit organization that provides legal assistance to artists and arts organizations. Counsel earned his B.A. in Political Science and Philosophy from Georgia State University and his J.D. from Georgia State University College of Law, where he clerked for Georgia Supreme Court Presiding Justice P. Harris Hines."
     },
@@ -30,7 +30,7 @@ export const team = [
     {
         name: 'Kevin McGraw',
         title: 'Senior Partner',
-        image: 'https://eufpxyq6xdx.exactdn.com/wp-content/uploads/2023/03/My-project-1-2.jpg?strip=all&lossy=1&w=520&ssl=1',
+        image: '/images/team/Kevin-McGraw-BW.png',
         founder: false,
         bio : "Kevin McGraw is a highly accomplished corporate and business attorney, with demonstrated success in complex transaction management, litigation management, dispute resolution, government contracting, regulatory compliance, and policy development, and has a proven ability to negotiate complex business transactions.\n\nDuring a 21-year career serving as in-house counsel (Assistant Geneneral Counsel and ad hoc General Counsel) for several mid-to-large size domestic and multi-national corporations, Kevin acted primarily as a corporate generalist, but also supported specific departments at various times, including but not limited to National Accounts (sales), Procurement, Finance and Accounting, Facilities, Human Resources, Marketing, and InfoSec departments.  One of the areas he has enjoyed most has been working on divestitures, and mergers and acquisitions, helping to facilitate transactions including due diligence, ancillary agreements, drafting and negotiation of representations and warranties, and managing outside M&A counsel.\n\nIn his free time, Kevin volunteers through the State Bar of Texas with the Texas Lawyers for Texas Veterans Pro Bono Initiative. Kevin has been happily married to his wife Nancy for almost 35 years. He also loves golfing, hunting, and watching sports, especially with his three sons."
     },
@@ -44,7 +44,7 @@ export const team = [
     {
         name: 'Stephanie Mongelluzzo',
         title: 'Senior Counsel',
-        image: null,
+        image: '/images/team/Stephanie-Ann-Michael-BW.png',
         founder: false,
         bio : null
     },
