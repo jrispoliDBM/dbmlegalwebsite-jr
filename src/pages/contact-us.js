@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
-import { Typography, ListItemText, ListItemAvatar, ListItem, Divider, Avatar, Card, Button } from '@mui/material';
+import { Typography, ListItemText, ListItemAvatar, ListItem, Divider, Avatar, Card, Button, Stack } from '@mui/material';
 import { info } from 'content/contact-info';
 
 // info@dbmlegalservices.com
@@ -65,7 +65,12 @@ export default function ContactUs() {
     return (
         <Box sx={{ overflowX: 'hidden' }}>
             <Main bgcolor={'background.paper'}>
+
               <Box mx={isMd ? 10 : 0} mt={2} mb={5} >
+              <Stack direction="row" spacing={2} justifyContent="flex-end">
+                        <Button href="/">Home</Button>
+                    </Stack>
+
                 <Card >
                     <Box position={'relative'}  display={'flex'} marginTop={-13}>
                         {isMd ? <Sidebar /> : null}
@@ -73,11 +78,11 @@ export default function ContactUs() {
                             <Box height={1} pl={3}>
                                 <Container >
                                     <ContactDetails />
-                                    <Box pt={3}>
+                                    {/* <Box pt={3}>
                                     <Button variant="contained" href={"/"}>
                                       Back
                                     </Button>
-                                    </Box>
+                                    </Box> */}
                                 </Container>
                             </Box>
                         </Box>
