@@ -4,13 +4,13 @@ import { corporateDetails, financeDetails, regulatoryAndComplianceDetails, intel
 
 export const services = [
     {
-        image: '/images/services/boardroom.jpeg',
+        image: '/images/services/bull.jpeg',
         description: 'Streamline your business with our comprehensive corporate services.',
         title: 'Corporate',
         details: corporateDetails
     },
     {
-        image: '/images/services/bull.jpeg',
+        image: '/images/services/fin2023.jpg',
         description: 'Maximize your financial potential with our expert legal guidance.',
         title: 'Finance',
         details: financeDetails
