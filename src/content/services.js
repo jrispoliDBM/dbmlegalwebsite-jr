@@ -4,13 +4,13 @@ import { corporateDetails, financeDetails, regulatoryAndComplianceDetails, intel
 
 export const services = [
     {
-        image: '/images/services/legalpillars.jpg',
+        image: '/images/services/boardroom.jpeg',
         description: 'Streamline your business with our comprehensive corporate services.',
         title: 'Corporate',
         details: corporateDetails
     },
     {
-        image: '/images/services/cloudfinance.jpg',
+        image: '/images/services/bull.jpeg',
         description: 'Maximize your financial potential with our expert legal guidance.',
         title: 'Finance',
         details: financeDetails
@@ -40,7 +40,7 @@ export const services = [
         details: realEstateDetails
     },
     {
-        image: '/images/services/empagree.jpg',
+        image: '/images/services/contracts.jpg',
         description: 'Protect your business and employees with our comprehensive employment law services.',
         title: 'Employment & Labor',
         details: employmentAndLaborLawDetails
