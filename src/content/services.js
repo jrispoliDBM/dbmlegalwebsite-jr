@@ -21,7 +21,7 @@ export const services = [
         details: regulatoryAndComplianceDetails
     },
     {
-        image: '/images/services/contracts.jpg',
+        image: '/images/services/copyright423.jpeg',
         description: 'Protect and maximize the value of your intellectual property with our legal expertise.',
         title: 'Intellectual Property',
         details: intellectualPropertyDetails
