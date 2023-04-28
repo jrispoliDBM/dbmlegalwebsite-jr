@@ -1,5 +1,5 @@
 import { corporateDetails, financeDetails, regulatoryAndComplianceDetails, intellectualPropertyDetails, technologyDetails, realEstateDetails, employmentAndLaborLawDetails, trustsAndEstateDetails, taxDetails, familyOfficeDetails } from './services-details';
-//ch
+//ch1
 
 
 export const services = [
