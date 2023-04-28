@@ -46,7 +46,7 @@ export const services = [
         details: employmentAndLaborLawDetails
     },
     {
-        image: '/images/services/estate.jpeg',
+        image: '/images/services/mansion2023.jpeg',
         description: 'Secure your legacy and protect your assets with our expert estate planning services.',
         title: 'Trusts & Estates',
         details: trustsAndEstateDetails
