@@ -84,7 +84,7 @@ const Footer = () => {
           color="text.secondary"
           gutterBottom
         >
-          &copy; Copyright 2023 Duncan Bergman Mandell
+          &copy; Copyright {new Date().getFullYear()} Duncan Bergman Mandell
 
         </Typography>
         <Typography
