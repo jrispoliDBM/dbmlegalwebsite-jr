@@ -54,10 +54,7 @@ const OurTeam = () => {
                             </Typography>
                         </Typography>
                         <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
-                            Michelle D. Bergman and Maura Mandell founded DBM LLC in 2020, believing that there was a better way to practice
-                            law and that the traditional big law model was in serious need of an overhaul. The last six months not only
-                            confirmed their decision but has proven that a distributive practice model not only benefits both the clients
-                            and the attorneys but is the reality of the future practice of law.
+                        Michelle D. Bergman and Maura Mandell co-founded DBM with the conviction that the conventional big law model required significant reform. Considering the changing landscape of the legal profession and the evolving needs of our clients, DBM has demonstrated that a distributive practice model not only serves the best interests of clients and lawyers alike, but it also represents the future of the legal industry. At DBM, we also strive to stay ahead of the curve and anticipate the needs of our clients. We believe that the future of the legal profession will involve greater flexibility and collaboration, and we are committed to exploring innovation and practices that better serve our clients&apos; needs.
                         </Typography>
                     </Box>
                 </Stack>

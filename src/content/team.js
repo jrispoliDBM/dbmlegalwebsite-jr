@@ -11,7 +11,7 @@ export const team = [
         title: 'Co-Founder and COO',
         image: '/images/team/maura-mandell.png',
         founder: true,
-        bio:"Ms. Mandell is a corporate attorney who also has significant operational experience running and consulting to growth companies. Ms. Mandell practiced law in the corporate departments of Weil, Gotshal, and Manges LLP and Fischbein, Badillo, Wagner, Harding, LLP. She was the founder and CEO of two startups — an organic skincare brand and a consumer wellness service. Additionally, Ms. Mandell has provided legal and operational consulting services to several businesses, including a large healthcare-focused hedge fund. Ms. Mandell and Ms. Bergman met in 2019 and quickly realized that they shared the vision that there is a better way to practice law. They began working together in early 2020 to build the law firm of the future and launched DBM in late 2020. Ms. Mandell focuses on all of the firm's operational aspects while simultaneously finding ways to drive its strategic growth.",
+        bio:"As a corporate attorney and experienced entrepreneur, Ms. Mandell brings a unique perspective to her role as co-founder of DBM. She has practiced law in the corporate departments of Weil, Gotshal, and Manges LLP and Fischbein, Badillo, Wagner, Harding, LLP. In addition, Ms. Mandell has founded and served as CEO of two successful startups - an organic skincare brand and a consumer wellness service. She has also provided legal and operational consulting services to several businesses, including a large healthcare-focused hedge fund.\n\nMs. Mandell met her DBM co-founder, Ms. Bergman, in 2019, and they quickly realized they shared a vision for a better way to practice law. They began working together in early 2020 to build the law firm of the future and launched DBM later that year. Ms. Mandell focuses on the firm's operational aspects while also driving strategic growth. With her diverse background, she brings a wealth of knowledge and expertise to the team, helping to ensure that DBM remains at the forefront of innovation and delivers exceptional service to clients.",
     },
     {
         name: 'Counsel McCullen',
@@ -46,21 +46,21 @@ export const team = [
         title: 'Senior Counsel',
         image: '/images/team/stephanie-ann-michael.png',
         founder: false,
-        bio : null
+        bio : 'Stephanie Mongelluzzo is a corporate and business attorney, specializing in mergers and acquisitions and corporate governance. In addition to her substantial experience in complex cross-border and domestic mergers and acquisitions, asset sales, and carve-out transactions, she advises clients on corporate restructurings and internal reorganizations, entity formation and corporate governance, and commercial contracts.  Prior to joining DBM, Stephanie was a Senior Associate at Hogan Lovells US LLP.  Stephanie has worked with clients in both the public and private sectors and in a variety of industries, including government contracting, aerospace, technology, healthcare, and media and telecommunications. Stephanie is barred in both Virginia and D.C. She earned her B.S. in Finance and B.S. in Economics from the University of Maryland and her J.D. from the University of Virginia School of Law.'
     },
     {
         name: 'Lori Ann Fox',
         title: 'Senior Counsel',
         image: '/images/team/lori-ann-fox.png',
         founder: false,
-        bio : null
+        bio : 'Proven ability to collaborate effectively with internal and external cross-functional professionals to enable attainment of mutual targets. Articulate communicator with ability to analyze, interpret, and convey complex concepts to stakeholders across all levels of business. Demonstrated capacity to formulate and implement agile strategies aligned with business objectives, oriented towards growth. Track record of delivering continuing legal education at diverse conferences and workshops. Hands-on executor with ability to provide significant subject matter expertise on intricate corporate transactions. Possess significant expertise on TCPA and FTC regulations pertaining to advertising and marketing, as well as CCPA, GDPR, PIPA, and PIPEDA privacy laws. Proven history of effective contract negotiation for SaaS technologies.'
     },
     {
         name: 'Joseph Rispoli',
         title: 'Senior Director People & Business Strategy',
         image: '/images/team/joseph-rispoli.jpg',
         founder: false,
-        bio : null
+        bio : 'Joseph Rispoli is a seasoned business professional with experience in Executive Talent Acquisition, Business Strategy, and Operational Management. He brings a wealth of experience in improving organizational efficiency and streamlining processes to help companies achieve their goals. His expertise includes process improvement, project management, and data analysis, and with a strong background in diverse industries such as law, pharmaceuticals, and consumer goods. He has a proven ability to identify inefficiencies, recommends solutions, and implement changes that drive business growth and profitability. Joseph is a creative problem-solver and a strategic thinker, with a passion for using data to inform my recommendations and drive results. He is a flexible and adaptive team player who is able to work effectively with clients of all sizes and across all levels of an organization.'
     },
     {
         name: 'Jenna Carr',

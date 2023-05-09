@@ -63,7 +63,7 @@ export default function ContactUs() {
                     Careers
                 </Typography>
                 <Typography color="text.secondary">
-                If you are a highly qualified candidate or a group of highly qualified candidates with at least five years' experience, including significant experience gained at a top-ranked AmLaw 100 law firm in a sophisticated corporate department, we would like to speak with you about joining our team at DBM.
+                If you are a highly qualified candidate or a group of highly qualified candidates with at least five years&apos; experience, including significant experience gained at a top-ranked AmLaw 100 law firm in a sophisticated corporate department, we would like to speak with you about joining our team at DBM.
                 </Typography>
             </Box>
         </Box>
