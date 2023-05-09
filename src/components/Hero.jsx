@@ -75,6 +75,7 @@ const Hero = () => {
                                 size="large"
                                 fullWidth={isMd ? false : true}
                                 href={"/contact-us"}
+                                // sx={{backgroundColor: theme.palette.primary.dark}}
                             >
                                 Contact Us
                             </Button>

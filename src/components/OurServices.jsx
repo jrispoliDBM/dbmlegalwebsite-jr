@@ -57,8 +57,7 @@ const OurServices = () => {
                             </Typography>
                         </Typography>
                         <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
-                            DBM offers business and transactional services in a diverse range of practice areas. Our clients include
-                            businesses of all sizes, from entrepreneurs to early to mid-stage companies and Fortune 1000 companies.
+                        DBM provides a diverse range of business and transactional services across various practice areas to clients of all sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline your business and expert legal guidance to maximize your financial potential.
                         </Typography>
                     </Box>
                 </Stack>

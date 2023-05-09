@@ -35,7 +35,7 @@ const CoreValues = () => {
         setOpen(false);
     };
     return (
-        <Box>
+        <Box >
             <Grid item xs={12} alignItems="center">
                 <Stack direction="row" spacing={2} justifyContent="center" 
                 // data-aos={'fade-right'}
@@ -59,7 +59,7 @@ const CoreValues = () => {
                     </Box>
                 </Stack>
             </Grid>
-            <Grid container spacing={4}>
+            <Grid container spacing={2}>
                 {coreValues.map((value, i) => (
                     <Grid item xs={12} sm={6} md={4} key={i}>
                         <Box
@@ -74,8 +74,8 @@ const CoreValues = () => {
                             sx={{
                                 boxShadow: theme.shadows[5],
                                 borderRadius: 5,
-                                border: `8px solid ${theme.palette.primary.main}`,
-                                backgroundColor: theme.palette.primary.light,
+                                border: `4px solid ${theme.palette.primary.main}`,
+                                // backgroundColor: theme.palette.primary.light,
                                 textDecoration: 'none',
                                 transition: 'all .2s ease-in-out',
                                 '&:hover': {
@@ -86,10 +86,10 @@ const CoreValues = () => {
                             <Box component={CardContent}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={12}>
-                                        <Typography variant={'h5'} fontWeight={700} gutterBottom color="white">
+                                        <Typography align="center" variant={'h5'} fontWeight={700} gutterBottom color={theme.palette.primary.main}>
                                             {value.title}
                                         </Typography>
-                                        <Typography variant={'body2'} color="text.primary">
+                                        <Typography align="center" variant={'body2'} color="text.primary">
                                             {value.description}
                                         </Typography>
                                     </Grid>

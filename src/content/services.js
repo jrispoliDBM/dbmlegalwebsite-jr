@@ -1,4 +1,4 @@
-import { corporateDetails, financeDetails, regulatoryAndComplianceDetails, intellectualPropertyDetails, technologyDetails, realEstateDetails, employmentAndLaborLawDetails, trustsAndEstateDetails, taxDetails, familyOfficeDetails } from './services-details';
+import { corporateDetails, financeDetails, regulatoryAndComplianceDetails, intellectualPropertyDetails, technologyDetails, realEstateDetails, employmentAndLaborLawDetails, trustsAndEstateDetails, taxDetails, familyOfficeDetails, specialEconomicZonesDetails } from './services-details';
 //chf
 
 
@@ -62,5 +62,11 @@ export const services = [
         description: 'Maximize your investment potential with our sophisticated legal solutions and personalized approach.',
         title: 'Family Office',
         details: familyOfficeDetails
+    },
+    {
+        image: '/images/services/handwithballs.png',
+        description: 'Facilitate rapid economic growth by leverating tax incentives to attract foreign investment and spark technological innovation.',
+        title: 'Special Economic Zones',
+        details: specialEconomicZonesDetails
     }
 ];

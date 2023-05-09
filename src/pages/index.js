@@ -3,6 +3,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
+import ContainerNoTopPadding from 'components/core/ContainerNoTopPadding';
 import Hero from 'components/Hero';
 import Head from 'next/head';
 import OurServices from 'components/OurServices';
@@ -23,9 +24,9 @@ export default function Home() {
             <Box sx={{ overflowX: 'hidden' }}>
                 <Main bgcolor={'background.paper'}>
                     <Hero />
-                    <Container>
+                    <ContainerNoTopPadding id="core-values-container" >
                         <CoreValues />
-                    </Container>
+                    </ContainerNoTopPadding>
                     <Container>
                         <OurServices />
                     </Container>

@@ -40,7 +40,7 @@ export default function ContactUs() {
         <Box>
             <Box marginBottom={2}>
                 <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>
-                    Contact details
+                    Contact us
                 </Typography>
                 <Typography color="text.secondary">
                     Please contact us to discuss our full range of comprehensive legal solutions tailored to meet your business needs.
@@ -57,6 +57,14 @@ export default function ContactUs() {
                         <ListItemText primary={item.label} secondary={item.value} />
                     </Box>
                 ))}
+            </Box>
+            <Box marginBottom={2} pt={4}>
+                <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>
+                    Careers
+                </Typography>
+                <Typography color="text.secondary">
+                If you are a highly qualified candidate or a group of highly qualified candidates with at least five years' experience, including significant experience gained at a top-ranked AmLaw 100 law firm in a sophisticated corporate department, we would like to speak with you about joining our team at DBM.
+                </Typography>
             </Box>
         </Box>
     );

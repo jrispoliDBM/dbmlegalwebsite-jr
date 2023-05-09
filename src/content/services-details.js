@@ -474,7 +474,7 @@ export const trustsAndEstateDetails = [
 export const taxDetails = [
     {
         title: 'Tax',
-        intro_text:'',
+        intro_text: '',
         lists: [
             {
                 heading: 'DBM creates innovative structures and solves complex tax issues for a full spectrum of clients, including:',
@@ -503,8 +503,7 @@ export const taxDetails = [
             }
         ]
     }
-
-]
+];
 
 export const familyOfficeDetails = [
     {
@@ -529,4 +528,29 @@ export const familyOfficeDetails = [
             }
         ]
     }
-]
+];
+
+export const specialEconomicZonesDetails = [
+    {
+        title: '',
+        intro_text:
+            'A special economic zone (SEZ) is a geographical region that has economic laws and regulations that are more liberal than those of the rest of the country in which it is located. The purpose of an SEZ is to create an environment that is conducive to foreign investment and to promote economic growth and development in the region.',
+        lists: [
+            {
+                heading: '',
+                list: [
+                    'Legal advice on the laws and regulations related to special economic zones.',
+                    'Drafting contracts between businesses, governments, and investors for the establishment and operation of special economic zones.',
+                    'Assisting clients with compliance, including obtaining permits and licenses and preparing necessary documents.',
+                    'Representing clients in disputes related to special economic zones through mediation, or arbitration.',
+                    'Performing due diligence on businesses and investors who want to establish or operate in special economic.'
+                    // 'Regulatory compliance',
+                    // 'Incorporation and licensing',
+                    // 'Contract drafting and review',
+                    // 'Intellectual property protection',
+                    // 'Taxation',
+                ]
+            }
+        ]
+    }
+];
