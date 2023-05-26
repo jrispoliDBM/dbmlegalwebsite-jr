@@ -63,10 +63,10 @@ export const services = [
         title: 'Family Office',
         details: familyOfficeDetails
     },
-    {
-        image: '/images/services/handwithballs2.png',
-        description: 'Facilitate rapid economic growth by leverating tax incentives to attract foreign investment and spark technological innovation.',
-        title: 'Special Economic Zones',
-        details: specialEconomicZonesDetails
-    }
+    // {
+    //     image: '/images/services/handwithballs2.png',
+    //     description: 'Facilitate rapid economic growth by leverating tax incentives to attract foreign investment and spark technological innovation.',
+    //     title: 'Special Economic Zones',
+    //     details: specialEconomicZonesDetails
+    // }
 ];
