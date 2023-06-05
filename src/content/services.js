@@ -15,6 +15,12 @@ export const services = [
         title: 'Finance',
         details: financeDetails
     },
+        {
+        image: '/images/services/familyoffice2023.jpeg',
+        description: 'Maximize your investment potential with our sophisticated legal solutions and personalized approach.',
+        title: 'Family Office',
+        details: familyOfficeDetails
+    },
     {
         image: '/images/services/regandcomp2023.jpeg',
         description: 'Stay compliant and ahead of regulations with our trusted legal advice. ',
@@ -57,12 +63,7 @@ export const services = [
         title: 'Tax',
         details: taxDetails
     },
-    {
-        image: '/images/services/familyoffice2023.jpeg',
-        description: 'Maximize your investment potential with our sophisticated legal solutions and personalized approach.',
-        title: 'Family Office',
-        details: familyOfficeDetails
-    },
+
     // {
     //     image: '/images/services/handwithballs2.png',
     //     description: 'Facilitate rapid economic growth by leverating tax incentives to attract foreign investment and spark technological innovation.',
