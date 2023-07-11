@@ -5,7 +5,7 @@ import { corporateDetails, financeDetails, regulatoryAndComplianceDetails, intel
 export const services = [
     {
         image: '/images/services/bull.jpeg',
-        description: 'Streamline your business with our comprehensive corporate services.',
+        description: 'Streamline your business with our comprehensive corporate services.                                       ',
         title: 'Corporate',
         details: corporateDetails
     },
