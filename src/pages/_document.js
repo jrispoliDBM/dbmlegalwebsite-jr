@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
                     <meta name="theme-color" content="#ffffff" />
                     <meta
                         name="description"
-                        content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
+                        content="DBM Business Services, LLC is a business services firm."
                     />
                     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
                     {/* <link rel="icon" href="/favicon.ico" /> */}

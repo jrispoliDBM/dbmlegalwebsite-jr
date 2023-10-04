@@ -15,7 +15,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>DBM Legal Services</title>
+                <title>DBM Business Services</title>
                 <meta name="description" content="DBM Legal Services" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/images/favicon.ico" />

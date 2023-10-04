@@ -43,7 +43,7 @@ export default function ContactUs() {
                     Contact us
                 </Typography>
                 <Typography color="text.secondary">
-                    Please contact us to discuss our full range of comprehensive legal solutions tailored to meet your business needs.
+                    Please contact us to discuss our full range of comprehensive business services tailored to meet your needs.
                 </Typography>
             </Box>
             <Box display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
