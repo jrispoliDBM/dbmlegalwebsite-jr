@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
         />
         <link rel="icon" href="/images/favicon.ico" />
         <link rel="shortcut icon" href="/images/favicon.ico" />
-        <title>DBM Business Services</title>
+        <title>DBM Business Services 2</title>
       </Head>
       <Page>
         <Component {...pageProps} />
