@@ -70,6 +70,7 @@ const OurServices = () => {
                             href={''}
                             display={'block'}
                             width={1}
+                            minHeight="100%"
                             
                             // data-aos={'fade-up'}
                             // data-aos-delay={i * 100}
