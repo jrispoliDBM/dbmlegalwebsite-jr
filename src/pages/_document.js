@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta charSet="utf-8" />
-                    {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
+                    {/* <link rel="shortcut icon" href="/favicon.icos" /> */}
                     <meta name="theme-color" content="#ffffff" />
                     <meta
                         name="description"
