@@ -89,7 +89,7 @@ const OldServicesBlock = () => {
                             height={1}
                             width={1}
                             minHeight={375}
-                            //C:\Users\llmandell\Documents\Projects\dbm\dbmlegalservices\public\images\backgrounds\samson-ZGjbiukp_-A-unsplash.jpg
+                            
                             image="/images/backgrounds/samson-ZGjbiukp_-A-unsplash.jpg"
                         />
                     </Box>

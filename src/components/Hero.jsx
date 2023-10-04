@@ -34,7 +34,7 @@ const Hero = () => {
                                 fontWeight: 700,
                             }}
                         >
-                            Legal Solutions for
+                            Busines Services for
                             <br />{" "}
                             <Typography
                                 color={"primary"}
@@ -59,7 +59,7 @@ const Hero = () => {
                         >
                             Exceptional talent, cost-effective service, and
                             custom-tailored solutions to complex business
-                            transactions and legal issues.
+                            issues.
                         </Typography>
                         </Box>
                         <Box
