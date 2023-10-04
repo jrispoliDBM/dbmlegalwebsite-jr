@@ -34,7 +34,7 @@ const Hero = () => {
                                 fontWeight: 700,
                             }}
                         >
-                            Busines Services for
+                            Legal Solutions for
                             <br />{" "}
                             <Typography
                                 color={"primary"}
@@ -58,7 +58,7 @@ const Hero = () => {
                             sx={{ fontWeight: 700, width: "70%" }}
                         >
                             Exceptional talent, cost-effective service, and
-                            custom-tailored solutions to complex business
+                            custom-tailored solutions to complex business transactions and legal
                             issues.
                         </Typography>
                         </Box>
