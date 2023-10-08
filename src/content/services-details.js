@@ -242,7 +242,7 @@ export const intellectualPropertyDetails = [
         ]
     },
     {
-        title: 'Median and Entertainment',
+        title: 'Media and Entertainment',
         intro_text:
             'DBM attorneys can assist clients with music licensing, traditional and electronic publishing, artist engagement agreements, electronic games distribution, licensing merchandising transactions, and compliance with the Digital Millennium Copyright Act.',
         lists: [
@@ -274,7 +274,7 @@ export const intellectualPropertyDetails = [
 
 export const technologyDetails = [
     {
-        title: 'Cloud Comuting Services and Technologies',
+        title: 'Cloud Computing Services and Technologies',
         intro_text:
             'Cloud computing has become the most effective way to scale, transform, and grow your business. DBM can help your work through the complex legal, regulatory, and commercial implications. DBM attorneys will counsel you through the complexities of negotiating Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS) agreements. We will ensure you receive the well-established contractual protections – standards of performance, clear scope of services and deliverables, confidentiality, remedies, and rights.',
         lists: [
