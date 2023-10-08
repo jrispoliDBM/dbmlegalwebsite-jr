@@ -167,7 +167,7 @@ export const financeDetails = [
                     'Acquisition financings',
                     'Leveraged leases',
                     'Real estate financings',
-                    'Private placements of debt securities; and'
+                    'Private placements of debt securities'
                 ]
             }
         ]
