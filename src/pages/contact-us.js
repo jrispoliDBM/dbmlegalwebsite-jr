@@ -54,7 +54,22 @@ export default function ContactUs() {
                                 {item.icon}
                             </Box>
                         </Box>
-                        <ListItemText primary={item.label} secondary={item.value} />
+                        {item.label === 'Email' ? (
+                            <ListItemText
+                                primary={item.label}
+                                secondary={item.value}
+                                primaryTypographyProps={{
+                                    color: 'textPrimary',
+                                }}
+                                secondaryTypographyProps={{
+                                    component: 'a',
+                                    href: `mailto:${item.value}`,
+                                    color: 'primary',
+                                }}
+                            />
+                        ) : (
+                        <ListItemText primary={item.label} secondary={item.value} />)}
+
                     </Box>
                 ))}
             </Box>
