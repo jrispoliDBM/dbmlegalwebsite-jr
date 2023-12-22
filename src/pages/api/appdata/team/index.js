@@ -8,6 +8,7 @@ export default async function handler(req, res) {
             case 'GET':
                 const collection = await getData();
                 res.status(200).json(collection);
+                break
             default:
                 return res.status(500).json({ error: 'Invalid request method' });
         }
