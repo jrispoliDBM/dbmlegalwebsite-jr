@@ -1,6 +1,86 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const sortedTeam = (team) => {
+    const sorted = team.sort((a, b) => {
+        const aNames = a.name.split(' ')
+        const bNames = b.name.split(' ')
+        const aLastName = aNames[aNames.length - 1]
+        const bLastName = bNames[bNames.length - 1]
+        if (a.founder && !b.founder) {
+            return -1;
+        }
+        if (!a.founder && b.founder) {
+            return 1;
+        }
+        if (!a.founder && !b.founder) {
+            // sort by title ordered by Senior Partner, Senior Counsel, Of Counsel, then alphabetical
+            if (a.title === 'Senior Partner' && b.title !== 'Senior Partner') {
+                return -1;
+            }
+            if (a.title !== 'Senior Partner' && b.title === 'Senior Partner') {
+                return 1;
+            }
+            if (a.title === 'Senior Partner' && b.title === 'Senior Partner') {
+                if (aLastName < bLastName) {
+                    return -1;
+                }
+                if (aLastName > bLastName) {
+                    return 1;
+                }
+                if (aLastName === bLastName) {
+                    return a.name < b.name ? -1 : 1;
+                }
+            }
+            if (a.title === 'Senior Counsel' && b.title !== 'Senior Counsel') {
+                return -1;
+            }
+            if (a.title !== 'Senior Counsel' && b.title === 'Senior Counsel') {
+                return 1;
+            }
+            if (a.title === 'Senior Counsel' && b.title === 'Senior Counsel') {
+                if (aLastName < bLastName) {
+                    return -1;
+                }
+                if (aLastName > bLastName) {
+                    return 1;
+                }
+                if (aLastName === bLastName) {
+                    return a.name < b.name ? -1 : 1;
+                }
+            }
+            if (a.title === 'Of Counsel' && b.title !== 'Of Counsel') {
+                return -1;
+            }
+            if (a.title !== 'Of Counsel' && b.title === 'Of Counsel') {
+                return 1;
+            }
+            if (a.title === 'Of Counsel' && b.title === 'Of Counsel') {
+                if (aLastName < bLastName) {
+                    return -1;
+                }
+                if (aLastName > bLastName) {
+                    return 1;
+                }
+                if (aLastName === bLastName) {
+                    return a.name < b.name ? -1 : 1;
+                }
+            }
+            if (aLastName < bLastName) {
+                return -1;
+            }
+            if (aLastName > bLastName) {
+                return 1;
+            }
+            if (aLastName === bLastName) {
+                return a.name < b.name ? -1 : 1;
+            }
+        }
+        return 0;
+    });
+    return sorted;
+};
+
 const useTeam = () => {
     const [team, setTeam] = useState([]);
     const [error, setError] = useState('');
@@ -11,7 +91,7 @@ const useTeam = () => {
         axios
             .get('/api/appdata/team')
             .then((response) => {
-                setTeam(response.data);
+                setTeam(sortedTeam(response.data));
                 setIsLoading(false);
             })
             .catch((error) => {
