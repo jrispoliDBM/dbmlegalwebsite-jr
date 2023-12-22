@@ -18,12 +18,15 @@ import {
     DialogContent,
     DialogContentText
 } from '@mui/material';
-import { team } from 'content/team';
+// import { team } from 'content/team';
+import useTeam from 'hooks/useTeam';
+
 
 const OurTeam = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const [selectedPerson, setSelectedPerson] = useState(null);
+    const {team} = useTeam();
 
     const handleClickOpen = (person) => {
         setSelectedPerson(person);
