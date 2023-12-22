@@ -89,7 +89,7 @@ const useTeam = () => {
     useEffect(() => {
         setIsLoading(true);
         axios
-            .get('/api/appdata/team')
+            .get('api/appdata/team')
             .then((response) => {
                 setTeam(sortedTeam(response.data));
                 setIsLoading(false);
