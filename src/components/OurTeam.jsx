@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -16,7 +16,11 @@ import {
     DialogTitle,
     DialogActions,
     DialogContent,
-    DialogContentText
+    DialogContentText,
+    FormControl,
+    InputLabel,
+    MenuItem,
+    Select
 } from '@mui/material';
 // import { team } from 'content/team';
 import useTeam from 'hooks/useTeam';
@@ -27,9 +31,28 @@ const OurTeam = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const [selectedPerson, setSelectedPerson] = useState(null);
-    const {team} = useTeam();
+    const [verticals, setVerticals] = useState([]);
+    const [selectedVertical, setSelectedVertical] = useState('All');
+    const { team } = useTeam();
 
+    useEffect(() => {
+        //set of verticals from team
+        let verticalList = [];
+        team.map((person) => {
+            if (person.practiceAreas) {
+                person.practiceAreas.map((vertical) => {
+                    if (!verticalList.includes(vertical)) {
+                        verticalList.push(vertical);
+                    }
+                });
+            }
+        });
+        // sort
+        verticalList.sort((a, b) => a.localeCompare(b));
 
+        setVerticals(['All', ...verticalList]);
+        // console.log(rates);
+    }, [team]);
 
     const handleClickOpen = (person) => {
         setSelectedPerson(person);
@@ -60,83 +83,127 @@ const OurTeam = () => {
                             </Typography>
                         </Typography>
                         <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
-                        Michelle D. Bergman and Maura Mandell co-founded DBM with the conviction that the conventional big law model required significant reform. Considering the changing landscape of the legal profession and the evolving needs of our clients, DBM has demonstrated that a distributive practice model not only serves the best interests of clients and lawyers alike, but it also represents the future of the legal industry. At DBM, we also strive to stay ahead of the curve and anticipate the needs of our clients. We believe that the future of the legal profession will involve greater flexibility and collaboration, and we are committed to exploring innovation and practices that better serve our clients&apos; needs.
+                            Michelle D. Bergman and Maura Mandell co-founded DBM with the conviction that the conventional big law model
+                            required significant reform. Considering the changing landscape of the legal profession and the evolving needs
+                            of our clients, DBM has demonstrated that a distributive practice model not only serves the best interests of
+                            clients and lawyers alike, but it also represents the future of the legal industry. At DBM, we also strive to
+                            stay ahead of the curve and anticipate the needs of our clients. We believe that the future of the legal
+                            profession will involve greater flexibility and collaboration, and we are committed to exploring innovation and
+                            practices that better serve our clients&apos; needs.
                         </Typography>
                     </Box>
                 </Stack>
             </Grid>
+            <Grid item xs={12} md={5}>
+                <FormControl fullWidth sx={{ m: 1 }}>
+                    <InputLabel id="veritcal-select-label">Vertical</InputLabel>
+                    <Select
+                        labelId="vertical-select-label"
+                        id="vertical-select"
+                        value={selectedVertical}
+                        label="Vertical"
+                        onChange={(e) => setSelectedVertical(e.target.value)}
+                        items={verticals}
+                    >
+                        {verticals.map((vertical, i) => {
+                            return (
+                                <MenuItem key={i} value={vertical}>
+                                    {vertical}
+                                </MenuItem>
+                            );
+                        })}
+                    </Select>
+                </FormControl>
+            </Grid>
+
             <Grid container spacing={4}>
-                {team.map((person, i) => (
-                    <Grid item xs={12} sm={person.founder ? 6 : 4} key={i}>
-                        <Box
-                            sx={{
-                                position: 'relative',
-                                overflow: 'hidden',
-                                borderRadius: 2,
-                                '&:hover': {
-                                    '& img': {
-                                        transform: 'scale(1.2)'
-                                    }
-                                }
-                            }}
-                        >
-                            <Box
-                                component={'img'}
-                                loading="lazy"
-                                height={1}
-                                width={1}
-                                src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
-                                alt="..."
-                                minHeight={person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
-                                maxHeight={person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
-                                sx={{
-                                    transition: 'transform .7s ease !important',
-                                    transform: 'scale(1.0)',
-                                    objectFit: 'contain',
-                                    filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
-                                }}
-                            />
-                            <Box
-                                position={'absolute'}
-                                bottom={0}
-                                left={0}
-                                right={0}
-                                padding={3}
-                                sx={{
-                                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000)`
-                                }}
-                            >
-                                <Stack direction={'row'} spacing={1} justifyContent="space-between">
-                                    <Stack direction="column">
-                                        <Typography variant={person.founder ? 'h4' : ''} fontWeight={700} sx={{ color: 'common.white' }}>
-                                            {person.name}
-                                        </Typography>
-                                        <Typography
-                                            variant={person.founder ? 'h4' : ''}
-                                            fontWeight={700}
-                                            sx={{ color: theme.palette.primary.main }}
-                                            gutterBottom
-                                        >
-                                            {person.title}
-                                        </Typography>
-                                    </Stack>
-                                    {person.bio && (
-                                        <Stack direction="column" justifyContent="center">
-                                            <Button
-                                                variant={'contained'}
-                                                color={'primary'}
-                                                size="small"
-                                                onClick={() => handleClickOpen(person)}
-                                            >
-                                                More
-                                            </Button>
+                {team.map(
+                    (person, i) =>
+                        person.practiceAreas &&
+                        (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') && (
+                            <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 4} key={i}>
+                                <Box
+                                    sx={{
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        borderRadius: 2,
+                                        '&:hover': {
+                                            '& img': {
+                                                transform: 'scale(1.2)'
+                                            }
+                                        }
+                                    }}
+                                >
+                                    <Box
+                                        component={'img'}
+                                        loading="lazy"
+                                        height={1}
+                                        width={1}
+                                        src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
+                                        alt="..."
+                                        minHeight={
+                                            selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }
+                                        }
+                                        maxHeight={
+                                            selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }
+                                        }
+                                        // minHeight={person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
+                                        // maxHeight={person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
+                                        sx={{
+                                            transition: 'transform .7s ease !important',
+                                            transform: 'scale(1.0)',
+                                            objectFit: 'contain',
+                                            filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
+                                        }}
+                                    />
+                                    <Box
+                                        position={'absolute'}
+                                        bottom={0}
+                                        left={0}
+                                        right={0}
+                                        padding={3}
+                                        sx={{
+                                            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000)`
+                                        }}
+                                    >
+                                        <Stack direction={'row'} spacing={1} justifyContent="space-between">
+                                            <Stack direction="column">
+                                                <Typography
+                                                    variant={selectedVertical === 'All' && person.founder ? 'h4' : ''}
+                                                    // variant={person.founder ? 'h4' : ''}
+                                                    fontWeight={700}
+                                                    sx={{ color: 'common.white' }}
+                                                >
+                                                    {person.name}
+                                                </Typography>
+                                                <Typography
+                                                    variant={selectedVertical === 'All' && person.founder ? 'h4' : ''}
+                                                    // variant={person.founder ? 'h4' : ''}
+                                                    fontWeight={700}
+                                                    sx={{ color: theme.palette.primary.main }}
+                                                    gutterBottom
+                                                >
+                                                    {person.title}
+                                                </Typography>
+                                            </Stack>
+                                            {person.bio && (
+                                                <Stack direction="column" justifyContent="center">
+                                                    <Button
+                                                        variant={'contained'}
+                                                        color={'primary'}
+                                                        size="small"
+                                                        onClick={() => handleClickOpen(person)}
+                                                    >
+                                                        More
+                                                    </Button>
+                                                </Stack>
+                                            )}
                                         </Stack>
-                                    )}
-                                </Stack>
-                            </Box>
-                        </Box>
-                    </Grid>
-                ))}
+                                    </Box>
+                                </Box>
+                            </Grid>
+                        )
+                )}
             </Grid>
             <Dialog onClose={handleClose} open={open}>
                 <DialogTitle>
