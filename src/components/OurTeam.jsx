@@ -37,6 +37,7 @@ const OurTeam = () => {
 
     useEffect(() => {
         //set of verticals from team
+        console.log('Team Loaded', team.length)
         let verticalList = [];
         team.map((person) => {
             if (person.practiceAreas) {
@@ -139,7 +140,7 @@ const OurTeam = () => {
                                         loading="lazy"
                                         height={1}
                                         width={1}
-                                        src={person.imageBinary ? person.imageBinary : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
+                                        src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
                                         alt="..."
                                         minHeight={
                                             selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }

@@ -3,9 +3,16 @@ const collectionName = 'team';
 const databaseName = 'application_data';
 
 export default async function handler(req, res) {
+    // avoide response limit
+
+
     try {
         switch (req.method) {
             case 'GET':
+                //avoid response limit
+                //res.setHeader('Content-Type', 'application/json');
+                //res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
+                //res.setHeader('Access-Control-Allow-Origin', '*');
                 const collection = await getData();
                 res.status(200).json(collection);
                 break
@@ -37,7 +44,20 @@ export default async function handler(req, res) {
 export const getData = async function () {
     console.log('GetData', collectionName, databaseName);
     const { client } = await connectToDatabase();
-    const appData = await client.db(databaseName);
-    const data = await appData.collection(collectionName).find().toArray();
+    const appData = await client.db('application_data');
+    console.log('Connected to appData')
+    //console.log('GetData appData', appData);
+    const data = await appData.collection('team').find().toArray();
+    console.log('Got Data', data.length)
+    if(data.length === 0) {
+        console.log(data)
+    }
+    //console.log('GetData data', data);
     return data;
 };
+
+// export const config = {
+//     api: {
+//       responseLimit: false,
+//     },
+//   }
