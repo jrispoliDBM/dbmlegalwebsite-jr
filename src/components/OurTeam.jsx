@@ -13,24 +13,16 @@ import {
     CardContent,
     Dialog,
     Stack,
-    DialogTitle,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
     FormControl,
     InputLabel,
     MenuItem,
     Select
 } from '@mui/material';
-// import { team } from 'content/team';
 import useTeam from 'hooks/useTeam';
-
-//sorted team function to sort by founder
+import TeamGrid from './TeamGrid2';
 
 const OurTeam = () => {
     const theme = useTheme();
-    const [open, setOpen] = useState(false);
-    const [selectedPerson, setSelectedPerson] = useState(null);
     const [verticals, setVerticals] = useState([]);
     const [selectedVertical, setSelectedVertical] = useState('All');
     const { team } = useTeam();
@@ -52,17 +44,8 @@ const OurTeam = () => {
         verticalList.sort((a, b) => a.localeCompare(b));
 
         setVerticals(['All', ...verticalList]);
-        // console.log(rates);
     }, [team]);
 
-    const handleClickOpen = (person) => {
-        setSelectedPerson(person);
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
     return (
         <Box>
             <Grid item xs={12} alignItems="center">
@@ -116,144 +99,7 @@ const OurTeam = () => {
                     </Select>
                 </FormControl>
             </Grid>
-
-            <Grid container spacing={4}>
-                {team.map(
-                    (person, i) =>
-                        person.practiceAreas &&
-                        (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') && (
-                            <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 4} key={i}>
-                                <Box
-                                    sx={{
-                                        position: 'relative',
-                                        overflow: 'hidden',
-                                        borderRadius: 2,
-                                        '&:hover': {
-                                            '& img': {
-                                                transform: 'scale(1.2)'
-                                            }
-                                        }
-                                    }}
-                                >
-                                    <Box
-                                        component={'img'}
-                                        loading="lazy"
-                                        height={1}
-                                        width={1}
-                                        src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
-                                        alt="..."
-                                        minHeight={
-                                            selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }
-                                        }
-                                        maxHeight={
-                                            selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }
-                                        }
-                                        // minHeight={person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
-                                        // maxHeight={person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
-                                        sx={{
-                                            transition: 'transform .7s ease !important',
-                                            transform: 'scale(1.0)',
-                                            objectFit: 'contain',
-                                            filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
-                                        }}
-                                    />
-                                    <Box
-                                        position={'absolute'}
-                                        bottom={0}
-                                        left={0}
-                                        right={0}
-                                        padding={3}
-                                        sx={{
-                                            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000)`
-                                        }}
-                                    >
-                                        <Stack direction={'row'} spacing={1} justifyContent="space-between">
-                                            <Stack direction="column">
-                                                <Typography
-                                                    variant={selectedVertical === 'All' && person.founder ? 'h4' : ''}
-                                                    // variant={person.founder ? 'h4' : ''}
-                                                    fontWeight={700}
-                                                    sx={{ color: 'common.white' }}
-                                                >
-                                                    {person.name}
-                                                </Typography>
-                                                <Typography
-                                                    variant={selectedVertical === 'All' && person.founder ? 'h4' : ''}
-                                                    // variant={person.founder ? 'h4' : ''}
-                                                    fontWeight={700}
-                                                    sx={{ color: theme.palette.primary.main }}
-                                                    gutterBottom
-                                                >
-                                                    {person.title}
-                                                </Typography>
-                                            </Stack>
-                                            {person.bio && (
-                                                <Stack direction="column" justifyContent="center">
-                                                    <Button
-                                                        variant={'contained'}
-                                                        color={'primary'}
-                                                        size="small"
-                                                        onClick={() => handleClickOpen(person)}
-                                                    >
-                                                        More
-                                                    </Button>
-                                                </Stack>
-                                            )}
-                                        </Stack>
-                                    </Box>
-                                </Box>
-                            </Grid>
-                        )
-                )}
-            </Grid>
-            <Dialog onClose={handleClose} open={open}>
-                <DialogTitle>
-                    <Stack direction={'row'} spacing={1} justifyContent="space-between" alignItems="center">
-                        <Stack direction="column">
-                            <Typography variant={'h5'} fontWeight={700} color="primary">
-                                {selectedPerson && selectedPerson.name}
-                            </Typography>
-                            <Typography gutterBottom>{selectedPerson && selectedPerson.title}</Typography>
-                        </Stack>
-                        <Stack direction="column">
-                            <Avatar
-                                src={
-                                    selectedPerson && selectedPerson.image
-                                        ? selectedPerson.image
-                                        : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'
-                                }
-                                sx={{
-                                    width: 56,
-                                    height: 56,
-                                    border: '1px solid', // Adjust the border thickness as needed
-                                    borderColor: theme.palette.grey[200], // Set the border color
-                                    boxShadow: theme.shadows[6] // Choose a shadow from the theme's shadows array
-                                }}
-                                imgProps={{
-                                    style: {
-                                        objectFit: 'contain'
-                                    }
-                                }}
-                            />
-                        </Stack>
-                    </Stack>
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        {selectedPerson &&
-                            selectedPerson.bio.split('\n').map((paragraph, index) => (
-                                <Typography key={index} paragraph>
-                                    {paragraph}
-                                </Typography>
-                            ))}
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Close
-                    </Button>
-                </DialogActions>
-            </Dialog>
+            <TeamGrid team={team} selectedVertical={selectedVertical} />
         </Box>
     );
 };
