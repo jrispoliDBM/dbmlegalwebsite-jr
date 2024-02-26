@@ -40,28 +40,31 @@ function TeamGrid({ team, selectedVertical }) {
                                 minHeight={selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}
                                 width={1}
                                 sx={{
-                                    justifyContent: 'center', 
+                                    justifyContent: 'center',
                                     alignItems: 'center',
                                     position: 'relative',
                                     overflow: 'hidden',
                                     borderRadius: 2,
-                                      
+                                    '&:hover .image-transform img': {
+                                        transform: 'scale(1.1)',
+                                        transition: 'transform 0.7s ease',
+                                    },
+                                    '.image-transform img': {
+                                        transform: 'scale(1.0)',
+                                        transition: 'transform 0.7s ease',
+                                    }
                                 }}
                             >
                                 <Box
                                     className="image-transform"
-                                    sx={{
-                                        overflow: 'hidden',
-                                        display: 'block',
-                                        height: '100%',
-                                    }}
                                 >
                                     <Image
                                         src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
                                         alt="..."
                                         fill={true}
                                         style={{
-                                            'object-fit': 'contain'
+                                            'object-fit': 'contain',
+                                            transition: 'transform .7s ease !important',
                                         }}
                                     />
                                 </Box>
