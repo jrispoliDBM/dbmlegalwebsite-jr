@@ -62,6 +62,7 @@ function TeamGrid({ team, selectedVertical }) {
                                         src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
                                         alt="..."
                                         fill={true}
+                                        loading='lazy'
                                         style={{
                                             'object-fit': 'contain',
                                             transition: 'transform .7s ease !important',
