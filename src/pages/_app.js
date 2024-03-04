@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google'; //GA
 
 import Page from '../components/core/Page';
 
