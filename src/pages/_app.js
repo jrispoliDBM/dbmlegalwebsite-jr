@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import Page from '../components/core/Page';
 
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Page>
         <Component {...pageProps} />
+        <GoogleAnalytics  gaId="G-W53S0BXD8Y"/>
       </Page>
     </React.Fragment>
   );
