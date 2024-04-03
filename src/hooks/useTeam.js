@@ -66,6 +66,23 @@ const sortedTeam = (team) => {
                     return a.name < b.name ? -1 : 1;
                 }
             }
+            if (a.title === 'Senior Director, People & Business Strategy' && b.title !== 'Senior Director, People & Business Strategy') {
+                return -1;
+            }
+            if (a.title !== 'Senior Director, People & Business Strategy' && b.title === 'Senior Director, People & Business Strategy') {
+                return 1;
+            }
+            if (a.title === 'Senior Director, People & Business Strategy' && b.title === 'Senior Director, People & Business Strategy') {
+                if (aLastName < bLastName) {
+                    return -1;
+                }
+                if (aLastName > bLastName) {
+                    return 1;
+                }
+                if (aLastName === bLastName) {
+                    return a.name < b.name ? -1 : 1;
+                }
+            }
             if (aLastName < bLastName) {
                 return -1;
             }
