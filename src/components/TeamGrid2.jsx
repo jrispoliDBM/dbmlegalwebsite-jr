@@ -33,7 +33,7 @@ function TeamGrid({ team, selectedVertical }) {
             {team.map(
                 (person, i) =>
                     person.practiceAreas &&
-                    (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') && (
+                    (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') && person.showOnLegal && (
                         <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 4} key={i}>
                             <Box
                                 position="relative"
