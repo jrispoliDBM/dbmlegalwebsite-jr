@@ -27,7 +27,7 @@ const ServiceHeader = ({ service }) => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
-    console.log(service);
+    //console.log(service);
 
     return (
         <Container maxWidth="lg">
