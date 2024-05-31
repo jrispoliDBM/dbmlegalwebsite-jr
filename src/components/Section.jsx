@@ -45,7 +45,7 @@ function Section({ section }) {
                 )}
                 {section.sectionType === 'faq' &&
                     section.items.map((item, index) => (
-                        <Box pb={3}>
+                        <Box pb={3} key={index}>
                             <Accordion>
                                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
                                     <Typography variant="h6" fontWeight="bold">
@@ -61,7 +61,7 @@ function Section({ section }) {
                 {section.sectionType === 'catalog' && (
                     <>
                         {section.items.map((item, index) => (
-                                <Stack pb={1} >
+                                <Stack pb={1} key={index}>
                                         <Typography variant="h6" fontWeight="bold" color='primary'>
                                             {item.title}
                                         </Typography>
@@ -73,7 +73,7 @@ function Section({ section }) {
                 {section.sectionType === 'simpleList' && (
                     <>
                         {section.items.map((item, index) => (
-                                <Stack pb={1} >
+                                <Stack pb={1} key={index}>
                                     <Stack direction="row" spacing={1}>
                                     <CheckCircleIcon color="primary" />
                                         <Typography variant="h6" fontWeight="bold" c>
