@@ -20,6 +20,7 @@ import {
 } from '@mui/material';
 import { coreValues } from 'content/core-values';
 import ServicePage from 'components/ServicePage';
+import {styled } from '@mui/material/styles';
 
 const CoreValues = () => {
     const theme = useTheme();
@@ -34,6 +35,8 @@ const CoreValues = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
+
     return (
         <Box >
             <Grid item xs={12} alignItems="center">

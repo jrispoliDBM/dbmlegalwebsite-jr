@@ -18,16 +18,18 @@ import {
     Typography,
     CardMedia
 } from '@mui/material';
-import { services } from 'content/services';
-import ServiceCard from './ServiceCard2';
+//import ServiceCard from './ServiceCard2';
+import ServiceCard3 from './ServiceCard3';
 import ServiceDialog from './ServiceDialog';
 //import ServicePage from 'components/ServicePage';
 import Image from 'next/image';
+import useServices from 'hooks/useServices';
 
 const OurServices = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
     const [selectedService, setSelectedService] = useState(null);
+    const { services } = useServices();
 
     const handleClickOpen = (service) => {
         setSelectedService(service);
@@ -37,11 +39,15 @@ const OurServices = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <Box>
             <Grid item xs={12} alignItems="center">
-                <Stack direction="row" spacing={2} justifyContent="center" 
-                // data-aos={'fade-right'}
+                <Stack
+                    direction="row"
+                    spacing={2}
+                    justifyContent="center"
+                    // data-aos={'fade-right'}
                 >
                     <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                         <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
@@ -60,16 +66,22 @@ const OurServices = () => {
                             </Typography>
                         </Typography>
                         <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
-                        DBM provides a diverse range of business and transactional services across various practice areas to clients of all sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline your business and expert legal guidance to maximize your financial potential.
+                            DBM provides a diverse range of business and transactional services across various practice areas to clients of
+                            all sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline
+                            your business and expert legal guidance to maximize your financial potential.
                         </Typography>
                     </Box>
                 </Stack>
             </Grid>
             <Grid container spacing={4}>
                 {services.map((service, i) => (
-                    <Grid item xs={12} sm={12} md={4} key={i}>
-                        <ServiceCard service={service} handleClickOpen={handleClickOpen} />                        
-                    </Grid>
+                    <>
+                        {service.show && (
+                            <Grid item xs={12} sm={12} md={4} lg={3} key={i}>
+                                <ServiceCard3 service={service} handleClickOpen={handleClickOpen} />
+                            </Grid>
+                        )}
+                    </>
                 ))}
             </Grid>
             <ServiceDialog open={open} handleClose={handleClose} selectedService={selectedService} />
@@ -79,14 +91,13 @@ const OurServices = () => {
 
 export default OurServices;
 
-
 // {/* <Box
 //                             component={Card}
 //                             href={''}
 //                             display={'block'}
 //                             width={1}
 //                             minHeight="100%"
-                            
+
 //                             // data-aos={'fade-up'}
 //                             // data-aos-delay={i * 100}
 //                             sx={{
@@ -149,8 +160,6 @@ export default OurServices;
 //                                 </Button>
 //                             </Box>
 //                         </Box> */}
-
-
 
 // {/* <Dialog onClose={handleClose} open={open} fullWidth maxWidth="lg">
 // {/* <DialogTitle>

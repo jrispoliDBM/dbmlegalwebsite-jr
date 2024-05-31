@@ -34,7 +34,7 @@ function TeamGrid({ team, selectedVertical }) {
                 (person, i) =>
                     person.practiceAreas &&
                     (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') && person.showOnLegal && (
-                        <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 4} key={i}>
+                        <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 3} key={i}>
                             <Box
                                 position="relative"
                                 minHeight={selectedVertical === 'All' && person.founder ? { xs: 400, md: 600 } : { xs: 400, md: 400 }}

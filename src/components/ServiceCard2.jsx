@@ -54,14 +54,14 @@ const ServiceCard = ({service, handleClickOpen}) => {
                     filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
                 }}
             /> */}
-            <Image src={service.image} alt={service.title} width={isMd? 400 : 600} height={isMd? 400:600} loading='lazy'  />
-            <Box component={CardContent}>
-                <Typography variant={'h6'} fontWeight={700} gutterBottom>
+            <Image src={service.image} alt={service.title} width={isMd? 400 : 600} height={isMd? 400:600} layout="responsive" loading='lazy'  />
+            <Box component={CardContent} height={isMd ? 70: 0}>
+                <Typography variant={'h6'} fontWeight={700} >
                     {service.title}
                 </Typography>
-                <Typography variant={'body2'} color="text.secondary">
+                {/* <Typography variant={'body2'} color="text.secondary">
                     {service.description}
-                </Typography>
+                </Typography> */}
             </Box>
             <Box flexGrow={1} />
             <Box component={CardActions} justifyContent={'flex-start'}>
