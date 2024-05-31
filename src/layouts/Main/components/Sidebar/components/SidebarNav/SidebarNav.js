@@ -1,104 +1,112 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import {Grid, Typography} from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import NavItem from './components/NavItem';
+import useServices from '@/hooks/useServices';
 
-const SidebarNav = ({ pages, simplePages }) => {
-  const theme = useTheme();
-  const { mode } = theme.palette;
-  const [activeLink, setActiveLink] = useState('');
-  useEffect(() => {
-    setActiveLink(window && window.location ? window.location.pathname : '');
-  }, []);
+const SidebarNav = () => {
+    const theme = useTheme();
+    const { mode } = theme.palette;
+    const [activeLink, setActiveLink] = useState('');
+    const { services, error, isLoading } = useServices();
+    const simplePages = [{ title: 'Home', href: '/' }];
+    const [servicePages, setServicePages] = useState([]);
+    const simplePages2 = [
+      {
+        title: 'Our Team',
+        href: '/our-team',
+      },
+      {
+        title: 'Contact Us',
+        href: '/contact-us',
+      },
+    ]
 
-  const hasActiveLink =  () => items.find((i) => i.href === activeLink);
-  const {
-    landings: landingPages,
-    secondary: secondaryPages,
-    company: companyPages,
-    account: accountPages,
-    portfolio: portfolioPages,
-    blog: blogPages,
-  } = pages;
+    useEffect(() => {
+        setActiveLink(window && window.location ? window.location.pathname : '');
+    }, []);
 
-  return (
-    <Box>
-      <Box width={1} paddingX={2} paddingY={1}>
-        <Box
-          display={'flex'}
-          component="a"
-          href="/"
-          title="theFront"
-          width={{ xs: 100, md: 120 }}
-        >
-          <Box
-            component={'img'}
-            src={
-              mode === 'light'
-                ? '/images/dbmnewlogo.png'
-                : '/images/dbmnewlogo.png'
-            }
-            height={1}
-            width={1}
-          />
-        </Box>
-      </Box>
-      <Box paddingX={2} paddingY={2}>
+    useEffect(() => {
+        let pages = [];
+        services.map((service) => {
+            pages.push({ title: service.service, href: `/${service.route}` });
+        });
+        setServicePages(pages);
+    }, [services]);
+
+    const hasActiveLink = () => items.find((i) => i.href === activeLink);
+
+    return (
         <Box>
-        <Grid container spacing={1}>
-            {simplePages && simplePages.length > 0 && simplePages.map((p, i) => (
-              <Grid item key={i} xs={12}>
-                <Button
-                  size={'large'}
-                  component={'a'}
-                  href={p.href}
-                  fullWidth
-                  sx={{
-                    justifyContent: 'flex-start',
-                    color:
-                      activeLink === p.href
-                        ? theme.palette.primary.main
-                        : theme.palette.text.primary,
-                    backgroundColor:
-                      activeLink === p.href
-                        ? alpha(theme.palette.primary.main, 0.1)
-                        : 'transparent',
-                    fontWeight: activeLink === p.href ? 600 : 400,
-                  }}
-                >
-                  {p.title}
-                  {p.isNew && (
+            <Box width={1} paddingX={2} paddingY={1}>
+                <Box display={'flex'} component="a" href="/" title="theFront" width={{ xs: 100, md: 120 }}>
                     <Box
-                      padding={0.5}
-                      display={'inline-flex'}
-                      borderRadius={1}
-                      bgcolor={'primary.main'}
-                      marginLeft={2}
-                    >
-                      <Typography
-                        variant={'caption'}
-                        sx={{ color: 'common.white', lineHeight: 1 }}
-                      >
-                        new
-                      </Typography>
-                    </Box>
-                  )}
-                </Button>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-        {/* <Box>
-          <NavItem title={'Landings'} items={landingPages} />
-        </Box> */}
-        {/* <Box>
+                        component={'img'}
+                        src={mode === 'light' ? '/images/dbmnewlogo.png' : '/images/dbmnewlogo.png'}
+                        height={1}
+                        width={1}
+                    />
+                </Box>
+            </Box>
+            <Box paddingX={2} paddingY={2}>
+                <Box>
+                    <Grid container spacing={1}>
+                        {simplePages &&
+                            simplePages.length > 0 &&
+                            simplePages.map((p, i) => (
+                                <Grid item key={i} xs={12}>
+                                    <Button
+                                        size={'large'}
+                                        component={'a'}
+                                        href={p.href}
+                                        fullWidth
+                                        sx={{
+                                            justifyContent: 'flex-start',
+                                            color: activeLink === p.href ? theme.palette.primary.main : theme.palette.text.primary,
+                                            backgroundColor: activeLink === p.href ? alpha(theme.palette.primary.main, 0.1) : 'transparent',
+                                            fontWeight: activeLink === p.href ? 600 : 400
+                                        }}
+                                    >
+                                        {p.title}
+                                    </Button>
+                                </Grid>
+                            ))}
+                        {servicePages && servicePages.length > 0 && (
+                            <Grid item xs={12}>
+                                <NavItem title={'Our Services'} items={servicePages} />
+                            </Grid>
+                        )}
+                        {simplePages2 &&
+                            simplePages2.length > 0 &&
+                            simplePages2.map((p, i) => (
+                                <Grid item key={i} xs={12}>
+                                    <Button
+                                        size={'large'}
+                                        component={'a'}
+                                        href={p.href}
+                                        fullWidth
+                                        sx={{
+                                            justifyContent: 'flex-start',
+                                            color: activeLink === p.href ? theme.palette.primary.main : theme.palette.text.primary,
+                                            backgroundColor: activeLink === p.href ? alpha(theme.palette.primary.main, 0.1) : 'transparent',
+                                            fontWeight: activeLink === p.href ? 600 : 400
+                                        }}
+                                    >
+                                        {p.title}
+                                    </Button>
+                                </Grid>
+                            ))}
+
+                    </Grid>
+                </Box>
+                {/* <Box>
           <NavItem title={'Company'} items={companyPages} />
         </Box> */}
-        {/* <Box>
+                {/* <Box>
           <NavItem title={'Pages'} items={secondaryPages} />
         </Box>
         <Box>
@@ -110,13 +118,13 @@ const SidebarNav = ({ pages, simplePages }) => {
         <Box>
           <NavItem title={'Portfolio'} items={portfolioPages} />
         </Box> */}
-      </Box>
-    </Box>
-  );
+            </Box>
+        </Box>
+    );
 };
 
 SidebarNav.propTypes = {
-  pages: PropTypes.object.isRequired,
+    pages: PropTypes.object.isRequired
 };
 
 export default SidebarNav;

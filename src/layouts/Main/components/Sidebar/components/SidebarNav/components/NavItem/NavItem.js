@@ -21,7 +21,7 @@ const NavItem = ({ title, items }) => {
   // console.log(items)
 
   return (
-    <Box>
+    <Box pl={1}>
       <Accordion
         disableGutters
         elevation={0}
