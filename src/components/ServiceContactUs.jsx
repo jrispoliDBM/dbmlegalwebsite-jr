@@ -27,24 +27,28 @@ const ServiceContactUs = ({ service }) => {
     };
 
     return (
-        <Card>
-            <PersonDialog open={open} handleClose={() => setOpen(false)} person={selectedPerson} />
-            <Box p={2}>
-                <Typography fontWeight="bold" variant={'h2'} color="primary" gutterBottom align="center">
-                    {`Our ${service.service} Team`}
-                </Typography>
-                <Grid container spacing={2} justifyContent="center">
-                    {filteredTeam.map((member, i) => (
-                        <Grid item xs={12} sm={3} key={i}>
-                            <PersonTile handleClickOpen={handleClickOpen} person={member} minHeight={250} />
-                            {/* <Typography variant={'h5'} fontWeight="bold">
+        <>
+            {filteredTeam.length > 0 && (
+                <Card>
+                    <PersonDialog open={open} handleClose={() => setOpen(false)} person={selectedPerson} />
+                    <Box p={2}>
+                        <Typography fontWeight="bold" variant={'h2'} color="primary" gutterBottom align="center">
+                            {`Our ${service.service} Team`}
+                        </Typography>
+                        <Grid container spacing={2} justifyContent="center">
+                            {filteredTeam.map((member, i) => (
+                                <Grid item xs={12} sm={3} key={i}>
+                                    <PersonTile handleClickOpen={handleClickOpen} person={member} minHeight={250} />
+                                    {/* <Typography variant={'h5'} fontWeight="bold">
                         {member.name}
                     </Typography> */}
+                                </Grid>
+                            ))}
                         </Grid>
-                    ))}
-                </Grid>
-            </Box>
-        </Card>
+                    </Box>
+                </Card>
+            )}
+        </>
     );
 };
 
