@@ -10,6 +10,7 @@ import Section from '@/components/Section';
 import Main from '@/layouts/Main';
 import Head from 'next/head';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ServiceContactUs from '@/components/ServiceContactUs';
 
 export default function ContactUs() {
     const router = useRouter();
@@ -53,6 +54,7 @@ export default function ContactUs() {
                                                     <Section section={section} />
                                                 </Card>
                                             ))}
+                                            <ServiceContactUs service={service}/>
                                     </Stack>
                                 </Container>
                             </Box>
