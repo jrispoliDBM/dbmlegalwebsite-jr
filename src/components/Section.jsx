@@ -70,13 +70,13 @@ function Section({ section }) {
                         ))}
                         </>
                 )}
-                {section.sectionType === 'simpleList' && (
+                {(section.sectionType === 'simpleList' || section.sectionType === 'simplelist') && (
                     <>
                         {section.items.map((item, index) => (
                                 <Stack pb={1} key={index}>
                                     <Stack direction="row" spacing={1}>
                                     <CheckCircleIcon color="primary" />
-                                        <Typography variant="h6" fontWeight="bold" c>
+                                        <Typography variant="h6" fontWeight="bold" >
                                             {item.title}
                                         </Typography>
                                     </Stack>
