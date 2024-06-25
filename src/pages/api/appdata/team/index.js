@@ -3,7 +3,7 @@ const collectionName = 'team';
 const databaseName = 'application_data';
 
 export default async function handler(req, res) {
-    // avoide response limita
+    // avoide response limitaa
 
 
     try {
