@@ -3,13 +3,19 @@ import { Grid, Stack, Typography, Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 const Footer = () => {
     const theme = useTheme();
     const { mode } = theme.palette;
+    const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+        defaultMatches: true
+    });
+
 
     return (
-        <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Stack direction={isMd ? "row" : 'column'} justifyContent="space-between" alignItems="center">
             <Stack direction="row" spacing={2} alignItems='center'>
                 <Box component="a" href="/" title="DBM Legal Services" width={{ xs: 100, md: 120 }}>
                     <Box
