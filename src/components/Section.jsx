@@ -6,24 +6,41 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { keyframes } from '@emotion/react';
 
 function Section({ section }) {
     const theme = useTheme();
+    const slideIn = keyframes`
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
     return (
         <Container>
             <Stack p={4}>
                 {section.title && (
-                    <>
-                        <Typography variant="h2" fontWeight="bold" align="center" color='primary'>
+                    <Box sx={{
+                        animation: `${slideIn} 1s ease-out forwards`
+                    }}>
+                        <Typography variant="h2" fontWeight="bold" align="center" color='primary' >
                             {section.title}
                         </Typography>
-                    </>
+                    </Box>
                 )}
                     <Box pb={3}>
                 {section.subtitle && (
+                     <Box sx={{
+                        animation: `${slideIn} 1s ease-out forwards`
+                    }}>
                         <Typography variant={section.subtitle.length < 40  ?  "h3" : "h4"} fontWeight="bold" align="center" gutterBottom>
                             {section.subtitle}
                         </Typography>
+                        </Box>
                 )}
                     </Box>
                 {section.sectionType === 'checkMarkList' && (
