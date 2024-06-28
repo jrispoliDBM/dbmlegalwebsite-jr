@@ -4,6 +4,7 @@ import {
     Button,
     Grid,
     Stack,
+    Chip,
     Typography,
     Dialog,
     DialogContent,
@@ -53,18 +54,27 @@ function PersonDialog({ open, handleClose, person }) {
             </DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    <Stack direction="column" spacing={1}>
+                    <Stack direction="column" spacing={0}>
                         {person &&
                             person.bio.split('\n').map((paragraph, index) => (
                                 <Typography key={index} paragraph color="black">
                                     {paragraph}
                                 </Typography>
                             ))}
+                        {person && person.verticals && person.verticals.length > 0 && (
+                            <Typography variant={'h6'} fontWeight={700} color="black">
+                                {/* Verticals: {person.verticals.join(', ')} */}
+                                Verticals:{' '}
+                                {person.verticals.map((vertical, i) => {
+                                    return <Chip key={i} label={vertical} variant="outlined" color="primary" sx={{ m: 0.5 }} />;
+                                })}
+                            </Typography>
+                        )}
                     </Stack>
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Stack direction="row" justifyContent="space-between" style={{width: '100%'}}>
+                <Stack direction="row" justifyContent="space-between" style={{ width: '100%' }}>
                     <Stack direction="row">
                         {person && person.linkedin && (
                             <Tooltip title={`${person.linkedin}`} arrow>

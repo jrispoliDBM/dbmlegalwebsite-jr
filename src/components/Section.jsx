@@ -24,25 +24,29 @@ function Section({ section }) {
         <Container>
             <Stack p={4}>
                 {section.title && (
-                    <Box sx={{
-                        animation: `${slideIn} 1s ease-out forwards`
-                    }}>
-                        <Typography variant="h2" fontWeight="bold" align="center" color='primary' >
+                    <Box
+                        sx={{
+                            animation: `${slideIn} 1s ease-out forwards`
+                        }}
+                    >
+                        <Typography variant="h2" fontWeight="bold" align="center" color="primary">
                             {section.title}
                         </Typography>
                     </Box>
                 )}
-                    <Box pb={3}>
-                {section.subtitle && (
-                     <Box sx={{
-                        animation: `${slideIn} 1s ease-out forwards`
-                    }}>
-                        <Typography variant={section.subtitle.length < 40  ?  "h3" : "h4"} fontWeight="bold" align="center" gutterBottom>
-                            {section.subtitle}
-                        </Typography>
+                <Box pb={3}>
+                    {section.subtitle && (
+                        <Box
+                            sx={{
+                                animation: `${slideIn} 1s ease-out forwards`
+                            }}
+                        >
+                            <Typography variant={section.subtitle.length < 40 ? 'h3' : 'h4'} fontWeight="bold" align="center" gutterBottom>
+                                {section.subtitle}
+                            </Typography>
                         </Box>
-                )}
-                    </Box>
+                    )}
+                </Box>
                 {section.sectionType === 'checkMarkList' && (
                     <Grid container spacing={3} pt={2}>
                         {section.items.map((item, index) => (
@@ -78,29 +82,46 @@ function Section({ section }) {
                 {section.sectionType === 'catalog' && (
                     <>
                         {section.items.map((item, index) => (
-                                <Stack pb={1} key={index}>
-                                        <Typography variant="h6" fontWeight="bold" color='primary'>
-                                            {item.title}
-                                        </Typography>
-                                        <Typography>{item.detailText}</Typography>
-                                </Stack>
+                            <Stack pb={1} key={index}>
+                                {item.headerBefore && (
+                                    <Typography variant="h5" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
+                                        {item.headerBefore}
+                                    </Typography>
+                                )}
+
+                                <Typography
+                                    variant="h6"
+                                    fontWeight="bold"
+                                    color="primary"
+                                    pl={section.indentItems ? section.indentItems : 0}
+                                >
+                                    {item.title}
+                                </Typography>
+                                <Typography pl={section.indentItems ? section.indentItems : 0}>{item.detailText}</Typography>
+                            </Stack>
                         ))}
-                        </>
+                    </>
                 )}
                 {(section.sectionType === 'simpleList' || section.sectionType === 'simplelist') && (
                     <>
                         {section.items.map((item, index) => (
-                                <Stack pb={1} key={index}>
-                                    <Stack direction="row" spacing={1}>
+                            <Stack pb={1} key={index}>
+                                <Stack direction="row" spacing={1}>
                                     <CheckCircleIcon color="primary" />
-                                        <Typography variant="h6" fontWeight="bold" >
-                                            {item.title}
-                                        </Typography>
-                                    </Stack>
-                                        
+                                    <Typography variant="h6" fontWeight="bold">
+                                        {item.title}
+                                    </Typography>
                                 </Stack>
+                            </Stack>
                         ))}
-                        </>
+                    </>
+                )}
+                {section.bottomCallToActionButton && (
+                    <Box pt={3} display="flex" justifyContent="center">
+                        <Button variant="contained" href={section.bottomCallToActionButton.route} m={10}>
+                            <Typography >{section.bottomCallToActionButton.label}</Typography>
+                        </Button>
+                    </Box>
                 )}
             </Stack>
         </Container>

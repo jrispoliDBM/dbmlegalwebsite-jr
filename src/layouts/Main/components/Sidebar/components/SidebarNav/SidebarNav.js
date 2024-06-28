@@ -35,6 +35,8 @@ const SidebarNav = () => {
         services.map((service) => {
             pages.push({ title: service.service, href: `/${service.route}` });
         });
+        //sort pages by title
+        pages.sort((a, b) => (a.title > b.title ? 1 : -1));
         setServicePages(pages);
     }, [services]);
 

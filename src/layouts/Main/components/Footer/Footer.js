@@ -1,39 +1,48 @@
-import React from "react";
-import { Grid, Stack, Typography, Button } from "@mui/material";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-import Link from "next/link";
+import React from 'react';
+import { Grid, Stack, Typography, Button } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import Link from 'next/link';
 
 const Footer = () => {
     const theme = useTheme();
     const { mode } = theme.palette;
 
     return (
-        <Stack direction="row" justifyContent="space-between" alignItems='center'>
-            
+        <Stack direction="row" justifyContent="space-between" alignItems="center">
+            <Stack direction="row">
                 <Box component="a" href="/" title="DBM Legal Services" width={{ xs: 100, md: 120 }}>
                     <Box
-                        component={"img"}
-                        src={mode === "light" ? "/images/dbmnewlogo.png" : "/images/dbmnewlogo.png"}
+                        component={'img'}
+                        src={mode === 'light' ? '/images/dbmnewlogo.png' : '/images/dbmnewlogo.png'}
                         height={1}
                         width={1}
                     />
                 </Box>
-            
-            <Typography align={"center"} variant={"subtitle2"} color="text.secondary" gutterBottom>
+                <Box component="a" href="https://www.dbmbusinessservices.com" title="DBM Business Services" width={{ xs: 100, md: 120 }}>
+                    <Box
+                        component={'img'}
+                        src={mode === 'light' ? '/images/dbmnewlogo2.png' : '/images/dbmnewlogo2.png'}
+                        height={1}
+                        width={1}
+                    />
+                </Box>
+            </Stack>
+
+            <Typography align={'center'} variant={'subtitle2'} color="text.secondary" gutterBottom>
                 &copy; Copyright {new Date().getFullYear()} DBM Legal Services LLC
             </Typography>
             <Stack direction="row">
-            {/* <Link href="/privacypolicy" passHref>
+                {/* <Link href="/privacypolicy" passHref>
                 <Button sx={{ whiteSpace: "nowrap" }}>Privacy Policy</Button>
               </Link> */}
-              <Link href="/disclaimer" passHref>
-                <Button sx={{ whiteSpace: "nowrap" }}>Disclaimer</Button>
-              </Link>
-              <Link href="/contact-us" passHref>
-                <Button sx={{ whiteSpace: "nowrap" }}>Contact Us</Button>
-              </Link>
-{/* 
+                <Link href="/disclaimer" passHref>
+                    <Button sx={{ whiteSpace: 'nowrap' }}>Disclaimer</Button>
+                </Link>
+                <Link href="/contact-us" passHref>
+                    <Button sx={{ whiteSpace: 'nowrap' }}>Contact Us</Button>
+                </Link>
+                {/* 
               <Button
                 sx={{ whiteSpace: "nowrap" }}
                 component="a"
