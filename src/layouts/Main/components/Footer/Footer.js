@@ -12,41 +12,43 @@ const Footer = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
+    const iconWidth = 50;
+    const iconHeight = 70;
 
 
     return (
         <Stack direction={isMd ? "row" : 'column'} justifyContent="space-between" alignItems="center">
             <Stack direction="row" spacing={2} alignItems='center'>
-                <Box component="a" href="/" title="DBM Legal Services" width={{ xs: 100, md: 120 }}>
+                <Box component="a" href="/" title="DBM Legal Services" width={{ xs: iconWidth, md: iconWidth }}>
                     <Box
                         component={'img'}
                         src={mode === 'light' ? '/images/dbmlegal.png' : '/images/dbmlegal.png'}
                         sx={{
-                            height: 61, // Set a fixed height for all images
+                            height: iconHeight, // Set a fixed height for all images
                             width: 'auto' // Maintain the aspect ratio
                         }}
                         // height={1}
                         // width={1}
                     />
                 </Box>
-                <Box component="a" href="https://www.dbmbusinessservices.com" title="DBM Business Services" width={{ xs: 100, md: 120 }}>
+                <Box component="a" href="https://www.dbmbusinessservices.com" title="DBM Business Services" width={{ xs: iconWidth, md: iconWidth }}>
                     <Box
                         component={'img'}
                         src={mode === 'light' ? '/images/dbmbusiness.png' : '/images/dbmbusiness.png'}
                         sx={{
-                            height: 58, // Set a fixed height for all images
+                            height:iconHeight, // Set a fixed height for all images
                             width: 'auto' // Maintain the aspect ratio
                         }}
                         // height={1}
                         // width={1}
                     />
                 </Box>
-                <Box component="a" href="https://www.dbmcompliance.com" title="DBM Compliance" width={{ xs: 100, md: 120 }}>
+                <Box component="a" href="https://www.dbmcompliance.com" title="DBM Compliance" width={{ xs: iconWidth, md: iconWidth }}>
                     <Box
                         component={'img'}
                         src={mode === 'light' ? '/images/dbmcompliance.png' : '/images/dbmcompliance.png'}
                         sx={{
-                            height: 63, // Set a fixed height for all images
+                            height: iconHeight, // Set a fixed height for all images
                             width: 'auto' // Maintain the aspect ratio
                         }}
                         // height={1}
