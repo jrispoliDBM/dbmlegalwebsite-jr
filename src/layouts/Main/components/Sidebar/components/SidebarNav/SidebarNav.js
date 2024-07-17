@@ -20,6 +20,7 @@ const SidebarNav = () => {
         title: 'Our Team',
         href: '/our-team',
       },
+      { title: 'New Client Form', href: '/new-client-form' },
       {
         title: 'Contact Us',
         href: '/contact-us',

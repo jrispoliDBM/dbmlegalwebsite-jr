@@ -64,7 +64,7 @@ function PersonDialog({ open, handleClose, person }) {
                         {person && person.verticals && person.verticals.length > 0 && (
                             <Typography variant={'h6'} fontWeight={700} color="black">
                                 {/* Verticals: {person.verticals.join(', ')} */}
-                                Verticals:{' '}
+                                Practice Areas:{' '}
                                 {person.verticals.map((vertical, i) => {
                                     return <Chip key={i} label={vertical} variant="outlined" color="primary" sx={{ m: 0.5 }} />;
                                 })}

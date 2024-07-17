@@ -2,16 +2,11 @@ import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
-
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
-import OurTeam from 'components/OurTeam';
 import { Typography, ListItemText, ListItemAvatar, ListItem, Divider, Avatar, Card, Button, Stack, Grid } from '@mui/material';
-import { info, careerInfo } from 'content/contact-info';
-import Lottie from 'react-lottie';
-import phoneAnimation from 'content/phone.json';
 
-export default function ContactUs() {
+export default function Faqs() {
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true

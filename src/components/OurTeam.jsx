@@ -80,7 +80,7 @@ const OurTeam = () => {
             </Grid>
             <Grid item xs={12} md={5}>
                 <FormControl fullWidth sx={{ m: 1 }}>
-                    <InputLabel id="veritcal-select-label">Vertical</InputLabel>
+                    <InputLabel id="veritcal-select-label">Practice Area</InputLabel>
                     <Select
                         labelId="vertical-select-label"
                         id="vertical-select"
