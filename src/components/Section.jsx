@@ -4,6 +4,7 @@ import { Stack, Box, Typography, Button, Grid, Container, Accordion, AccordionSu
 import { alpha, useTheme } from '@mui/material/styles';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckSharpIcon from '@mui/icons-material/CheckSharp';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { keyframes } from '@emotion/react';
@@ -88,16 +89,20 @@ function Section({ section }) {
                                         {item.headerBefore}
                                     </Typography>
                                 )}
-
-                                <Typography
-                                    variant="h6"
-                                    fontWeight="bold"
-                                    color="primary"
-                                    pl={section.indentItems ? section.indentItems : 0}
-                                >
-                                    {item.title}
-                                </Typography>
-                                <Typography pl={section.indentItems ? section.indentItems : 0}>{item.detailText}</Typography>
+                                <Stack direction="row" spacing={1} alignItems="center">
+                                    {item.iconBefore && item.iconBefore === 'CheckSharp' && <CheckSharpIcon color="primary" />}
+                                    <Stack direction="column">
+                                        <Typography
+                                            variant="h6"
+                                            fontWeight="bold"
+                                            color="primary"
+                                            pl={section.indentItems ? section.indentItems : 0}
+                                        >
+                                            {item.title}
+                                        </Typography>
+                                        <Typography pl={section.indentItems ? section.indentItems : 0}>{item.detailText}</Typography>
+                                    </Stack>
+                                </Stack>
                             </Stack>
                         ))}
                     </>
@@ -119,7 +124,7 @@ function Section({ section }) {
                 {section.bottomCallToActionButton && (
                     <Box pt={3} display="flex" justifyContent="center">
                         <Button variant="contained" href={section.bottomCallToActionButton.route} m={10}>
-                            <Typography >{section.bottomCallToActionButton.label}</Typography>
+                            <Typography>{section.bottomCallToActionButton.label}</Typography>
                         </Button>
                     </Box>
                 )}
