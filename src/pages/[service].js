@@ -52,7 +52,7 @@ export default function ContactUs() {
                                             service.sections.map((section, index) => (
                                                 <Card key={index} sx={{
                                                     boxShadow: `10px 10px 15px 0px ${theme.palette.primary.main}`, // Change the shadow color here
-                                                    border: `1px solid ${theme.palette.grey[900]}`, // Add border here
+                                                    border: `3px solid ${theme.palette.grey[100]}`, // Add border here
                                                     padding: theme.spacing(2), // Optional: add padding
                                                     borderRadius: theme.shape.borderRadius // Optional: adjust borde
                                                     //boxShadow: `0px 4px 10px ${theme.palette.primary.dark}` // Change the shadow color here
