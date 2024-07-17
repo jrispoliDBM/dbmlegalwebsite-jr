@@ -21,6 +21,7 @@ const SidebarNav = () => {
         href: '/our-team',
       },
       { title: 'New Client Form', href: '/new-client-form' },
+      { title: 'FAQs', href: '/faqs' },
       {
         title: 'Contact Us',
         href: '/contact-us',
