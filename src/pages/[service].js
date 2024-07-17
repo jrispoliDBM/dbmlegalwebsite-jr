@@ -47,11 +47,15 @@ export default function ContactUs() {
                             <ServiceHeader service={service} />
                             <Box backgroundColor={null}>
                                 <Container >
-                                    <Stack spacing={3} p={2}>
+                                    <Stack spacing={4} p={2}>
                                         {service.sections &&
                                             service.sections.map((section, index) => (
                                                 <Card key={index} sx={{
-                                                    boxShadow: `0px 4px 10px ${theme.palette.primary.dark}` // Change the shadow color here
+                                                    boxShadow: `10px 10px 15px 0px ${theme.palette.primary.main}`, // Change the shadow color here
+                                                    border: `1px solid ${theme.palette.grey[900]}`, // Add border here
+                                                    padding: theme.spacing(2), // Optional: add padding
+                                                    borderRadius: theme.shape.borderRadius // Optional: adjust borde
+                                                    //boxShadow: `0px 4px 10px ${theme.palette.primary.dark}` // Change the shadow color here
                                                 }}>
                                                     <Section section={section} />
                                                 </Card>

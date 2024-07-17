@@ -89,8 +89,8 @@ function Section({ section }) {
                                         {item.headerBefore}
                                     </Typography>
                                 )}
-                                <Stack direction="row" spacing={1} alignItems="center">
-                                    {item.iconBefore && item.iconBefore === 'CheckSharp' && <CheckSharpIcon color="primary" />}
+                                <Stack direction="row" spacing={1} alignItems="flex-start">
+                                    {item.iconBefore && item.iconBefore === 'CheckSharp' && <CheckSharpIcon color="primary" sx={{fontSize: 35}} />}
                                     <Stack direction="column">
                                         <Typography
                                             variant="h6"
