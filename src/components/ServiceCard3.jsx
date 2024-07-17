@@ -30,17 +30,25 @@ const ServiceCard = ({ service, handleClickOpen }) => {
     });
 
     return (
-        <Box
+        <Card             sx={{
+            // marginBottom: { xs: 2, sm: 3 },
+            '&:last-child': { marginBottom: 0 },
+            height: '100%'
+        }}
+>
+        {/* <Box
             sx={{
-                marginBottom: { xs: 2, sm: 3 },
-                '&:last-child': { marginBottom: 0 }
+                // marginBottom: { xs: 2, sm: 3 },
+                '&:last-child': { marginBottom: 0 },
+                height: '100%'
             }}
-        >
+        > */}
             <Box
                 boxShadow={1}
                 sx={{
                     position: 'relative',
                     overflow: 'hidden',
+                    height: '100%',
                     borderRadius: 2,
                     '&:hover': {
                         '& img': {
@@ -70,7 +78,7 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                             filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
                         }}
                     />
-                    <Typography variant={'h6'} fontWeight={700} gutterBottom>
+                    <Typography variant={'h6'} fontWeight={700} gutterBottom align='center'>
                         {service.headerSection.title}
                     </Typography>
                 </Stack>
@@ -139,7 +147,8 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                     {/* <Typography>{service.description}</Typography> */}
                 </Box>
             </Box>
-        </Box>
+        {/* </Box> */}
+        </Card>
     );
 };
 

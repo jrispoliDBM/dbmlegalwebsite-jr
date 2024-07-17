@@ -73,12 +73,13 @@ const OurServices = () => {
                     </Box>
                 </Stack>
             </Grid>
-            <Grid container spacing={4}>
+            <Grid container spacing={4} alignItems='stretch'>
                 {services.map((service, i) => (
                     <>
+                    
                         {service.show && (
-                            <Grid item xs={6} sm={6} md={4} lg={3} key={i}>
-                                <ServiceCard3 service={service} handleClickOpen={handleClickOpen} />
+                            <Grid item xs={6} sm={6} md={4} lg={3} key={i} sx={{display: 'flex'}}>
+                                <ServiceCard3 service={service} handleClickOpen={handleClickOpen} sx={{flex:1, height:'100%'}}/>
                             </Grid>
                         )}
                     </>
