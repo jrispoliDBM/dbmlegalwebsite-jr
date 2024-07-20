@@ -166,7 +166,6 @@ export default function NewClientForm() {
                                             userIP: '',
                                             dateCompleted: new Date().toISOString(),
                                             reviewedByDBM: false,
-                                            visible: true
                                         }}
                                         onSubmit={async (values, actions) => {
                                             //alert(JSON.stringify(values, null, 2));
