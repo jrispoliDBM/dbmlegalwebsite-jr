@@ -128,7 +128,6 @@ const SidebarNav = () => {
 };
 
 SidebarNav.propTypes = {
-    pages: PropTypes.object.isRequired
 };
 
 export default SidebarNav;

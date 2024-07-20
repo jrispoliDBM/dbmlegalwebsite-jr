@@ -12,6 +12,7 @@ import useTeam from 'hooks/useTeam';
 import { TextField, DatePicker, FormSelect, EntryTypeRadioGroup, FormSwitch, GenericRadioGroup } from 'components/FormikMui';
 import useNewClientForms from '@/hooks/useNewClientForms';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import axios from 'axios';
 
 export default function NewClientForm() {
     const theme = useTheme();
@@ -22,14 +23,30 @@ export default function NewClientForm() {
     const { team } = useTeam();
     const { addForm } = useNewClientForms();
     const [openSubmissionDialog, setOpenSubmissionDialog] = useState(false);
+    const [IP, setIP] = useState('');
+    
 
     useEffect(() => {
         //set of verticals from team
-        console.log('Team Loaded', team.length);
+        //console.log('Team', team)
+        //console.log('Team Loaded', team.length);
+        //console.log('Navigator', navigator.geolocation.latitude);
+        const fetchIP = async () => {
+            try {
+                const response = await axios.get('https://api.ipify.org?format=json');
+                console.log('IP:', response.data.ip);
+                setIP(response.data.ip);
+            } catch (error) {
+                console.error('Error fetching IP address:', error);
+                setIP('Error fetching IP address');
+            }
+        };
+
+        fetchIP();
         let verticalList = [];
         team.map((person) => {
-            if (person.practiceAreas) {
-                person.practiceAreas.map((vertical) => {
+            if (person.verticals) {
+                person.verticals.map((vertical) => {
                     if (!verticalList.includes(vertical)) {
                         if (vertical !== 'All') {
                             verticalList.push(vertical);
@@ -143,11 +160,21 @@ export default function NewClientForm() {
                                             matterPracticeArea: 'Unknown',
                                             matterBillingType: 'TBD',
                                             matterCounterparties: '',
-                                            disclaimerAcknowledged: false
+                                            disclaimerAcknowledged: false,
+                                            practice: 'Unassigned',
+                                            userAgent:'',
+                                            userIP: '',
+                                            dateCompleted: new Date().toISOString(),
+                                            reviewedByDBM: false,
+                                            visible: true
                                         }}
                                         onSubmit={async (values, actions) => {
                                             //alert(JSON.stringify(values, null, 2));
-                                            await addForm(values);
+                                            values.userIP = IP;
+                                            values.userAgent = navigator.userAgent;
+                                            values.dateCompleted = new Date().toISOString();
+                                            //console.log('Submitting:', values); 
+                                            addForm(values);
                                             actions.setSubmitting(false);
                                             actions.resetForm();
                                             setOpenSubmissionDialog(true);
@@ -445,7 +472,8 @@ export default function NewClientForm() {
                                                             placeholder="disclaimerAcknowledged"
                                                             label="I hereby accept this disclaimer"
                                                             checked={values.disclaimerAcknowledged}
-                                                        />
+                                                            />
+                                                            
                                                         {errors.disclaimerAcknowledged && touched.disclaimerAcknowledged ? (
                                                             <Typography color="error">{errors.disclaimerAcknowledged}</Typography>
                                                         ) : null}
@@ -464,6 +492,7 @@ export default function NewClientForm() {
                                                         <Button variant="contained" onClick={submitForm}>
                                                             Submit
                                                         </Button>
+                                                        
                                                     </Grid>
                                                 </Grid>
                                             </Form>
