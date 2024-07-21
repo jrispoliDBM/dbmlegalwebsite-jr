@@ -9,7 +9,7 @@ import Head from 'next/head';
 import * as Yup from 'yup';
 import { Field, Form, Formik, FormikProps } from 'formik';
 import useTeam from 'hooks/useTeam';
-import { TextField, DatePicker, FormSelect, EntryTypeRadioGroup, FormSwitch, GenericRadioGroup } from 'components/FormikMui';
+import { TextField, DatePicker, FormSelect, EntryTypeRadioGroup, FormSwitch, GenericRadioGroup, PhoneNumberInput } from 'components/FormikMui';
 import useNewClientForms from '@/hooks/useNewClientForms';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import axios from 'axios';
@@ -186,7 +186,8 @@ export default function NewClientForm() {
                                                 .email('Enter a valid primary point of contact email')
                                                 .required('A primary point of contact email is required.'),
                                             businessName: Yup.string('Enter a business name').required('A business name is required.'),
-
+                                            businessEmail: Yup.string('Enter an email')
+                                            .email('Enter a valid business email'),
                                             disclaimerAcknowledged: Yup.boolean()
                                                 .oneOf([true], 'You must accept the disclaimer to submit.')
                                                 .required('You must accept the disclaimer to submit.')
@@ -212,14 +213,7 @@ export default function NewClientForm() {
                                                         />
                                                     </Grid>
                                                     <Grid item xs={12} md={6}>
-                                                        <Field
-                                                            component={TextField}
-                                                            name="pointOfContactCellPhone"
-                                                            id="pointOfContactCellPhone"
-                                                            placeholder="Cell Phone"
-                                                            label="Cell Phone"
-                                                            fullWidth
-                                                        />
+                                                        <Field component={PhoneNumberInput} label={'Cell Phone'} name="pointOfContactCellPhone" fullWidth/>
                                                     </Grid>
                                                     <Grid item xs={12} md={6}>
                                                         <Field
@@ -299,7 +293,7 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="businessOfficersDirectorsPartners"
                                                             id="businessOfficersDirectorsPartners"
-                                                            placeholder="businessOfficersDirectorsPartners"
+                                                            placeholder="List of officers, directors, partners"
                                                             label="Officers, Directors & Partners"
                                                             fullWidth
                                                         />
@@ -309,8 +303,8 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="businessDescription"
                                                             id="businessDescription"
-                                                            placeholder="businessDescription"
-                                                            label="Busines Description"
+                                                            placeholder="Describe business"
+                                                            label="Business Description"
                                                             multiline
                                                             fullWidth
                                                         />
@@ -320,7 +314,7 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="businessIndustry"
                                                             id="businessIndustry"
-                                                            placeholder="businessIndustry"
+                                                            placeholder="Industry"
                                                             label="Industry"
                                                             fullWidth
                                                         />
@@ -330,12 +324,8 @@ export default function NewClientForm() {
                                                             component={FormSwitch}
                                                             name="businessPublicCompany"
                                                             id="businessPublicCompany"
-                                                            placeholder="businessPublicCompany"
                                                             label="Public Company?"
                                                             checked={values.businessPublicCompany}
-                                                            // onChange={(e) => {
-                                                            //     setFieldValue('billable', !values.billable);
-                                                            // }}
                                                         />
                                                     </Grid>
                                                     <Grid item xs={12} md={6}>
@@ -343,7 +333,7 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="businessWebsite"
                                                             id="businessWebsite"
-                                                            placeholder="businessWebsite"
+                                                            placeholder="Website"
                                                             label="Website"
                                                             fullWidth
                                                         />
@@ -353,7 +343,7 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="businessEmail"
                                                             id="businessEmail"
-                                                            placeholder="businessEmail"
+                                                            placeholder="Email"
                                                             label="Business Email"
                                                             fullWidth
                                                         />
@@ -401,7 +391,7 @@ export default function NewClientForm() {
                                                                 component={TextField}
                                                                 name="businessEntityTypeOther"
                                                                 id="businessEntityTypeOther"
-                                                                placeholder="businessEntityTypeOther"
+                                                                placeholder=""
                                                                 label="Other?"
                                                                 fullWidth
                                                             />
@@ -417,7 +407,7 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="matterSummary"
                                                             id="matterSummary"
-                                                            placeholder="matterSummary"
+                                                            placeholder="Summary of Legal Issue"
                                                             label="Brief Summary of Legal Issue"
                                                             multiline
                                                             fullWidth
@@ -428,7 +418,7 @@ export default function NewClientForm() {
                                                             component={TextField}
                                                             name="matterCounterparties"
                                                             id="matterCounterparties"
-                                                            placeholder="matterCounterparties"
+                                                            placeholder="List of Counterparties"
                                                             label="Counterparties"
                                                             fullWidth
                                                         />
@@ -473,18 +463,21 @@ export default function NewClientForm() {
                                                             checked={values.disclaimerAcknowledged}
                                                             />
                                                             
-                                                        {errors.disclaimerAcknowledged && touched.disclaimerAcknowledged ? (
-                                                            <Typography color="error">{errors.disclaimerAcknowledged}</Typography>
-                                                        ) : null}
                                                         {errors.pointOfContactName ? (
                                                             <Typography color="error">{errors.pointOfContactName}</Typography>
-                                                        ) : null}
+                                                            ) : null}
                                                         {errors.pointOfContactEmail ? (
                                                             <Typography color="error">{errors.pointOfContactEmail}</Typography>
-                                                        ) : null}
+                                                            ) : null}
                                                         {errors.businessName ? (
                                                             <Typography color="error">{errors.businessName}</Typography>
-                                                        ) : null}
+                                                            ) : null}
+                                                        {errors.businessEmail ? (
+                                                            <Typography color="error">{errors.businessEmail}</Typography>
+                                                            ) : null}
+                                                            {errors.disclaimerAcknowledged && touched.disclaimerAcknowledged ? (
+                                                                <Typography color="error">{errors.disclaimerAcknowledged}</Typography>
+                                                            ) : null}
                                                     </Grid>
 
                                                     <Grid item xs={12}>

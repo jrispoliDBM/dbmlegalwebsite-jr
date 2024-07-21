@@ -27,6 +27,7 @@
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
     "react-lottie": "^1.2.4",
+    "react-phone-input-2": "^2.15.1",
     "react-slick": "^0.29.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",

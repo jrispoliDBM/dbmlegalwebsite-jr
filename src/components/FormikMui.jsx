@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {
     TextField as MuiTextField,
@@ -13,13 +13,16 @@ import {
     Switch,
     Typography
 } from '@mui/material';
+import { Box } from '@mui/system';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 export const TextField = ({ field, form, ...props }) => (
     <MuiTextField
         {...field}
         {...props}
-        error={form.touched[field.name] && form.errors[field.name] && true}
-        helperText={form.errors[field.name]}
+        error={form && form.errors && form.touched && form.touched[field.name] && form.errors[field.name] && true}
+        helperText={form && form.errors && form.errors[field.name]}
     />
 );
 
@@ -97,7 +100,6 @@ export const FormMultiSelect = ({ field, label, items, form, meta, hiddenValues 
     );
 };
 
-
 export const GenericRadioGroup = ({ activeStates, field, label, items, form, ...props }) => {
     return (
         <FormControl>
@@ -107,5 +109,47 @@ export const GenericRadioGroup = ({ activeStates, field, label, items, form, ...
                 ))}
             </RadioGroup>
         </FormControl>
+    );
+};
+
+// Custom Phone Input component
+export const PhoneNumberInput = ({ field, form, label = 'Enter Cell Number' }) => {
+    const [focused, setFocused] = useState(false)
+    return (
+        <TextField
+            label={field.value.length>0 ? label : <Box pl={focused? 0 : 10}>{label}</Box>}
+            placeholder=''
+            fullWidth
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            error={form.errors && form.touched && form.errors[field.name] && form.touched[field.name]}
+            helperText={form.errors && form.touched && form.errors[field.name] && form.touched[field.name] ? form.errors[field.name] : ''}
+            InputProps={{
+                inputComponent: PhoneInputCustom,
+                inputProps: {
+                    value: field.value,
+                    onChange: (value) => form.setFieldValue(field.name, value)
+                }
+            }}
+        />
+    );
+};
+
+// Custom component to integrate PhoneInput with MUI TextField
+const PhoneInputCustom = ({ inputRef, ...props }) => {
+    return (
+        <PhoneInput
+            country={'us'}
+            inputStyle={{
+                width: '100%',
+                height: '1.4375em', // match MUI TextField height
+                border: 'none',
+                fontSize: '1rem',
+                padding: '6px 40px 7px'
+            }}
+            buttonStyle={{ border: 'none', background: 'none' }}
+            dropdownStyle={{ width: 'auto' }}
+            {...props}
+        />
     );
 };
