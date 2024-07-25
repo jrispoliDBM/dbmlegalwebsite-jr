@@ -19,9 +19,12 @@ import { alpha, useTheme } from '@mui/material/styles';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import Link from 'next/link';
+import useServices from '@/hooks/useServices';
 
 function PersonDialog({ open, handleClose, person }) {
     const theme = useTheme();
+    const { getRoute } = useServices();
+
 
     return (
         <Dialog onClose={handleClose} open={open}>
@@ -61,12 +64,23 @@ function PersonDialog({ open, handleClose, person }) {
                                     {paragraph}
                                 </Typography>
                             ))}
-                        {person && person.verticals && person.verticals.length > 0 && (
+                        {person && person.practiceAreas && person.practiceAreas.length > 0 && (
                             <Typography variant={'h6'} fontWeight={700} color="black">
-                                {/* Verticals: {person.verticals.join(', ')} */}
+                                {/* practiceAreas: {person.practiceAreas.join(', ')} */}
                                 Practice Areas:{' '}
-                                {person.verticals.map((vertical, i) => {
-                                    return <Chip key={i} label={vertical} variant="outlined" color="primary" sx={{ m: 0.5 }} />;
+                                {person.practiceAreas.map((vertical, i) => {
+                                    return (
+                                        <Chip
+                                            key={i}
+                                            label={vertical}
+                                            variant="outlined"
+                                            color="primary"
+                                            sx={{ m: 0.5 }}
+                                            component="a"
+                                            href={getRoute(vertical)}
+                                            clickable
+                                        />
+                                    );
                                 })}
                             </Typography>
                         )}

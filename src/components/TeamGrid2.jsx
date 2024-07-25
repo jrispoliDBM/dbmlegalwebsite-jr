@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Button,
@@ -24,9 +24,13 @@ function TeamGrid({ team, selectedVertical }) {
 
     const handleClickOpen = (person) => {
         setSelectedPerson(person);
-        console.log(person);
+        //console.log(person);
         setOpen(true);
     };
+
+    useEffect(() => {
+        console.log('team', team);
+    }, [team]);
 
     return (
         <Grid container spacing={1}>

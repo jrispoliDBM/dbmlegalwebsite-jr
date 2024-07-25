@@ -22,7 +22,13 @@ const useServices = () => {
             });
     }, []);
 
-    return { services, error, isLoading };
+    const getRoute = (serviceName) => {
+        let thisService = services.find((s) => s.service == serviceName);
+        console.log('services', services, 'serviceName', serviceName, 'service', thisService, 'route', thisService ? thisService.route : "none" )
+        return thisService ? thisService.route : '';
+    };
+
+    return { services, error, isLoading, getRoute };
 };
 
 export default useServices;

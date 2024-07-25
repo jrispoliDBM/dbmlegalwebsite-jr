@@ -85,7 +85,7 @@ const OurTeam = () => {
                         labelId="vertical-select-label"
                         id="vertical-select"
                         value={selectedVertical}
-                        label="Vertical"
+                        label="Practice Areas"
                         onChange={(e) => setSelectedVertical(e.target.value)}
                         items={verticals}
                     >
