@@ -21,15 +21,7 @@ export const fix = async function () {
     let data = await getData();
    
     for (const item of data) {
-        // delete item.showOnMainPage
-        // let result = await putData(item);
-        // results.push(result);
-        for (const section of item.sections) {
-            if (section.checkMarkList) {
-                section.items = section.checkMarkList;
-                delete section.checkMarkList;
-            }
-        }
+        item.tag = item.service
         let result = await putData(item);
         results.push(result);
     }

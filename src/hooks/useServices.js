@@ -23,7 +23,7 @@ const useServices = () => {
     }, []);
 
     const getRoute = (serviceName) => {
-        let thisService = services.find((s) => s.service == serviceName);
+        let thisService = services.find((s) => s.tag == serviceName);
         //console.log('services', services, 'serviceName', serviceName, 'service', thisService, 'route', thisService ? thisService.route : "none" )
         return thisService ? thisService.route : '';
     };
