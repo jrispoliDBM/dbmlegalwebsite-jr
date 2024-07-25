@@ -17,7 +17,7 @@ const TrademarkPricing = () => {
             </Typography>
             <Grid container spacing={3} pt={2}>
                 {checkList.map((item, index) => (
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} key={index}>
                         <Stack direction="row" spacing={1}>
                             <CheckCircleIcon color="primary" />
                             <Typography variant="body">{item}</Typography>
