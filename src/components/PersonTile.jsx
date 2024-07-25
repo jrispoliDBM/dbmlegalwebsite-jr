@@ -47,7 +47,7 @@ function PersonTile({ person, handleClickOpen, minHeight=500, fontVariant='' }) 
                         fill={true}
                         loading="lazy"
                         style={{
-                            'object-fit': 'contain',
+                            'objectFit': 'contain',
                             transition: 'transform .7s ease !important'
                         }}
                     />

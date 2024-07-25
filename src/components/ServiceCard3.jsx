@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Link from 'next/link'
+import Link from 'next/link';
 import {
     Backdrop,
     Button,
@@ -23,26 +23,18 @@ import Image from 'next/image';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const ServiceCard = ({ service, handleClickOpen }) => {
-    console.log(service)
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
 
     return (
-        <Card             sx={{
-            // marginBottom: { xs: 2, sm: 3 },
-            '&:last-child': { marginBottom: 0 },
-            height: '100%'
-        }}
->
-        {/* <Box
+        <Card
             sx={{
-                // marginBottom: { xs: 2, sm: 3 },
                 '&:last-child': { marginBottom: 0 },
                 height: '100%'
             }}
-        > */}
+        >
             <Box
                 boxShadow={1}
                 sx={{
@@ -52,8 +44,7 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                     borderRadius: 2,
                     '&:hover': {
                         '& img': {
-                            transform: 'scale(1.2)',
-                            //paddingBottom: 5
+                            transform: 'scale(1.2)'
                         },
                         '& .portfolio-massonry__main-item': {
                             bottom: 0
@@ -78,7 +69,7 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                             filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
                         }}
                     />
-                    <Typography variant={'h6'} fontWeight={700} gutterBottom align='center'>
+                    <Typography variant={'h6'} fontWeight={700} gutterBottom align="center">
                         {service.headerSection.title}
                     </Typography>
                 </Stack>
@@ -93,61 +84,34 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                     className={'portfolio-massonry__main-item'}
                     sx={{ transition: 'bottom 0.3s ease 0s' }}
                 >
-                    <Stack direction='column' alignItems='center' >
-                    <Box
-                        component={'svg'}
-                        preserveAspectRatio="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        x="0px"
-                        y="0px"
-                        viewBox="0 0 1920 100.1"
-                        sx={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            transform: 'translateY(-90%)',
-                            zIndex: 2,
-                            width: 1
-                        }}
-                    >
-                        <path fill={theme.palette.grey[900]} d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"></path>
-                    </Box>
-                    <Box pb={isMd ? 0.5: 2}>
-                        <Link href={`${service.route}`}>
-                    <Button variant="contained" color="primary" component='a'>
-                        Learn More
-                    </Button>
-                    </Link>
-                    </Box>
+                    <Stack direction="column" alignItems="center">
+                        <Box
+                            component={'svg'}
+                            preserveAspectRatio="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 1920 100.1"
+                            sx={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                transform: 'translateY(-90%)',
+                                zIndex: 2,
+                                width: 1
+                            }}
+                        >
+                            <path fill={theme.palette.grey[900]} d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"></path>
+                        </Box>
+                        <Box pb={isMd ? 0.5 : 2}>
+                            <Button variant="contained" color="primary" component="a" href={`${service.route}`}>
+                                Learn More
+                            </Button>
+                        </Box>
                     </Stack>
-                    {/* <Typography variant={'h6'} fontWeight={700}>
-                        {service.title}
-                    </Typography> */}
-                    {/* <Button
-                        size="large"
-                        color='secondary'
-                        onClick={() => handleClickOpen(service)}
-                        endIcon={
-                            <svg
-                                width={16}
-                                height={16}
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        }
-                    >
-                        <Typography color='white' fontWeight='bold'>Learn more</Typography>
-                        
-                    </Button> */}
-                    {/* <Typography>{service.description}</Typography> */}
                 </Box>
             </Box>
-        {/* </Box> */}
         </Card>
     );
 };

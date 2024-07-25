@@ -29,7 +29,7 @@ function TeamGrid({ team, selectedVertical }) {
     };
 
     useEffect(() => {
-        console.log('team', team);
+        //console.log('team', team);
     }, [team]);
 
     return (

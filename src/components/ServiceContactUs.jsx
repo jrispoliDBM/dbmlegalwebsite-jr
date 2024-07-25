@@ -11,18 +11,18 @@ const ServiceContactUs = ({ service }) => {
     const { team } = useTeam();
     const [filteredTeam, setFilteredTeam] = useState([]);
     useEffect(() => {
-        console.log(team);
+        //console.log(team);
         setFilteredTeam(team.filter((member) => member.verticals.includes(service.service)));
     }, [team]);
 
-    console.log(service);
+    //console.log(service);
     const [selectedPerson, setSelectedPerson] = useState(null);
     const [open, setOpen] = useState(false);
     const theme = useTheme();
 
     const handleClickOpen = (person) => {
         setSelectedPerson(person);
-        console.log(person);
+        //console.log(person);
         setOpen(true);
     };
 

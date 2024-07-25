@@ -29,7 +29,7 @@ const OurTeam = () => {
 
     useEffect(() => {
         //set of verticals from team
-        console.log('Team Loaded', team.length)
+        //console.log('Team Loaded', team.length)
         let verticalList = [];
         team.map((person) => {
             if (person.practiceAreas) {
