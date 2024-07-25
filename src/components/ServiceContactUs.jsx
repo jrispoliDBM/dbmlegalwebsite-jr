@@ -12,7 +12,7 @@ const ServiceContactUs = ({ service }) => {
     const [filteredTeam, setFilteredTeam] = useState([]);
     useEffect(() => {
         //console.log(team);
-        setFilteredTeam(team.filter((member) => member.verticals.includes(service.service)));
+        setFilteredTeam(team.filter((member) => member.practiceAreas.includes(service.tag)));
     }, [team]);
 
     //console.log(service);
