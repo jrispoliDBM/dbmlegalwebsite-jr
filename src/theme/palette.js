@@ -19,14 +19,15 @@ export const light = {
     },
     text: {
         primary: '#1e2022',
-        secondary: '#677788'
+        secondary: '#323a46'//'#677788'
     },
     divider: 'rgba(0, 0, 0, 0.12)',
     background: {
         paper: '#ffffff',
         default: '#ffffff',
         level2: '#f5f5f5',
-        level1: '#ffffff'
+        level1: '#ffffff',
+        lightGreen: '#F6fBF2'
     },
     green: {
       100: '#d5f0db',
@@ -38,6 +39,18 @@ export const light = {
       700: '#1b6b2c',
       800: '#12481e',
       900: '#09240f'
+  },
+  grey: {
+        100: '#f5f7f9',
+        200: '#e4e7eb',
+        300: '#c7ced4',
+        400: '#a7b6c2',
+        500: '#8c9aa7',
+        600: '#6e7a8a',
+        700: '#57606b',
+        800: '#424a59',
+        900: '#323a46'
+
   }
 };
 

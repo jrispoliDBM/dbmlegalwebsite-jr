@@ -29,7 +29,7 @@ const OurTeam = () => {
 
     useEffect(() => {
         //set of verticals from team
-        console.log('Team Loaded', team.length)
+        //console.log('Team Loaded', team.length)
         let verticalList = [];
         team.map((person) => {
             if (person.practiceAreas) {
@@ -80,12 +80,12 @@ const OurTeam = () => {
             </Grid>
             <Grid item xs={12} md={5}>
                 <FormControl fullWidth sx={{ m: 1 }}>
-                    <InputLabel id="veritcal-select-label">Vertical</InputLabel>
+                    <InputLabel id="veritcal-select-label">Practice Area</InputLabel>
                     <Select
                         labelId="vertical-select-label"
                         id="vertical-select"
                         value={selectedVertical}
-                        label="Vertical"
+                        label="Practice Areas"
                         onChange={(e) => setSelectedVertical(e.target.value)}
                         items={verticals}
                     >

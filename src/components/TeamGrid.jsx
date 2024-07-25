@@ -17,7 +17,7 @@ function TeamGrid({ team, selectedVertical }) {
 
     return (
         <Grid container spacing={4}>
-            <PersonDialog open={open} handleClose={()=>setOpen(false)} selectedPerson={selectedPerson} />
+            <PersonDialog open={open} handleClose={()=>setOpen(false)} person={selectedPerson} />
             {team.map(
                 (person, i) =>
                     person.practiceAreas &&

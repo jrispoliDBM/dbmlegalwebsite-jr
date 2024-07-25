@@ -1,0 +1,55 @@
+import React, { useEffect, useState } from 'react';
+import { Typography, Grid, Stack, Card } from '@mui/material';
+import Box from '@mui/material/Box';
+import { alpha, useTheme } from '@mui/material/styles';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import useTeam from '@/hooks/useTeam';
+import PersonTile from './PersonTile';
+import PersonDialog from './PersonDialog';
+
+const ServiceContactUs = ({ service }) => {
+    const { team } = useTeam();
+    const [filteredTeam, setFilteredTeam] = useState([]);
+    useEffect(() => {
+        //console.log(team);
+        setFilteredTeam(team.filter((member) => member.practiceAreas.includes(service.tag)));
+    }, [team]);
+
+    //console.log(service);
+    const [selectedPerson, setSelectedPerson] = useState(null);
+    const [open, setOpen] = useState(false);
+    const theme = useTheme();
+
+    const handleClickOpen = (person) => {
+        setSelectedPerson(person);
+        //console.log(person);
+        setOpen(true);
+    };
+
+    return (
+        <>
+            {filteredTeam.length > 0 && (
+                <Card>
+                    <PersonDialog open={open} handleClose={() => setOpen(false)} person={selectedPerson} />
+                    <Box p={2}>
+                        <Typography fontWeight="bold" variant={'h2'} color="primary" gutterBottom align="center">
+                            {`Our ${service.service} Team`}
+                        </Typography>
+                        <Grid container spacing={2} justifyContent="center">
+                            {filteredTeam.map((member, i) => (
+                                <Grid item xs={12} sm={3} key={i}>
+                                    <PersonTile handleClickOpen={handleClickOpen} person={member} minHeight={250} />
+                                    {/* <Typography variant={'h5'} fontWeight="bold">
+                        {member.name}
+                    </Typography> */}
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
+                </Card>
+            )}
+        </>
+    );
+};
+
+export default ServiceContactUs;
