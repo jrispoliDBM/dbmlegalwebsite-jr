@@ -23,7 +23,7 @@ function Section({ section }) {
 `;
     return (
         <Container>
-            <Stack p={4}>
+            <Stack p={0}>
                 {section.title && (
                     <Box
                         sx={{
