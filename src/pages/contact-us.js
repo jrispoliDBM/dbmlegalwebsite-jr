@@ -10,6 +10,7 @@ import { Typography, ListItemText, ListItemAvatar, ListItem, Divider, Avatar, Ca
 import { info, careerInfo } from 'content/contact-info';
 import Lottie from 'react-lottie';
 import phoneAnimation from 'content/phone.json';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function ContactUs() {
     const theme = useTheme();
@@ -80,7 +81,20 @@ export default function ContactUs() {
                                 }}
                             />
                         </>
-                    ) : (
+                    ) : item.label === 'LinkedIn' ? (<>
+                            <ListItemText
+                                primary={item.label}
+                                secondary={item.value}
+                                primaryTypographyProps={{
+                                    color: 'textPrimary'
+                                }}
+                                secondaryTypographyProps={{
+                                    component: 'a',
+                                    href: `https://www.linkedin.com/company/duncan-bergman-mandell/`,
+                                    color: 'primary'
+                                }}
+                            />
+                    </>): (
                         <ListItemText primary={item.label} secondary={item.value} />
                     )}
                 </Box>

@@ -1,4 +1,5 @@
 import EventIcon from '@mui/icons-material/Event';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export const info = [
     {
@@ -24,6 +25,12 @@ export const info = [
         label: 'Request a Call',
         value: 'Schedule a complimentary consultation',
         icon: <EventIcon />,
+
+    },
+    {
+        label: 'LinkedIn',
+        value: 'Visit our LinkedIn page',
+        icon: <LinkedInIcon />,
 
     }
 ];
