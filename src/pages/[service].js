@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useTheme } from '@mui/material/styles';
+import { useTheme, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
-import { Button, Stack, Card, Container } from '@mui/material';
+import { Button, Stack, Card, Container, Typography, Chip } from '@mui/material';
 import useServices from '@/hooks/useServices';
 import ServiceHeader from '@/components/ServiceHeader';
 import Section from '@/components/Section';
@@ -14,9 +14,9 @@ import ServiceContactUs from '@/components/ServiceContactUs';
 
 export default function ContactUs() {
     const router = useRouter();
-    
+
     const theme = useTheme();
-    const { services, error, isLoading } = useServices();
+    const { services, getRoute } = useServices();
     const [service, setService] = useState(null);
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
@@ -46,24 +46,53 @@ export default function ContactUs() {
                         <Stack>
                             <ServiceHeader service={service} />
                             <Box backgroundColor={null}>
-                                <Container >
+                                <Container>
                                     <Stack spacing={4} p={2}>
                                         {service.sections &&
                                             service.sections.map((section, index) => (
-                                                <Card key={index} sx={{
-                                                    boxShadow: `10px 10px 15px 0px ${theme.palette.primary.main}`, // Change the shadow color here
-                                                    border: `3px solid ${theme.palette.grey[100]}`, // Add border here
-                                                    padding: theme.spacing(2), // Optional: add padding
-                                                    borderRadius: theme.shape.borderRadius // Optional: adjust borde
-                                                    //boxShadow: `0px 4px 10px ${theme.palette.primary.dark}` // Change the shadow color here
-                                                }}>
+                                                <Card
+                                                    key={index}
+                                                    sx={{
+                                                        boxShadow: `10px 10px 15px 0px ${theme.palette.primary.main}`, // Change the shadow color here
+                                                        border: `3px solid ${theme.palette.grey[100]}`, // Add border here
+                                                        padding: theme.spacing(2), // Optional: add padding
+                                                        borderRadius: theme.shape.borderRadius // Optional: adjust borde
+                                                        //boxShadow: `0px 4px 10px ${theme.palette.primary.dark}` // Change the shadow color here
+                                                    }}
+                                                >
                                                     <Section section={section} />
                                                 </Card>
                                             ))}
-                                            <ServiceContactUs service={service}/>
+                                        <ServiceContactUs service={service} />
                                     </Stack>
                                 </Container>
                             </Box>
+                            {service.relatedServices && (
+                                <Container>
+                                    <Box p={2} pb={4}>
+                                        <Card p={4} >
+                                            <Stack spacing={4} p={2}>
+                                                <Typography variant="h4" fontWeight="bold" color="textPrimary">
+                                                    Related Practice Areas
+                                                </Typography>
+                                                <Stack direction="row" spacing={2} justifyContent="flex-start">
+                                                    {service.relatedServices.map((relatedService, index) => (
+                                                        false ? (
+                                                        <Chip
+                                                            color="primary"
+                                                            clickable
+                                                            component="a"
+                                                            size="large"
+                                                            label={relatedService}
+                                                            href={getRoute(relatedService)}
+                                                        ></Chip>) : (<Button variant='contained' component='a' href={getRoute(relatedService)}>{relatedService}</Button>)
+                                                    ))}
+                                                </Stack>
+                                            </Stack>
+                                        </Card>
+                                    </Box>
+                                </Container>
+                            )}
                         </Stack>
                     )}
                 </Main>
