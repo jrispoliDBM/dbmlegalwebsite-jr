@@ -8,6 +8,8 @@ import CheckSharpIcon from '@mui/icons-material/CheckSharp';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { keyframes } from '@emotion/react';
+import GeneralCounselPricing from './GeneralCounselPricing';
+import TrademarkPricing from './TrademarkPricing';
 
 function Section({ section }) {
     const theme = useTheme();
@@ -90,7 +92,9 @@ function Section({ section }) {
                                     </Typography>
                                 )}
                                 <Stack direction="row" spacing={1} alignItems="flex-start">
-                                    {item.iconBefore && item.iconBefore === 'CheckSharp' && <CheckSharpIcon color="primary" sx={{fontSize: 35}} />}
+                                    {item.iconBefore && item.iconBefore === 'CheckSharp' && (
+                                        <CheckSharpIcon color="primary" sx={{ fontSize: 35 }} />
+                                    )}
                                     <Stack direction="column">
                                         <Typography
                                             variant="h6"
@@ -121,6 +125,8 @@ function Section({ section }) {
                         ))}
                     </>
                 )}
+                {section.sectionType === 'general-counsel-pricing' && <GeneralCounselPricing />}
+                {section.sectionType === 'trademark-pricing' && <TrademarkPricing />}
                 {section.bottomCallToActionButton && (
                     <Box pt={3} display="flex" justifyContent="center">
                         <Button variant="contained" href={section.bottomCallToActionButton.route} m={10}>
