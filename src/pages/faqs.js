@@ -30,7 +30,7 @@ export default function Faqs() {
     });
     const { faqs } = useFaqs();
     useEffect(() => {
-        console.log(faqs);
+        //console.log(faqs);
     }, [faqs]);
 
     return (
