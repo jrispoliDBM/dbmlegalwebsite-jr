@@ -79,13 +79,14 @@ export default function ContactUs() {
                                                     {service.relatedServices.map((relatedService, index) => (
                                                         false ? (
                                                         <Chip
+                                                        key={index}
                                                             color="primary"
                                                             clickable
                                                             component="a"
                                                             size="large"
                                                             label={relatedService}
                                                             href={getRoute(relatedService)}
-                                                        ></Chip>) : (<Button variant='contained' component='a' href={getRoute(relatedService)}>{relatedService}</Button>)
+                                                        ></Chip>) : (<Button key={index} variant='contained' component='a' href={getRoute(relatedService)}>{relatedService}</Button>)
                                                     ))}
                                                 </Stack>
                                             </Stack>
