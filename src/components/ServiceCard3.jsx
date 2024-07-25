@@ -32,7 +32,8 @@ const ServiceCard = ({ service, handleClickOpen }) => {
         <Card
             sx={{
                 '&:last-child': { marginBottom: 0 },
-                height: '100%'
+                height: '100%',
+                
             }}
         >
             <Box

@@ -45,8 +45,8 @@ export default function NewClientForm() {
         fetchIP();
         let verticalList = [];
         team.map((person) => {
-            if (person.verticals) {
-                person.verticals.map((vertical) => {
+            if (person.practiceAreas) {
+                person.practiceAreas.map((vertical) => {
                     if (!verticalList.includes(vertical)) {
                         if (vertical !== 'All') {
                             verticalList.push(vertical);

@@ -9,9 +9,11 @@ import Head from 'next/head';
 import OurServices from 'components/OurServices';
 import OurTeam from 'components/OurTeam';
 import CoreValues from 'components/CoreValues';
+import DbmDivider from '@/components/DbmDivider';
 
 export default function Home() {
     const theme = useTheme();
+
     return (
         <>
             <Head>
@@ -24,32 +26,33 @@ export default function Home() {
             <Box sx={{ overflowX: 'hidden' }}>
                 <Main bgcolor={'background.paper'}>
                     <Hero />
-                    <ContainerNoTopPadding id="core-values-container" >
+                    <Container id="core-values-container">
                         <CoreValues />
-                    </ContainerNoTopPadding>
+                    </Container>
                     <Container>
                         <OurServices />
                     </Container>
                     <Container>
                         <OurTeam />
                     </Container>
-
-                    <Box
-                        component={'svg'}
-                        preserveAspectRatio="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        x="0px"
-                        y="0px"
-                        viewBox="0 0 1920 100.1"
-                        sx={{
-                            width: '100%',
-                            marginBottom: theme.spacing(-1)
-                        }}
-                    >
-                        <path fill={theme.palette.alternate.main} d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"></path>
-                    </Box>
+                    <DbmDivider />
                 </Main>
             </Box>
         </>
     );
 }
+
+// {/* <Box
+//     component={'svg'}
+//     preserveAspectRatio="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//     x="0px"
+//     y="0px"
+//     viewBox="0 0 1920 100.1"
+//     sx={{
+//         width: '100%',
+//         marginBottom: theme.spacing(-1)
+//     }}
+// >
+//     <path fill={theme.palette.alternate.main} d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"></path>
+// </Box> */}

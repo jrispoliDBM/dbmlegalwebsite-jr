@@ -81,7 +81,7 @@ const SidebarNav = () => {
                             ))}
                         {servicePages && servicePages.length > 0 && (
                             <Grid item xs={12}>
-                                <NavItem title={'Our Services'} items={servicePages} />
+                                <NavItem title={'Our Services'} items={servicePages} href='our-services' />
                             </Grid>
                         )}
                         {simplePages2 &&

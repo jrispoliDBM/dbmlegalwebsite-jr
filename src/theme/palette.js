@@ -26,7 +26,8 @@ export const light = {
         paper: '#ffffff',
         default: '#ffffff',
         level2: '#f5f5f5',
-        level1: '#ffffff'
+        level1: '#ffffff',
+        lightGreen: '#F6fBF2'
     },
     green: {
       100: '#d5f0db',
