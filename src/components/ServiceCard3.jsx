@@ -38,29 +38,36 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                     height: '100%',
                     borderRadius: 2,
                     '&:hover': {
-                        '& img': {
-                            transform: 'scale(1.2)',
-                            transition: 'transform .7s ease !important',
-                        },
                         '& .portfolio-masonry__main-item': {
                             bottom: 0
                         }
+                    },
+                    '&:hover .image-transform img': {
+                        transform: 'scale(1.2)',
+                        transition: 'transform 0.7s ease'
+                    },
+                    '.image-transform img': {
+                        transform: 'scale(1.0)',
+                        transition: 'transform 0.7s ease'
                     }
                 }}
             >
                 <Stack direction={'column'} spacing={0} alignItems="center">
-                    <Image
-                        sx={{
-                            transition: 'transform .7s ease !important',
-                            transform: 'scale(1.0)',
-                            objectFit: 'cover',
-                            // filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
-                        }}
-                        height={275}
-                        width={275}
-                        alt={service.headerSection.image}
-                        src={`/images/services/${service.headerSection.image}`}
-                    ></Image>
+                    <Box className="image-transform">
+                        <Link href={service.route}>
+                        <Image
+                            sx={{
+                                transition: 'transform .7s ease !important',
+                                transform: 'scale(1.0)',
+                                objectFit: 'cover'
+                            }}
+                            height={275}
+                            width={275}
+                            alt={service.headerSection.image}
+                            src={`/images/services/${service.headerSection.image}`}
+                        />
+                        </Link>
+                    </Box>
                     <Typography variant={'h6'} fontWeight={700} gutterBottom align="center">
                         {service.headerSection.title}
                     </Typography>

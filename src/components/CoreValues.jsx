@@ -19,22 +19,9 @@ import {
     CardMedia
 } from '@mui/material';
 import { coreValues } from 'content/core-values';
-import ServicePage from 'components/ServicePage';
-import {styled } from '@mui/material/styles';
 
 const CoreValues = () => {
     const theme = useTheme();
-    const [open, setOpen] = useState(false);
-    const [selectedService, setSelectedService] = useState(null);
-
-    const handleClickOpen = (service) => {
-        setSelectedService(service);
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
 
 
     return (

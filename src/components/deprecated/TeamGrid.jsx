@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Grid, Stack, Typography, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Avatar } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
-import PersonDialog from './PersonDialog';
+import PersonDialog from '../PersonDialog';
 
 
 function TeamGrid({ team, selectedVertical }) {
