@@ -41,43 +41,34 @@ const OurServices = () => {
     };
 
     return (
-        <Box>
-            <Grid item xs={12} alignItems="center">
-                <Stack
-                    direction="row"
-                    spacing={2}
-                    justifyContent="center"
-                    // data-aos={'fade-right'}
-                >
-                    <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
-                        <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
-                            Our{' '}
-                            <Typography
-                                fontWeight="bold"
-                                variant={'h2'}
-                                gutterBottom
-                                component="span"
-                                color="primary"
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
-                                }}
-                            >
-                                Services.
-                            </Typography>
-                        </Typography>
-                        <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
-                            DBM provides a diverse range of business and transactional services across various practice areas to clients of
-                            all sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline
-                            your business and expert legal guidance to maximize your financial potential.
-                        </Typography>
-                    </Box>
-                </Stack>
-            </Grid>
-            <Grid container spacing={4} alignItems="stretch">
+        <Stack direction="column" justifyContent="center" alignItems='center'>
+            <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
+                <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
+                    Our{' '}
+                    <Typography
+                        fontWeight="bold"
+                        variant={'h2'}
+                        gutterBottom
+                        component="span"
+                        color="primary"
+                        sx={{
+                            background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
+                        }}
+                    >
+                        Services.
+                    </Typography>
+                </Typography>
+                <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
+                    DBM provides a diverse range of business and transactional services across various practice areas to clients of all
+                    sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline your
+                    business and expert legal guidance to maximize your financial potential.
+                </Typography>
+            </Box>
+            <Grid container spacing={4} alignItems="center">
                 {services.map((service, i) =>
                     service.show ? (
-                        <Grid item xs={6} sm={6} md={4} lg={3} key={i} sx={{ display: 'flex' }}>
-                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen} sx={{ flex: 1, height: '100%' }} />
+                        <Grid item xs={12} sm={6} md={4} lg={3} key={i} >
+                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen}  />
                         </Grid>
                     ) : (
                         <Box key={i}></Box>
@@ -85,7 +76,7 @@ const OurServices = () => {
                 )}
             </Grid>
             <ServiceDialog open={open} handleClose={handleClose} selectedService={selectedService} />
-        </Box>
+        </Stack>
     );
 };
 

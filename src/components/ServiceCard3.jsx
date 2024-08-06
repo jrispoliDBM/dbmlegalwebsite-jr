@@ -29,13 +29,7 @@ const ServiceCard = ({ service, handleClickOpen }) => {
     });
 
     return (
-        <Card
-            sx={{
-                '&:last-child': { marginBottom: 0 },
-                height: '100%',
-                
-            }}
-        >
+        <Card>
             <Box
                 boxShadow={1}
                 sx={{
@@ -45,31 +39,28 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                     borderRadius: 2,
                     '&:hover': {
                         '& img': {
-                            transform: 'scale(1.2)'
+                            transform: 'scale(1.2)',
+                            transition: 'transform .7s ease !important',
                         },
-                        '& .portfolio-massonry__main-item': {
+                        '& .portfolio-masonry__main-item': {
                             bottom: 0
                         }
                     }
                 }}
             >
                 <Stack direction={'column'} spacing={0} alignItems="center">
-                    <Box
-                        component={'img'}
-                        loading="lazy"
-                        height={1}
-                        width={1}
-                        pb={2}
-                        src={`images/services/${service.headerSection.image}`}
-                        alt="..."
-                        maxHeight={{ xs: 400, sm: 600, md: 1 }}
+                    <Image
                         sx={{
                             transition: 'transform .7s ease !important',
                             transform: 'scale(1.0)',
                             objectFit: 'cover',
-                            filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
+                            // filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none'
                         }}
-                    />
+                        height={275}
+                        width={275}
+                        alt={service.headerSection.image}
+                        src={`/images/services/${service.headerSection.image}`}
+                    ></Image>
                     <Typography variant={'h6'} fontWeight={700} gutterBottom align="center">
                         {service.headerSection.title}
                     </Typography>
@@ -79,10 +70,8 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                     bottom={'-100%'}
                     left={0}
                     right={0}
-                    //padding={0}
-                    //bgcolor={'background.paper'}
                     bgcolor={theme.palette.grey[900]}
-                    className={'portfolio-massonry__main-item'}
+                    className={'portfolio-masonry__main-item'}
                     sx={{ transition: 'bottom 0.3s ease 0s' }}
                 >
                     <Stack direction="column" alignItems="center">
