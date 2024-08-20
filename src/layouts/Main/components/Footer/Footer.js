@@ -25,7 +25,7 @@ const Footer = () => {
                         src={mode === 'light' ? '/images/dbmlegal.png' : '/images/dbmlegal.png'}
                         sx={{
                             height: iconHeight, // Set a fixed height for all images
-                            width: 'auto' // Maintain the aspect ratio
+                            width: 'auto' // Maintain the aspect ratio 
                         }}
                     />
                 </Box>

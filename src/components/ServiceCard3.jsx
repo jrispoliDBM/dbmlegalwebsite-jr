@@ -61,8 +61,8 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                                 transform: 'scale(1.0)',
                                 objectFit: 'cover'
                             }}
-                            height={275}
-                            width={275}
+                            height={175}
+                            width={175}
                             alt={service.headerSection.image}
                             src={`/images/services/${service.headerSection.image}`}
                         />
