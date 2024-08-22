@@ -42,7 +42,6 @@ const OurTeam = () => {
         });
         // sort
         verticalList.sort((a, b) => a.localeCompare(b));
-
         setVerticals(['All', ...verticalList]);
     }, [team]);
 

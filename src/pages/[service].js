@@ -12,7 +12,7 @@ import Head from 'next/head';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ServiceContactUs from '@/components/ServiceContactUs';
 
-export default function ContactUs() {
+export default function Service() {
     const router = useRouter();
 
     const theme = useTheme();
@@ -26,7 +26,7 @@ export default function ContactUs() {
         const serviceQuery = router.query.service;
         if (serviceQuery && services.length > 0) {
             const thisService = services.find((service) => service.route.toLowerCase() === serviceQuery.toLowerCase());
-            //console.log('This Service', thisService);
+            console.log('This Service', thisService);
             setService(thisService);
         }
     }, [services, router]);

@@ -70,7 +70,7 @@ const PricingCompareTable = () => {
         <Box>
             <Box marginBottom={4}>
                 <Typography fontWeight={700} variant={'h4'}>
-                    Transparent Flat-Free Packages
+                    Transparent Flat-Fee Packages
                 </Typography>
             </Box>
             <Box>
