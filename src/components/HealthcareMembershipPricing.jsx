@@ -116,7 +116,7 @@ const HealthcareMembershipPricing = ({ section }) => {
                 </TableContainer>
                 <Stack pt={2}>
                     {section.notes.map((note, i) => (
-                        <Typography variant="caption">{formattedNote(note)}</Typography>
+                        <Typography key={i} variant="caption">{formattedNote(note)}</Typography>
                     ))}
                 </Stack>
             </Stack>
