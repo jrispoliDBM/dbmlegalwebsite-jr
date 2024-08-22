@@ -31,6 +31,10 @@ export default function Service() {
         }
     }, [services, router]);
 
+    const sortedSections = (sections) => {
+        return sections.sort((a, b) => a.order - b.order);
+    };
+
     return (
         <>
             <Head>
@@ -49,7 +53,7 @@ export default function Service() {
                                 <Container>
                                     <Stack spacing={4} p={2}>
                                         {service.sections &&
-                                            service.sections.map((section, index) => (
+                                            sortedSections(service.sections).map((section, index) => (
                                                 <Card
                                                     key={index}
                                                     sx={{

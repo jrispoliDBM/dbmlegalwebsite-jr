@@ -128,7 +128,9 @@ function Section({ section }) {
                 )}
                 {section.sectionType === 'general-counsel-pricing' && <GeneralCounselPricing />}
                 {section.sectionType === 'trademark-pricing' && <TrademarkPricing />}
-                {section.sectionType === 'healthcare-membership-pricing' && <HealthcareMembershipPricing section={section} pricing={section.pricingTable} />}
+                {section.sectionType === 'healthcare-membership-pricing' && (
+                    <HealthcareMembershipPricing section={section} pricing={section.pricingTable} />
+                )}
                 {section.bottomCallToActionButton && (
                     <Box pt={3} display="flex" justifyContent="center">
                         <Button variant="contained" href={section.bottomCallToActionButton.route} m={10}>
