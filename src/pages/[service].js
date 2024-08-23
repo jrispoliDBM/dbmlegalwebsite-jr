@@ -11,6 +11,8 @@ import Main from '@/layouts/Main';
 import Head from 'next/head';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ServiceContactUs from '@/components/ServiceContactUs';
+import NewClientForm from '@/components/NewClientForm';
+import ContactUs from '@/components/ContactUs';
 
 export default function Service() {
     const router = useRouter();
@@ -71,6 +73,24 @@ export default function Service() {
                                     </Stack>
                                 </Container>
                             </Box>
+                            {service.callToAction && (
+                                <Container>
+                                    <Box p={2} pb={4}>
+                                        <Card p={4}>
+                                            <Grid spacing={2} container p={2}>
+                                                <Grid item xs={12} md={4} >
+                                                    <Box pt={4}>
+                                                    <ContactUs />
+                                                    </Box>
+                                                </Grid>
+                                                <Grid item xs={12} md={8}>
+                                                    <NewClientForm source={service.newClientFormSource} />
+                                                </Grid>
+                                            </Grid>
+                                        </Card>
+                                    </Box>
+                                </Container>
+                            )}
                             {service.relatedServices && (
                                 <Container>
                                     <Box p={2} pb={4}>
@@ -93,37 +113,18 @@ export default function Service() {
                                                                     sx={{ width: '100%', height: '100%', textAlign: 'center' }}
                                                                 />
                                                             ) : (
-                                                                <Button variant="contained" component="a" href={getRoute(relatedService)} sx={{width: '100%', height: '100%', textAlign: 'center'}}>
+                                                                <Button
+                                                                    variant="contained"
+                                                                    component="a"
+                                                                    href={getRoute(relatedService)}
+                                                                    sx={{ width: '100%', height: '100%', textAlign: 'center' }}
+                                                                >
                                                                     {relatedService}
                                                                 </Button>
                                                             )}
                                                         </Grid>
                                                     ))}
                                                 </Grid>
-                                                {/* <Stack direction="row" spacing={2} justifyContent="flex-start">
-                                                    {service.relatedServices.map((relatedService, index) =>
-                                                        false ? (
-                                                            <Chip
-                                                                key={index}
-                                                                color="primary"
-                                                                clickable
-                                                                component="a"
-                                                                size="large"
-                                                                label={relatedService}
-                                                                href={getRoute(relatedService)}
-                                                            ></Chip>
-                                                        ) : (
-                                                            <Button
-                                                                key={index}
-                                                                variant="contained"
-                                                                component="a"
-                                                                href={getRoute(relatedService)}
-                                                            >
-                                                                {relatedService}
-                                                            </Button>
-                                                        )
-                                                    )}
-                                                </Stack> */}
                                             </Stack>
                                         </Card>
                                     </Box>
