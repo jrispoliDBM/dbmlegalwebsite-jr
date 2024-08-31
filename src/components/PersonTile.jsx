@@ -15,6 +15,8 @@ import {
 import { alpha, useTheme } from '@mui/material/styles';
 import PersonDialog from './PersonDialog';
 import Image from 'next/image';
+import { CldImage } from 'next-cloudinary'; 
+
 
 function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = '', fontVariant2 = 'caption' }) {
     const theme = useTheme();
@@ -41,7 +43,19 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
             }}
         >
             <Box className="image-transform">
-                <Image
+                <CldImage
+                    src={person.image} // Use this sample image or upload your own via the Media Explorer
+                    //width="500" // Transform the image: auto-crop to square aspect_ratio
+                    //height="500"
+                    fill={true} // Fill the image to cover the dimensions provided
+                    alt="alt"
+                    style={{
+                        objectFit: 'contain',
+                        transition: 'transform .7s ease !important'
+                    }}
+                />
+
+                {/* <Image
                     src={person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
                     alt="..."
                     fill={true}
@@ -50,7 +64,7 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
                         objectFit: 'contain',
                         transition: 'transform .7s ease !important'
                     }}
-                />
+                /> */}
             </Box>
             <Box
                 position={'absolute'}
