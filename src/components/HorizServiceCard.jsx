@@ -55,6 +55,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                             height={iconSize}
                             alt={service.headerSection.image}
                             src={`${service.headerSection.image}`}
+                            
                             style={{
                                 objectFit: 'contain',
                                 transition: 'transform .7s ease !important'
@@ -83,7 +84,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                             }
                         }}
                     >
-                        {service.headerSection.title}
+                        {service.headerSection.preTitle} {service.headerSection.title}
                     </Typography>
                 </Stack>
             </Link>

@@ -27,30 +27,58 @@ function Section({ section }) {
     return (
         <Container>
             <Stack p={0}>
-                {section.title && (
-                    <Box
-                        sx={{
-                            animation: `${slideIn} 1s ease-out forwards`
-                        }}
-                    >
-                        <Typography variant="h2" fontWeight="bold" align="center" color="primary">
-                            {section.title}
-                        </Typography>
-                    </Box>
-                )}
-                <Box pb={3}>
-                    {section.subtitle && (
-                        <Box
-                            sx={{
-                                animation: `${slideIn} 1s ease-out forwards`
-                            }}
-                        >
-                            <Typography variant={section.subtitle.length < 40 ? 'h3' : 'h4'} fontWeight="bold" align="center" gutterBottom>
-                                {section.subtitle}
-                            </Typography>
+                {section.subtitle ? (
+                    <>
+                        {section.title && (
+                            <Box
+                                sx={{
+                                    animation: `${slideIn} 1s ease-out forwards`
+                                }}
+                            >
+                                <Typography variant="h2" fontWeight="bold" align="center" color="primary">
+                                    {section.title}
+                                </Typography>
+                            </Box>
+                        )}
+                        <Box pb={3}>
+                            {section.subtitle && (
+                                <Box
+                                    sx={{
+                                        animation: `${slideIn} 1s ease-out forwards`
+                                    }}
+                                >
+                                    <Typography
+                                        variant={section.subtitle.length < 40 ? 'h3' : 'h4'}
+                                        fontWeight="bold"
+                                        align="center"
+                                        gutterBottom
+                                    >
+                                        {section.subtitle}
+                                    </Typography>
+                                </Box>
+                            )}
                         </Box>
-                    )}
-                </Box>
+                    </>
+                ) : (
+                    <>
+                        {section.title && (
+                            <Box
+                                sx={{
+                                    animation: `${slideIn} 1s ease-out forwards`
+                                }}
+                            >
+                                <Typography variant="h2" fontWeight="bold" align="center" color="text.primary" sx={{
+                                    textDecoration: 'underline',
+                                    textDecorationColor: `${alpha(theme.palette.primary.main,1.0)}`,
+                                    // textDecorationThickness: '0.2em'
+                                    //
+                                }}>
+                                    {section.title}
+                                </Typography>
+                            </Box>
+                        )}
+                    </>
+                )}
                 {section.sectionType === 'checkMarkList' && (
                     <Grid container spacing={3} pt={2}>
                         {section.items.map((item, index) => (
