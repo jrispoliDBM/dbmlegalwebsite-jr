@@ -37,63 +37,99 @@ const ServiceHeader = ({ service }) => {
                 <Grid container spacing={isMd ? 4 : 2} pb={4}>
                     <Grid item xs={12} md={8}>
                         <Box maxWidth={{ xs: 1, sm: '100%' }}>
-                            <Typography
-                                variant="h1"
-                                color="text.primary"
-                                pb={2}
-                                sx={{
-                                    fontWeight: 700
-                                }}
-                            >
-                                {service.headerSection.preTitle && (
-                                    <>
-                                        <Typography variant="h1" mb={isMd ? -18 : -15}>
-                                            {service.headerSection.preTitle}
+                            {isMd ? (
+                                <>
+                                    <Typography
+                                        variant="h1"
+                                        color="text.primary"
+                                        pb={2}
+                                        sx={{
+                                            fontWeight: 700
+                                        }}
+                                    >
+                                        {service.headerSection.preTitle && (
+                                            <>
+                                                <Typography variant="h1" mb={isMd ? -18 : -15}>
+                                                    {service.headerSection.preTitle}
+                                                </Typography>
+                                                <br />
+                                            </>
+                                        )}
+                                        <Typography
+                                            color={'primary'}
+                                            component={'span'}
+                                            variant={'inherit'}
+                                            sx={{
+                                                background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                                                    theme.palette.primary.light,
+                                                    0.3
+                                                )} 0%)`
+                                            }}
+                                        >
+                                            {service.headerSection.title}.
                                         </Typography>
-                                        <br />
-                                    </>
-                                )}
-                                <Typography
-                                    color={'primary'}
-                                    component={'span'}
-                                    variant={'inherit'}
-                                    sx={{
-                                        background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                                            theme.palette.primary.light,
-                                            0.3
-                                        )} 0%)`
-                                    }}
-                                >
-                                    {service.headerSection.title}.
-                                </Typography>
-                            </Typography>
-                            <Typography variant="h3" fontWeight="bold" gutterBottom>
-                                {service.headerSection.subtitle}
-                            </Typography>
+                                    </Typography>
+                                    <Typography variant="h3" fontWeight="bold" gutterBottom>
+                                        {service.headerSection.subtitle}
+                                    </Typography>
+                                </>
+                            ) : (
+                                <>
+                                    {' '}
+                                    <Typography
+                                        variant="h1"
+                                        color="text.primary"
+                                        pb={2}
+                                        sx={{
+                                            fontWeight: 700
+                                        }}
+                                    >
+                                        <Typography
+                                            color={'primary'}
+                                            component={'span'}
+                                            variant={'inherit'}
+                                            sx={{
+                                                background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                                                    theme.palette.primary.light,
+                                                    0.3
+                                                )} 0%)`
+                                            }}
+                                        >
+                                            {`${service.headerSection.preTitle} ${service.headerSection.title}.`}
+                                        </Typography>
+                                    </Typography>
+                                    <Typography variant="h3" fontWeight="bold" gutterBottom>
+                                        {service.headerSection.subtitle}
+                                    </Typography>
+                                </>
+                            )}
                             <Box data-aos={'fade-right'}>
                                 <Typography variant="h6">{service.headerSection.detailText}</Typography>
                             </Box>
-                            <Box
-                                display="flex"
-                                flexDirection={{ xs: 'column', sm: 'row' }}
-                                alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-                                marginTop={4}
-                            >
-                                <Button
-                                    component={'a'}
-                                    variant="contained"
-                                    color="primary"
-                                    size="large"
-                                    fullWidth={isMd ? false : true}
-                                    href={'/contact-us'}
-                                    // sx={{backgroundColor: theme.palette.primary.dark}}
+                           
+                                <Box
+                                    display="flex"
+                                    flexDirection={{ xs: 'column', sm: 'row' }}
+                                    alignItems={{ xs: 'stretched', sm: 'flex-start' }}
+                                    marginTop={4}
                                 >
-                                    Contact Us
-                                </Button>
-                                <Box marginTop={{ xs: 2, sm: 0 }} marginLeft={{ sm: 2 }} width={{ xs: '100%', md: 'auto' }}></Box>
-                            </Box>
+                                    <Button
+                                        component={'a'}
+                                        variant="contained"
+                                        color="primary"
+                                        size="large"
+                                        fullWidth={isMd ? false : true}
+                                        href={'/contact-us'}
+                                        // sx={{backgroundColor: theme.palette.primary.dark}}
+                                    >
+                                        Contact Us
+                                    </Button>
+                                    <Box marginTop={{ xs: 2, sm: 0 }} marginLeft={{ sm: 2 }} width={{ xs: '100%', md: 'auto' }}></Box>
+                                </Box>
+                            
                         </Box>
                     </Grid>
+                    {isMd && (
                     <Grid item xs={12} md={4}>
                         <Box position="relative" height={1} width={1} pt={6}>
                             <CldImage
@@ -108,6 +144,7 @@ const ServiceHeader = ({ service }) => {
                             />
                         </Box>
                     </Grid>
+                    )}
                 </Grid>
             )}
         </Container>
