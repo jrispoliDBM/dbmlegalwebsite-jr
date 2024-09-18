@@ -47,6 +47,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                 }
             }}
         >
+                    <Link className="link" href={service.route}>
             <Stack direction={'row'} spacing={2} alignItems="center">
                 <Box p={3}>
                     <CldImage
@@ -60,7 +61,6 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                                 }}
                             />
                 </Box>
-                <Link className="link" href={service.route}>
                     <Typography
                         component="a"
                         color={'text.primary'}
@@ -85,8 +85,8 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                     >
                         {service.headerSection.title}
                     </Typography>
-                </Link>
             </Stack>
+                </Link>
         </Card>
     );
 };
