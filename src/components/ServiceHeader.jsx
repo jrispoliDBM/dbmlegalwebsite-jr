@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
 
 const ServiceHeader = ({ service }) => {
     const theme = useTheme();
@@ -28,6 +29,7 @@ const ServiceHeader = ({ service }) => {
         defaultMatches: true
     });
     //console.log(service);
+    const iconSize=400;
 
     return (
         <Container maxWidth="lg">
@@ -85,14 +87,16 @@ const ServiceHeader = ({ service }) => {
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Box position="relative" height={1} width={1}>
-                            <Image
-                                src={`/images/services/${service.headerSection.image}`}
-                                alt={service.headerSection.title}
-                                fill={true}
-                                style={{ objectFit: 'contain', objectPosition: 'center' }}
-                                // width={300}
-                                // height={300}
+                        <Box position="relative" height={1} width={1} pt={6}>
+                        <CldImage
+                                width={iconSize} // Transform the image: auto-crop to square aspect_ratio
+                                height={iconSize}
+                                alt={service.headerSection.image}
+                                src={`${service.headerSection.image}`}
+                                style={{
+                                    objectFit: 'contain',
+                                    transition: 'transform .7s ease !important'
+                                }}
                             />
                         </Box>
                     </Grid>
