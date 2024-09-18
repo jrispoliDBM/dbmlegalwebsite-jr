@@ -43,26 +43,26 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
             sx={{
                 transition: 'box-shadow 0.3s ease-in-out',
                 ':hover': {
-                    boxShadow: `0 8px 15px 8px ${alpha(theme.palette.primary.main, 0.24)}`, // Change elevation on hover by adjusting box-shadow level
+                    boxShadow: `0 8px 15px 8px ${alpha(theme.palette.primary.main, 0.24)}` // Change elevation on hover by adjusting box-shadow level
                 }
             }}
         >
-                    <Link className="link" href={service.route}>
-            <Stack direction={'row'} spacing={2} alignItems="center">
-                <Box p={3}>
-                    <CldImage
-                                width={iconSize} // Transform the image: auto-crop to square aspect_ratio
-                                height={iconSize}
-                                alt={service.headerSection.image}
-                                src={`${service.headerSection.image}`}
-                                style={{
-                                    objectFit: 'contain',
-                                    transition: 'transform .7s ease !important'
-                                }}
-                            />
-                </Box>
+            <Link className='no link' href={service.route} color={'text.primary'}  style={{ textDecoration: 'none', color: 'inherit' }} > 
+                <Stack direction={'row'} spacing={2} alignItems="center">
+                    <Box p={3}>
+                        <CldImage
+                            width={iconSize} // Transform the image: auto-crop to square aspect_ratio
+                            height={iconSize}
+                            alt={service.headerSection.image}
+                            src={`${service.headerSection.image}`}
+                            style={{
+                                objectFit: 'contain',
+                                transition: 'transform .7s ease !important'
+                            }}
+                        />
+                    </Box>
                     <Typography
-                        component="a"
+                        component='text'
                         color={'text.primary'}
                         variant={'h4'}
                         fontWeight={800}
@@ -85,8 +85,8 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                     >
                         {service.headerSection.title}
                     </Typography>
-            </Stack>
-                </Link>
+                </Stack>
+            </Link>
         </Card>
     );
 };
