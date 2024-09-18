@@ -29,15 +29,14 @@ const ServiceHeader = ({ service }) => {
         defaultMatches: true
     });
     //console.log(service);
-    const iconSize=400;
+    const iconSize = 400;
 
-    
     return (
         <Container maxWidth="lg">
             {service && (
                 <Grid container spacing={isMd ? 4 : 2} pb={4}>
                     <Grid item xs={12} md={8}>
-                        <Box maxWidth={{ xs: 1, sm: '100%' }} >
+                        <Box maxWidth={{ xs: 1, sm: '100%' }}>
                             <Typography
                                 variant="h1"
                                 color="text.primary"
@@ -46,10 +45,14 @@ const ServiceHeader = ({ service }) => {
                                     fontWeight: 700
                                 }}
                             >
-                                <Typography variant='h1' mb={isMd? -18 : -15}>
-                                {service.headerSection.preTitle}
-                                </Typography>
-                                {service.headerSection.preTitle && (<br />)}
+                                {service.headerSection.preTitle && (
+                                    <>
+                                        <Typography variant="h1" mb={isMd ? -18 : -15}>
+                                            {service.headerSection.preTitle}
+                                        </Typography>
+                                        <br />
+                                    </>
+                                )}
                                 <Typography
                                     color={'primary'}
                                     component={'span'}
@@ -68,7 +71,7 @@ const ServiceHeader = ({ service }) => {
                                 {service.headerSection.subtitle}
                             </Typography>
                             <Box data-aos={'fade-right'}>
-                                <Typography variant='h6'>{service.headerSection.detailText}</Typography>
+                                <Typography variant="h6">{service.headerSection.detailText}</Typography>
                             </Box>
                             <Box
                                 display="flex"
@@ -93,7 +96,7 @@ const ServiceHeader = ({ service }) => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Box position="relative" height={1} width={1} pt={6}>
-                        <CldImage
+                            <CldImage
                                 width={iconSize} // Transform the image: auto-crop to square aspect_ratio
                                 height={iconSize}
                                 alt={service.headerSection.image}
