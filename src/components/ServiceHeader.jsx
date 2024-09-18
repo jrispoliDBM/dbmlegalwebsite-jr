@@ -46,8 +46,9 @@ const ServiceHeader = ({ service }) => {
                                     fontWeight: 700
                                 }}
                             >
-                                
+                                <Typography variant='h1' mb={isMd? -18 : -15}>
                                 {service.headerSection.preTitle}
+                                </Typography>
                                 {service.headerSection.preTitle && (<br />)}
                                 <Typography
                                     color={'primary'}
