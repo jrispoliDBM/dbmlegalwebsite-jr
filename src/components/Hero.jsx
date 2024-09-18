@@ -15,7 +15,7 @@ const Hero = () => {
 
     return (
         <Box
-        // sx={{backgroundColor: theme.palette.background.lightGreen}}
+        sx={{backgroundColor: theme.palette.grey[100]}}
         // sx={{
         //     backgroundImage: `linear-gradient(to bottom, ${alpha(theme.palette.background.paper, 0)}, ${alpha(
         //         theme.palette.alternate.main,

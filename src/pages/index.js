@@ -6,7 +6,8 @@ import Container from 'components/core/Container';
 import ContainerNoTopPadding from 'components/core/ContainerNoTopPadding';
 import Hero from 'components/Hero';
 import Head from 'next/head';
-import OurServices from 'components/OurServices';
+// import OurServices from 'components/OurServices';
+import OurServices from 'components/HorizOurServices';
 import OurTeam from 'components/OurTeam';
 import CoreValues from 'components/CoreValues';
 import DbmDivider from '@/components/DbmDivider';
@@ -29,9 +30,11 @@ export default function Home() {
                     <Container id="core-values-container">
                         <CoreValues />
                     </Container>
-                    <Container>
+                    <Box sx={{backgroundColor: theme.palette.grey[100] }}>
+                    <Container >
                         <OurServices />
                     </Container>
+                    </Box>
                     <Container>
                         <OurTeam />
                     </Container>

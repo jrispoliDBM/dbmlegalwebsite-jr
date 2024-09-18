@@ -59,9 +59,11 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
                 {children}
                 <Divider />
             </main>
+            <Box sx={{backgroundColor: theme.palette.grey[100] }}>
             <Container paddingY={4}>
                 <Footer />
             </Container>
+            </Box>
         </Box>
     );
 };

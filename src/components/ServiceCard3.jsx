@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { CldImage } from 'next-cloudinary';
 
 const ServiceCard = ({ service, handleClickOpen }) => {
     const theme = useTheme();
@@ -55,7 +56,20 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                 <Stack direction={'column'} spacing={0} alignItems="center">
                     <Box className="image-transform">
                         <Link href={service.route}>
-                        <Image
+                            {/* <CldImage
+                                // src={service.headerSection.image} // Use this sample image or upload your own via the Media Explorer
+                                // src={'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1725074166/trusts_estates_urq939.png'}
+                                src={'trusts_estates_urq939'}
+                                width="175" // Transform the image: auto-crop to square aspect_ratio
+                                height="175"
+                                // fill={true} // Fill the image to cover the dimensions provided
+                                alt="alt"
+                                style={{
+                                    objectFit: 'contain',
+                                    transition: 'transform .7s ease !important'
+                                }}
+                            /> */}
+                            <Image
                             sx={{
                                 transition: 'transform .7s ease !important',
                                 transform: 'scale(1.0)',
@@ -64,7 +78,7 @@ const ServiceCard = ({ service, handleClickOpen }) => {
                             height={175}
                             width={175}
                             alt={service.headerSection.image}
-                            src={`/images/services/${service.headerSection.image}`}
+                            src={`/images/services-temp/${service.headerSection.image}`}
                         />
                         </Link>
                     </Box>
