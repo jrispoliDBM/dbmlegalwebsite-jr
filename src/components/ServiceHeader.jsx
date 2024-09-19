@@ -95,7 +95,9 @@ const ServiceHeader = ({ service }) => {
                                                 )} 0%)`
                                             }}
                                         >
-                                            {`${service.headerSection.preTitle} ${service.headerSection.title}.`}
+                                            {service.headerSection.preTitle
+                                                ? `${service.headerSection.preTitle} ${service.headerSection.title}`
+                                                : `${service.headerSection.title}`}
                                         </Typography>
                                     </Typography>
                                     <Typography variant="h3" fontWeight="bold" gutterBottom>
@@ -106,44 +108,43 @@ const ServiceHeader = ({ service }) => {
                             <Box data-aos={'fade-right'}>
                                 <Typography variant="h6">{service.headerSection.detailText}</Typography>
                             </Box>
-                           
-                                <Box
-                                    display="flex"
-                                    flexDirection={{ xs: 'column', sm: 'row' }}
-                                    alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-                                    marginTop={4}
+
+                            <Box
+                                display="flex"
+                                flexDirection={{ xs: 'column', sm: 'row' }}
+                                alignItems={{ xs: 'stretched', sm: 'flex-start' }}
+                                marginTop={4}
+                            >
+                                <Button
+                                    component={'a'}
+                                    variant="contained"
+                                    color="primary"
+                                    size="large"
+                                    fullWidth={isMd ? false : true}
+                                    href={'/contact-us'}
+                                    // sx={{backgroundColor: theme.palette.primary.dark}}
                                 >
-                                    <Button
-                                        component={'a'}
-                                        variant="contained"
-                                        color="primary"
-                                        size="large"
-                                        fullWidth={isMd ? false : true}
-                                        href={'/contact-us'}
-                                        // sx={{backgroundColor: theme.palette.primary.dark}}
-                                    >
-                                        Contact Us
-                                    </Button>
-                                    <Box marginTop={{ xs: 2, sm: 0 }} marginLeft={{ sm: 2 }} width={{ xs: '100%', md: 'auto' }}></Box>
-                                </Box>
-                            
+                                    Contact Us
+                                </Button>
+                                <Box marginTop={{ xs: 2, sm: 0 }} marginLeft={{ sm: 2 }} width={{ xs: '100%', md: 'auto' }}></Box>
+                            </Box>
                         </Box>
                     </Grid>
                     {isMd && (
-                    <Grid item xs={12} md={4}>
-                        <Box position="relative" height={1} width={1} pt={6}>
-                            <CldImage
-                                width={iconSize} // Transform the image: auto-crop to square aspect_ratio
-                                height={iconSize}
-                                alt={service.headerSection.image}
-                                src={`${service.headerSection.image}`}
-                                style={{
-                                    objectFit: 'contain',
-                                    transition: 'transform .7s ease !important'
-                                }}
-                            />
-                        </Box>
-                    </Grid>
+                        <Grid item xs={12} md={4}>
+                            <Box position="relative" height={1} width={1} pt={6}>
+                                <CldImage
+                                    width={iconSize} // Transform the image: auto-crop to square aspect_ratio
+                                    height={iconSize}
+                                    alt={service.headerSection.image}
+                                    src={`${service.headerSection.image}`}
+                                    style={{
+                                        objectFit: 'contain',
+                                        transition: 'transform .7s ease !important'
+                                    }}
+                                />
+                            </Box>
+                        </Grid>
                     )}
                 </Grid>
             )}

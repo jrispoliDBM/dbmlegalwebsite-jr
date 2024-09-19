@@ -47,7 +47,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                 }
             }}
         >
-            <Link className='no link' href={service.route} color={'text.primary'}  style={{ textDecoration: 'none', color: 'inherit' }} > 
+            <Link className="no link" href={service.route} color={'text.primary'} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Stack direction={'row'} spacing={2} alignItems="center">
                     <Box p={3}>
                         <CldImage
@@ -55,7 +55,6 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                             height={iconSize}
                             alt={service.headerSection.image}
                             src={`${service.headerSection.image}`}
-                            
                             style={{
                                 objectFit: 'contain',
                                 transition: 'transform .7s ease !important'
@@ -63,7 +62,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                         />
                     </Box>
                     <Typography
-                        component='text'
+                        component="text"
                         color={'text.primary'}
                         variant={'h4'}
                         fontWeight={800}
@@ -84,7 +83,9 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                             }
                         }}
                     >
-                        {service.headerSection.preTitle} {service.headerSection.title}
+                        {service.headerSection.preTitle
+                            ? `${service.headerSection.preTitle} ${service.headerSection.title}`
+                            : `${service.headerSection.title}`}
                     </Typography>
                 </Stack>
             </Link>
