@@ -65,7 +65,7 @@ const OurServices = () => {
             <Grid container spacing={4} alignItems="center">
                 {services.map((service, i) =>
                     service.show ? (
-                        <Grid item xs={12} sm={6} md={6} lg={6} key={i} >
+                        <Grid item xs={12} sm={12} md={12} lg={6} key={i} >
                             <ServiceCard3 service={service} handleClickOpen={handleClickOpen}  />
                         </Grid>
                     ) : (
