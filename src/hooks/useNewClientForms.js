@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { sendObjectEmail } from './useMail';
 
 
 const useNewClientForms = () => {
@@ -12,6 +13,8 @@ const useNewClientForms = () => {
             .catch((error) => {
                 console.log('Error in addForm', error);
                 setError(error);
+            }).finally(() => {
+                sendObjectEmail(formData, 'New Client Form');
             });
     };
 
