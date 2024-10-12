@@ -29,7 +29,7 @@ export const sendObjectEmail = async (data, title) => {
     .map(([key, value]) => `${key}: ${value}`)
    .join('\n');
 
-   await sendEmail('llmandell@gmail.com; joseph.rispoli@dbmlegalservics.com', `DBM - ${title}`, formattedData);
+   await sendEmail('llmandell@gmail.com; joseph.rispoli@dbmlegalservices.com', `DBM - ${title}`, formattedData);
 };
 
 
