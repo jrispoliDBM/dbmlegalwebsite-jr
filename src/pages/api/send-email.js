@@ -3,7 +3,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req, res) => {
   if (req.method === 'POST') {
     const { email, subject, message } = req.body;
 

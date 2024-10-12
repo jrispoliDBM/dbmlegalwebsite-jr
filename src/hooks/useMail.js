@@ -1,4 +1,4 @@
-export const sendEmail = async (email: string, subject: string, message: string) => {
+export const sendEmail = async (email, subject, message) => {
     try {
       const res = await fetch('/api/send-email', {
         method: 'POST',
@@ -24,7 +24,7 @@ export const sendEmail = async (email: string, subject: string, message: string)
     }
   };
 
-export const sendObjectEmail = async (data: any, title: string) => {
+export const sendObjectEmail = async (data, title) => {
     const formattedData = Object.entries(data)
     .map(([key, value]) => `${key}: ${value}`)
    .join('\n');
