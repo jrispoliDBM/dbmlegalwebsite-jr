@@ -12,9 +12,10 @@ const Hero = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
+    const fontSize = '7em';
 
     return (
-        <Stack sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }} p={10}>
+        <Stack sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }}>
             <Slide
                 direction="right"
                 in={true}
@@ -23,10 +24,18 @@ const Hero = () => {
                 easing={{ enter: theme.transitions.easing.easeIn }}
                 timeout={2000}
             >
-                <Typography variant="h1" color="text.primary" gutterBottom>
+                <Typography fontSize={fontSize} fontWeight='bold' color="text.primary">
                     Legal Solutions for
                 </Typography>
             </Slide>
+            <Slide direction="left" in={true} mountOnEnter unmountOnExit easing={{ enter: theme.transitions.easing.easeIn }} timeout={2000}>
+                <Typography fontSize={fontSize} fontWeight='bold' color="primary" align="right">
+                    Business
+                </Typography>
+            </Slide>
+            {/* <Typography variant="h1" color="text.primary" gutterBottom data-os='fade-right'>
+                Legal Solutions for
+            </Typography> */}
             {/* <Box paddingY={{ xs: 0, sm: 0, md: 0 }}>
                 <Container>
                     <Box maxWidth={{ xs: 1, sm: '100%' }} data-aos='fade-right'>

@@ -26,7 +26,10 @@ export default function Home() {
 
             <Box sx={{ overflowX: 'hidden' }}>
                 <Main bgcolor={'background.paper'}>
+
+                    <Container id="core-values-container">
                     <Hero />
+                    </Container>
                     <DbmDivider />
                     <Container id="core-values-container">
                         <CoreValues />
