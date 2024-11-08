@@ -92,7 +92,7 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
                     </Stack>
                     {person.bio && (
                         <Stack direction="column" justifyContent="center">
-                            <Button variant={'contained'} color={'primary'} size="small" onClick={() => handleClickOpen(person)}>
+                            <Button sx={{padding: '2px'}} variant={'outlined'} color={'primary'} size="small" onClick={() => handleClickOpen(person)}>
                                 More
                             </Button>
                         </Stack>

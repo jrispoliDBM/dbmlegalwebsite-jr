@@ -59,7 +59,7 @@ export default function Service() {
                                                 <Card
                                                     key={index}
                                                     sx={{
-                                                        boxShadow: `10px 10px 15px 0px ${theme.palette.primary.main}`, // Change the shadow color here
+                                                        boxShadow: `5px 5px 10px 0px ${theme.palette.white[700]}`, // Change the shadow color here
                                                         border: `3px solid ${theme.palette.grey[100]}`, // Add border here
                                                         padding: theme.spacing(2), // Optional: add padding
                                                         borderRadius: theme.shape.borderRadius // Optional: adjust borde

@@ -19,7 +19,7 @@ import {
     CardMedia
 } from '@mui/material';
 // import ServiceCard3 from './ServiceCard3';
-import ServiceCard3 from './HorizServiceCard';
+import ServiceCard3 from './HorizServiceCardPhoto';
 import ServiceDialog from './ServiceDialog';
 import useServices from 'hooks/useServices';
 
@@ -72,10 +72,10 @@ const OurServices = () => {
                     business and expert legal guidance to maximize your financial potential.
                 </Typography>
             </Box>
-            <Grid container spacing={4} alignItems="center">
+            <Grid container spacing={4} alignItems="center" justifyContent='center'>
                 {services.map((service, i) =>
                     service.show ? (
-                        <Grid item xs={12} sm={12} md={12} lg={6} key={i} >
+                        <Grid item xs={12} sm={12} md={12} lg={3} key={i} >
                             <ServiceCard3 service={service} handleClickOpen={handleClickOpen}  />
                         </Grid>
                     ) : (
