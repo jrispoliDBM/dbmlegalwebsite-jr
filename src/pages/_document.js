@@ -17,11 +17,16 @@ export default class MyDocument extends Document {
                         content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
                     />
                     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+          rel="stylesheet"
+        ></link>
                     {/* <link rel="icon" href="/favicon.ico" /> */}
-                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
                     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
-                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet" /> */}
                     {/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet"></link> */}
                 </Head>
                 <body>

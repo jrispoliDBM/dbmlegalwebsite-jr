@@ -42,7 +42,7 @@ export default function Faqs() {
                             <Button href="/">Home</Button>
                         </Stack>
 
-                        <Card>
+                        <Card   sx= {{backgroundColor: theme.palette.grey[700]}}>
                             <Stack direction="row" spacing={2} p={2}>
                                 <Stack>
                                     <Typography fontWeight="bold" pb={1} variant={'h2'} gutterBottom align="center">
@@ -65,7 +65,7 @@ export default function Faqs() {
                                     </Typography>
 
                                     {faqs.map((item, index) => (
-                                        <Box pb={3} key={index}>
+                                        <Box pb={3} key={index} >
                                             {item.headerBefore && (
                                                 <Typography variant="h5" fontWeight="bold" py={2}>
                                                     {item.headerBefore}

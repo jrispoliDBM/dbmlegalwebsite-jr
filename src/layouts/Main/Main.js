@@ -47,7 +47,9 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
                 sx={{
                     top: 0,
                     backgroundColor: trigger ? theme.palette.background.paper : bgcolor,
-                    boxShadow:  '0px 3px 2px rgba(255, 255, 255, 0.5)' ,
+                    //backgroundColor={theme.palette.black[100]}
+                    borderBottom: `2px solid ${theme.palette.black[100]}`,
+                    //boxShadow:  `0px 3px 2px ${theme.palette.black[100]}` ,
                 }}
                 elevation={trigger ? 1 : 0}
                 
@@ -63,8 +65,8 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
                 {children}
                 <Divider />
             </main>
-            <Box sx={{ backgroundColor: theme.palette.background.secondary }}>
-                <Container paddingY={4}>
+            <Box sx={{ backgroundColor: theme.palette.background.secondary,   borderTop: `2px solid ${theme.palette.black[100]}`,   }}>
+                <Container paddingY={4}   >
                     <Footer />
                 </Container>
             </Box>

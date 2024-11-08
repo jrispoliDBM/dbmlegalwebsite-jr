@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Stack, Slide } from '@mui/material';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -14,20 +14,19 @@ const Hero = () => {
     });
 
     return (
-        <Stack sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }} p={10}>
-            <Slide
-                direction="right"
-                in={true}
-                mountOnEnter
-                unmountOnExit
-                easing={{ enter: theme.transitions.easing.easeIn }}
-                timeout={2000}
-            >
-                <Typography variant="h1" color="text.primary" gutterBottom>
-                    Legal Solutions for
-                </Typography>
-            </Slide>
-            {/* <Box paddingY={{ xs: 0, sm: 0, md: 0 }}>
+        <Box
+        sx={{backgroundColor: theme.palette.background.secondary, height: '100vh'}}
+        
+        // sx={{
+        //     backgroundImage: `linear-gradient(to bottom, ${alpha(theme.palette.background.paper, 0)}, ${alpha(
+        //         theme.palette.alternate.main,
+        //         1
+        //     )} 100%)`,
+        //     backgroundRepeat: 'repeat-x',
+        //     position: 'relative'
+        // }}
+        >
+            <Box paddingY={{ xs: 0, sm: 0, md: 0 }}>
                 <Container>
                     <Box maxWidth={{ xs: 1, sm: '100%' }} data-aos='fade-right'>
                         <Typography
@@ -88,7 +87,7 @@ const Hero = () => {
                         </Box>
                     </Box>
                 </Container>
-            </Box> */}
+            </Box>
             {/* <DbmDivider /> */}
 
             {/* <Box backgroundColor={theme.palette.primary.main} sx={{ height: 10 }}></Box>
@@ -118,7 +117,7 @@ const Hero = () => {
                     d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"
                 ></path>
             </Box> */}
-        </Stack>
+        </Box>
     );
 };
 

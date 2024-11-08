@@ -114,7 +114,7 @@ export default function Service() {
                                                                 />
                                                             ) : (
                                                                 <Button
-                                                                    variant="contained"
+                                                                    variant="outlined"
                                                                     component="a"
                                                                     href={getRoute(relatedService)}
                                                                     sx={{ width: '100%', height: '100%', textAlign: 'center' }}

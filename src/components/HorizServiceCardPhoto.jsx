@@ -54,7 +54,8 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                         component="text"
                         color={'text.primary'}
                         variant={'h4'}
-                        fontWeight={800}
+                        fontWeight='bold'
+                        //fontWeight={700}
                         gutterBottom
                         align="center"
                         p={3}
