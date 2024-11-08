@@ -59,11 +59,22 @@ const OurTeam = () => {
                                 component="span"
                                 color="primary"
                                 sx={{
-                                    background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
                                 }}
                             >
-                                Team.
+                                Team
                             </Typography>
+                            <Typography
+                                color={theme.palette.white[100]}
+                                component={'span'}
+                                variant={'inherit'}
+                                sx={{
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                }}
+                            >
+                                .
+                            </Typography>
+                            
                         </Typography>
                         <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
                             Michelle D. Bergman and Maura Mandell co-founded DBM with the conviction that the conventional big law model

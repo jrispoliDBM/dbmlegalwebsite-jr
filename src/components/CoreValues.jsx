@@ -40,10 +40,20 @@ const CoreValues = () => {
                                 component="span"
                                 color="primary"
                                 sx={{
-                                    background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
                                 }}
                             >
-                                Core Principles.
+                                Core Principles
+                            </Typography>
+                            <Typography
+                                color={theme.palette.white[100]}
+                                component={'span'}
+                                variant={'inherit'}
+                                sx={{
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                }}
+                            >
+                                .
                             </Typography>
                         </Typography>
                     </Box>

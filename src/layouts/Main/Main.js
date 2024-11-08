@@ -46,23 +46,27 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
                 position={'sticky'}
                 sx={{
                     top: 0,
-                    backgroundColor: trigger ? theme.palette.background.paper : bgcolor
+                    backgroundColor: trigger ? theme.palette.background.paper : bgcolor,
+                    boxShadow:  '0px 3px 2px rgba(255, 255, 255, 0.5)' ,
                 }}
                 elevation={trigger ? 1 : 0}
+                
             >
                 <Container paddingY={1}>
                     <Topbar onSidebarOpen={handleSidebarOpen} pages={pages} colorInvert={trigger ? false : colorInvert} />
                 </Container>
             </AppBar>
-            <Sidebar onClose={handleSidebarClose} open={open} variant="temporary"  />
+            {/* <Box backgroundColor={theme.palette.black[600]} sx={{ height: 4 }}></Box> */}
+
+            <Sidebar onClose={handleSidebarClose} open={open} variant="temporary" />
             <main>
                 {children}
                 <Divider />
             </main>
-            <Box sx={{backgroundColor: theme.palette.grey[100] }}>
-            <Container paddingY={4}>
-                <Footer />
-            </Container>
+            <Box sx={{ backgroundColor: theme.palette.background.secondary }}>
+                <Container paddingY={4}>
+                    <Footer />
+                </Container>
             </Box>
         </Box>
     );

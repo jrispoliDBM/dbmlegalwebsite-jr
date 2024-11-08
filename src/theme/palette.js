@@ -1,3 +1,39 @@
+const black2 = {
+    100: "#d4d4d4",
+    200: "#a9a9a9",
+    300: "#7f7f7f",
+    400: "#545454",
+    500: "#292929",
+    600: "#212121",
+    700: "#191919",
+    800: "#101010",
+    900: "#080808"
+};
+
+const black = {
+          100: "#d2d2d3",
+          200: "#a5a6a7",
+          300: "#78797a",
+          400: "#4b4d4e",
+          500: "#1e2022",
+          600: "#181a1b",
+          700: "#121314",
+          800: "#0c0d0e",
+          900: "#060607"
+}
+
+const white = {
+          100: "#f8f9fa",
+          200: "#f2f4f5",
+          300: "#ebeeef",
+          400: "#e5e9ea",
+          500: "#dee3e5",
+          600: "#b2b6b7",
+          700: "#858889",
+          800: "#595b5c",
+          900: "#2c2d2e"
+}
+
 export const light = {
     alternate: {
         main: '#f7faff',
@@ -18,17 +54,35 @@ export const light = {
         contrastText: 'rgba(0, 0, 0, 0.87)'
     },
     text: {
-        primary: '#1e2022',
-        secondary: '#323a46'//'#677788'
+        primary: white[100],
+        secondary: white[600],
+        // primary: '#EEEEEF',
+        // secondary: '#AEB0B4'
     },
+    // text: {
+    //     primary: '#292929',
+    //     secondary: '#323a46'//'#677788'
+    // },
     divider: 'rgba(0, 0, 0, 0.12)',
     background: {
-        paper: '#ffffff',
-        default: '#ffffff',
-        level2: '#f5f5f5',
-        level1: '#ffffff',
-        lightGreen: '#F6fBF2'
+        paper: black[500],
+        default: black[500],
+        secondary: black[500],
+        tertiary: black[900],
+        // level2: '#333',
+        // level1: '#2D3748'
     },
+
+
+    // background: {
+    //     paper: '#ffffff',
+    //     default: '#ffffff',
+    //     level2: '#f5f5f5',
+    //     level1: '#ffffff',
+    //     lightGreen: '#F6fBF2'
+    // },
+    black: black,
+    white: white,
     green: {
       100: '#d5f0db',
       200: '#abe1b7',

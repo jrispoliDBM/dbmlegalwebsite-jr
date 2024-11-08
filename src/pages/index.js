@@ -26,15 +26,14 @@ export default function Home() {
 
             <Box sx={{ overflowX: 'hidden' }}>
                 <Main bgcolor={'background.paper'}>
-                    hello
                     <Hero />
                     <Container id="core-values-container">
                         <CoreValues />
                     </Container>
-                    <Box sx={{backgroundColor: theme.palette.grey[100] }}>
-                    <Container >
-                        <OurServices />
-                    </Container>
+                    <Box sx={{ backgroundColor: theme.palette.background.secondary }}>
+                        <Container>
+                            <OurServices />
+                        </Container>
                     </Box>
                     <Container>
                         <OurTeam />

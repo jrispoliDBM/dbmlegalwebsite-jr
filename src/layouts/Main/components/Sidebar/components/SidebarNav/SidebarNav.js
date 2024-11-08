@@ -50,7 +50,7 @@ const SidebarNav = () => {
                 <Box display={'flex'} component="a" href="/" title="theFront" width={{ xs: 100, md: 120 }}>
                     <Box
                         component={'img'}
-                        src={mode === 'light' ? '/images/dbmnewlogo.png' : '/images/dbmnewlogo.png'}
+                        src={mode === 'light' ? '/images/dbm_dark_logo2.png' : '/images/dbm_dark_logo2.png'}
                         height={1}
                         width={1}
                     />

@@ -27,8 +27,8 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
                     component={"img"}
                     src={
                         mode === "light" && !colorInvert
-                            ? "/images/dbmnewlogo.png"
-                            : "/images/dbmnewlogo.png"
+                            ? "/images/dbm_dark_logo2.png"
+                            : "/images/dbm_dark_logo2.png"
                     }
                     height={1}
                     width={1}

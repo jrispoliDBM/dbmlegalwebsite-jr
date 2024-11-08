@@ -50,11 +50,21 @@ const OurServices = () => {
                         component="span"
                         color="primary"
                         sx={{
-                            background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
+                            background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
                         }}
                     >
-                        Services.
+                        Services
                     </Typography>
+                    <Typography
+                                color={theme.palette.white[100]}
+                                component={'span'}
+                                variant={'inherit'}
+                                sx={{
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                }}
+                            >
+                                .
+                            </Typography>
                 </Typography>
                 <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
                     DBM provides a diverse range of business and transactional services across various practice areas to clients of all

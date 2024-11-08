@@ -11,8 +11,9 @@ const DbmDivider = () => {
 
     return isMd ? (
         <>
-            <Box backgroundColor={theme.palette.primary.light} sx={{ height: 10 }}></Box>
-            <Box backgroundColor={theme.palette.primary.main} sx={{ height: 10 }}></Box>
+                    <Box backgroundColor={theme.palette.black[100]} sx={{ height: 2 }}></Box>
+            {/* <Box backgroundColor={theme.palette.primary.light} sx={{ height: 10 }}></Box>
+            <Box backgroundColor={theme.palette.primary.main} sx={{ height: 10 }}></Box> */}
         </>
     ) : (
         <></>

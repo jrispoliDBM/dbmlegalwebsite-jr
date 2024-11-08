@@ -15,7 +15,7 @@ const Hero = () => {
 
     return (
         <Box
-        sx={{backgroundColor: theme.palette.grey[100]}}
+        sx={{backgroundColor: theme.palette.background.secondary}}
         // sx={{
         //     backgroundImage: `linear-gradient(to bottom, ${alpha(theme.palette.background.paper, 0)}, ${alpha(
         //         theme.palette.alternate.main,
@@ -43,14 +43,24 @@ const Hero = () => {
                                 component={'span'}
                                 variant={'inherit'}
                                 sx={{
-                                    background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
                                 }}
                             >
-                                Business.
+                                Business
+                            </Typography>
+                            <Typography
+                                color={theme.palette.white[100]}
+                                component={'span'}
+                                variant={'inherit'}
+                                sx={{
+                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                }}
+                            >
+                                .
                             </Typography>
                         </Typography>
                         <Box data-aos={'fade-right'}>
-                            <Typography variant="h5" component="p" color={theme.palette.grey[700]} sx={{ fontWeight: 700, width: '70%' }}>
+                            <Typography variant="h5" component="p" color={theme.palette.white[500]} sx={{ fontWeight: 700, width: '70%' }}>
                                 Exceptional talent, cost-effective service, and custom-tailored solutions to complex business transactions
                                 and legal issues.
                             </Typography>

@@ -9,7 +9,7 @@ const getTheme = (mode, themeToggler) =>
       palette: mode === 'light' ? light : dark,
       shadows: shadows(mode),
       typography: {
-        fontFamily: '"Montserrat", sans-serif',//'"Inter", sans-serif',
+        fontFamily: '"Inter", sans-serif',//'"Inter", sans-serif',
         button: {
           textTransform: 'none',
           fontWeight: 'medium',

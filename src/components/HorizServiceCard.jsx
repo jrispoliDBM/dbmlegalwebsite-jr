@@ -42,6 +42,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
             elevation={1}
             sx={{
                 transition: 'box-shadow 0.3s ease-in-out',
+                backgroundColor: theme.palette.black[400],
                 ':hover': {
                     boxShadow: `0 8px 15px 8px ${alpha(theme.palette.primary.main, 0.24)}` // Change elevation on hover by adjusting box-shadow level
                 }
