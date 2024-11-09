@@ -2,6 +2,8 @@ import { Box, Slide, Stack, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React, { useEffect, useState } from 'react';
+import IconButton from '@mui/material/IconButton';
+import SouthIcon from '@mui/icons-material/South';
 
 const Hero = () => {
     const theme = useTheme();
@@ -10,7 +12,6 @@ const Hero = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
-
 
     useEffect(() => {
         const updateFontSize = () => {
@@ -72,7 +73,12 @@ const Hero = () => {
                     onEntered={() => setStartBullets2(true)}
                     container={containerRef.current}
                 >
-                    <Typography fontSize={isMd ? fontSize * 0.5 : fontSize * .8} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
+                    <Typography
+                        fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
+                        color={theme.palette.white[500]}
+                        sx={{ fontWeight: 300 }}
+                        pb={fontSize * 0.03}
+                    >
                         Exceptional talent.
                     </Typography>
                 </Slide>
@@ -85,7 +91,12 @@ const Hero = () => {
                     onEntered={() => setStartBullets3(true)}
                     container={containerRef.current}
                 >
-                    <Typography fontSize={isMd ? fontSize * 0.5 : fontSize * .8} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
+                    <Typography
+                        fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
+                        color={theme.palette.white[500]}
+                        sx={{ fontWeight: 300 }}
+                        pb={fontSize * 0.03}
+                    >
                         Cost-effective service.
                     </Typography>
                 </Slide>
@@ -97,11 +108,36 @@ const Hero = () => {
                     timeout={timeout * 0.5}
                     container={containerRef.current}
                 >
-                    <Typography fontSize={isMd ? fontSize * 0.5 : fontSize * .8} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
+                    <Typography
+                        fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
+                        color={theme.palette.white[500]}
+                        sx={{ fontWeight: 300 }}
+                        pb={fontSize * 0.03}
+                    >
                         Custom-tailored solutions.
                     </Typography>
                 </Slide>
             </Stack>
+            <Stack  pt={fontSize * 0.15}>
+            <IconButton
+                onClick={() => window.scrollBy({ top: window.outerHeight, behavior: 'smooth' })}
+                sx={{
+                    
+                    backgroundColor: theme.palette.primary.main, // customize background color
+                    color: '#ffffff', // customize icon color
+                    borderRadius: '50%', // make it circular
+                    width: isMd ? fontSize : fontSize*1.5, // adjust size as needed
+                    height: isMd ? fontSize : fontSize*1.5,
+                    '&:hover': {
+                        backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
+                        boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
+                    }
+                }}
+            >
+                <SouthIcon sx={{ fontSize: fontSize * 0.5 }} />
+            </IconButton>
+            </Stack>
+
         </Stack>
     );
 };
