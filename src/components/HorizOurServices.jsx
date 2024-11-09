@@ -49,9 +49,9 @@ const OurServices = () => {
                         gutterBottom
                         component="span"
                         color="primary"
-                        sx={{
-                            background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                        }}
+                        // sx={{
+                        //     background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                        // }}
                     >
                         Services
                     </Typography>
@@ -59,9 +59,9 @@ const OurServices = () => {
                                 color={theme.palette.white[100]}
                                 component={'span'}
                                 variant={'inherit'}
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                }}
+                                // sx={{
+                                //     background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                // }}
                             >
                                 .
                             </Typography>

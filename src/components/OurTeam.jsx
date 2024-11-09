@@ -58,9 +58,9 @@ const OurTeam = () => {
                                 gutterBottom
                                 component="span"
                                 color="primary"
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                }}
+                                // sx={{
+                                //     background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                // }}
                             >
                                 Team
                             </Typography>
@@ -68,9 +68,9 @@ const OurTeam = () => {
                                 color={theme.palette.white[100]}
                                 component={'span'}
                                 variant={'inherit'}
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                }}
+                                // sx={{
+                                //     background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                                // }}
                             >
                                 .
                             </Typography>
@@ -88,8 +88,8 @@ const OurTeam = () => {
                     </Box>
                 </Stack>
             </Grid>
-            <Grid item xs={12} md={5}>
-                <FormControl fullWidth sx={{ m: 1 }}>
+            <Grid item xs={12} md={5}  sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <FormControl fullWidth sx={{ mb: 5 }}>
                     <InputLabel id="veritcal-select-label">Practice Area</InputLabel>
                     <Select
                         labelId="vertical-select-label"
@@ -98,10 +98,22 @@ const OurTeam = () => {
                         label="Practice Areas"
                         onChange={(e) => setSelectedVertical(e.target.value)}
                         items={verticals}
+                        sx={{
+                            maxWidth: '400px',
+                            backgroundColor: '#3b3b3b', // slightly lighter than #292929 for contrast
+                            color: '#ffffff',
+                            '& .MuiSvgIcon-root': { color: '#ffffff' } // arrow color
+                        }}
                     >
                         {verticals.map((vertical, i) => {
                             return (
-                                <MenuItem key={i} value={vertical}>
+                                <MenuItem key={i} value={vertical} sx={{
+                                    backgroundColor: '#292929',
+                                    color: '#ffffff',
+                                    '&:hover': {
+                                        backgroundColor: '#444444', // slightly lighter on hover
+                                    }
+                                }}>
                                     {vertical}
                                 </MenuItem>
                             );

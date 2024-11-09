@@ -45,7 +45,7 @@ const CoreValues = () => {
         };
     }, []);
 
-    const timeout = 1250;
+    const timeout = 650;
     const fontWeight = 700;
     const [startBullets, setStartBullets] = useState(false);
     const [startBullets2, setStartBullets2] = useState(false);
@@ -64,9 +64,11 @@ const CoreValues = () => {
                     borderRadius: 5,
                     border: `2px solid ${theme.palette.black[100]}`,
                     textDecoration: 'none',
+                    boxShadow: `5px 5px 10px 0px ${theme.palette.white[700]}`,
                     transition: 'all .2s ease-in-out',
                     '&:hover': {
-                        transform: `translateY(-${theme.spacing(1 / 2)})`
+                        transform: `translateY(-${theme.spacing(1 / 2)})`,
+                        boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`,
                     }
                 }}
             >
@@ -90,7 +92,7 @@ const CoreValues = () => {
     return (
         <Stack
             ref={observerRef} // Attach ref for intersection observer
-            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '100vh' }}
+            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '75vh' }}
         >
             <Typography fontSize={fontSize * 0.7} fontWeight={fontWeight} gutterBottom align="center">
                 Our{' '}
@@ -101,7 +103,7 @@ const CoreValues = () => {
                     .
                 </Typography>
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
             <Slide
                 direction="left"
                 in={isVisible} // Trigger slide when component is visible
