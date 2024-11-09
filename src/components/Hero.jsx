@@ -8,18 +8,11 @@ const Hero = () => {
     const [fontSize, setFontSize] = useState(30); // Initial default font size
 
     useEffect(() => {
-        // Define a function to calculate font size based on screen width
         const updateFontSize = () => {
             setFontSize((window.innerWidth * 7) / 100); // Adjust percentage as needed
         };
-
-        // Initial calculation
         updateFontSize();
-
-        // Update font size on window resize
         window.addEventListener('resize', updateFontSize);
-
-        // Cleanup on component unmount
         return () => {
             window.removeEventListener('resize', updateFontSize);
         };
