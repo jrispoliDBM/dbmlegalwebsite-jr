@@ -120,7 +120,7 @@ const Hero = () => {
             </Stack>
             <Stack  pt={fontSize * 0.15}>
             <IconButton
-                onClick={() => window.scrollBy({ top: window.outerHeight, behavior: 'smooth' })}
+                onClick={() => window.scrollBy({ top: window.innerHeight * 1.15, behavior: 'smooth' })}
                 sx={{
                     
                     backgroundColor: theme.palette.primary.main, // customize background color
