@@ -73,7 +73,7 @@ const CoreValues = () => {
                 <Box component={CardContent}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography align="center" fontSize={isMd ? fontSize*.2 : fontsize} fontWeight={700} gutterBottom color={theme.palette.primary.main}>
+                            <Typography align="center" fontSize={isMd ? fontSize*.2 : fontSize} fontWeight={700} gutterBottom color={theme.palette.primary.main}>
                                 {value.title}
                             </Typography>
                             <Typography align="center" fontSize={isMd ? fontSize * 0.16 : fontSize} fontWeight={300} color="text.primary">
