@@ -18,7 +18,9 @@ const Hero = () => {
     const isXs = useMediaQuery(theme.breakpoints.up('xs'), {
         defaultMatches: true
     });
-    const fontSize = isLg ? 112 : isMd ? 80 : isSm ? 50 : isXs? 40 : 30;
+//    const fontSize = isLg ? 112 : isMd ? 80 : isSm ? 50 : isXs? 40 : 30;
+    const fontSize = (window.innerWidth * 7) / 100; // Adjust percentage as needed
+
     const timeout = 1250;
     const fontWeight = 700;
     const [startBullets, setStartBullets] = React.useState(false);
