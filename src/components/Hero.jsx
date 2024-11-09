@@ -13,6 +13,14 @@ const Hero = () => {
         defaultMatches: true
     });
     const fontSize = '7em';
+    const timeout = 1250;
+    const fontWeight = 700;
+    const [startBullets, setStartBullets] = React.useState(false);
+    const [startBullets2, setStartBullets2] = React.useState(false);
+    const [startBullets3, setStartBullets3] = React.useState(false);
+    React.useEffect(() => {
+        console.log('startBullets:', startBullets);
+    }, [startBullets]);
 
     return (
         <Stack sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }}>
@@ -22,111 +30,75 @@ const Hero = () => {
                 mountOnEnter
                 unmountOnExit
                 easing={{ enter: theme.transitions.easing.easeIn }}
-                timeout={2000}
+                timeout={timeout}
+                onEntered={() => setStartBullets(true)}
             >
-                <Typography fontSize={fontSize} fontWeight='bold' color="text.primary">
+                <Typography fontSize={fontSize} fontWeight={fontWeight} color="text.primary">
                     Legal Solutions for
                 </Typography>
             </Slide>
-            <Slide direction="left" in={true} mountOnEnter unmountOnExit easing={{ enter: theme.transitions.easing.easeIn }} timeout={2000}>
-                <Typography fontSize={fontSize} fontWeight='bold' color="primary" align="right">
-                    Business
-                </Typography>
-            </Slide>
-            {/* <Typography variant="h1" color="text.primary" gutterBottom data-os='fade-right'>
-                Legal Solutions for
-            </Typography> */}
-            {/* <Box paddingY={{ xs: 0, sm: 0, md: 0 }}>
-                <Container>
-                    <Box maxWidth={{ xs: 1, sm: '100%' }} data-aos='fade-right'>
-                        <Typography
-                            variant="h1"
-                            color="text.primary"
-                            gutterBottom
-                            // sx={{
-                            //     fontWeight: 700
-                            // }}
-                        >
-                            Legal Solutions for
-                            <br />{' '}
-                            <Typography
-                                color={'primary'}
-                                component={'span'}
-                                variant={'inherit'}
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                }}
-                            >
-                                Business
-                            </Typography>
-                            <Typography
-                                color={theme.palette.white[100]}
-                                component={'span'}
-                                variant={'inherit'}
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                }}
-                            >
-                                .
-                            </Typography>
-                        </Typography>
-                        <Box data-aos={'fade-right'}>
-                            <Typography variant="h5" component="p" color={theme.palette.white[500]} sx={{ fontWeight: 700, width: '70%' }}>
-                                Exceptional talent, cost-effective service, and custom-tailored solutions to complex business transactions
-                                and legal issues.
-                            </Typography>
-                        </Box>
-                        <Box
-                            display="flex"
-                            flexDirection={{ xs: 'column', sm: 'row' }}
-                            alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-                            marginTop={4}
-                        >
-                            <Button
-                                component={'a'}
-                                variant="outlined"
-                                color="primary"
-                                size="large"
-                                fullWidth={isMd ? false : true}
-                                href={'/contact-us'}
-                                // sx={{backgroundColor: theme.palette.primary.dark}}
-                            >
-                                Contact Us
-                            </Button>
-                            <Box marginTop={{ xs: 2, sm: 0 }} marginLeft={{ sm: 2 }} width={{ xs: '100%', md: 'auto' }}></Box>
-                        </Box>
-                    </Box>
-                </Container>
-            </Box> */}
-            {/* <DbmDivider /> */}
-
-            {/* <Box backgroundColor={theme.palette.primary.main} sx={{ height: 10 }}></Box>
-            <Box backgroundColor={`linear-gradient(180deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`} sx={{ height: 100 }}></Box> */}
-            {/* <Box
-                sx={{
-                    height: 30,
-                    background: `linear-gradient(to bottom, ${alpha(theme.palette.primary.light,0.3)}, ${theme.palette.primary.main})`
-                }}
-            /> */}
-            {/* <Box backgroundColor={theme.palette.primary.light} sx={{ height: 10 }}></Box>
-            <Box backgroundColor={alpha(theme.palette.primary.light,0.3)} sx={{ height: 10 }}></Box> */}
-            {/* <Box
-                component={"svg"}
-                preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                viewBox="0 0 1920 100.1"
-                sx={{
-                    width: "100%",
-                    marginBottom: theme.spacing(-1),
-                }}
+            <Slide
+                direction="left"
+                in={true}
+                mountOnEnter
+                unmountOnExit
+                easing={{ enter: theme.transitions.easing.easeIn }}
+                timeout={timeout}
             >
-                <path
-                    fill={theme.palette.background.paper}
-                    d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"
-                ></path>
-            </Box> */}
+                <Stack direction="row" alignItems="center" width="100%">
+                    <Box flexGrow={1} />
+                    <Typography fontSize={fontSize} fontWeight={fontWeight} color="primary" align="right">
+                        Business
+                    </Typography>
+                    <Typography fontSize={fontSize} fontWeight={fontWeight} color={theme.palette.white[100]} align="right" component="span">
+                        .
+                    </Typography>
+                </Stack>
+            </Slide>
+            <Stack alignItems="center" pt={15}>
+                <Slide
+                    direction="up"
+                    in={startBullets}
+                    appear={startBullets}
+                    // mountOnEnter
+                    // unmountOnExit
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout*0.5}
+                    onEntered={() => setStartBullets2(true)}
+                >
+                    <Typography variant="h3" color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={3}>
+                        Exceptional talent.
+                    </Typography>
+                </Slide>
+                <Slide
+                    direction="up"
+                    in={startBullets2}
+                    appear={startBullets2}
+                    // mountOnEnter
+                    // unmountOnExit
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout*0.5}
+                    onEntered={() => setStartBullets3(true)}
+                >
+                    <Typography variant="h3" color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={3}>
+                    Cost-effective service.
+                    </Typography>
+                </Slide>
+                <Slide
+                    direction="up"
+                    in={startBullets3}
+                    appear={startBullets3}
+                    // mountOnEnter
+                    // unmountOnExit
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout*0.5}
+                    onEntered={() => setStartBullets3(true)}
+                >
+                    <Typography variant="h3" color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={3}>
+                    Custom-tailored solutions.
+                    </Typography>
+                </Slide>
+            </Stack>
         </Stack>
     );
 };
