@@ -41,8 +41,8 @@ const Hero = () => {
                 timeout={timeout}
                 onEntered={() => setStartBullets(true)}
             >
-                <Typography fontSize={fontSize} fontWeight={fontWeight} color="text.primary">
-                    Legal Solutions for
+                <Typography fontSize={isMd ? fontSize : fontSize * 1.3} fontWeight={fontWeight} color="text.primary">
+                    {isMd ? 'Legal Solutions for' : 'Legal Solutions'}
                 </Typography>
             </Slide>
             <Slide
@@ -55,8 +55,8 @@ const Hero = () => {
             >
                 <Stack direction="row" alignItems="center" width="100%">
                     <Box flexGrow={1} />
-                    <Typography fontSize={fontSize} fontWeight={fontWeight} color="primary" align="right">
-                        Business
+                    <Typography fontSize={isMd ? fontSize : fontSize * 1.3} fontWeight={fontWeight} color="primary" align="right">
+                        {isMd ? 'Business' : 'for Business'}
                     </Typography>
                     <Typography fontSize={fontSize} fontWeight={fontWeight} color={theme.palette.white[100]} align="right" component="span">
                         .
@@ -126,15 +126,15 @@ const Hero = () => {
                     backgroundColor: theme.palette.primary.main, // customize background color
                     color: '#ffffff', // customize icon color
                     borderRadius: '50%', // make it circular
-                    width: isMd ? fontSize : fontSize*1.5, // adjust size as needed
-                    height: isMd ? fontSize : fontSize*1.5,
+                    width: isMd ? fontSize*1.75 : fontSize*2.0, // adjust size as needed
+                    height: isMd ? fontSize*1.75 : fontSize*2.0,
                     '&:hover': {
                         backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
                         boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
                     }
                 }}
             >
-                <SouthIcon sx={{ fontSize: fontSize * 0.5 }} />
+                <SouthIcon sx={{ fontSize: isMd ? fontSize * 0.75 : fontSize * 1 }} />
             </IconButton>
             </Stack>
 
