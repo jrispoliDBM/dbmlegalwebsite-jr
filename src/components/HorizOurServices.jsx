@@ -76,7 +76,7 @@ const OurServices = () => {
                 {services.map((service, i) =>
                     service.show ? (
                         <Grid item xs={12} sm={12} md={12} lg={3} key={i} >
-                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen}  />
+                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen} index={i} />
                         </Grid>
                     ) : (
                         <Box key={i}></Box>

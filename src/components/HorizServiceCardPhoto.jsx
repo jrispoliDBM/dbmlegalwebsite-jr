@@ -8,13 +8,13 @@ import { alpha, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 
-const HorizServiceCard = ({ service, handleClickOpen }) => {
+const HorizServiceCard = ({ service, handleClickOpen, index }) => {
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
 
-    const backgroundImageUrl = 'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1725069637/samples/coffee.jpg';
+    const backgroundImageUrls = ['https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193222/nyc_e3zbl0.jpg','https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193323/chicago_qh8qgi.jpg','https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193361/sanfrancisco_nl9opt.jpg','https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193416/seattle_bkgeat.jpg'];
     
 
     return (
@@ -25,10 +25,11 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                 overflow: 'hidden',
                 transition: 'box-shadow 0.3s ease-in-out',
                 backgroundColor: theme.palette.background.default,
-                backgroundImage: `url(${backgroundImageUrl})`,
+                backgroundImage: `url(${backgroundImageUrls[Math.min(index, backgroundImageUrls.length - 1)]})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
+                filter: 'grayscale(100%)', // Apply grayscale filter
                 height: '150px',
                 ':before': {
                     content: '""',
@@ -43,6 +44,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
                 },
                 ':hover': {
                     boxShadow: `0 8px 15px 8px ${alpha(theme.palette.white[500], 0.24)}`,
+                    filter: 'grayscale(0%)', // Remove grayscale filter on hover
                     ':before': {
                         backgroundColor: alpha(theme.palette.background.paper, 0.4) // Reduce overlay opacity on hover for brightness effect
                     }
