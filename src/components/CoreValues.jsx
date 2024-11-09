@@ -18,7 +18,7 @@ const CoreValues = () => {
     useEffect(() => {
         // Update font size based on window width
         const updateFontSize = () => {
-            setFontSize((window.innerWidth * 7) / 100); // Adjust percentage as needed
+            setFontSize((Math.min(10000,window.innerWidth * 7) / 100)); // Adjust percentage as needed
         };
         updateFontSize();
         window.addEventListener('resize', updateFontSize);
