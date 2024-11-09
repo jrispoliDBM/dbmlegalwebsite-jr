@@ -1,4 +1,4 @@
-import { Box, Slide, Stack } from '@mui/material';
+import { Box, Slide, Stack, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React, { useEffect, useState } from 'react';
@@ -7,6 +7,10 @@ const Hero = () => {
     const theme = useTheme();
     const [fontSize, setFontSize] = useState(30); // Initial default font size
     const containerRef = React.useRef(null);
+    const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+        defaultMatches: true
+    });
+
 
     useEffect(() => {
         const updateFontSize = () => {
@@ -68,7 +72,7 @@ const Hero = () => {
                     onEntered={() => setStartBullets2(true)}
                     container={containerRef.current}
                 >
-                    <Typography fontSize={fontSize * 0.5} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
+                    <Typography fontSize={isMd ? fontSize * 0.5 : fontSize * .8} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
                         Exceptional talent.
                     </Typography>
                 </Slide>
@@ -81,7 +85,7 @@ const Hero = () => {
                     onEntered={() => setStartBullets3(true)}
                     container={containerRef.current}
                 >
-                    <Typography fontSize={fontSize * 0.5} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
+                    <Typography fontSize={isMd ? fontSize * 0.5 : fontSize * .8} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
                         Cost-effective service.
                     </Typography>
                 </Slide>
@@ -93,7 +97,7 @@ const Hero = () => {
                     timeout={timeout * 0.5}
                     container={containerRef.current}
                 >
-                    <Typography fontSize={fontSize * 0.5} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
+                    <Typography fontSize={isMd ? fontSize * 0.5 : fontSize * .8} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize * 0.03}>
                         Custom-tailored solutions.
                     </Typography>
                 </Slide>

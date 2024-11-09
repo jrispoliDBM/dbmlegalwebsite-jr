@@ -90,7 +90,7 @@ const CoreValues = () => {
     return (
         <Stack
             ref={observerRef} // Attach ref for intersection observer
-            sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }}
+            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '100vh' }}
         >
             <Typography fontSize={fontSize * 0.7} fontWeight={fontWeight} gutterBottom align="center">
                 Our{' '}
