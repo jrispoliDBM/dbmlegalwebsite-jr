@@ -9,9 +9,7 @@ const DbmDivider = () => {
         defaultMatches: true
     });
 
-    return isMd ? (
-        <>
-            <Box
+    return  (<Box
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -24,15 +22,7 @@ const DbmDivider = () => {
                         width: '90%'
                     }}
                 />
-            </Box>
-
-            {/* <Box backgroundColor={theme.palette.black[100]} sx={{ height: 2, width: '80%' }}></Box> */}
-            {/* <Box backgroundColor={theme.palette.primary.light} sx={{ height: 10 }}></Box>
-            <Box backgroundColor={theme.palette.primary.main} sx={{ height: 10 }}></Box> */}
-        </>
-    ) : (
-        <></>
-    );
+            </Box>);
 };
 
 export default DbmDivider;
