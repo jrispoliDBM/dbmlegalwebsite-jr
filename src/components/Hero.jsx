@@ -12,7 +12,7 @@ const Hero = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
-    const fontSize = '7em';
+    const fontSize = isMd ? '7em' : '4em';
     const timeout = 1250;
     const fontWeight = 700;
     const [startBullets, setStartBullets] = React.useState(false);
