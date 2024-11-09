@@ -15,7 +15,7 @@ const Hero = () => {
 
     useEffect(() => {
         const updateFontSize = () => {
-            setFontSize((window.innerWidth * 7) / 100); // Adjust percentage as needed
+            setFontSize((Math.min(10000,window.innerWidth * 7) / 100)); // Adjust percentage as needed
         };
         updateFontSize();
         window.addEventListener('resize', updateFontSize);
@@ -63,7 +63,7 @@ const Hero = () => {
                     </Typography>
                 </Stack>
             </Slide>
-            <Stack alignItems="center" pt={fontSize * 0.15}>
+            <Stack alignItems="center" pt={fontSize * 0.1}>
                 <Slide
                     direction="up"
                     in={startBullets}
@@ -77,7 +77,7 @@ const Hero = () => {
                         fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
                         color={theme.palette.white[500]}
                         sx={{ fontWeight: 300 }}
-                        pb={fontSize * 0.03}
+                        pb={fontSize * 0.02}
                     >
                         Exceptional talent.
                     </Typography>
@@ -95,7 +95,7 @@ const Hero = () => {
                         fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
                         color={theme.palette.white[500]}
                         sx={{ fontWeight: 300 }}
-                        pb={fontSize * 0.03}
+                        pb={fontSize * 0.02}
                     >
                         Cost-effective service.
                     </Typography>

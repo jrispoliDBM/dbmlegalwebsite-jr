@@ -15,6 +15,7 @@ const HorizServiceCard = ({ service, handleClickOpen }) => {
     });
 
     const backgroundImageUrl = 'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1725069637/samples/coffee.jpg';
+    
 
     return (
         <Card
