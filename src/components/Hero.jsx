@@ -15,7 +15,10 @@ const Hero = () => {
     const isSm = useMediaQuery(theme.breakpoints.up('sm'), {
         defaultMatches: true
     });
-    const fontSize = isLg ? 112 : isMd ? 80 : isSm ? 50 : 40;
+    const isXs = useMediaQuery(theme.breakpoints.up('xs'), {
+        defaultMatches: true
+    });
+    const fontSize = isLg ? 112 : isMd ? 80 : isSm ? 50 : isXs? 40 : 30;
     const timeout = 1250;
     const fontWeight = 700;
     const [startBullets, setStartBullets] = React.useState(false);
@@ -64,8 +67,6 @@ const Hero = () => {
                     direction="up"
                     in={startBullets}
                     appear={startBullets}
-                    // mountOnEnter
-                    // unmountOnExit
                     easing={{ enter: theme.transitions.easing.easeIn }}
                     timeout={timeout*0.5}
                     onEntered={() => setStartBullets2(true)}
@@ -78,8 +79,6 @@ const Hero = () => {
                     direction="up"
                     in={startBullets2}
                     appear={startBullets2}
-                    // mountOnEnter
-                    // unmountOnExit
                     easing={{ enter: theme.transitions.easing.easeIn }}
                     timeout={timeout*0.5}
                     onEntered={() => setStartBullets3(true)}
@@ -92,8 +91,6 @@ const Hero = () => {
                     direction="up"
                     in={startBullets3}
                     appear={startBullets3}
-                    // mountOnEnter
-                    // unmountOnExit
                     easing={{ enter: theme.transitions.easing.easeIn }}
                     timeout={timeout*0.5}
                     onEntered={() => setStartBullets3(true)}
