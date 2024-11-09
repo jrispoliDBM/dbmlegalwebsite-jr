@@ -130,7 +130,7 @@ const ServiceHeader = ({ service }) => {
                             </Box>
                         </Box>
                     </Grid>
-                    {isMd && (
+                    {/* {isMd && (
                         <Grid item xs={12} md={4}>
                             <Box position="relative" height={1} width={1} pt={6}>
                                 <CldImage
@@ -145,7 +145,7 @@ const ServiceHeader = ({ service }) => {
                                 />
                             </Box>
                         </Grid>
-                    )}
+                    )} */}
                 </Grid>
             )}
         </Container>

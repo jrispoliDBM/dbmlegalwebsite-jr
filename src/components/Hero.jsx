@@ -29,6 +29,7 @@ const Hero = () => {
     const [startBullets, setStartBullets] = React.useState(false);
     const [startBullets2, setStartBullets2] = React.useState(false);
     const [startBullets3, setStartBullets3] = React.useState(false);
+    const [showArrow, setShowArrow] = React.useState(false);
 
     return (
         <Stack sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }} ref={containerRef}>
@@ -107,6 +108,7 @@ const Hero = () => {
                     easing={{ enter: theme.transitions.easing.easeIn }}
                     timeout={timeout * 0.5}
                     container={containerRef.current}
+                    onEntered={() => setShowArrow(true)}
                 >
                     <Typography
                         fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
@@ -119,7 +121,7 @@ const Hero = () => {
                 </Slide>
             </Stack>
             <Stack  pt={fontSize * 0.15}>
-            <IconButton
+            {showArrow && <IconButton
                 onClick={() => window.scrollBy({ top: window.innerHeight * 1.15, behavior: 'smooth' })}
                 sx={{
                     
@@ -135,7 +137,7 @@ const Hero = () => {
                 }}
             >
                 <SouthIcon sx={{ fontSize: isMd ? fontSize * 0.75 : fontSize * 1 }} />
-            </IconButton>
+            </IconButton>}
             </Stack>
 
         </Stack>
