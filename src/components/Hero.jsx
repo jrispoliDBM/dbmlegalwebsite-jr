@@ -1,18 +1,21 @@
-import React from 'react';
-import { Box, Stack, Slide } from '@mui/material';
+import { Box, Slide, Stack } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { alpha, useTheme } from '@mui/material/styles';
-import Container from 'components/core/Container';
-import DbmDivider from './DbmDivider';
+import React from 'react';
 
 const Hero = () => {
     const theme = useTheme();
+    const isLg = useMediaQuery(theme.breakpoints.up('lg'), {
+        defaultMatches: true
+    });
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
-    const fontSize = isMd ? '7em' : '4em';
+    const isSm = useMediaQuery(theme.breakpoints.up('sm'), {
+        defaultMatches: true
+    });
+    const fontSize = isLg ? 112 : isMd ? 80 : isSm ? 50 : 40;
     const timeout = 1250;
     const fontWeight = 700;
     const [startBullets, setStartBullets] = React.useState(false);
@@ -20,6 +23,7 @@ const Hero = () => {
     const [startBullets3, setStartBullets3] = React.useState(false);
     React.useEffect(() => {
         console.log('startBullets:', startBullets);
+        console.log(isMd, isSm);
     }, [startBullets]);
 
     return (
@@ -55,7 +59,7 @@ const Hero = () => {
                     </Typography>
                 </Stack>
             </Slide>
-            <Stack alignItems="center" pt={15}>
+            <Stack alignItems="center" pt={fontSize*.15}>
                 <Slide
                     direction="up"
                     in={startBullets}
@@ -66,7 +70,7 @@ const Hero = () => {
                     timeout={timeout*0.5}
                     onEntered={() => setStartBullets2(true)}
                 >
-                    <Typography variant="h3" color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={3}>
+                    <Typography fontSize={fontSize*.5} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize*.03}>
                         Exceptional talent.
                     </Typography>
                 </Slide>
@@ -80,7 +84,7 @@ const Hero = () => {
                     timeout={timeout*0.5}
                     onEntered={() => setStartBullets3(true)}
                 >
-                    <Typography variant="h3" color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={3}>
+                    <Typography fontSize={fontSize*.5} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize*.03}>
                     Cost-effective service.
                     </Typography>
                 </Slide>
@@ -94,7 +98,7 @@ const Hero = () => {
                     timeout={timeout*0.5}
                     onEntered={() => setStartBullets3(true)}
                 >
-                    <Typography variant="h3" color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={3}>
+                    <Typography fontSize={fontSize*.5} color={theme.palette.white[500]} sx={{ fontWeight: 300 }} pb={fontSize*.03}>
                     Custom-tailored solutions.
                     </Typography>
                 </Slide>
