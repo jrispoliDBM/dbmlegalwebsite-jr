@@ -21,6 +21,7 @@ const black = {
           800: "#0c0d0e",
           900: "#060607"
 }
+//#f0f0f0
 
 const white = {
           100: "#f8f9fa",

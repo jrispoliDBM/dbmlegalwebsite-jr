@@ -52,6 +52,7 @@ function Section({ section }) {
                                         fontWeight="bold"
                                         align="center"
                                         gutterBottom
+                                        color={theme.palette.black[500]}
                                     >
                                         {section.subtitle}
                                     </Typography>
@@ -67,7 +68,7 @@ function Section({ section }) {
                                     animation: `${slideIn} 1s ease-out forwards`
                                 }}
                             >
-                                <Typography variant="h2" fontWeight="bold" align="center" color="text.primary" sx={{
+                                <Typography variant="h2" fontWeight="bold" align="center" color={theme.palette.black[500]} sx={{
                                     textDecoration: 'underline',
                                     textDecorationColor: `${alpha(theme.palette.primary.main,1.0)}`,
                                     // textDecorationThickness: '0.2em'
@@ -86,10 +87,10 @@ function Section({ section }) {
                                 <Stack direction="row" spacing={1}>
                                     <CheckBoxIcon color="primary" />
                                     <Box>
-                                        <Typography variant="h6" fontWeight="bold">
+                                        <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
                                             {item.title}
                                         </Typography>
-                                        <Typography>{item.detailText}</Typography>
+                                        <Typography color={theme.palette.black[500]}>{item.detailText}</Typography>
                                     </Box>
                                 </Stack>
                             </Grid>
@@ -101,12 +102,12 @@ function Section({ section }) {
                         <Box pb={3} key={index}>
                             <Accordion>
                                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
-                                    <Typography variant="h6" fontWeight="bold">
+                                    <Typography color={theme.palette.black[100]} variant="h6" fontWeight="bold">
                                         {item.title}
                                     </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <Typography>{item.detailText}</Typography>
+                                    <Typography color={theme.palette.black[100]}>{item.detailText}</Typography>
                                 </AccordionDetails>
                             </Accordion>
                         </Box>
@@ -116,7 +117,7 @@ function Section({ section }) {
                         {section.items.map((item, index) => (
                             <Stack pb={1} key={index}>
                                 {item.headerBefore && (
-                                    <Typography variant="h5" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
+                                    <Typography color={theme.palette.black[500]} variant="h5" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
                                         {item.headerBefore}
                                     </Typography>
                                 )}
@@ -133,7 +134,7 @@ function Section({ section }) {
                                         >
                                             {item.title}
                                         </Typography>
-                                        <Typography pl={section.indentItems ? section.indentItems : 0}>{item.detailText}</Typography>
+                                        <Typography color={theme.palette.black[500]} pl={section.indentItems ? section.indentItems : 0}>{item.detailText}</Typography>
                                     </Stack>
                                 </Stack>
                             </Stack>
@@ -146,7 +147,7 @@ function Section({ section }) {
                             <Stack pb={1} key={index}>
                                 <Stack direction="row" spacing={1}>
                                     <CheckCircleIcon color="primary" />
-                                    <Typography variant="h6" fontWeight="bold">
+                                    <Typography variant="h6" fontWeight="bold" color={theme.palette.black[500]}>
                                         {item.title}
                                     </Typography>
                                 </Stack>
