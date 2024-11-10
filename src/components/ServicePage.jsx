@@ -16,9 +16,9 @@ const ServicePage = ({ service }) => {
                         gutterBottom
                         component="span"
                         color="primary"
-                        sx={{
-                            background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
-                        }}
+                        // sx={{
+                        //     background: `linear-gradient(180deg, transparent 82%, ${alpha(theme.palette.primary.light, 0.3)} 0%)`
+                        // }}
                     >
                         {service.title}.
                     </Typography>

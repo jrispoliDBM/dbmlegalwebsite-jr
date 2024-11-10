@@ -59,12 +59,12 @@ const ServiceHeader = ({ service }) => {
                                             color={'primary'}
                                             component={'span'}
                                             variant={'inherit'}
-                                            sx={{
-                                                background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                                                    theme.palette.primary.light,
-                                                    0.3
-                                                )} 0%)`
-                                            }}
+                                            // sx={{
+                                            //     background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                                            //         theme.palette.primary.light,
+                                            //         0.3
+                                            //     )} 0%)`
+                                            // }}
                                         >
                                             {service.headerSection.title}.
                                         </Typography>
@@ -88,12 +88,12 @@ const ServiceHeader = ({ service }) => {
                                             color={'primary'}
                                             component={'span'}
                                             variant={'inherit'}
-                                            sx={{
-                                                background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                                                    theme.palette.primary.light,
-                                                    0.3
-                                                )} 0%)`
-                                            }}
+                                            // sx={{
+                                            //     background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                                            //         theme.palette.primary.light,
+                                            //         0.3
+                                            //     )} 0%)`
+                                            // }}
                                         >
                                             {service.headerSection.preTitle
                                                 ? `${service.headerSection.preTitle} ${service.headerSection.title}`
