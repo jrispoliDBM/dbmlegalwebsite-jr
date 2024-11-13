@@ -18,7 +18,7 @@ const HorizServiceCard = ({ service, handleClickOpen, index }) => {
         'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193710/losangeles_iiih5p.png',//5
         'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195463/philly_rlt0hl.jpg',
         'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193727/houston_if6jzf.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194148/atlanta_ezb5oc.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194663/atlanta_ayepd9.jpg',
         'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194237/heidi-kaden-L_U4jhwZ6hY-unsplash_qzfcoa.jpg',//DC
         'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194404/weston-m-RzOUP6_Aa80-unsplash-san-antonio_nawb6q.jpg',//19
         'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194098/mIami_vbnx77.png',
