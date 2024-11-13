@@ -7,7 +7,7 @@ import SouthIcon from '@mui/icons-material/South';
 
 const Hero = () => {
     const theme = useTheme();
-    const [fontSize, setFontSize] = useState(30); // Initial default font size
+    const [fontSize, setFontSize] = useState(0); // Initial default font size
     const containerRef = React.useRef(null);
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
