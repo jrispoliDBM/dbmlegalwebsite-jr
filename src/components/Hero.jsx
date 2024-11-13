@@ -120,7 +120,7 @@ const Hero = () => {
                     </Typography>
                 </Slide>
             </Stack>
-            <Stack  pt={fontSize * 0.05}>
+            <Stack  pt={fontSize * 0.03}>
             {showArrow && <IconButton
                 onClick={() => window.scrollBy({ top: window.innerHeight * 1.15, behavior: 'smooth' })}
                 sx={{
