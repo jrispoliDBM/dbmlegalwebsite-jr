@@ -54,7 +54,7 @@ const Hero = () => {
                 easing={{ enter: theme.transitions.easing.easeIn }}
                 timeout={timeout}
             >
-                <Stack direction="row" alignItems="center" width="100%">
+                <Stack direction="row" alignItems="center" width="100%" >
                     <Box flexGrow={1} />
                     <Typography fontSize={isMd ? fontSize : fontSize * 1.3} fontWeight={fontWeight} color="primary" align="right">
                         {isMd ? 'Business' : 'for Business'}
@@ -64,7 +64,7 @@ const Hero = () => {
                     </Typography>
                 </Stack>
             </Slide>
-            <Stack alignItems="center" pt={fontSize * 0.05}>
+            <Stack alignItems="center" pt={fontSize * 0.01}>
                 <Slide
                     direction="up"
                     in={startBullets}
@@ -78,7 +78,7 @@ const Hero = () => {
                         fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
                         color={theme.palette.white[500]}
                         sx={{ fontWeight: 300 }}
-                        pb={fontSize * 0.02}
+                        //pb={fontSize * 0.02}
                     >
                         Exceptional talent.
                     </Typography>
@@ -96,7 +96,7 @@ const Hero = () => {
                         fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
                         color={theme.palette.white[500]}
                         sx={{ fontWeight: 300 }}
-                        pb={fontSize * 0.02}
+                        //pb={fontSize * 0.02}
                     >
                         Cost-effective service.
                     </Typography>
@@ -114,7 +114,7 @@ const Hero = () => {
                         fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
                         color={theme.palette.white[500]}
                         sx={{ fontWeight: 300 }}
-                        pb={fontSize * 0.03}
+                        //pb={fontSize * 0.03}
                     >
                         Custom-tailored solutions.
                     </Typography>
