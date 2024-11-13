@@ -128,8 +128,8 @@ const Hero = () => {
                     backgroundColor: theme.palette.primary.main, // customize background color
                     color: '#ffffff', // customize icon color
                     borderRadius: '50%', // make it circular
-                    width: isMd ? fontSize*1.5 : fontSize*2.0, // adjust size as needed
-                    height: isMd ? fontSize*1.5 : fontSize*2.0,
+                    width: isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
+                    height: isMd ? fontSize*1.5 : fontSize*1.75,
                     '&:hover': {
                         backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
                         boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
