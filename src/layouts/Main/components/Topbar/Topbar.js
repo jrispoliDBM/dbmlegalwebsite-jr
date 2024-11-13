@@ -20,7 +20,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
                 display={"flex"}
                 component="a"
                 href="/"
-                title="theFront"
+                title="DBM"
                 width={{ xs: 200, md: 240 }}
             >
                 <Box

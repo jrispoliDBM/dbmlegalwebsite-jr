@@ -3,18 +3,36 @@ export const coreValues = [
         title: 'Client Centric',
         // title: 'CLIENT CENTRIC',
         description:
-            "We prioritize your business needs. By listening and collaborating, we develop customized legal solutions to support your success. Anticipating your needs and delivering exceptional service is fundamental to building long-term relationships. We aim to become an extension of your business and work tirelessly to achieve your goals. With us by your side, you have a dedicated team looking out for your best interests."
+            "We build enduring relationships by deeply understanding each client's needs and working collaboratively to advance their unique objectives. Our commitment to trust, transparency, and attentive service makes us an integral partner in our clients' success."
     },
     {
         title: 'Legal & Business Expertise',
         // title: 'LEGAL & BUSINESS EXPERTISE',
         description:
-            'At DBM, we take pride in offering not only legal expertise but also business acumen. Our clients work directly with partner-level attorneys who bring extensive training and experience from top law firms and in-house legal departments. We believe that this high level of expertise is essential in providing our clients with the exceptional service and support they need to achieve their business goals.'
+            'Our team comprises partner-level attorneys with distinguished backgrounds in top law firms and in-house legal departments. This depth of experience ensures our clients receive high-caliber insights and solutions tailored to their business goals.'
     },
     {
         title: 'Value Driven',
         // title: 'VALUE DRIVEN',
         description:
-            `We're committed to delivering exceptional value to our clients. By leveraging technology and eliminating unnecessary overhead, we can provide substantial savings compared to traditional "Big Law" firms. Our focus on affordability means that you can receive the same high-quality legal services without sacrificing your bottom line. So you can focus on growing your business, while we take care of the legal details.`
+            `We leverage cutting-edge technology and eliminate unnecessary overhead to deliver exceptional legal services at a fraction of traditional costs. Our efficient, streamlined approach allows clients to focus on growth while we handle the legal complexities.`
     }
 ];
+
+// export const coreValues = [
+//     {
+//         title: 'Client-Centric',
+//         description:
+//             `We build enduring relationships by deeply understanding each client's needs and working collaboratively to advance their unique objectives. Our commitment to trust, transparency, and attentive service makes us an integral partner in our clients' success.`
+//     },
+//     {
+//         title: 'Legal & Business Expertise',
+//         description:
+//             `Our team comprises partner-level attorneys with distinguished backgrounds in top law firms and in-house legal departments. This depth of experience ensures our clients receive high-caliber insights and solutions tailored to their business goals.`
+//     },
+//     {
+//         title: 'Value Driven',
+//         description:
+//             `We leverage cutting-edge technology and eliminate unnecessary overhead to deliver exceptional legal services at a fraction of traditional costs. Our efficient, streamlined approach allows clients to focus on growth while we handle the legal complexities.`
+//     }
+// ];

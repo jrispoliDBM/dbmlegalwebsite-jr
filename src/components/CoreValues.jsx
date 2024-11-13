@@ -10,7 +10,7 @@ const CoreValues = () => {
         defaultMatches: true
     });
 
-    const [fontSize, setFontSize] = useState(30); // Initial default font size
+    const [fontSize, setFontSize] = useState(0); // Initial default font size
     const [isVisible, setIsVisible] = useState(false); // Track visibility of the component
 
     const observerRef = useRef(null); // Reference to the component for intersection observer
@@ -52,7 +52,7 @@ const CoreValues = () => {
     const [startBullets3, setStartBullets3] = useState(false);
 
     const coreValueComponent = (value, i) => (
-        <Grid item xs={12} sm={12} md={4} key={i}>
+        <Grid item xs={12} sm={12} md={12} key={i} pb={3}>
             <Box
                 component={Card}
                 href={''}
@@ -60,6 +60,7 @@ const CoreValues = () => {
                 width={1}
                 height={1}
                 sx={{
+                    backgroundColor: theme.palette.white[300],
                     boxShadow: theme.shadows[5],
                     borderRadius: 5,
                     border: `2px solid ${theme.palette.black[100]}`,
@@ -69,16 +70,16 @@ const CoreValues = () => {
                     '&:hover': {
                         transform: `translateY(-${theme.spacing(1 / 2)})`,
                         boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`,
-                    }
+                    },
                 }}
             >
                 <Box component={CardContent}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography align="center" fontSize={isMd ? fontSize*.2 : fontSize*.5} fontWeight={700} gutterBottom color={theme.palette.primary.main}>
+                            <Typography align="center" variant='h2' fontWeight={700} gutterBottom color={theme.palette.primary.main}>
                                 {value.title}
                             </Typography>
-                            <Typography align="center" fontSize={isMd ? fontSize * 0.16 : fontSize*.4} fontWeight={300} color="text.primary">
+                            <Typography align="center" variant='h4' fontWeight={300} color={theme.palette.black[500]}>
                                 {value.description}
                             </Typography>
                         </Grid>
@@ -94,9 +95,9 @@ const CoreValues = () => {
             ref={observerRef} // Attach ref for intersection observer
             sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '75vh' }}
         >
-            <Typography fontSize={fontSize * 0.7} fontWeight={fontWeight} gutterBottom align="center">
+            <Typography fontSize={fontSize} fontWeight={fontWeight} gutterBottom align="center">
                 Our{' '}
-                <Typography fontSize={fontSize * 0.7} fontWeight={fontWeight} gutterBottom component="span" color="primary">
+                <Typography fontSize={fontSize} fontWeight={fontWeight} gutterBottom component="span" color="primary">
                     Core Principles
                 </Typography>
                 <Typography color={theme.palette.white[100]} component={'span'} variant={'inherit'}>
