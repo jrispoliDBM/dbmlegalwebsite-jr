@@ -64,7 +64,7 @@ const Hero = () => {
                     </Typography>
                 </Stack>
             </Slide>
-            <Stack alignItems="center" pt={fontSize * 0.1}>
+            <Stack alignItems="center" pt={fontSize * 0.05}>
                 <Slide
                     direction="up"
                     in={startBullets}
@@ -120,7 +120,7 @@ const Hero = () => {
                     </Typography>
                 </Slide>
             </Stack>
-            <Stack  pt={fontSize * 0.1}>
+            <Stack  pt={fontSize * 0.05}>
             {showArrow && <IconButton
                 onClick={() => window.scrollBy({ top: window.innerHeight * 1.15, behavior: 'smooth' })}
                 sx={{
