@@ -50,10 +50,10 @@ const CoreValues = () => {
                 sx={{
                     boxShadow: theme.shadows[5],
                     borderRadius: 5,
-                    border: `2px solid ${theme.palette.black[100]}`,
+                    border: `2px solid ${theme.palette.white[600]}`,
                     textDecoration: 'none',
-                    boxShadow: `5px 5px 10px 0px ${theme.palette.white[700]}`,
-                    backgroundColor: theme.palette.white[500],
+                    boxShadow: `5px 5px 5px 0px ${theme.palette.white[600]}`,
+                    backgroundColor: theme.palette.black[900],
                     transition: 'all .2s ease-in-out',
                     '&:hover': {
                         transform: `translateY(-${theme.spacing(1 / 2)})`,
@@ -67,7 +67,7 @@ const CoreValues = () => {
                             <Typography align="center" variant='h3' gutterBottom color={theme.palette.primary.main}>
                                 {value.title}
                             </Typography>
-                            <Typography align="center" variant='h4' color={theme.palette.black[500]}>
+                            <Typography align="center" variant='h4' color={theme.palette.white[100]}>
                                 {value.description}
                             </Typography>
                         </Grid>
