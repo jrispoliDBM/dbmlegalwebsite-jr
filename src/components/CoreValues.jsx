@@ -10,20 +10,10 @@ const CoreValues = () => {
         defaultMatches: true
     });
 
-    const [fontSize, setFontSize] = useState(0); // Initial default font size
     const [isVisible, setIsVisible] = useState(false); // Track visibility of the component
-
     const observerRef = useRef(null); // Reference to the component for intersection observer
 
     useEffect(() => {
-        // Update font size based on window width
-        const updateFontSize = () => {
-            setFontSize((Math.min(10000,window.innerWidth * 7) / 100)); // Adjust percentage as needed
-        };
-        updateFontSize();
-        window.addEventListener('resize', updateFontSize);
-
-        // Set up the intersection observer
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -38,7 +28,6 @@ const CoreValues = () => {
         }
 
         return () => {
-            window.removeEventListener('resize', updateFontSize);
             if (observerRef.current) {
                 observer.unobserve(observerRef.current);
             }
@@ -49,10 +38,9 @@ const CoreValues = () => {
     const fontWeight = 700;
     const [startBullets, setStartBullets] = useState(false);
     const [startBullets2, setStartBullets2] = useState(false);
-    const [startBullets3, setStartBullets3] = useState(false);
 
     const coreValueComponent = (value, i) => (
-        <Grid item xs={12} sm={12} md={12} key={i} pb={3}>
+        <Grid item xs={12} sm={12} md={12} key={i}>
             <Box
                 component={Card}
                 href={''}
@@ -60,26 +48,26 @@ const CoreValues = () => {
                 width={1}
                 height={1}
                 sx={{
-                    backgroundColor: theme.palette.white[300],
                     boxShadow: theme.shadows[5],
                     borderRadius: 5,
                     border: `2px solid ${theme.palette.black[100]}`,
                     textDecoration: 'none',
                     boxShadow: `5px 5px 10px 0px ${theme.palette.white[700]}`,
+                    backgroundColor: theme.palette.white[500],
                     transition: 'all .2s ease-in-out',
                     '&:hover': {
                         transform: `translateY(-${theme.spacing(1 / 2)})`,
                         boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`,
-                    },
+                    }
                 }}
             >
                 <Box component={CardContent}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography align="center" variant='h2' fontWeight={700} gutterBottom color={theme.palette.primary.main}>
+                            <Typography align="center" variant='h2' gutterBottom color={theme.palette.primary.main}>
                                 {value.title}
                             </Typography>
-                            <Typography align="center" variant='h4' fontWeight={300} color={theme.palette.black[500]}>
+                            <Typography align="center" variant='h3' color={theme.palette.black[500]}>
                                 {value.description}
                             </Typography>
                         </Grid>
@@ -93,18 +81,21 @@ const CoreValues = () => {
     return (
         <Stack
             ref={observerRef} // Attach ref for intersection observer
-            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '75vh' }}
+            //sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '75vh' }}
+            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: `calc(100vh)`, paddingBottom: '100px' }}
+            p={2}
+            justifyContent="center"
         >
-            <Typography fontSize={fontSize} fontWeight={fontWeight} gutterBottom align="center">
+            <Typography variant='h1' gutterBottom align="center">
                 Our{' '}
-                <Typography fontSize={fontSize} fontWeight={fontWeight} gutterBottom component="span" color="primary">
+                <Typography variant='h1' gutterBottom component="span" color="primary">
                     Core Principles
                 </Typography>
                 <Typography color={theme.palette.white[100]} component={'span'} variant={'inherit'}>
                     .
                 </Typography>
             </Typography>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
             <Slide
                 direction="left"
                 in={isVisible} // Trigger slide when component is visible
@@ -113,6 +104,7 @@ const CoreValues = () => {
                 easing={{ enter: theme.transitions.easing.easeIn }}
                 timeout={timeout}
                 onEntered={() => setStartBullets(true)}
+
             >
                 {coreValueComponent(coreValues[0], 0)}
             </Slide>
@@ -134,7 +126,7 @@ const CoreValues = () => {
                 unmountOnExit
                 easing={{ enter: theme.transitions.easing.easeIn }}
                 timeout={timeout}
-                onEntered={() => setStartBullets3(true)}
+                //onEntered={() => setStartBullets3(true)}
             >
                 {coreValueComponent(coreValues[2], 0)}
             </Slide>

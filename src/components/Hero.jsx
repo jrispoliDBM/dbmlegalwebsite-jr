@@ -56,7 +56,7 @@ const Hero = ({ nextSectionRef }) => {
 
     return (
         <Stack
-            sx={{ backgroundColor: theme.palette.background.secondary, height: `calc(100vh)`, paddingBottom: '100px' }}
+            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: `calc(100vh)`, paddingBottom: '100px' }}
             ref={containerRef}
             justifyContent="center"
             p={2}
