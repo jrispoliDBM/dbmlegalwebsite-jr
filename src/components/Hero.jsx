@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import SouthIcon from '@mui/icons-material/South';
 
-const Hero = () => {
+const Hero = ({ nextSectionRef }) => {
     const theme = useTheme();
     const containerRef = React.useRef(null);
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -16,13 +16,54 @@ const Hero = () => {
     const [startBullets2, setStartBullets2] = React.useState(false);
     const [startBullets3, setStartBullets3] = React.useState(false);
     const [showArrow, setShowArrow] = React.useState(false);
+    const [slideIn, setSlideIn] = useState(false);
+
+    useEffect(() => {
+        setSlideIn(true);
+    }, []);
+
+    const handleScrollToNextSection = () => {
+        console.log('Next Section Ref:', nextSectionRef.current)
+        if (nextSectionRef.current) {
+            //nextSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+            smoothScrollTo(nextSectionRef.current, 2000);
+        }
+    };
+
+    function smoothScrollTo(element, duration = 1000) {
+        const startPosition = window.scrollY;
+        const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+    
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+    
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t + b;
+            t--;
+            return (-c / 2) * (t * (t - 2) - 1) + b;
+        }
+    
+        requestAnimationFrame(animation);
+    }
 
     return (
-        <Stack sx={{ backgroundColor: theme.palette.background.secondary, height: `calc(100vh - 100px)`, paddingBottom: '100px'  }} ref={containerRef} justifyContent='center' >
+        <Stack
+            sx={{ backgroundColor: theme.palette.background.secondary, height: `calc(100vh)`, paddingBottom: '100px' }}
+            ref={containerRef}
+            justifyContent="center"
+            p={2}
+        >
             <Slide
                 direction="right"
-                in={true}
-                appear={true}
+                in={slideIn}
                 mountOnEnter
                 unmountOnExit
                 easing={{ enter: theme.transitions.easing.easeIn }}
@@ -30,29 +71,29 @@ const Hero = () => {
                 onEntered={() => setStartBullets(true)}
             >
                 {/* <Typography fontSize={isMd ? fontSize : fontSize * 1.3} fontWeight={fontWeight} color="text.primary"> */}
-                <Typography variant='h1' color="text.primary">
+                <Typography variant="h1" color="text.primary">
                     {isMd ? 'Legal Solutions for' : 'Legal Solutions'}
                 </Typography>
             </Slide>
             <Slide
                 direction="left"
-                in={true}
+                in={slideIn}
                 mountOnEnter
                 unmountOnExit
                 easing={{ enter: theme.transitions.easing.easeIn }}
                 timeout={timeout}
             >
-                <Stack direction="row" alignItems="center" width="100%" >
+                <Stack direction="row" alignItems="center" width="100%">
                     <Box flexGrow={1} />
-                    <Typography variant='h1' color="primary" align="right">
+                    <Typography variant="h1" color="primary" align="right">
                         {isMd ? 'Business' : 'for Business'}
                     </Typography>
-                    <Typography variant='h1' color={theme.palette.white[100]} align="right" component="span">
+                    <Typography variant="h1" color={theme.palette.white[100]} align="right" component="span">
                         .
                     </Typography>
                 </Stack>
             </Slide>
-            <Stack alignItems="center" pt={1}>
+            <Stack alignItems="center" py={4} spacing={1}>
                 <Slide
                     direction="up"
                     in={startBullets}
@@ -63,11 +104,9 @@ const Hero = () => {
                     container={containerRef.current}
                 >
                     <Typography
-                        variant='h2'
-                        //fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
+                        variant="h2"
                         color={theme.palette.white[500]}
-                        sx={{ fontWeight: 300 }}
-                        //pb={fontSize * 0.02}
+                        align="center"
                     >
                         Exceptional talent.
                     </Typography>
@@ -82,11 +121,9 @@ const Hero = () => {
                     container={containerRef.current}
                 >
                     <Typography
-                    variant='h2'
-                        //fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
+                        variant="h2"
                         color={theme.palette.white[500]}
-                        sx={{ fontWeight: 300 }}
-                        //pb={fontSize * 0.02}
+                        align="center"
                     >
                         Cost-effective service.
                     </Typography>
@@ -101,37 +138,44 @@ const Hero = () => {
                     onEntered={() => setShowArrow(true)}
                 >
                     <Typography
-                    variant='h2'
-                        //fontSize={isMd ? fontSize * 0.5 : fontSize * 0.8}
+                        variant="h2"
                         color={theme.palette.white[500]}
-                        sx={{ fontWeight: 300 }}
-                        //pb={fontSize * 0.03}
+                        align="center"
                     >
                         Custom-tailored solutions.
                     </Typography>
                 </Slide>
             </Stack>
-            <Stack  pt={1}>
-            <IconButton
-                onClick={() => window.scrollBy({ top: window.innerHeight * 1.15, behavior: 'smooth' })}
-                sx={{
-                    
-                    backgroundColor: theme.palette.primary.main, // customize background color
-                    color: '#ffffff', // customize icon color
-                    borderRadius: '50%', // make it circular
-                    width: 100,//isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
-                    height: 100,//isMd ? fontSize*1.5 : fontSize*1.75,
-                    '&:hover': {
-                        backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
-                        boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
-                    },
-                    display: showArrow ? 'block' : 'none'
-                }}
-            >
-                <SouthIcon sx={{ fontSize: 50 }} />
-            </IconButton>
-            </Stack>
+            <Stack pt={1} sx={{height: '110px'}}>
+            <Slide
+                    direction="up"
+                    in={showArrow}
+                    appear={showArrow}
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout * 0.5}
+                    container={containerRef.current}
+                    onEntered={() => setShowArrow(true)}
+                >
 
+                <IconButton
+                    onClick={handleScrollToNextSection}
+                    sx={{
+                        backgroundColor: theme.palette.primary.main, // customize background color
+                        color: '#ffffff', // customize icon color
+                        borderRadius: '50%', // make it circular
+                        width: 100, //isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
+                        height: 100, //isMd ? fontSize*1.5 : fontSize*1.75,
+                        '&:hover': {
+                            backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
+                            boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
+                        },
+                        display: showArrow ? 'block' : 'none'
+                    }}
+                >
+                    <SouthIcon sx={{ fontSize: 50 }} />
+                </IconButton>
+                </Slide>
+            </Stack>
         </Stack>
     );
 };

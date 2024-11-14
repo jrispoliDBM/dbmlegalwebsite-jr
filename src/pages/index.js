@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
@@ -14,6 +14,7 @@ import DbmDivider from '@/components/DbmDivider';
 
 export default function Home() {
     const theme = useTheme();
+    const coreValuesRef = useRef(null);
 
     return (
         <>
@@ -25,15 +26,17 @@ export default function Home() {
             </Head>
 
             <Box sx={{ overflowX: 'hidden' }}>
+                
                 <Main bgcolor={'background.paper'}>
-
                     <Container id="core-values-container">
-                    <Hero />
+                        <Hero nextSectionRef={coreValuesRef} />
                     </Container>
                     <DbmDivider />
-                    <Container id="core-values-container">
-                        <CoreValues />
-                    </Container>
+                    <Box ref={coreValuesRef}>
+                        <Container>
+                            <CoreValues />
+                        </Container>
+                    </Box>
                     <DbmDivider />
                     <Box sx={{ backgroundColor: theme.palette.background.secondary }}>
                         <Container>
