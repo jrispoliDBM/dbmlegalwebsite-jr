@@ -67,7 +67,7 @@ const OurServices = () => {
                     </Typography>
                 </Typography>
                 <Stack pb={4}>
-                    <Typography variant={'h4'} component={'p'} color={'text.secondary'} align="center">
+                    <Typography variant={'h5'} component={'p'} color={'text.secondary'} align="center">
                         DBM provides a diverse range of business and transactional services across various practice areas to clients of all
                         sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline your
                         business and expert legal guidance to maximize your financial potential.

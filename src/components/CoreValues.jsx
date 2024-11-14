@@ -57,17 +57,17 @@ const CoreValues = () => {
                     transition: 'all .2s ease-in-out',
                     '&:hover': {
                         transform: `translateY(-${theme.spacing(1 / 2)})`,
-                        boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`,
+                        boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`
                     }
                 }}
             >
                 <Box component={CardContent}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography align="center" variant='h3' gutterBottom color={theme.palette.primary.main}>
+                            <Typography align="center" variant="h3" gutterBottom color={theme.palette.primary.main}>
                                 {value.title}
                             </Typography>
-                            <Typography align="center" variant='h4' color={theme.palette.white[100]}>
+                            <Typography align="center" variant="h5" color={theme.palette.white[100]}>
                                 {value.description}
                             </Typography>
                         </Grid>
@@ -82,15 +82,17 @@ const CoreValues = () => {
         <Stack
             ref={observerRef} // Attach ref for intersection observer
             //sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '75vh' }}
-            sx={{ backgroundColor: theme.palette.background.secondary, 
-                //minHeight: `calc(100vh)`, 
-                paddingBottom: '100px' }}
+            sx={{
+                backgroundColor: theme.palette.background.secondary,
+                //minHeight: `calc(100vh)`,
+                paddingBottom: '100px'
+            }}
             p={2}
             justifyContent="center"
         >
-            <Typography variant='h2' gutterBottom align="center">
+            <Typography variant="h2" gutterBottom align="center">
                 Our{' '}
-                <Typography variant='h2' gutterBottom component="span" color="primary">
+                <Typography variant="h2" gutterBottom component="span" color="primary">
                     Core Principles
                 </Typography>
                 <Typography color={theme.palette.white[100]} component={'span'} variant={'inherit'}>
@@ -98,40 +100,39 @@ const CoreValues = () => {
                 </Typography>
             </Typography>
             <Grid container spacing={4}>
-            <Slide
-                direction="left"
-                in={isVisible} // Trigger slide when component is visible
-                mountOnEnter
-                unmountOnExit
-                easing={{ enter: theme.transitions.easing.easeIn }}
-                timeout={timeout}
-                onEntered={() => setStartBullets(true)}
-
-            >
-                {coreValueComponent(coreValues[0], 0)}
-            </Slide>
-            <Slide
-                direction="left"
-                in={startBullets} // Trigger slide when component is visible
-                mountOnEnter
-                unmountOnExit
-                easing={{ enter: theme.transitions.easing.easeIn }}
-                timeout={timeout}
-                onEntered={() => setStartBullets2(true)}
-            >
-                {coreValueComponent(coreValues[1], 0)}
-            </Slide>
-            <Slide
-                direction="left"
-                in={startBullets2} // Trigger slide when component is visible
-                mountOnEnter
-                unmountOnExit
-                easing={{ enter: theme.transitions.easing.easeIn }}
-                timeout={timeout}
-                //onEntered={() => setStartBullets3(true)}
-            >
-                {coreValueComponent(coreValues[2], 0)}
-            </Slide>
+                <Slide
+                    direction="left"
+                    in={isVisible} // Trigger slide when component is visible
+                    mountOnEnter
+                    unmountOnExit
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout}
+                    onEntered={() => setStartBullets(true)}
+                >
+                    {coreValueComponent(coreValues[0], 0)}
+                </Slide>
+                <Slide
+                    direction="left"
+                    in={startBullets} // Trigger slide when component is visible
+                    mountOnEnter
+                    unmountOnExit
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout}
+                    onEntered={() => setStartBullets2(true)}
+                >
+                    {coreValueComponent(coreValues[1], 0)}
+                </Slide>
+                <Slide
+                    direction="left"
+                    in={startBullets2} // Trigger slide when component is visible
+                    mountOnEnter
+                    unmountOnExit
+                    easing={{ enter: theme.transitions.easing.easeIn }}
+                    timeout={timeout}
+                    //onEntered={() => setStartBullets3(true)}
+                >
+                    {coreValueComponent(coreValues[2], 0)}
+                </Slide>
             </Grid>
             {/* <Slide
                 direction="left"

@@ -29,13 +29,37 @@ const ServiceContactUs = ({ service }) => {
     return (
         <>
             {filteredTeam.length > 0 && (
-                <Card>
+                <Card
+                    sx={{
+                        borderRadius: 5,
+                        border: `2px solid ${theme.palette.white[600]}`,
+                        textDecoration: 'none',
+                        backgroundColor: theme.palette.black[900],
+                        backgroundImage: `linear-gradient(180deg, ${theme.palette.black[500]}, ${theme.palette.black[900]})` // Gradient background
+                        // transition: 'all .2s ease-in-out',
+                        // '&:hover': {
+                        //     transform: `translateY(-${theme.spacing(1 / 2)})`,
+                        //     boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`
+                        // }
+                    }}
+                >
                     <PersonDialog open={open} handleClose={() => setOpen(false)} person={selectedPerson} />
                     <Box p={2}>
-                        <Typography fontWeight="bold" variant={'h2'} color="primary" gutterBottom align="center">
+                        <Typography
+                            fontWeight="bold"
+                            variant={'h3'}
+                            color={theme.palette.white[100]}
+                            align="center"
+                            sx={{
+                                textDecoration: 'underline',
+                                textDecorationColor: `${alpha(theme.palette.primary.main, 1.0)}`
+                                // textDecorationThickness: '0.2em'
+                                //
+                            }}
+                        >
                             {`Our ${service.service} Team`}
                         </Typography>
-                        <Grid container spacing={2} justifyContent="center">
+                        <Grid container pt={2} spacing={2} justifyContent="center">
                             {filteredTeam.map((member, i) => (
                                 <Grid item xs={12} sm={3} key={i}>
                                     <PersonTile handleClickOpen={handleClickOpen} person={member} minHeight={250} />

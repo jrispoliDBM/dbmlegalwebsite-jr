@@ -14,6 +14,7 @@ import HealthcareMembershipPricing from './HealthcareMembershipPricing';
 
 function Section({ section }) {
     const theme = useTheme();
+    const textColor = theme.palette.white[100];
     const slideIn = keyframes`
   from {
     transform: translateX(-100%);
@@ -34,26 +35,21 @@ function Section({ section }) {
                                 sx={{
                                     animation: `${slideIn} 1s ease-out forwards`
                                 }}
+                                pt={2}
                             >
-                                <Typography variant="h2" fontWeight="bold" align="center" color="primary">
+                                <Typography variant="h3" align="center" color="primary">
                                     {section.title}
                                 </Typography>
                             </Box>
                         )}
-                        <Box pb={3}>
+                        <Box>
                             {section.subtitle && (
                                 <Box
-                                    sx={{
-                                        animation: `${slideIn} 1s ease-out forwards`
-                                    }}
+                                    // sx={{
+                                    //     animation: `${slideIn} 1s ease-out forwards`
+                                    // }}
                                 >
-                                    <Typography
-                                        variant={section.subtitle.length < 40 ? 'h3' : 'h4'}
-                                        fontWeight="bold"
-                                        align="center"
-                                        gutterBottom
-                                        color={theme.palette.black[500]}
-                                    >
+                                    <Typography variant={'h4'} align="center" color={textColor} >
                                         {section.subtitle}
                                     </Typography>
                                 </Box>
@@ -67,13 +63,20 @@ function Section({ section }) {
                                 sx={{
                                     animation: `${slideIn} 1s ease-out forwards`
                                 }}
+                                pt={2}
                             >
-                                <Typography variant="h2" fontWeight="bold" align="center" color={theme.palette.black[500]} sx={{
-                                    textDecoration: 'underline',
-                                    textDecorationColor: `${alpha(theme.palette.primary.main,1.0)}`,
-                                    // textDecorationThickness: '0.2em'
-                                    //
-                                }}>
+                                <Typography
+                                    variant="h3"
+                                    fontWeight="bold"
+                                    align="center"
+                                    color={textColor}
+                                    sx={{
+                                        textDecoration: 'underline',
+                                        textDecorationColor: `${alpha(theme.palette.primary.main, 1.0)}`
+                                        // textDecorationThickness: '0.2em'
+                                        //
+                                    }}
+                                >
                                     {section.title}
                                 </Typography>
                             </Box>
@@ -81,16 +84,16 @@ function Section({ section }) {
                     </>
                 )}
                 {section.sectionType === 'checkMarkList' && (
-                    <Grid container spacing={3} pt={2}>
+                    <Grid container spacing={3} p={3}>
                         {section.items.map((item, index) => (
                             <Grid item xs={12} md={6} key={index}>
                                 <Stack direction="row" spacing={1}>
                                     <CheckBoxIcon color="primary" />
                                     <Box>
-                                        <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
+                                        <Typography color={textColor} variant="h6" fontWeight="bold">
                                             {item.title}
                                         </Typography>
-                                        <Typography color={theme.palette.black[500]}>{item.detailText}</Typography>
+                                        <Typography color={textColor}>{item.detailText}</Typography>
                                     </Box>
                                 </Stack>
                             </Grid>
@@ -101,7 +104,7 @@ function Section({ section }) {
                     section.items.map((item, index) => (
                         <Box pb={3} key={index}>
                             <Accordion>
-                                <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+                                <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.white[100] }} />}>
                                     <Typography color={theme.palette.black[100]} variant="h6" fontWeight="bold">
                                         {item.title}
                                     </Typography>
@@ -115,9 +118,9 @@ function Section({ section }) {
                 {section.sectionType === 'catalog' && (
                     <>
                         {section.items.map((item, index) => (
-                            <Stack pb={1} key={index}>
+                            <Stack p={2} key={index}>
                                 {item.headerBefore && (
-                                    <Typography color={theme.palette.black[500]} variant="h5" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
+                                    <Typography color={textColor} variant="h4" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
                                         {item.headerBefore}
                                     </Typography>
                                 )}
@@ -134,7 +137,9 @@ function Section({ section }) {
                                         >
                                             {item.title}
                                         </Typography>
-                                        <Typography color={theme.palette.black[500]} pl={section.indentItems ? section.indentItems : 0}>{item.detailText}</Typography>
+                                        <Typography variant="h6" color={textColor} pl={section.indentItems ? section.indentItems : 0}>
+                                            {item.detailText}
+                                        </Typography>
                                     </Stack>
                                 </Stack>
                             </Stack>
@@ -142,18 +147,18 @@ function Section({ section }) {
                     </>
                 )}
                 {(section.sectionType === 'simpleList' || section.sectionType === 'simplelist') && (
-                    <>
+                    <Box p={2}>
                         {section.items.map((item, index) => (
-                            <Stack pb={1} key={index}>
+                            <Stack p={1} key={index}>
                                 <Stack direction="row" spacing={1}>
                                     <CheckCircleIcon color="primary" />
-                                    <Typography variant="h6" fontWeight="bold" color={theme.palette.black[500]}>
+                                    <Typography variant="h6" fontWeight="bold" color={textColor}>
                                         {item.title}
                                     </Typography>
                                 </Stack>
                             </Stack>
                         ))}
-                    </>
+                    </Box>
                 )}
                 {section.sectionType === 'general-counsel-pricing' && <GeneralCounselPricing />}
                 {section.sectionType === 'trademark-pricing' && <TrademarkPricing />}
@@ -161,8 +166,8 @@ function Section({ section }) {
                     <HealthcareMembershipPricing section={section} pricing={section.pricingTable} />
                 )}
                 {section.bottomCallToActionButton && (
-                    <Box pt={3} display="flex" justifyContent="center">
-                        <Button variant="contained" href={section.bottomCallToActionButton.route} m={10}>
+                    <Box py={3} display="flex" justifyContent="center">
+                        <Button variant="outlined" href={section.bottomCallToActionButton.route} m={10}>
                             <Typography>{section.bottomCallToActionButton.label}</Typography>
                         </Button>
                     </Box>

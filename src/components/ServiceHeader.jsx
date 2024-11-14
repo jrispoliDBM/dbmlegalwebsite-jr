@@ -32,81 +32,33 @@ const ServiceHeader = ({ service }) => {
     const iconSize = 400;
 
     return (
-        <Container maxWidth="lg">
+        <Box>
             {service && (
                 <Grid container spacing={isMd ? 4 : 2} pb={4}>
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12} md={12}>
                         <Box maxWidth={{ xs: 1, sm: '100%' }}>
-                            {isMd ? (
-                                <>
-                                    <Typography
-                                        variant="h1"
-                                        color="text.primary"
-                                        pb={2}
-                                        sx={{
-                                            fontWeight: 700
-                                        }}
-                                    >
-                                        {service.headerSection.preTitle && (
-                                            <>
-                                                <Typography variant="h1" mb={isMd ? -18 : -15}>
-                                                    {service.headerSection.preTitle}
-                                                </Typography>
-                                                <br />
-                                            </>
-                                        )}
-                                        <Typography
-                                            color={'primary'}
-                                            component={'span'}
-                                            variant={'inherit'}
-                                            // sx={{
-                                            //     background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                                            //         theme.palette.primary.light,
-                                            //         0.3
-                                            //     )} 0%)`
-                                            // }}
-                                        >
-                                            {service.headerSection.title}.
+                            <Typography
+                                variant="h2"
+                                color="text.primary"
+                                //pb={2}
+                            >
+                                {service.headerSection.preTitle && (
+                                    <>
+                                        <Typography variant="h2" mb={isMd ? -14 : -11}>
+                                            {service.headerSection.preTitle}
                                         </Typography>
-                                    </Typography>
-                                    <Typography variant="h3" fontWeight="bold" gutterBottom>
-                                        {service.headerSection.subtitle}
-                                    </Typography>
-                                </>
-                            ) : (
-                                <>
-                                    {' '}
-                                    <Typography
-                                        variant="h1"
-                                        color="text.primary"
-                                        pb={2}
-                                        sx={{
-                                            fontWeight: 700
-                                        }}
-                                    >
-                                        <Typography
-                                            color={'primary'}
-                                            component={'span'}
-                                            variant={'inherit'}
-                                            // sx={{
-                                            //     background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                                            //         theme.palette.primary.light,
-                                            //         0.3
-                                            //     )} 0%)`
-                                            // }}
-                                        >
-                                            {service.headerSection.preTitle
-                                                ? `${service.headerSection.preTitle} ${service.headerSection.title}`
-                                                : `${service.headerSection.title}`}
-                                        </Typography>
-                                    </Typography>
-                                    <Typography variant="h3" fontWeight="bold" gutterBottom>
-                                        {service.headerSection.subtitle}
-                                    </Typography>
-                                </>
-                            )}
+                                        <br />
+                                    </>
+                                )}
+                                <Typography color={'primary'} component={'span'} variant={'inherit'}>
+                                    {service.headerSection.title}.
+                                </Typography>
+                            </Typography>
+                            <Typography variant="h4" fontWeight="bold" gutterBottom>
+                                {service.headerSection.subtitle}
+                            </Typography>
                             <Box data-aos={'fade-right'}>
-                                <Typography variant="h6">{service.headerSection.detailText}</Typography>
+                                <Typography variant="h5" color={'text.secondary'} >{service.headerSection.detailText}</Typography>
                             </Box>
 
                             <Box
@@ -117,7 +69,7 @@ const ServiceHeader = ({ service }) => {
                             >
                                 <Button
                                     component={'a'}
-                                    variant="contained"
+                                    variant="outlined"
                                     color="primary"
                                     size="large"
                                     fullWidth={isMd ? false : true}
@@ -148,7 +100,7 @@ const ServiceHeader = ({ service }) => {
                     )} */}
                 </Grid>
             )}
-        </Container>
+        </Box>
     );
 };
 

@@ -27,7 +27,11 @@ const getTheme = (mode, themeToggler) =>
                     fontWeight: 700
                 },
                 h4: {
-                    fontSize: '1.4rem',
+                    fontSize: '2.25rem',
+                    fontWeight: 400
+                },
+                h5: {
+                    fontSize: '1.5rem',
                     fontWeight: 400
                 }
             },
