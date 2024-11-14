@@ -46,21 +46,16 @@ const OurTeam = () => {
     }, [team]);
 
     return (
-        <Box>
+        <Box sx={{ paddingBottom: '100px' }}>
             <Grid item xs={12} alignItems="center">
-                <Stack direction="row" spacing={2} justifyContent="center" data-aos={'fade-right'}>
+            <Stack direction="column" justifyContent="center" alignItems="center" p={2} >
                     <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
-                        <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
+                        <Typography variant={'h2'} align="center">
                             Our{' '}
                             <Typography
-                                fontWeight="bold"
                                 variant={'h2'}
-                                gutterBottom
                                 component="span"
                                 color="primary"
-                                // sx={{
-                                //     background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                // }}
                             >
                                 Team
                             </Typography>
@@ -68,15 +63,12 @@ const OurTeam = () => {
                                 color={theme.palette.white[100]}
                                 component={'span'}
                                 variant={'inherit'}
-                                // sx={{
-                                //     background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                // }}
                             >
                                 .
                             </Typography>
                             
                         </Typography>
-                        <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
+                        <Typography variant={'h4'} color={'text.secondary'} align="center">
                             Michelle D. Bergman and Maura Mandell co-founded DBM with the conviction that the conventional big law model
                             required significant reform. Considering the changing landscape of the legal profession and the evolving needs
                             of our clients, DBM has demonstrated that a distributive practice model not only serves the best interests of
