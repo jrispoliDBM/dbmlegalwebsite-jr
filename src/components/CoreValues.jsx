@@ -64,10 +64,10 @@ const CoreValues = () => {
                 <Box component={CardContent}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography align="center" variant='h2' gutterBottom color={theme.palette.primary.main}>
+                            <Typography align="center" variant='h3' gutterBottom color={theme.palette.primary.main}>
                                 {value.title}
                             </Typography>
-                            <Typography align="center" variant='h3' color={theme.palette.black[500]}>
+                            <Typography align="center" variant='h4' color={theme.palette.black[500]}>
                                 {value.description}
                             </Typography>
                         </Grid>
@@ -88,9 +88,9 @@ const CoreValues = () => {
             p={2}
             justifyContent="center"
         >
-            <Typography variant='h1' gutterBottom align="center">
+            <Typography variant='h2' gutterBottom align="center">
                 Our{' '}
-                <Typography variant='h1' gutterBottom component="span" color="primary">
+                <Typography variant='h2' gutterBottom component="span" color="primary">
                     Core Principles
                 </Typography>
                 <Typography color={theme.palette.white[100]} component={'span'} variant={'inherit'}>

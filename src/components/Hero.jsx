@@ -23,7 +23,7 @@ const Hero = ({ nextSectionRef }) => {
     }, []);
 
     const handleScrollToNextSection = () => {
-        console.log('Next Section Ref:', nextSectionRef.current)
+        console.log('Next Section Ref:', nextSectionRef.current);
         if (nextSectionRef.current) {
             //nextSectionRef.current.scrollIntoView({ behavior: 'smooth' });
             smoothScrollTo(nextSectionRef.current, 2000);
@@ -35,7 +35,7 @@ const Hero = ({ nextSectionRef }) => {
         const targetPosition = element.getBoundingClientRect().top + window.scrollY;
         const distance = targetPosition - startPosition;
         let startTime = null;
-    
+
         function animation(currentTime) {
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
@@ -43,14 +43,14 @@ const Hero = ({ nextSectionRef }) => {
             window.scrollTo(0, run);
             if (timeElapsed < duration) requestAnimationFrame(animation);
         }
-    
+
         function ease(t, b, c, d) {
             t /= d / 2;
             if (t < 1) return (c / 2) * t * t + b;
             t--;
             return (-c / 2) * (t * (t - 2) - 1) + b;
         }
-    
+
         requestAnimationFrame(animation);
     }
 
@@ -87,13 +87,13 @@ const Hero = ({ nextSectionRef }) => {
                     <Box flexGrow={1} />
                     <Typography variant="h1" color="primary" align="right">
                         {isMd ? 'Business' : 'for Business'}
-                    </Typography>
-                    <Typography variant="h1" color={theme.palette.white[100]} align="right" component="span">
-                        .
+                        <Typography variant="h1" color={theme.palette.white[100]} align="right" component="span">
+                            .
+                        </Typography>
                     </Typography>
                 </Stack>
             </Slide>
-            <Stack alignItems="center" py={4} spacing={1}>
+            <Stack alignItems="center" py={4} spacing={3}>
                 <Slide
                     direction="up"
                     in={startBullets}
@@ -103,11 +103,7 @@ const Hero = ({ nextSectionRef }) => {
                     onEntered={() => setStartBullets2(true)}
                     container={containerRef.current}
                 >
-                    <Typography
-                        variant="h2"
-                        color={theme.palette.white[500]}
-                        align="center"
-                    >
+                    <Typography variant="h3" color={theme.palette.white[500]} align="center">
                         Exceptional talent.
                     </Typography>
                 </Slide>
@@ -120,11 +116,7 @@ const Hero = ({ nextSectionRef }) => {
                     onEntered={() => setStartBullets3(true)}
                     container={containerRef.current}
                 >
-                    <Typography
-                        variant="h2"
-                        color={theme.palette.white[500]}
-                        align="center"
-                    >
+                    <Typography variant="h3" color={theme.palette.white[500]} align="center">
                         Cost-effective service.
                     </Typography>
                 </Slide>
@@ -137,17 +129,13 @@ const Hero = ({ nextSectionRef }) => {
                     container={containerRef.current}
                     onEntered={() => setShowArrow(true)}
                 >
-                    <Typography
-                        variant="h2"
-                        color={theme.palette.white[500]}
-                        align="center"
-                    >
+                    <Typography variant="h3" color={theme.palette.white[500]} align="center">
                         Custom-tailored solutions.
                     </Typography>
                 </Slide>
             </Stack>
-            <Stack pt={1} sx={{height: '110px'}}>
-            <Slide
+            <Stack pt={1} sx={{ height: '110px' }}>
+                <Slide
                     direction="up"
                     in={showArrow}
                     appear={showArrow}
@@ -156,24 +144,23 @@ const Hero = ({ nextSectionRef }) => {
                     container={containerRef.current}
                     onEntered={() => setShowArrow(true)}
                 >
-
-                <IconButton
-                    onClick={handleScrollToNextSection}
-                    sx={{
-                        backgroundColor: theme.palette.primary.main, // customize background color
-                        color: '#ffffff', // customize icon color
-                        borderRadius: '50%', // make it circular
-                        width: 100, //isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
-                        height: 100, //isMd ? fontSize*1.5 : fontSize*1.75,
-                        '&:hover': {
-                            backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
-                            boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
-                        },
-                        display: showArrow ? 'block' : 'none'
-                    }}
-                >
-                    <SouthIcon sx={{ fontSize: 50 }} />
-                </IconButton>
+                    <IconButton
+                        onClick={handleScrollToNextSection}
+                        sx={{
+                            backgroundColor: theme.palette.primary.main, // customize background color
+                            color: '#ffffff', // customize icon color
+                            borderRadius: '50%', // make it circular
+                            width: 100, //isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
+                            height: 100, //isMd ? fontSize*1.5 : fontSize*1.75,
+                            '&:hover': {
+                                backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
+                                boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
+                            },
+                            display: showArrow ? 'block' : 'none'
+                        }}
+                    >
+                        <SouthIcon sx={{ fontSize: 50 }} />
+                    </IconButton>
                 </Slide>
             </Stack>
         </Stack>

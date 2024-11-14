@@ -19,8 +19,8 @@ import {
     CardMedia
 } from '@mui/material';
 // import ServiceCard3 from './ServiceCard3';
-import ServiceCard3 from './HorizServiceCard';
-import ServiceDialog from './ServiceDialog';
+import ServiceCard3 from '../HorizServiceCard';
+import ServiceDialog from '../ServiceDialog';
 import useServices from 'hooks/useServices';
 
 const OurServices = () => {

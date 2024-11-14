@@ -18,8 +18,8 @@ import {
     Typography,
     CardMedia
 } from '@mui/material';
-import ServiceCard3 from './ServiceCard3';
-import ServiceDialog from './ServiceDialog';
+import ServiceCard3 from '../ServiceCard3';
+import ServiceDialog from '../ServiceDialog';
 import useServices from 'hooks/useServices';
 
 const OurServices = () => {
@@ -38,7 +38,7 @@ const OurServices = () => {
     };
 
     return (
-        <Stack direction="column" justifyContent="center" alignItems='center'>
+        <Stack direction="column" justifyContent="center" alignItems='center' p={2}>
             <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                 <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
                     Our{' '}

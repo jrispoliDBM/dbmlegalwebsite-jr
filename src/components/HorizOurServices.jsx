@@ -39,7 +39,7 @@ const OurServices = () => {
     };
 
     return (
-        <Stack direction="column" justifyContent="center" alignItems='center' >
+        <Stack direction="column" justifyContent="center" alignItems='center'p={2}>
             <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                 <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
                     Our{' '}
@@ -66,7 +66,7 @@ const OurServices = () => {
                                 .
                             </Typography>
                 </Typography>
-                <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
+                <Typography variant={'h4'} component={'p'} color={'text.secondary'} align="center">
                     DBM provides a diverse range of business and transactional services across various practice areas to clients of all
                     sizes. From entrepreneurs to Fortune 1000 companies, we offer comprehensive corporate services to streamline your
                     business and expert legal guidance to maximize your financial potential.

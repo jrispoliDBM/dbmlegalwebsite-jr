@@ -15,14 +15,18 @@ const getTheme = (mode, themeToggler) =>
                     fontWeight: 'medium'
                 },
                 h1: {
-                    fontSize: '6.5rem',
+                    fontSize: '6.25rem',
                     fontWeight: 700
                 },
                 h2: {
-                    fontSize: '3rem',
+                    fontSize: '4.5rem',
                     fontWeight: 700
                 },
                 h3: {
+                    fontSize: '3rem',
+                    fontWeight: 700
+                },
+                h4: {
                     fontSize: '1.4rem',
                     fontWeight: 400
                 }
