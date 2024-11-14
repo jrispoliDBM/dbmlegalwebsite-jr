@@ -48,12 +48,12 @@ const CoreValues = () => {
                 width={1}
                 height={1}
                 sx={{
-                    boxShadow: theme.shadows[5],
+                    //boxShadow: theme.shadows[5],
                     borderRadius: 5,
                     border: `2px solid ${theme.palette.white[600]}`,
                     textDecoration: 'none',
-                    boxShadow: `5px 5px 5px 0px ${theme.palette.white[600]}`,
                     backgroundColor: theme.palette.black[900],
+                    backgroundImage: `linear-gradient(180deg, ${theme.palette.black[500]}, ${theme.palette.black[900]})`, // Gradient background
                     transition: 'all .2s ease-in-out',
                     '&:hover': {
                         transform: `translateY(-${theme.spacing(1 / 2)})`,
