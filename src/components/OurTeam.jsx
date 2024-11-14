@@ -80,7 +80,7 @@ const OurTeam = () => {
                     </Box>
                 </Stack>
             </Grid>
-            <Grid item xs={12} md={5}  sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Grid item xs={12} md={12}  sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <FormControl fullWidth sx={{ mb: 5 }}>
                     <InputLabel id="veritcal-select-label">Practice Area</InputLabel>
                     <Select
@@ -91,7 +91,7 @@ const OurTeam = () => {
                         onChange={(e) => setSelectedVertical(e.target.value)}
                         items={verticals}
                         sx={{
-                            maxWidth: '400px',
+                            //maxWidth: '400px',
                             backgroundColor: '#3b3b3b', // slightly lighter than #292929 for contrast
                             color: '#ffffff',
                             '& .MuiSvgIcon-root': { color: '#ffffff' } // arrow color
