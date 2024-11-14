@@ -82,7 +82,9 @@ const CoreValues = () => {
         <Stack
             ref={observerRef} // Attach ref for intersection observer
             //sx={{ backgroundColor: theme.palette.background.secondary, minHeight: '75vh' }}
-            sx={{ backgroundColor: theme.palette.background.secondary, minHeight: `calc(100vh)`, paddingBottom: '100px' }}
+            sx={{ backgroundColor: theme.palette.background.secondary, 
+                //minHeight: `calc(100vh)`, 
+                paddingBottom: '100px' }}
             p={2}
             justifyContent="center"
         >
