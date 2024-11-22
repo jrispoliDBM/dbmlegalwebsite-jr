@@ -27,24 +27,30 @@ function PersonDialog({ open, handleClose, person }) {
 
 
     return (
-        <Dialog onClose={handleClose} open={open}>
+        <Dialog onClose={handleClose} open={open} maxWidth='sm' sx={{
+            '.MuiPaper-root': {
+                backgroundColor: theme.palette.common.white, // Set the dialog background to white
+                color: theme.palette.common.black, // Set the default text color to black
+                borderRadius: 5, // Set the dialog border radius to 2
+            },
+        }}>
             <DialogTitle>
                 <Stack direction={'row'} spacing={1} justifyContent="space-between" alignItems="center">
                     <Stack direction="column">
                         <Typography variant={'h5'} fontWeight={700} color="primary">
                             {person && person.name}
                         </Typography>
-                        <Typography gutterBottom>{person && person.title}</Typography>
+                        <Typography fontWeight='bold' gutterBottom>{person && person.title}</Typography>
                     </Stack>
                     <Stack direction="column">
                         <Avatar
                             src={person && person.image ? person.image : '/images/backgrounds/nordwood-themes-R53t-Tg6J4c-unsplash.jpg'}
                             sx={{
-                                width: 56,
-                                height: 56,
+                                width: 75,
+                                height: 75,
                                 border: '1px solid', // Adjust the border thickness as needed
-                                borderColor: theme.palette.grey[200], // Set the border color
-                                boxShadow: theme.shadows[6] // Choose a shadow from the theme's shadows array
+                                borderColor: theme.palette.grey[500], // Set the border color
+                                boxShadow: theme.shadows[2] // Choose a shadow from the theme's shadows array
                             }}
                             imgProps={{
                                 style: {
@@ -60,12 +66,12 @@ function PersonDialog({ open, handleClose, person }) {
                     <Stack direction="column" spacing={0}>
                         {person &&
                             person.bio.split('\n').map((paragraph, index) => (
-                                <Typography key={index} paragraph color="black">
+                                <Typography  key={index} paragraph color={theme.palette.black[500]}>
                                     {paragraph}
                                 </Typography>
                             ))}
                         {person && person.practiceAreas && person.practiceAreas.length > 0 && (
-                            <Typography variant={'h6'} fontWeight={700} color="black">
+                            <Typography variant={'h6'} fontWeight={700} color={theme.palette.black[500]}>
                                 {/* practiceAreas: {person.practiceAreas.join(', ')} */}
                                 Practice Areas:{' '}
                                 {person.practiceAreas.map((vertical, i) => {
