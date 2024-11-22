@@ -54,12 +54,14 @@ const Footer = () => {
                 </Box>
             </Stack>
 
-            <Stack direction={isMd ? "row" : 'column'} spacing={isMd ? 4 : 0}>
+            <Stack direction={isMd ? 'row' : 'column'} spacing={isMd ? 4 : 0}>
                 <Typography align={'center'} variant={'subtitle2'} color="text.secondary" gutterBottom>
                     &copy; Copyright {new Date().getFullYear()} DBM Legal Services LLC
                 </Typography>
                 <Typography align={'center'} variant={'subtitle2'} color="text.secondary" gutterBottom>
-                    (646) 809-8000
+                    <a href="tel:6468098000" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        (646) 809-8000
+                    </a>
                 </Typography>
             </Stack>
             <Stack direction="row">
