@@ -80,7 +80,7 @@ const HorizServiceCard = ({ service, handleClickOpen, index }) => {
                     <Typography
                         component="text"
                         color={'text.primary'}
-                        variant={'h4'}
+                        variant={isMd ? 'h5' : 'h4'}
                         fontWeight="bold"
                         //fontWeight={700}
                         gutterBottom
@@ -91,11 +91,13 @@ const HorizServiceCard = ({ service, handleClickOpen, index }) => {
                             display: 'inline-block',
                             cursor: 'default',
                             zIndex: 3,
+                            transition: 'transform 0.5s, font-size 0.5s',
                             ':hover': {
-                                transform: 'scale(1.05)',
+                                //transform: 'scale(1.05)',
+                                transform: 'scale(1.25)',
                                 // textDecoration: 'underline',
                                 // textDecorationColor: theme.palette.grey[900],
-                                color: theme.palette.primary.main,
+                                //color: theme.palette.primary.main,
                                 cursor: 'pointer'
                             }
                         }}
