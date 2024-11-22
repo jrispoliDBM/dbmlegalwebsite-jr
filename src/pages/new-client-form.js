@@ -15,7 +15,7 @@ export default function NewClientFormPage() {
                 <link rel="icon" href="/images/favicon.ico" />
             </Head>
 
-            <Box sx={{ overflowX: 'hidden' }}>
+            <Box sx={{ overflowX: 'hidden' }} pt={5}>
                 <Main bgcolor={'background.paper'}>
                     <Container>
                         <NewClientForm formSource='new-client-form' />

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import {
     TextField as MuiTextField,
@@ -28,6 +28,10 @@ export const TextField = ({ field, form, ...props }) => (
 
 export const FormSwitch = ({ field, label, form, ...props }) => {
     return <FormControlLabel control={<Switch {...field} {...props} />} label={label} />;
+};
+
+export const BlackFormSwitch = ({ field, label, form, ...props }) => {
+    return <FormControlLabel control={<Switch {...field} {...props} />} label={<Typography color='#111111'>{label}</Typography>} />;
 };
 
 export const FormSelect = ({ field, label, items, form, meta, hiddenValues = [], ...props }) => {
@@ -105,7 +109,31 @@ export const GenericRadioGroup = ({ activeStates, field, label, items, form, ...
         <FormControl>
             <RadioGroup {...field} {...props} id="genericRadioGroupType" row>
                 {activeStates.map((item) => (
-                    <FormControlLabel key={`${item}ActiveState`} value={item} control={<Radio />} label={item} />
+                    <FormControlLabel key={`${item}ActiveState`} value={item} control={<Radio />} label={item} {...props} />
+                ))}
+            </RadioGroup>
+        </FormControl>
+    );
+};
+
+export const BlackGenericRadioGroup = ({ activeStates, field, label, items, form, ...props }) => {
+    return (
+        <FormControl>
+            <RadioGroup {...field} {...props} id="genericRadioGroupType" row>
+                {activeStates.map((item) => (
+                    <FormControlLabel
+                        key={`${item}ActiveState`}
+                        value={item}
+                        control={<Radio sx={{ color: 'black', '&.Mui-checked': { color: 'black' } }} />}
+                        label={<Typography color='#111111'>{item}</Typography>}
+                        color='black'
+                        sx={{
+                            color: 'black', // Ensures the entire label text is black
+                            '&.Mui-checked': { color: 'black' }, // Ensures the radio button is black when selected,
+                            '&.MuiFormControlLabel-label': { color: 'black' } // Ensures the radio button is black when selected,    
+
+                        }}
+                    />
                 ))}
             </RadioGroup>
         </FormControl>
@@ -114,11 +142,11 @@ export const GenericRadioGroup = ({ activeStates, field, label, items, form, ...
 
 // Custom Phone Input component
 export const PhoneNumberInput = ({ field, form, label = 'Enter Cell Number' }) => {
-    const [focused, setFocused] = useState(false)
+    const [focused, setFocused] = useState(false);
     return (
         <TextField
-            label={field.value.length>0 ? label : <Box pl={focused? 0 : 10}>{label}</Box>}
-            placeholder=''
+            label={field.value.length > 0 ? label : <Box pl={focused ? 0 : 10}>{label}</Box>}
+            placeholder=""
             fullWidth
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
