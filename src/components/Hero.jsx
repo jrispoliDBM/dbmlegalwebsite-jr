@@ -11,6 +11,9 @@ const Hero = ({ nextSectionRef }) => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true
     });
+    const isXs = useMediaQuery(theme.breakpoints.down('sm'), {
+        defaultMatches: true
+    });
     const timeout = 1250;
     const [startBullets, setStartBullets] = React.useState(false);
     const [startBullets2, setStartBullets2] = React.useState(false);
@@ -150,8 +153,8 @@ const Hero = ({ nextSectionRef }) => {
                             backgroundColor: theme.palette.primary.main, // customize background color
                             color: '#ffffff', // customize icon color
                             borderRadius: '50%', // make it circular
-                            width: 100, //isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
-                            height: 100, //isMd ? fontSize*1.5 : fontSize*1.75,
+                            width: isXs ? 75 : 100, //isMd ? fontSize*1.5 : fontSize*1.75, // adjust size as needed
+                            height: isXs ? 75: 100, //isMd ? fontSize*1.5 : fontSize*1.75,
                             '&:hover': {
                                 backgroundColor: theme.palette.primary.dark, // slightly lighter on hover
                                 boxShadow: `5px 5px 5px 0px ${theme.palette.white[700]}`
@@ -159,7 +162,7 @@ const Hero = ({ nextSectionRef }) => {
                             display: showArrow ? 'block' : 'none'
                         }}
                     >
-                        <SouthIcon sx={{ fontSize: 50 }} />
+                        <SouthIcon sx={{ fontSize: isXs ? 35 : 50 }} />
                     </IconButton>
                 </Slide>
             </Stack>

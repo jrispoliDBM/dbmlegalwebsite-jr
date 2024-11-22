@@ -11,27 +11,28 @@ const HorizServiceCard = ({ service, handleClickOpen, index }) => {
     });
 
     const backgroundImageUrls = [
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193323/chicago_qh8qgi.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193361/sanfrancisco_nl9opt.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193416/seattle_bkgeat.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193710/losangeles_iiih5p.png',//5
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195463/philly_rlt0hl.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731193727/houston_if6jzf.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194663/atlanta_ayepd9.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194237/heidi-kaden-L_U4jhwZ6hY-unsplash_qzfcoa.jpg',//DC
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194404/weston-m-RzOUP6_Aa80-unsplash-san-antonio_nawb6q.jpg',//19
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194098/mIami_vbnx77.png',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194514/boston_b1y8ud.png',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194340/dallas_pzejy8.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194760/sandiego_ncoqm7.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731518210/denver_e6oeso.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194829/st.louis_c5ofza.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195012/austin_zuzluf.png',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195119/nashville_pevye3.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195326/indianapolis_mvrzzw.png',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195426/phoenix_vycjce.jpg',
-        'https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195495/lasvegas_ydxhza.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194663/atlanta_ayepd9.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731193323/chicago_qh8qgi.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731193361/sanfrancisco_nl9opt.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731193416/seattle_bkgeat.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731193710/losangeles_iiih5p.png',//5
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731195463/philly_rlt0hl.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731193727/houston_if6jzf.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194663/atlanta_ayepd9.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194237/heidi-kaden-L_U4jhwZ6hY-unsplash_qzfcoa.jpg',//DC
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194404/weston-m-RzOUP6_Aa80-unsplash-san-antonio_nawb6q.jpg',//19
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194098/mIami_vbnx77.png',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194514/boston_b1y8ud.png',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194340/dallas_pzejy8.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194760/sandiego_ncoqm7.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731518210/denver_e6oeso.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731194829/st.louis_c5ofza.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731195012/austin_zuzluf.png',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731195119/nashville_pevye3.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731195326/indianapolis_mvrzzw.png',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731195426/phoenix_vycjce.jpg',
+        'https://res.cloudinary.com/dtxp5tzr5/image/upload/c_thumb,w_200,g_face/v1731195495/lasvegas_ydxhza.jpg',
 
 
     ];

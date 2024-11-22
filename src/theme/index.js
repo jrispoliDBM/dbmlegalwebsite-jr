@@ -3,6 +3,8 @@ import { createTheme } from '@mui/material/styles';
 import shadows from './shadows';
 import { light, dark } from './palette';
 
+const defaultTheme = createTheme();
+
 const getTheme = (mode, themeToggler) =>
     responsiveFontSizes(
         createTheme({
@@ -16,23 +18,38 @@ const getTheme = (mode, themeToggler) =>
                 },
                 h1: {
                     fontSize: '6.25rem',
-                    fontWeight: 700
+                    fontWeight: 700,
+                    [defaultTheme.breakpoints.down('sm')]: {
+                        fontSize: '4rem'
+                    }
                 },
                 h2: {
                     fontSize: '4.5rem',
-                    fontWeight: 700
+                    fontWeight: 700,
+                    [defaultTheme.breakpoints.down('sm')]: {
+                        fontSize: '2.5rem'
+                    }
                 },
                 h3: {
                     fontSize: '3rem',
-                    fontWeight: 700
+                    fontWeight: 700,
+                    [defaultTheme.breakpoints.down('sm')]: {
+                        fontSize: '1.5rem'
+                    }
                 },
                 h4: {
                     fontSize: '2.25rem',
-                    fontWeight: 400
+                    fontWeight: 400,
+                    [defaultTheme.breakpoints.down('sm')]: {
+                        fontSize: '1.25rem'
+                    }
                 },
                 h5: {
                     fontSize: '1.5rem',
-                    fontWeight: 400
+                    fontWeight: 400,
+                    [defaultTheme.breakpoints.down('sm')]: {
+                        fontSize: '1rem'
+                    }
                 }
             },
             zIndex: {
