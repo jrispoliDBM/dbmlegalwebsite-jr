@@ -51,7 +51,7 @@ export default function Service() {
                 <Main bgcolor={'background.paper'}>
                     <Container>
                         {service && (
-                            <Stack pt={8}>
+                            <Stack p={1} pt={8}>
                                 <ServiceHeader service={service} />
                                 <Box backgroundColor={null}>
                                     <Container>

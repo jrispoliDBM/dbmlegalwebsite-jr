@@ -44,10 +44,10 @@ const ServiceHeader = ({ service }) => {
                             >
                                 {service.headerSection.preTitle && (
                                     <>
-                                        <Typography variant="h2" mb={isMd ? -14 : -11}>
+                                        <Typography variant="h2" mb={-2}>
                                             {service.headerSection.preTitle}
                                         </Typography>
-                                        <br />
+                                        {/* <br /> */}
                                     </>
                                 )}
                                 <Typography color={'primary'} component={'span'} variant={'inherit'}>
