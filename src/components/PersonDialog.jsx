@@ -99,7 +99,7 @@ function PersonDialog({ open, handleClose, person }) {
                         {person && person.linkedin && (
                             <Tooltip title={`${person.linkedin}`} arrow>
                                 <Link href={person.linkedin} passHref>
-                                    <IconButton component="a" color="primary">
+                                    <IconButton component="a" color="info">
                                         <LinkedInIcon fontSize="large" />
                                     </IconButton>
                                 </Link>
@@ -108,7 +108,7 @@ function PersonDialog({ open, handleClose, person }) {
                         {person && person.email && (
                             <Tooltip title={`${person.email}`} arrow>
                                 <Link href={`mailto:${person.email}`} passHref>
-                                    <IconButton component="a" color="primary">
+                                    <IconButton component="a" color="info">
                                         <EmailIcon fontSize="large" />
                                     </IconButton>
                                 </Link>
