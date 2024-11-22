@@ -5,7 +5,6 @@ import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-
 const Footer = () => {
     const theme = useTheme();
     const { mode } = theme.palette;
@@ -15,26 +14,30 @@ const Footer = () => {
     const iconWidth = 50;
     const iconHeight = 70;
 
-
     return (
-        <Stack direction={isMd ? "row" : 'column'} justifyContent="space-between" alignItems="center">
-            <Stack direction="row" spacing={3} alignItems='center'>
+        <Stack direction={isMd ? 'row' : 'column'} justifyContent="space-between" alignItems="center">
+            <Stack direction="row" spacing={3} alignItems="center">
                 <Box component="a" href="/" title="DBM Legal Services" width={{ xs: iconWidth, md: iconWidth }}>
                     <Box
                         component={'img'}
                         src={mode === 'light' ? '/images/dbmlegal.png' : '/images/dbmlegal.png'}
                         sx={{
                             height: iconHeight, // Set a fixed height for all images
-                            width: 'auto' // Maintain the aspect ratio 
+                            width: 'auto' // Maintain the aspect ratio
                         }}
                     />
                 </Box>
-                <Box component="a" href="https://www.dbmbusinessservices.com" title="DBM Business Services" width={{ xs: iconWidth, md: iconWidth }}>
+                <Box
+                    component="a"
+                    href="https://www.dbmbusinessservices.com"
+                    title="DBM Business Services"
+                    width={{ xs: iconWidth, md: iconWidth }}
+                >
                     <Box
                         component={'img'}
                         src={mode === 'light' ? '/images/dbmbusiness.png' : '/images/dbmbusiness.png'}
                         sx={{
-                            height:iconHeight, // Set a fixed height for all images
+                            height: iconHeight, // Set a fixed height for all images
                             width: 'auto' // Maintain the aspect ratio
                         }}
                     />
@@ -51,9 +54,14 @@ const Footer = () => {
                 </Box>
             </Stack>
 
-            <Typography align={'center'} variant={'subtitle2'} color="text.secondary" gutterBottom>
-                &copy; Copyright {new Date().getFullYear()} DBM Legal Services LLC
-            </Typography>
+            <Stack direction={isMd ? "row" : 'column'} spacing={isMd ? 4 : 0}>
+                <Typography align={'center'} variant={'subtitle2'} color="text.secondary" gutterBottom>
+                    &copy; Copyright {new Date().getFullYear()} DBM Legal Services LLC
+                </Typography>
+                <Typography align={'center'} variant={'subtitle2'} color="text.secondary" gutterBottom>
+                    (646) 809-8000
+                </Typography>
+            </Stack>
             <Stack direction="row">
                 <Link href="/disclaimer" passHref>
                     <Button sx={{ whiteSpace: 'nowrap' }}>Disclaimer</Button>
