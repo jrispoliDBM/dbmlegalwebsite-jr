@@ -68,7 +68,7 @@ const OurTeam = () => {
                             </Typography>
                             
                         </Typography>
-                        <Typography variant={'h4'} color={'text.secondary'} align="center">{`Michelle D. Bergman and Maura Mandell co-founded DBM to challenge the traditional big law model and meet the evolving needs of clients. Embracing a distributive practice model, DBM prioritizes flexibility, collaboration, and innovation, paving the way for a future-focused legal industry that better serves both clients and lawyers.`}
+                        <Typography variant={'h5'} color={'text.secondary'} align="center">{`Michelle D. Bergman and Maura Mandell co-founded DBM to challenge the traditional big law model and meet the evolving needs of clients. Embracing a distributive practice model, DBM prioritizes flexibility, collaboration, and innovation, paving the way for a future-focused legal industry that better serves both clients and lawyers.`}
                           
                         </Typography>
                     </Box>
