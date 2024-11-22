@@ -42,10 +42,25 @@ export default function Faqs() {
                             <Button href="/">Home</Button>
                         </Stack>
 
-                        <Card   sx= {{backgroundColor: theme.palette.grey[700]}}>
+                        <Card
+                            sx={{
+                                backgroundColor: theme.palette.common.white,
+                                borderRadius: 5,
+                                boxShadow: 5,
+                                marginTop: 5,
+                                marginBottom: 4
+                            }}
+                        >
                             <Stack direction="row" spacing={2} p={2}>
                                 <Stack>
-                                    <Typography fontWeight="bold" pb={1} variant={'h2'} gutterBottom align="center">
+                                    <Typography
+                                        fontWeight="bold"
+                                        pb={1}
+                                        variant={'h2'}
+                                        color={theme.palette.black[500]}
+                                        gutterBottom
+                                        align="center"
+                                    >
                                         Frequently Asked{' '}
                                         <Typography
                                             fontWeight="bold"
@@ -53,28 +68,28 @@ export default function Faqs() {
                                             gutterBottom
                                             component="span"
                                             color="primary"
-                                            sx={{
-                                                background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                                                    theme.palette.primary.light,
-                                                    0.3
-                                                )} 0%)`
-                                            }}
+                                            // sx={{
+                                            //     background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                                            //         theme.palette.primary.light,
+                                            //         0.3
+                                            //     )} 0%)`
+                                            // }}
                                         >
                                             Questions.
                                         </Typography>
                                     </Typography>
 
                                     {faqs.map((item, index) => (
-                                        <Box pb={3} key={index} >
+                                        <Box pb={3} key={index}>
                                             {item.headerBefore && (
                                                 <Typography variant="h5" fontWeight="bold" py={2}>
                                                     {item.headerBefore}
                                                 </Typography>
                                             )}
-                                            <Accordion>
-                                                <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+                                            <Accordion sx={{ backgroundColor: theme.palette.black[900], borderRadius: 5 }}>
+                                                <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{color: theme.palette.white[100]}} />}>
                                                     <Stack>
-                                                        <Typography variant="h6" fontWeight="bold">
+                                                        <Typography variant="h6">
                                                             {item.title}
                                                         </Typography>
                                                     </Stack>

@@ -31,8 +31,8 @@ export default function ContactUsPage() {
             <Box display={'flex'} alignItems={'center'} height={1} width={1}>
                 <Lottie
                     options={animationOptions}
-                    height={'90%'} // Set the height and width as per your requirements
-                    width={'100%'}
+                    height={'70%'} // Set the height and width as per your requirements
+                    width={'80%'}
                 />
             </Box>
         </Box>
@@ -95,7 +95,7 @@ export default function ContactUsPage() {
             </Typography>
             <Typography>To provide us more information about your legal needs, please complete our New Client Form.</Typography>
             <Box pt={1}>
-                <Button variant="contained" color="primary" href="new-client-form">
+                <Button variant="outlined" color="primary" href="new-client-form">
                     New Client Form
                 </Button>
             </Box>
