@@ -77,7 +77,23 @@ function ContactUs() {
                                 }}
                             />
                         </>
-                    ) : (
+                    ) : item.label === 'Phone' ? (
+                        <>
+                            {' '}
+                            <ListItemText
+                                primary={item.label}
+                                secondary={item.value}
+                                primaryTypographyProps={{
+                                    color: 'textPrimary'
+                                }}
+                                secondaryTypographyProps={{
+                                    component: 'a',
+                                    href: `tel:${item.value}`,
+                                    color: 'primary'
+                                }}
+                            />
+                        </>
+                    ) :  (
                         <ListItemText primary={item.label} secondary={item.value} />
                     )}
                 </Box>
