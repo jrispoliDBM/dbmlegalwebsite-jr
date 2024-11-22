@@ -148,6 +148,7 @@ export default function Service() {
                                                                             width: '100%',
                                                                             height: '100%',
                                                                             textAlign: 'center',
+                                                                            fontWeight: 'bold',
                                                                             color: theme.palette.white[500],
                                                                             borderColor: theme.palette.white[500]
                                                                         }}

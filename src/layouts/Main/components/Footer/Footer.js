@@ -18,7 +18,7 @@ const Footer = () => {
 
     return (
         <Stack direction={isMd ? "row" : 'column'} justifyContent="space-between" alignItems="center">
-            <Stack direction="row" spacing={2} alignItems='center'>
+            <Stack direction="row" spacing={3} alignItems='center'>
                 <Box component="a" href="/" title="DBM Legal Services" width={{ xs: iconWidth, md: iconWidth }}>
                     <Box
                         component={'img'}

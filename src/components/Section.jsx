@@ -102,15 +102,15 @@ function Section({ section }) {
                 )}
                 {section.sectionType === 'faq' &&
                     section.items.map((item, index) => (
-                        <Box pb={3} key={index}>
-                            <Accordion>
-                                <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.white[100] }} />}>
-                                    <Typography color={theme.palette.black[100]} variant="h6" fontWeight="bold">
+                        <Box pb={3} pt={1} key={index}>
+                            <Accordion sx={{backgroundColor: theme.palette.white[100]}}>
+                                <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}>
+                                    <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
                                         {item.title}
                                     </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <Typography color={theme.palette.black[100]}>{item.detailText}</Typography>
+                                    <Typography color={theme.palette.black[500]}>{item.detailText}</Typography>
                                 </AccordionDetails>
                             </Accordion>
                         </Box>
