@@ -54,6 +54,7 @@ const DbmDivider = () => {
                 unmountOnExit
                 easing={{ enter: theme.transitions.easing.easeIn }}
                 timeout={timeout}
+                container={observerRef.current}
             >
                 <Box
                     backgroundColor={theme.palette.black[100]}

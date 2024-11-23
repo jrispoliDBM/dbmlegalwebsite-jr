@@ -101,7 +101,7 @@ const CoreValues = () => {
             </Typography>
             <Grid container spacing={4}>
                 <Slide
-                    direction="left"
+                    direction="right"
                     in={isVisible} // Trigger slide when component is visible
                     mountOnEnter
                     unmountOnExit
@@ -112,7 +112,7 @@ const CoreValues = () => {
                     {coreValueComponent(coreValues[0], 0)}
                 </Slide>
                 <Slide
-                    direction="left"
+                    direction="right"
                     in={startBullets} // Trigger slide when component is visible
                     mountOnEnter
                     unmountOnExit
@@ -123,7 +123,7 @@ const CoreValues = () => {
                     {coreValueComponent(coreValues[1], 0)}
                 </Slide>
                 <Slide
-                    direction="left"
+                    direction="right"
                     in={startBullets2} // Trigger slide when component is visible
                     mountOnEnter
                     unmountOnExit
@@ -135,7 +135,7 @@ const CoreValues = () => {
                 </Slide>
             </Grid>
             {/* <Slide
-                direction="left"
+                direction="right"
                 in={isVisible} // Trigger slide when component is visible
                 mountOnEnter
                 unmountOnExit
