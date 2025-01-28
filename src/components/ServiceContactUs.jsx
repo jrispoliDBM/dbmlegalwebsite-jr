@@ -12,7 +12,7 @@ const ServiceContactUs = ({ service }) => {
     const [filteredTeam, setFilteredTeam] = useState([]);
     useEffect(() => {
         //console.log(team);
-        setFilteredTeam(team.filter((member) => member.practiceAreas.includes(service.tag)));
+        setFilteredTeam(team.filter((member) => member.showOnLegal && member.practiceAreas.includes(service.tag)));
     }, [team]);
 
     //console.log(service);
