@@ -33,8 +33,9 @@ const SidebarNav = () => {
     }, []);
 
     useEffect(() => {
+        console.log('servicePages', services);
         let pages = [];
-        services.map((service) => {
+        services.filter(service=>service.showOnMainPage && service.showOnMainPage != "false").map((service) => {
             pages.push({ title: service.service, href: `/${service.route}` });
         });
         //sort pages by title

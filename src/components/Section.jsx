@@ -45,11 +45,11 @@ function Section({ section }) {
                         <Box>
                             {section.subtitle && (
                                 <Box
-                                    // sx={{
-                                    //     animation: `${slideIn} 1s ease-out forwards`
-                                    // }}
+                                // sx={{
+                                //     animation: `${slideIn} 1s ease-out forwards`
+                                // }}
                                 >
-                                    <Typography variant={'h4'} align="center" color={textColor} >
+                                    <Typography variant={'h4'} align="center" color={textColor}>
                                         {section.subtitle}
                                     </Typography>
                                 </Box>
@@ -64,6 +64,7 @@ function Section({ section }) {
                                     animation: `${slideIn} 1s ease-out forwards`
                                 }}
                                 pt={2}
+                                pb={2}
                             >
                                 <Typography
                                     variant="h3"
@@ -103,7 +104,7 @@ function Section({ section }) {
                 {section.sectionType === 'faq' &&
                     section.items.map((item, index) => (
                         <Box pb={3} pt={1} key={index}>
-                            <Accordion sx={{backgroundColor: theme.palette.white[100]}}>
+                            <Accordion sx={{ backgroundColor: theme.palette.white[100] }}>
                                 <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}>
                                     <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
                                         {item.title}
@@ -137,9 +138,20 @@ function Section({ section }) {
                                         >
                                             {item.title}
                                         </Typography>
-                                        <Typography variant="h6" color={textColor} pl={section.indentItems ? section.indentItems : 0}>
-                                            {item.detailText}
-                                        </Typography>
+                                        {item.detailText &&
+                                            item.detailText.split('\n').map((text, index) => (
+                                                <Stack direction="row" spacing={1}>           
+                                                {text.trim() && item.useCheckmarkBeforeDetailTextParagraphs && <CheckCircleIcon color="primary" />     }
+                                                <Typography
+                                                    variant="h6"
+                                                    color={textColor}
+                                                    gutterBottom
+                                                    pl={section.indentItems ? section.indentItems : 0}
+                                                >
+                                                    {text}
+                                                </Typography>
+                                                </Stack>
+                                            ))}
                                     </Stack>
                                 </Stack>
                             </Stack>

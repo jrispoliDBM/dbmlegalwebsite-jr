@@ -36,7 +36,8 @@ const HealthcareMembershipPricing = ({ section }) => {
         'complianceDocumentStorage',
         'complianceBusinessLicensePermitRenewal',
         'complianceCorporateTransparencyActPortal',
-        'monthlyCost'
+        'monthlyCost',
+        'subscriptionRate'
     ];
     const rowHeadings = [
         'Billable Attorney Time Per Month',
@@ -45,7 +46,8 @@ const HealthcareMembershipPricing = ({ section }) => {
         'Compliance Document Storage',
         'Compliance Business License Permit Renewal',
         'Compliance Corporate Transparency Act Portal',
-        'Monthly Cost'
+        'Monthly Cost',
+        'Subscription Rate'
     ];
 
     const formattedNote = (note) => {
@@ -76,7 +78,7 @@ const HealthcareMembershipPricing = ({ section }) => {
     return (
         <Box>
             <Stack>
-                <TableContainer component={Paper} elevation={0}>
+                <TableContainer  elevation={0}>
                     <Table aria-label="caption table" sx={{ minWidth: 600 }}>
                         <TableHead>
                             <TableRow>
@@ -114,7 +116,7 @@ const HealthcareMembershipPricing = ({ section }) => {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                <Stack pt={2}>
+                <Stack pt={2} pb={2}>
                     {section.notes.map((note, i) => (
                         <Typography key={i} variant="caption">{formattedNote(note)}</Typography>
                     ))}

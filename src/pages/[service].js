@@ -89,7 +89,27 @@ export default function Service() {
                                 {service.callToAction && (
                                     <Container>
                                         <Box p={2} pb={4}>
-                                            <Card p={4}>
+                                            <Card
+                                                p={4}
+                                                sx={{
+                                                    // boxShadow: `5px 5px 10px 0px ${theme.palette.white[700]}`, // Change the shadow color here
+                                                    // border: `3px solid ${theme.palette.grey[100]}`, // Add border here
+                                                    // padding: theme.spacing(2), // Optional: add padding
+                                                    // borderRadius: theme.shape.borderRadius, // Optional: adjust borde,
+                                                    // backgroundColor: theme.palette.white[300],
+                                                    borderRadius: 5,
+                                                    border: `2px solid ${theme.palette.white[600]}`,
+                                                    textDecoration: 'none',
+                                                    backgroundColor: theme.palette.black[900],
+                                                    backgroundImage: `linear-gradient(180deg, ${theme.palette.black[500]}, ${theme.palette.black[900]})`, // Gradient background
+                                                    transition: 'all .2s ease-in-out',
+                                                    '&:hover': {
+                                                        transform: `translateY(-${theme.spacing(1 / 2)})`,
+                                                        boxShadow: `10px 10px 10px 0px ${theme.palette.white[700]}`
+                                                    }
+                                                    //boxShadow: `0px 4px 10px ${theme.palette.primary.dark}` // Change the shadow color here
+                                                }}
+                                            >
                                                 <Grid spacing={2} container p={2}>
                                                     <Grid item xs={12} md={4}>
                                                         <Box pt={4}>

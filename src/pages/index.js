@@ -11,6 +11,7 @@ import OurServices from 'components/HorizOurServices';
 import OurTeam from 'components/OurTeam';
 import CoreValues from 'components/CoreValues';
 import DbmDivider from '@/components/DbmDivider';
+import PuzzleAnimation from '@/components/Puzzle';
 
 export default function Home() {
     const theme = useTheme();
@@ -29,6 +30,7 @@ export default function Home() {
                 
                 <Main bgcolor={'background.paper'}>
                     <Container id="core-values-container">
+                            {/* <PuzzleAnimation/> */}
                         <Hero nextSectionRef={coreValuesRef} />
                     </Container>
                     <DbmDivider />
