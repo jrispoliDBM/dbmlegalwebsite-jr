@@ -140,7 +140,7 @@ function Section({ section }) {
                                         </Typography>
                                         {item.detailText &&
                                             item.detailText.split('\n').map((text, index) => (
-                                                <Stack direction="row" spacing={1}>           
+                                                <Stack direction="row" spacing={1} key={index}>           
                                                 {text.trim() && item.useCheckmarkBeforeDetailTextParagraphs && <CheckCircleIcon color="primary" />     }
                                                 <Typography
                                                     variant="h6"

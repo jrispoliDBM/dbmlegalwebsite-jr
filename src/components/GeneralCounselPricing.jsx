@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@mui/material/styles';
+import { useTheme, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -68,13 +68,23 @@ const PricingCompareTable = () => {
     const theme = useTheme();
     return (
         <Box>
-            <Box marginBottom={4}>
-                <Typography fontWeight={700} variant={'h4'}>
+            <Box marginBottom={4} pt={2}>
+                <Typography
+                    fontWeight={700}
+                    variant={'h3'}
+                    align="center"
+                    sx={{
+                        textDecoration: 'underline',
+                        textDecorationColor: `${alpha(theme.palette.primary.main, 1.0)}`
+                        // textDecorationThickness: '0.2em'
+                        //
+                    }}
+                >
                     Transparent Flat-Fee Packages
                 </Typography>
             </Box>
             <Box>
-                <TableContainer component={Paper} elevation={0}>
+                <TableContainer elevation={0}>
                     <Table aria-label="caption table" sx={{ minWidth: 600 }}>
                         <caption>* The monthly price is determined based on the standard hourly rate of your selected attorney.</caption>
                         <TableHead>
@@ -152,7 +162,7 @@ const PricingCompareTable = () => {
                                 <TableCell />
                                 {pricing.map((item, i) => (
                                     <TableCell align="center" key={i}>
-                                        <Button size={'large'} variant= 'contained' href='contact-us'>
+                                        <Button size={'large'} variant="contained" href="contact-us">
                                             Get {item.title}
                                         </Button>
                                     </TableCell>
