@@ -118,7 +118,7 @@ function Section({ section }) {
                     ))}
                 {section.sectionType === 'catalog' && (
                     <>
-                        {section.items.map((item, index) => (
+                        {section.items.sort((a,b)=>a.order < b.order).map((item, index) => (
                             <Stack p={2} key={index}>
                                 {item.headerBefore && (
                                     <Typography color={textColor} variant="h4" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
