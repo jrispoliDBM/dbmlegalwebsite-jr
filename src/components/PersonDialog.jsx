@@ -40,7 +40,8 @@ function PersonDialog({ open, handleClose, person }) {
                         <Typography variant={'h5'} fontWeight={700} color="primary">
                             {person && person.name}
                         </Typography>
-                        <Typography fontWeight='bold' gutterBottom>{person && person.title}</Typography>
+                        <Typography fontWeight='bold' >{person && person.title}</Typography>
+                        {person && person.subtitle && <Typography fontWeight='bold' variant='caption' gutterBottom>{person && person.subtitle}</Typography>}
                     </Stack>
                     <Stack direction="column">
                         <Avatar
