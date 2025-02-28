@@ -15,6 +15,23 @@ const sortedTeam = (team) => {
         }
         if (!a.founder && !b.founder) {
             // sort by title ordered by Senior Partner, Senior Counsel, Of Counsel, then alphabetical
+            if (a.title === 'Managing Partner' && b.title !== 'Managing Partner') {
+                return -1;
+            }
+            if (a.title !== 'Managing Partner' && b.title === 'Managing Partner') {
+                return 1;
+            }
+            if (a.title === 'Managing Partner' && b.title === 'Managing Partner') {
+                if (aLastName < bLastName) {
+                    return -1;
+                }
+                if (aLastName > bLastName) {
+                    return 1;
+                }
+                if (aLastName === bLastName) {
+                    return a.name < b.name ? -1 : 1;
+                }
+            }
             if (a.title === 'Senior Partner' && b.title !== 'Senior Partner') {
                 return -1;
             }
