@@ -12,16 +12,14 @@ export default class MyDocument extends Document {
                     <meta charSet="utf-8" />
                     {/* <link rel="shortcut icon" href="/favicon.icos" /> */}
                     <meta name="theme-color" content="#ffffff" />
+                    
                     <meta
                         name="description"
                         content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
                     />
                     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
-          rel="stylesheet"
-        ></link>
+                    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet"></link>
                     {/* <link rel="icon" href="/favicon.ico" /> */}
                     {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
