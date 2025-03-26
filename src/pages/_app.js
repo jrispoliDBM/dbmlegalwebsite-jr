@@ -22,9 +22,26 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:url" content="https://www.dbmlegalservices.com/" />
                 <meta property="og:title" content="DBM Legal Services" />
                 <meta property="og:description" content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate." />
-                <meta property="og:image" content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731195463/philly_rlt0hl.jpg" />
+                <meta property="og:image" content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="DBM Legal Services" />
+                <meta
+                    name="twitter:description"
+                    content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
+                />
+                <meta
+                    name="twitter:image"
+                    content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg"
+                />
+
+                {/* LinkedIn specific tags */}
+                <meta property="linkedin:owner" content="DBM Legal Services, LLC" />
+                <meta name="author" content="Lloyd Mandell" />
+                <meta name="image" property="og:image" content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg" />
+
 
                 <link rel="icon" href="/images/favicon.ico" />
                 <link rel="shortcut icon" href="/images/favicon.ico" />
