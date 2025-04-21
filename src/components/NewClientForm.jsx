@@ -172,6 +172,24 @@ export default function NewClientForm({ formSource }) {
                             }}
                         />
                     </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Field
+                            component={TextField}
+                            name="pointOfContactLinkedIn"
+                            id="pointOfContactLinkedIn"
+                            type="email"
+                            placeholder="LinkedIn Profile URL"
+                            label="LinkedIn Profile URL"
+                            required
+                            fullWidth
+                            InputProps={{
+                                style: { color: 'black' } // Ensure text entered by the user is black
+                            }}
+                            InputLabelProps={{
+                                style: { color: 'black' } // Ensure label text is black
+                            }}
+                        />
+                    </Grid>
                     {isMd && <Grid item md={6} />}
                     <Grid item xs={12}>
                         <Stack>
@@ -320,6 +338,22 @@ export default function NewClientForm({ formSource }) {
                             id="businessWebsite"
                             placeholder="Website"
                             label="Website"
+                            fullWidth
+                            InputProps={{
+                                style: { color: 'black' } // Ensure text entered by the user is black
+                            }}
+                            InputLabelProps={{
+                                style: { color: 'black' } // Ensure label text is black
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Field
+                            component={TextField}
+                            name="businessLinkedIn"
+                            id="businessLinkedIn"
+                            placeholder="LinkedIn Profile URL"
+                            label="LinkedIn Profile URL"
                             fullWidth
                             InputProps={{
                                 style: { color: 'black' } // Ensure text entered by the user is black
