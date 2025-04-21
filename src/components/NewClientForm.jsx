@@ -180,7 +180,6 @@ export default function NewClientForm({ formSource }) {
                             type="email"
                             placeholder="LinkedIn Profile URL"
                             label="LinkedIn Profile URL"
-                            required
                             fullWidth
                             InputProps={{
                                 style: { color: 'black' } // Ensure text entered by the user is black
