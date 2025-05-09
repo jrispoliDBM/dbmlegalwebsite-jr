@@ -10,9 +10,8 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta charSet="utf-8" />
-                    {/* <link rel="shortcut icon" href="/favicon.icos" /> */}
                     <meta name="theme-color" content="#ffffff" />
-                    
+
                     <meta
                         name="description"
                         content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
@@ -20,6 +19,21 @@ export default class MyDocument extends Document {
                     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet"></link>
+                    {/* Open Graph / Facebook */}
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content="https://www.dbmlegalservices.com/" />
+                    <meta property="og:title" content="DBM Legal Services" />
+                    <meta
+                        property="og:description"
+                        content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
+                    />
+                    <meta
+                        property="og:image"
+                        content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg"
+                    />
+                    <meta property="og:image:width" content="1200" />
+                    <meta property="og:image:height" content="630" />
+
                     {/* <link rel="icon" href="/favicon.ico" /> */}
                     {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
