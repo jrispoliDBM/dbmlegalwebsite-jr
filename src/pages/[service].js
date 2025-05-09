@@ -41,16 +41,43 @@ export default function Service() {
     return (
         <>
             <Head>
-                <title>{'DBM Legal Services'}</title>
-                <meta name="description" content={'DBM Legal Services'} />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/images/favicon.ico" />
 
-                {/* Open Graph / LinkedIn */}
+                {/* Open Graph / Facebook */}
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={'DBM Legal Services Service Page'} />
-                <meta property="og:description" content={'DBM Legal Services'} />
+                <meta property="og:url" content="https://www.dbmlegalservices.com/" />
+                <meta property="og:title" content="DBM Legal Services Service Page" />
+                <meta
+                    property="og:description"
+                    content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
+                />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg"
+                />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
                 <meta property="article:published_time" content="2025-05-09T00:00:00.000Z" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="DBM Legal Services" />
+                <meta
+                    name="twitter:description"
+                    content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
+                />
+                <meta
+                    name="twitter:image"
+                    content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg"
+                />
+
+                {/* LinkedIn specific tags */}
+                <meta property="linkedin:owner" content="DBM Legal Services, LLC" />
+                <meta name="author" content="Lloyd Mandell" />
+                <meta
+                    name="image"
+                    property="og:image"
+                    content="https://res.cloudinary.com/dtxp5tzr5/image/upload/v1731194126/luca-bravo-_QdFx92MO2U-unsplash_izhjmo.jpg"
+                />
+
             </Head>
 
             <Box>
