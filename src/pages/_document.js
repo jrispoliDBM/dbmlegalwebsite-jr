@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
                     {/* Open Graph / Facebook */}
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://www.dbmlegalservices.com/" />
-                    <meta property="og:title" content="DBM Legal Services" />
+                    <meta property="og:title" content="DBM Legal Services Document Service Page" />
                     <meta
                         property="og:description"
                         content="DBM Legal Services, LLC is a full-service law firm that provides legal services to individuals and businesses in the areas of business law, estate planning, and real estate."
