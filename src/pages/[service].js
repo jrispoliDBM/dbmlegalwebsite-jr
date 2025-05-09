@@ -41,10 +41,20 @@ export default function Service() {
     return (
         <>
             <Head>
-                <title>DBM Legal Services</title>
-                <meta name="description" content="DBM Legal Services" />
+                <title>{service ? `${service.name} - DBM Legal Services` : 'DBM Legal Services'}</title>
+                <meta name="description" content={service?.description || 'DBM Legal Services'} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/images/favicon.ico" />
+
+                {/* Open Graph / LinkedIn */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={service ? `${service.name} - DBM Legal Services` : 'DBM Legal Services'} />
+                <meta property="og:description" content={service?.description || 'DBM Legal Services'} />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={service ? `${service.name} - DBM Legal Services` : 'DBM Legal Services'} />
+                <meta name="twitter:description" content={service?.description || 'DBM Legal Services'} />
             </Head>
 
             <Box>
