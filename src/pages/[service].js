@@ -48,7 +48,7 @@ export default function Service() {
 
                 {/* Open Graph / LinkedIn */}
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={'DBM Legal Services'} />
+                <meta property="og:title" content={'DBM Legal Services Service Page'} />
                 <meta property="og:description" content={'DBM Legal Services'} />
                 <meta property="article:published_time" content="2025-05-09T00:00:00.000Z" />
             </Head>
