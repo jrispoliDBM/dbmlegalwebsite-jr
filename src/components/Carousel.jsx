@@ -238,7 +238,7 @@ const Carousel = ({ data = [] }) => {
                                 fontFamily: 'serif'
                             }}
                         >
-                            "
+                            &ldquo;
                         </Typography>
 
                         {/* Quote Text */}
