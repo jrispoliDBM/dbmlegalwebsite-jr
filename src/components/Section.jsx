@@ -11,6 +11,7 @@ import { keyframes } from '@emotion/react';
 import GeneralCounselPricing from './GeneralCounselPricing';
 import TrademarkPricing from './TrademarkPricing';
 import HealthcareMembershipPricing from './HealthcareMembershipPricing';
+import Carousel from './Carousel';
 
 function Section({ section }) {
     const theme = useTheme();
@@ -100,6 +101,9 @@ function Section({ section }) {
                             </Grid>
                         ))}
                     </Grid>
+                )}
+                {section.sectionType === 'carousel' && (
+                    <Carousel data={section.items} />
                 )}
                 {section.sectionType === 'faq' &&
                     section.items.sort((a,b)=>a.order - b.order).map((item, index) => (

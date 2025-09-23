@@ -1,9 +1,8 @@
 import { connectToDatabase } from 'lib/mongodb';
 import { ObjectId } from 'mongodb';
 
-const collectionName = 'services'
-const databaseName = 'dbm_legal_external'
-
+const collectionName = 'services';
+const databaseName = 'dbm_legal_external';
 
 export default async function handler(req, res) {
     try {
@@ -13,16 +12,24 @@ export default async function handler(req, res) {
         console.log('Error', error);
         res.status(500).send(error.message);
     }
-};
+}
 
 export const fix = async function () {
     const startTime = new Date();
     let results = [];
     let data = await getData();
-   
+
     for (const item of data) {
-        item.tag = item.service
-        let result = await putData(item);
+        let headerSection = item.headerSection;
+        let newItem = {
+            ...item,
+            headerSection: {
+                ...headerSection,
+                contactUsLabel: 'Contact Us',
+                contactUsLink: '/contact-us'
+            }
+        };
+        let result = await putData(newItem);
         results.push(result);
     }
     return { elapsed: `${(new Date() - startTime) / 1000} seconds`, result: results }; // ,'Extract': extract[2300]};//,'Filtered Data': filteredData[2300]};

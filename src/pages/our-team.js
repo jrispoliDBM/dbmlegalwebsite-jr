@@ -14,23 +14,19 @@ export default function ContactUs() {
         defaultMatches: true
     });
 
-
     return (
         <Box sx={{ overflowX: 'hidden' }}>
             <Main bgcolor={'background.paper'}>
-            <Container>
-            <Stack direction="row" spacing={2} justifyContent="flex-end">
+                <Container>
+                    <Stack direction="row" spacing={2} justifyContent="flex-end">
                         <Button href="/">Home</Button>
                     </Stack>
 
-                        <OurTeam />
-                        <Stack direction="row" spacing={2} justifyContent="flex-end">
+                    <OurTeam />
+                    <Stack direction="row" spacing={2} justifyContent="flex-end">
                         <Button href="/">Home</Button>
                     </Stack>
-
-                    </Container>
-
-
+                </Container>
             </Main>
         </Box>
     );

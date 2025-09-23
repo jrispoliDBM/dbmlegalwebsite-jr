@@ -73,10 +73,10 @@ const ServiceHeader = ({ service }) => {
                                     color="primary"
                                     size="large"
                                     fullWidth={isMd ? false : true}
-                                    href={'/contact-us'}
+                                    href={service.headerSection.contactUsLink}
                                     // sx={{backgroundColor: theme.palette.primary.dark}}
                                 >
-                                    Contact Us
+                                    {service.headerSection.contactUsLabel}
                                 </Button>
                                 <Box marginTop={{ xs: 2, sm: 0 }} marginLeft={{ sm: 2 }} width={{ xs: '100%', md: 'auto' }}></Box>
                             </Box>
