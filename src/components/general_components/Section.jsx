@@ -17,6 +17,7 @@ import CheckMarkList from '../section_components/CheckMarkList';
 import Faq from '../section_components/Faq';
 import Catalog from '../section_components/Catalog';
 import SimpleList from '../section_components/SimpleList';
+import AboutTeamMember from '../section_components/AboutTeamMember';
 
 function Section({ section }) {
     const theme = useTheme();
@@ -37,6 +38,7 @@ function Section({ section }) {
                 {section.sectionType === 'healthcare-membership-pricing' && (
                     <HealthcareMembershipPricing section={section} pricing={section.pricingTable} />
                 )}
+                {section.sectionType === 'aboutTeamMember' && <AboutTeamMember section={section} />}
                 {section.bottomCallToActionButton && (
                     <Box py={3} display="flex" justifyContent="center">
                         <Button variant="outlined" href={section.bottomCallToActionButton.route} m={10}>

@@ -1,29 +1,15 @@
-import React, { useState } from 'react';
-import {
-    Box,
-    Button,
-    Grid,
-    Stack,
-    Typography,
-    Dialog,
-    DialogContent,
-    DialogActions,
-    DialogContentText,
-    DialogTitle,
-    Avatar
-} from '@mui/material';
-import { alpha, useTheme } from '@mui/material/styles';
-import PersonDialog from './PersonDialog';
-import Image from 'next/image';
+import { Box, Button, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { CldImage } from 'next-cloudinary';
 
-function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = '', fontVariant2 = 'caption' }) {
+function PersonTile({ person, handleClickOpen, moreText = 'More', useGradient = true, minHeight = 500, fontVariant = '', fontVariant2 = 'caption', titleOnly = false, addBottomPadding = 0 }) {
     const theme = useTheme();
 
     return (
         <Box
             position="relative"
             minHeight={minHeight}
+            pb={addBottomPadding}
             width={1}
             sx={{
                 justifyContent: 'center',
@@ -50,7 +36,8 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
                     alt="alt"
                     style={{
                         objectFit: 'contain',
-                        transition: 'transform .7s ease !important'
+                        transition: 'transform .7s ease !important',
+                        paddingBottom: addBottomPadding
                     }}
                 />
 
@@ -67,15 +54,20 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
             </Box>
             <Box
                 position={'absolute'}
-                bottom={0}
+                bottom={addBottomPadding}
                 left={0}
                 right={0}
                 padding={3}
                 sx={{
-                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000)`
+                    backgroundImage: useGradient ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000)` : 'none'
                 }}
             >
                 <Stack direction={'row'} spacing={1} justifyContent="space-between">
+                    {titleOnly ? <Stack direction="column">
+                        <Typography variant={fontVariant} fontWeight={700} sx={{ color:theme.palette.primary.main }}>
+                            {person.title}
+                        </Typography>
+                    </Stack> : (
                     <Stack direction="column">
                         <Typography variant={fontVariant} fontWeight={700} sx={{ color: 'common.white' }}>
                             {person.name}
@@ -88,7 +80,7 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
                         >
                             {person.title}
                         </Typography>
-                    </Stack>
+                    </Stack>)}
                     {person.bio && (
                         <Stack direction="column" justifyContent="center">
                             <Button
@@ -98,7 +90,7 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
                                 size="small"
                                 onClick={() => handleClickOpen(person)}
                             >
-                                More
+                                {moreText}
                             </Button>
                         </Stack>
                     )}

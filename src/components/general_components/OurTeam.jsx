@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { alpha, useTheme } from '@mui/material/styles';
+import { FormControl, InputLabel, MenuItem, Select, Stack } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import Avatar from '@mui/material/Avatar';
+import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
-import { Backdrop, Button, CardActions, CardContent, Dialog, Stack, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import useTeam from 'hooks/useTeam';
+import { useEffect, useState } from 'react';
 import TeamGrid from './TeamGrid2';
 
 const OurTeam = () => {
