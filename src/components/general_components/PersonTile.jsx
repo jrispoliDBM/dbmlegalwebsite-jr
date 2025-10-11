@@ -54,7 +54,7 @@ function PersonTile({ person, handleClickOpen, moreText = 'More', useGradient = 
             </Box>
             <Box
                 position={'absolute'}
-                bottom={addBottomPadding}
+                bottom={0}
                 left={0}
                 right={0}
                 padding={3}

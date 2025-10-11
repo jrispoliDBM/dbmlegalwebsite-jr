@@ -12,10 +12,11 @@ const AboutTeamMember = ({ section }) => {
         console.log(teamMember);
     }, [team]);
     if (!teamMember) return null;
+    if (!teamMember.alternateBio) return null;
     return (
         <Grid container spacing={2} pb={2}>
             <Grid item xs={12} md={7}>
-                {teamMember.bio.split('\n').map((paragraph, index) => (
+                {teamMember.alternateBio.split('\n').map((paragraph, index) => (
                     <Typography key={index} variant="body1" pb={1}>
                         {paragraph}
                     </Typography>
@@ -31,8 +32,8 @@ const AboutTeamMember = ({ section }) => {
                     }}
                     moreText="Contact"
                     useGradient={false}
-                    minHeight={500}
-                    addBottomPadding={25}
+                    minHeight={300}
+                    addBottomPadding={15}
                     titleOnly={true}
                     fontVariant="h5"
                     fontVariant2="caption"
