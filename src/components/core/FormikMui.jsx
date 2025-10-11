@@ -31,7 +31,7 @@ export const FormSwitch = ({ field, label, form, ...props }) => {
 };
 
 export const BlackFormSwitch = ({ field, label, form, ...props }) => {
-    return <FormControlLabel control={<Switch {...field} {...props} />} label={<Typography color='#111111'>{label}</Typography>} />;
+    return <FormControlLabel control={<Switch {...field} {...props} />} label={<Typography color="#111111">{label}</Typography>} />;
 };
 
 export const FormSelect = ({ field, label, items, form, meta, hiddenValues = [], ...props }) => {
@@ -125,13 +125,12 @@ export const BlackGenericRadioGroup = ({ activeStates, field, label, items, form
                         key={`${item}ActiveState`}
                         value={item}
                         control={<Radio sx={{ color: 'black', '&.Mui-checked': { color: 'black' } }} />}
-                        label={<Typography color='#111111'>{item}</Typography>}
-                        color='black'
+                        label={<Typography color="#111111">{item}</Typography>}
+                        color="black"
                         sx={{
                             color: 'black', // Ensures the entire label text is black
                             '&.Mui-checked': { color: 'black' }, // Ensures the radio button is black when selected,
-                            '&.MuiFormControlLabel-label': { color: 'black' } // Ensures the radio button is black when selected,    
-
+                            '&.MuiFormControlLabel-label': { color: 'black' } // Ensures the radio button is black when selected,
                         }}
                     />
                 ))}
@@ -164,7 +163,7 @@ export const PhoneNumberInput = ({ field, form, label = 'Enter Cell Number' }) =
 };
 
 // Custom component to integrate PhoneInput with MUI TextField
-const PhoneInputCustom = ({ inputRef, ...props }) => {
+const PhoneInputCustom = React.forwardRef(function PhoneInputCustom(props, ref) {
     return (
         <PhoneInput
             country={'us'}
@@ -177,7 +176,8 @@ const PhoneInputCustom = ({ inputRef, ...props }) => {
             }}
             buttonStyle={{ border: 'none', background: 'none' }}
             dropdownStyle={{ width: 'auto' }}
+            inputProps={{ ref }}
             {...props}
         />
     );
-};
+});

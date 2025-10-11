@@ -6,18 +6,7 @@ import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
-import {
-    Backdrop,
-    Button,
-    CardActions,
-    CardContent,
-    Dialog,
-    Stack,
-    FormControl,
-    InputLabel,
-    MenuItem,
-    Select
-} from '@mui/material';
+import { Backdrop, Button, CardActions, CardContent, Dialog, Stack, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import useTeam from 'hooks/useTeam';
 import TeamGrid from './TeamGrid2';
 
@@ -48,33 +37,24 @@ const OurTeam = () => {
     return (
         <Box sx={{ paddingBottom: '100px' }}>
             <Grid item xs={12} alignItems="center">
-            <Stack direction="column" justifyContent="center" alignItems="center" p={2} >
+                <Stack direction="column" justifyContent="center" alignItems="center" p={2}>
                     <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                         <Typography variant={'h2'} align="center">
                             Our{' '}
-                            <Typography
-                                variant={'h2'}
-                                component="span"
-                                color="primary"
-                            >
+                            <Typography variant={'h2'} component="span" color="primary">
                                 Team
                             </Typography>
-                            <Typography
-                                color={theme.palette.white[100]}
-                                component={'span'}
-                                variant={'inherit'}
-                            >
+                            <Typography color={theme.palette.white[100]} component={'span'} variant={'inherit'}>
                                 .
                             </Typography>
-                            
                         </Typography>
-                        <Typography variant={'h5'} color={'text.secondary'} align="center">{`Michelle D. Bergman and Maura Mandell co-founded DBM to challenge the traditional big law model and meet the evolving needs of clients. Embracing a distributive practice model, DBM prioritizes flexibility, collaboration, and innovation, paving the way for a future-focused legal industry that better serves both clients and lawyers.`}
-                          
+                        <Typography variant={'h5'} color={'text.secondary'} align="center">
+                            {`Michelle D. Bergman and Maura Mandell co-founded DBM to challenge the traditional big law model and meet the evolving needs of clients. Embracing a distributive practice model, DBM prioritizes flexibility, collaboration, and innovation, paving the way for a future-focused legal industry that better serves both clients and lawyers.`}
                         </Typography>
                     </Box>
                 </Stack>
             </Grid>
-            <Grid item xs={12} md={12}  sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Grid item xs={12} md={12} sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <FormControl fullWidth sx={{ mb: 5 }}>
                     <InputLabel id="veritcal-select-label">Practice Area</InputLabel>
                     <Select
@@ -93,13 +73,17 @@ const OurTeam = () => {
                     >
                         {verticals.map((vertical, i) => {
                             return (
-                                <MenuItem key={i} value={vertical} sx={{
-                                    backgroundColor: '#292929',
-                                    color: '#ffffff',
-                                    '&:hover': {
-                                        backgroundColor: '#444444', // slightly lighter on hover
-                                    }
-                                }}>
+                                <MenuItem
+                                    key={i}
+                                    value={vertical}
+                                    sx={{
+                                        backgroundColor: '#292929',
+                                        color: '#ffffff',
+                                        '&:hover': {
+                                            backgroundColor: '#444444' // slightly lighter on hover
+                                        }
+                                    }}
+                                >
                                     {vertical}
                                 </MenuItem>
                             );

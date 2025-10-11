@@ -15,8 +15,7 @@ import {
 import { alpha, useTheme } from '@mui/material/styles';
 import PersonDialog from './PersonDialog';
 import Image from 'next/image';
-import { CldImage } from 'next-cloudinary'; 
-
+import { CldImage } from 'next-cloudinary';
 
 function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = '', fontVariant2 = 'caption' }) {
     const theme = useTheme();
@@ -92,7 +91,13 @@ function PersonTile({ person, handleClickOpen, minHeight = 500, fontVariant = ''
                     </Stack>
                     {person.bio && (
                         <Stack direction="column" justifyContent="center">
-                            <Button sx={{padding: '2px'}} variant={'outlined'} color={'primary'} size="small" onClick={() => handleClickOpen(person)}>
+                            <Button
+                                sx={{ padding: '2px' }}
+                                variant={'outlined'}
+                                color={'primary'}
+                                size="small"
+                                onClick={() => handleClickOpen(person)}
+                            >
                                 More
                             </Button>
                         </Stack>

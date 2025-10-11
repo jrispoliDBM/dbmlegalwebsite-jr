@@ -40,7 +40,13 @@ function TeamGrid({ team, selectedVertical }) {
                     person.practiceAreas &&
                     (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') &&
                     person.showOnLegal && (
-                        <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 4} md={selectedVertical === 'All' && person.founder ? 6 : 3} key={i}>
+                        <Grid
+                            item
+                            xs={12}
+                            sm={selectedVertical === 'All' && person.founder ? 6 : 4}
+                            md={selectedVertical === 'All' && person.founder ? 6 : 3}
+                            key={i}
+                        >
                             <PersonTile
                                 person={person}
                                 handleClickOpen={handleClickOpen}

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 import Container from 'components/core/Container';
-import DbmDivider from './DbmDivider';
+import DbmDivider from './core/DbmDivider';
 
 const Hero = () => {
     const theme = useTheme();
@@ -15,20 +15,20 @@ const Hero = () => {
 
     return (
         <Box
-        sx={{backgroundColor: theme.palette.background.secondary, height: '100vh'}}
-        
-        // sx={{
-        //     backgroundImage: `linear-gradient(to bottom, ${alpha(theme.palette.background.paper, 0)}, ${alpha(
-        //         theme.palette.alternate.main,
-        //         1
-        //     )} 100%)`,
-        //     backgroundRepeat: 'repeat-x',
-        //     position: 'relative'
-        // }}
+            sx={{ backgroundColor: theme.palette.background.secondary, height: '100vh' }}
+
+            // sx={{
+            //     backgroundImage: `linear-gradient(to bottom, ${alpha(theme.palette.background.paper, 0)}, ${alpha(
+            //         theme.palette.alternate.main,
+            //         1
+            //     )} 100%)`,
+            //     backgroundRepeat: 'repeat-x',
+            //     position: 'relative'
+            // }}
         >
             <Box paddingY={{ xs: 0, sm: 0, md: 0 }}>
                 <Container>
-                    <Box maxWidth={{ xs: 1, sm: '100%' }} data-aos='fade-right'>
+                    <Box maxWidth={{ xs: 1, sm: '100%' }} data-aos="fade-right">
                         <Typography
                             variant="h1"
                             color="text.primary"

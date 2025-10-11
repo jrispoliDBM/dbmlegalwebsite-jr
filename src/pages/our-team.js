@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
 import { Button, Stack } from '@mui/material';
-import OurTeam from 'components/OurTeam';
+import OurTeam from '@/components/general_components/OurTeam';
 
 export default function ContactUs() {
     const theme = useTheme();

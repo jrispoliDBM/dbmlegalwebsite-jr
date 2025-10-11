@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
 import { Button, Stack } from '@mui/material';
-import ServicesGrid from 'components/HorizOurServices';
+import ServicesGrid from '@/components/general_components/HorizOurServices';
 
 export default function ContactUs() {
     const theme = useTheme();

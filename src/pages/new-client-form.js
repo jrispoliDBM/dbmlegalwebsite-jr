@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
 import Head from 'next/head';
-import NewClientForm from '@/components/NewClientForm';
+import NewClientForm from '@/components/general_components/NewClientForm';
 
 export default function NewClientFormPage() {
     return (
@@ -18,7 +18,7 @@ export default function NewClientFormPage() {
             <Box sx={{ overflowX: 'hidden' }} pt={5}>
                 <Main bgcolor={'background.paper'}>
                     <Container>
-                        <NewClientForm formSource='new-client-form' />
+                        <NewClientForm formSource="new-client-form" />
                     </Container>
                 </Main>
             </Box>

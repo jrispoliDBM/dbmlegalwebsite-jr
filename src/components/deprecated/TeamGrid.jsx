@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
-import { Box, Button, Grid, Stack, Typography, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Avatar } from '@mui/material';
+import {
+    Box,
+    Button,
+    Grid,
+    Stack,
+    Typography,
+    Dialog,
+    DialogContent,
+    DialogActions,
+    DialogContentText,
+    DialogTitle,
+    Avatar
+} from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
-import PersonDialog from '../PersonDialog';
-
+import PersonDialog from '../general_components/PersonDialog';
 
 function TeamGrid({ team, selectedVertical }) {
     const [selectedPerson, setSelectedPerson] = useState(null);
@@ -11,17 +22,18 @@ function TeamGrid({ team, selectedVertical }) {
 
     const handleClickOpen = (person) => {
         setSelectedPerson(person);
-        console.log(person)
+        console.log(person);
         setOpen(true);
     };
 
     return (
         <Grid container spacing={4}>
-            <PersonDialog open={open} handleClose={()=>setOpen(false)} person={selectedPerson} />
+            <PersonDialog open={open} handleClose={() => setOpen(false)} person={selectedPerson} />
             {team.map(
                 (person, i) =>
                     person.practiceAreas &&
-                    (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') && person.showOnLegal && (
+                    (person.practiceAreas.includes(selectedVertical) || selectedVertical === 'All') &&
+                    person.showOnLegal && (
                         <Grid item xs={12} sm={selectedVertical === 'All' && person.founder ? 6 : 4} key={i}>
                             <Box
                                 sx={{

@@ -1,23 +1,11 @@
-import React from 'react';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
-
-import Main from 'layouts/Main';
-import Container from 'components/core/Container';
-import OurTeam from 'components/OurTeam';
-import { Typography, ListItemText, ListItemAvatar, ListItem, Divider, Avatar, Card, Button, Stack, Grid } from '@mui/material';
-import { info, careerInfo } from 'content/contact-info';
-import Lottie from 'react-lottie';
-import phoneAnimation from 'content/phone.json';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useTheme } from '@mui/material/styles';
+import { Avatar, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
+import { info } from 'content/contact-info';
 
 
 function ContactUs() {
     const theme = useTheme();
-    const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-        defaultMatches: true
-    });
     return (
         <Stack>
             <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>

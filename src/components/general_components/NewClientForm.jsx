@@ -3,7 +3,14 @@ import { Button, Card, Dialog, DialogActions, DialogContent, DialogContentText, 
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import axios from 'axios';
-import { FormSelect, BlackFormSwitch, BlackGenericRadioGroup, BlackBlackGenericRadioGroup, PhoneNumberInput, TextField } from 'components/FormikMui';
+import {
+    FormSelect,
+    BlackFormSwitch,
+    BlackGenericRadioGroup,
+    BlackBlackGenericRadioGroup,
+    PhoneNumberInput,
+    TextField
+} from '@/components/core/FormikMui';
 import { Field, Form, Formik } from 'formik';
 import useTeam from 'hooks/useTeam';
 import { useEffect, useState } from 'react';
@@ -119,7 +126,7 @@ export default function NewClientForm({ formSource }) {
             <Form>
                 <Grid container spacing={2} p={2}>
                     <Grid item xs={12}>
-                        <Typography variant="h5" color={theme.palette.black[500]} fontWeight="bold" >
+                        <Typography variant="h5" color={theme.palette.black[500]} fontWeight="bold">
                             Client Point of Contact Information
                         </Typography>
                     </Grid>
@@ -704,7 +711,7 @@ export default function NewClientForm({ formSource }) {
                 p={2}
                 backgroundColor={theme.palette.common.white}
                 sx={{ backgroundColor: theme.palette.common.white, borderRadius: '10px', boxShadow: 5, marginTop: 5, marginBottom: 4 }}
-                >
+            >
                 <Stack spacing={2} direction="column" p={2}>
                     {formSource == 'new-client-form' ? (
                         <>

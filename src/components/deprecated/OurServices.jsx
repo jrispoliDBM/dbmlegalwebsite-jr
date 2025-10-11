@@ -18,8 +18,8 @@ import {
     Typography,
     CardMedia
 } from '@mui/material';
-import ServiceCard3 from '../ServiceCard3';
-import ServiceDialog from '../ServiceDialog';
+import ServiceCard3 from '../service_components/ServiceCard3';
+import ServiceDialog from '../general_components/ServiceDialog';
 import useServices from 'hooks/useServices';
 
 const OurServices = () => {
@@ -38,7 +38,7 @@ const OurServices = () => {
     };
 
     return (
-        <Stack direction="column" justifyContent="center" alignItems='center' p={2}>
+        <Stack direction="column" justifyContent="center" alignItems="center" p={2}>
             <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                 <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
                     Our{' '}
@@ -64,8 +64,8 @@ const OurServices = () => {
             <Grid container spacing={4} alignItems="center">
                 {services.map((service, i) =>
                     service.show ? (
-                        <Grid item xs={12} sm={6} md={4} lg={3} key={i} >
-                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen}  />
+                        <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen} />
                         </Grid>
                     ) : (
                         <Box key={i}></Box>

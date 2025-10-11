@@ -19,8 +19,8 @@ import {
     CardMedia
 } from '@mui/material';
 // import ServiceCard3 from './ServiceCard3';
-import ServiceCard3 from '../HorizServiceCard';
-import ServiceDialog from '../ServiceDialog';
+import ServiceCard3 from './HorizServiceCard';
+import ServiceDialog from '../general_components/ServiceDialog';
 import useServices from 'hooks/useServices';
 
 const OurServices = () => {
@@ -39,7 +39,7 @@ const OurServices = () => {
     };
 
     return (
-        <Stack direction="column" justifyContent="center" alignItems='center' >
+        <Stack direction="column" justifyContent="center" alignItems="center">
             <Box padding={4} borderRadius={2} width={1} height={1} mb={1}>
                 <Typography fontWeight="bold" variant={'h2'} gutterBottom align="center">
                     Our{' '}
@@ -56,15 +56,15 @@ const OurServices = () => {
                         Services
                     </Typography>
                     <Typography
-                                color={theme.palette.white[100]}
-                                component={'span'}
-                                variant={'inherit'}
-                                sx={{
-                                    background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
-                                }}
-                            >
-                                .
-                            </Typography>
+                        color={theme.palette.white[100]}
+                        component={'span'}
+                        variant={'inherit'}
+                        sx={{
+                            background: `linear-gradient(180deg, transparent 87%, ${alpha(theme.palette.primary.main, 0.5)} 0%)`
+                        }}
+                    >
+                        .
+                    </Typography>
                 </Typography>
                 <Typography variant={'h6'} component={'p'} color={'text.secondary'} align="center">
                     DBM provides a diverse range of business and transactional services across various practice areas to clients of all
@@ -75,8 +75,8 @@ const OurServices = () => {
             <Grid container spacing={4} alignItems="center">
                 {services.map((service, i) =>
                     service.show ? (
-                        <Grid item xs={12} sm={12} md={12} lg={6} key={i} >
-                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen}  />
+                        <Grid item xs={12} sm={12} md={12} lg={6} key={i}>
+                            <ServiceCard3 service={service} handleClickOpen={handleClickOpen} />
                         </Grid>
                     ) : (
                         <Box key={i}></Box>

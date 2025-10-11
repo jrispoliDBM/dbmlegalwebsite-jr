@@ -8,10 +8,10 @@ import CheckSharpIcon from '@mui/icons-material/CheckSharp';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { keyframes } from '@emotion/react';
-import GeneralCounselPricing from './GeneralCounselPricing';
-import TrademarkPricing from './TrademarkPricing';
-import HealthcareMembershipPricing from './HealthcareMembershipPricing';
-import Carousel from './Carousel';
+import GeneralCounselPricing from '../sectionType_components/GeneralCounselPricing';
+import TrademarkPricing from '../sectionType_components/TrademarkPricing';
+import HealthcareMembershipPricing from '../sectionType_components/HealthcareMembershipPricing';
+import Carousel from '../sectionType_components/Carousel';
 
 function Section({ section }) {
     const theme = useTheme();
@@ -142,7 +142,13 @@ function Section({ section }) {
                                                 variant="h6"
                                                 fontWeight="bold"
                                                 color="primary"
-                                                pl={section.indentItems ? section.indentItems : 0}
+                                                pl={
+                                                    typeof section.indentItems === 'number' &&
+                                                    (!section.indentCharacter ||
+                                                        (item.title && item.title.trim().startsWith(section.indentCharacter)))
+                                                        ? section.indentItems
+                                                        : 0
+                                                }
                                             >
                                                 {item.title}
                                             </Typography>
@@ -156,7 +162,13 @@ function Section({ section }) {
                                                             variant="h6"
                                                             color={textColor}
                                                             gutterBottom
-                                                            pl={section.indentItems ? section.indentItems : 0}
+                                                            pl={
+                                                                typeof section.indentItems === 'number' &&
+                                                                (!section.indentCharacter ||
+                                                                    (text && text.trim().startsWith(section.indentCharacter)))
+                                                                    ? section.indentItems
+                                                                    : 0
+                                                            }
                                                         >
                                                             {text}
                                                         </Typography>

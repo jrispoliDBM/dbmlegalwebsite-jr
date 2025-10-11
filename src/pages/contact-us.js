@@ -5,13 +5,13 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/core/Container';
-import OurTeam from 'components/OurTeam';
+import OurTeam from '@/components/general_components/OurTeam';
 import { Typography, ListItemText, ListItemAvatar, ListItem, Divider, Avatar, Card, Button, Stack, Grid } from '@mui/material';
 import { info, careerInfo } from 'content/contact-info';
 import Lottie from 'react-lottie';
 import phoneAnimation from 'content/phone.json';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ContactUs from '@/components/ContactUs';
+import ContactUs from '@/components/general_components/ContactUs';
 
 export default function ContactUsPage() {
     const theme = useTheme();
@@ -131,8 +131,8 @@ export default function ContactUsPage() {
                                 // boxShadow: `5px 5px 10px 0px ${theme.palette.white[700]}`, // Change the shadow color here
                                 // border: `3px solid ${theme.palette.grey[100]}`, // Add border here
                                 margin: isMd ? 0 : 1, // Optional: add padding
-                                marginTop: isMd ? 10: 2, // Optional: add padding
-                                marginBottom: isMd ? 10: 2, // Optional: add padding
+                                marginTop: isMd ? 10 : 2, // Optional: add padding
+                                marginBottom: isMd ? 10 : 2, // Optional: add padding
                                 // borderRadius: theme.shape.borderRadius, // Optional: adjust borde,
                                 // backgroundColor: theme.palette.white[300],
                                 borderRadius: 5,

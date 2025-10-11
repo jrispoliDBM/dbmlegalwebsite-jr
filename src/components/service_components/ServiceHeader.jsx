@@ -38,6 +38,7 @@ const ServiceHeader = ({ service }) => {
                     <Grid item xs={12} md={12}>
                         <Box maxWidth={{ xs: 1, sm: '100%' }}>
                             <Typography
+                                component="div"
                                 variant="h2"
                                 color="text.primary"
                                 //pb={2}

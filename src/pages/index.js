@@ -1,17 +1,15 @@
-import React, { useRef } from 'react';
-import { alpha, useTheme } from '@mui/material/styles';
+import Hero from '@/components/general_components/Hero';
 import Box from '@mui/material/Box';
-import Main from 'layouts/Main';
+import { useTheme } from '@mui/material/styles';
 import Container from 'components/core/Container';
-import ContainerNoTopPadding from 'components/core/ContainerNoTopPadding';
-import Hero from 'components/Hero';
+import Main from 'layouts/Main';
 import Head from 'next/head';
+import { useRef } from 'react';
 // import OurServices from 'components/OurServices';
-import OurServices from 'components/HorizOurServices';
-import OurTeam from 'components/OurTeam';
-import CoreValues from 'components/CoreValues';
-import DbmDivider from '@/components/DbmDivider';
-import PuzzleAnimation from '@/components/Puzzle';
+import DbmDivider from '@/components/core/DbmDivider';
+import CoreValues from '@/components/general_components/CoreValues';
+import OurServices from '@/components/general_components/HorizOurServices';
+import OurTeam from '@/components/general_components/OurTeam';
 
 export default function Home() {
     const theme = useTheme();
@@ -27,10 +25,9 @@ export default function Home() {
             </Head>
 
             <Box sx={{ overflowX: 'hidden' }}>
-                
                 <Main bgcolor={'background.paper'}>
                     <Container id="core-values-container">
-                            {/* <PuzzleAnimation/> */}
+                        {/* <PuzzleAnimation/> */}
                         <Hero nextSectionRef={coreValuesRef} />
                     </Container>
                     <DbmDivider />
