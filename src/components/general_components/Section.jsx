@@ -8,193 +8,29 @@ import CheckSharpIcon from '@mui/icons-material/CheckSharp';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { keyframes } from '@emotion/react';
-import GeneralCounselPricing from '../sectionType_components/GeneralCounselPricing';
-import TrademarkPricing from '../sectionType_components/TrademarkPricing';
-import HealthcareMembershipPricing from '../sectionType_components/HealthcareMembershipPricing';
-import Carousel from '../sectionType_components/Carousel';
+import GeneralCounselPricing from '../section_components/GeneralCounselPricing';
+import TrademarkPricing from '../section_components/TrademarkPricing';
+import HealthcareMembershipPricing from '../section_components/HealthcareMembershipPricing';
+import Carousel from '../section_components/Carousel';
+import SectionTitle from '../section_components/SectionTitle';
+import CheckMarkList from '../section_components/CheckMarkList';
+import Faq from '../section_components/Faq';
+import Catalog from '../section_components/Catalog';
+import SimpleList from '../section_components/SimpleList';
 
 function Section({ section }) {
     const theme = useTheme();
     const textColor = theme.palette.white[100];
-    const slideIn = keyframes`
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
     return (
         <Container>
             <Stack p={0}>
-                {section.subtitle ? (
-                    <>
-                        {section.title && (
-                            <Box
-                                sx={{
-                                    animation: `${slideIn} 1s ease-out forwards`
-                                }}
-                                pt={2}
-                            >
-                                <Typography variant="h3" align="center" color="primary">
-                                    {section.title}
-                                </Typography>
-                            </Box>
-                        )}
-                        <Box>
-                            {section.subtitle && (
-                                <Box
-                                // sx={{
-                                //     animation: `${slideIn} 1s ease-out forwards`
-                                // }}
-                                >
-                                    <Typography variant={'h4'} align="center" color={textColor}>
-                                        {section.subtitle}
-                                    </Typography>
-                                </Box>
-                            )}
-                        </Box>
-                    </>
-                ) : (
-                    <>
-                        {section.title && (
-                            <Box
-                                sx={{
-                                    animation: `${slideIn} 1s ease-out forwards`
-                                }}
-                                pt={2}
-                                pb={2}
-                            >
-                                <Typography
-                                    variant="h3"
-                                    fontWeight="bold"
-                                    align="center"
-                                    color={textColor}
-                                    sx={{
-                                        textDecoration: 'underline',
-                                        textDecorationColor: `${alpha(theme.palette.primary.main, 1.0)}`
-                                        // textDecorationThickness: '0.2em'
-                                        //
-                                    }}
-                                >
-                                    {section.title}
-                                </Typography>
-                            </Box>
-                        )}
-                    </>
-                )}
-                {section.sectionType === 'checkMarkList' && (
-                    <Grid container spacing={3} p={3}>
-                        {section.items
-                            .sort((a, b) => a.order - b.order)
-                            .map((item, index) => (
-                                <Grid item xs={12} md={6} key={index}>
-                                    <Stack direction="row" spacing={1}>
-                                        <CheckBoxIcon color="primary" />
-                                        <Box>
-                                            <Typography color={textColor} variant="h6" fontWeight="bold">
-                                                {item.title}
-                                            </Typography>
-                                            <Typography color={textColor}>{item.detailText}</Typography>
-                                        </Box>
-                                    </Stack>
-                                </Grid>
-                            ))}
-                    </Grid>
-                )}
+                <SectionTitle section={section} textColor={textColor} />
+                {section.sectionType === 'checkMarkList' && <CheckMarkList section={section} textColor={textColor} />}
                 {section.sectionType === 'carousel' && <Carousel data={section.items} />}
-                {section.sectionType === 'faq' &&
-                    section.items
-                        .sort((a, b) => a.order - b.order)
-                        .map((item, index) => (
-                            <Box pb={3} pt={1} key={index}>
-                                <Accordion sx={{ backgroundColor: theme.palette.white[100] }}>
-                                    <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}>
-                                        <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
-                                            {item.title}
-                                        </Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography color={theme.palette.black[500]}>{item.detailText}</Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                            </Box>
-                        ))}
-                {section.sectionType === 'catalog' && (
-                    <>
-                        {section.items
-                            .sort((a, b) => a.order - b.order)
-                            .map((item, index) => (
-                                <Stack p={2} key={index}>
-                                    {item.headerBefore && (
-                                        <Typography color={textColor} variant="h4" fontWeight="bold" pb={1} pt={index > 0 ? 3 : 0}>
-                                            {item.headerBefore}
-                                        </Typography>
-                                    )}
-                                    <Stack direction="row" spacing={1} alignItems="flex-start">
-                                        {item.iconBefore && item.iconBefore === 'CheckSharp' && (
-                                            <CheckSharpIcon color="primary" sx={{ fontSize: 35 }} />
-                                        )}
-                                        <Stack direction="column">
-                                            <Typography
-                                                variant="h6"
-                                                fontWeight="bold"
-                                                color="primary"
-                                                pl={
-                                                    typeof section.indentItems === 'number' &&
-                                                    (!section.indentCharacter ||
-                                                        (item.title && item.title.trim().startsWith(section.indentCharacter)))
-                                                        ? section.indentItems
-                                                        : 0
-                                                }
-                                            >
-                                                {item.title}
-                                            </Typography>
-                                            {item.detailText &&
-                                                item.detailText.split('\n').map((text, index) => (
-                                                    <Stack direction="row" spacing={1} key={index}>
-                                                        {text.trim() && item.useCheckmarkBeforeDetailTextParagraphs && (
-                                                            <CheckCircleIcon color="primary" />
-                                                        )}
-                                                        <Typography
-                                                            variant="h6"
-                                                            color={textColor}
-                                                            gutterBottom
-                                                            pl={
-                                                                typeof section.indentItems === 'number' &&
-                                                                (!section.indentCharacter ||
-                                                                    (text && text.trim().startsWith(section.indentCharacter)))
-                                                                    ? section.indentItems
-                                                                    : 0
-                                                            }
-                                                        >
-                                                            {text}
-                                                        </Typography>
-                                                    </Stack>
-                                                ))}
-                                        </Stack>
-                                    </Stack>
-                                </Stack>
-                            ))}
-                    </>
-                )}
+                {section.sectionType === 'faq' && <Faq section={section} />}
+                {section.sectionType === 'catalog' && <Catalog section={section} textColor={textColor} />}
                 {(section.sectionType === 'simpleList' || section.sectionType === 'simplelist') && (
-                    <Box p={2}>
-                        {section.items
-                            .sort((a, b) => a.order - b.order)
-                            .map((item, index) => (
-                                <Stack p={1} key={index}>
-                                    <Stack direction="row" spacing={1}>
-                                        <CheckCircleIcon color="primary" />
-                                        <Typography variant="h6" fontWeight="bold" color={textColor}>
-                                            {item.title}
-                                        </Typography>
-                                    </Stack>
-                                </Stack>
-                            ))}
-                    </Box>
+                    <SimpleList section={section} textColor={textColor} />
                 )}
                 {section.sectionType === 'general-counsel-pricing' && <GeneralCounselPricing />}
                 {section.sectionType === 'trademark-pricing' && <TrademarkPricing />}
