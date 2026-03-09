@@ -120,9 +120,9 @@ const pricingTiers = [
         name: 'Enterprise',
         subtitle: 'Ideal for multi-location practices, health systems, and complex organizations',
         price: '$8,500',
-        hours: '18',
+        hours: '20',
         keyTerms: [
-            { label: 'Hours Per Month', value: '18 billable attorney hours' }
+            { label: 'Hours Per Month', value: '20 billable attorney hours' }
         ]
     }
 ];
@@ -285,19 +285,22 @@ export default function HealthcareGCPhillips() {
                                                 </Button>
                                             </Box>
                                             <Stack
-                                                direction="row"
-                                                alignItems="center"
+                                                direction={{ xs: 'column', sm: 'row' }}
+                                                alignItems={{ xs: 'flex-start', sm: 'center' }}
                                                 flexWrap="wrap"
-                                                gap={1.5}
+                                                gap={{ xs: 1, sm: 1.5 }}
                                                 mt={3}
                                             >
                                                 {HERO_TRUST_POINTS.map((point, i, arr) => (
                                                     <React.Fragment key={i}>
-                                                        <Typography variant="body2" color={theme.palette.white[500]}>
-                                                            {point}
-                                                        </Typography>
+                                                        <Stack direction="row" alignItems="center" spacing={1}>
+                                                            <Box sx={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: theme.palette.primary.main, flexShrink: 0 }} />
+                                                            <Typography variant="body2" color={theme.palette.white[500]}>
+                                                                {point}
+                                                            </Typography>
+                                                        </Stack>
                                                         {i < arr.length - 1 && (
-                                                            <Box sx={{ width: 5, height: 5, borderRadius: '50%', backgroundColor: theme.palette.primary.main, opacity: 0.6, flexShrink: 0 }} />
+                                                            <Box sx={{ display: { xs: 'none', sm: 'block' }, width: 5, height: 5, borderRadius: '50%', backgroundColor: theme.palette.primary.main, opacity: 0.4, flexShrink: 0 }} />
                                                         )}
                                                     </React.Fragment>
                                                 ))}
@@ -308,7 +311,7 @@ export default function HealthcareGCPhillips() {
                             </Box>
 
                             {/* ========== 2. INTRODUCTION ========== */}
-                            <Stack spacing={4} mx={{ xs: 0, md: 2 }}>
+                            <Stack spacing={4}>
                                 <GradientCard data-aos="fade-right" data-aos-delay="0">
                                     <Box p={{ xs: 3, md: 5 }}>
                                         <Typography
@@ -751,7 +754,7 @@ export default function HealthcareGCPhillips() {
                                             </Box>
                                             <Grid container spacing={2.5}>
                                                 {includedCategories.map((group, index) => (
-                                                    <Grid item xs={12} md={6} key={group.category} data-aos="fade-up" data-aos-delay={index * 40}>
+                                                    <Grid item xs={12} md={4} key={group.title} data-aos="fade-up" data-aos-delay={index * 40}>
                                                         <Box
                                                             sx={{
                                                                 backgroundColor: alpha(theme.palette.white[100], 0.03),
