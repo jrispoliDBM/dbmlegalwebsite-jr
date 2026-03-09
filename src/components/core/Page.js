@@ -47,11 +47,11 @@ export default function Page({ children }) {
     }
 
     AOS.init({
-      once: false,
+      once: true,
       delay: 0,
-      duration: 800,
-      offset: 0,
-      easing: 'ease-in-out',
+      duration: 550,
+      offset: 60,
+      easing: 'ease-out',
     });
   }, []);
 
