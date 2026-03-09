@@ -261,7 +261,7 @@ export default function HealthcareGCPhillips() {
                                             </Typography>
                                             <Box data-aos="fade-right">
                                                 <Typography variant="h5" color="text.secondary">
-                                                    Led by Senior Partner Shawn Phillips, DBM's Healthcare General Counsel program
+                                                    Led by Senior Partner Shawn Phillips, DBM&apos;s Healthcare General Counsel program
                                                     provides physicians, medical practices, and healthcare organizations with a dedicated
                                                     legal partner for the regulatory, transactional, and compliance demands of modern
                                                     healthcare, backed by the full strength of the DBM team.
@@ -458,10 +458,10 @@ export default function HealthcareGCPhillips() {
                                                         }}
                                                     >
                                                         <Typography variant="h5" color={theme.palette.white[100]} sx={{ fontStyle: 'italic' }}>
-                                                            "When you engage DBM's Healthcare General Counsel program, Shawn is
-                                                            your first call, but you're never limited to one attorney. Your
+                                                            &ldquo;When you engage DBM&apos;s Healthcare General Counsel program, Shawn is
+                                                            your first call, but you&apos;re never limited to one attorney. Your
                                                             subscription gives you access to the full DBM team, so no matter what
-                                                            issue arises, you have the right expertise at the table."
+                                                            issue arises, you have the right expertise at the table.&rdquo;
                                                         </Typography>
                                                     </Box>
                                                 </Stack>
@@ -743,10 +743,10 @@ export default function HealthcareGCPhillips() {
                                                     }}
                                                 />
                                                 <Typography variant="h4" fontWeight="bold" color={theme.palette.white[100]} pb={1}>
-                                                    What's Included Across All Plans
+                                                    What&apos;s Included Across All Plans
                                                 </Typography>
                                                 <Typography variant="body1" color={theme.palette.white[500]} sx={{ maxWidth: 700 }}>
-                                                    Integrated legal support across DBM Legal Services' full suite of healthcare capabilities.
+                                                    Integrated legal support across DBM Legal Services&apos; full suite of healthcare capabilities.
                                                 </Typography>
                                             </Box>
                                             <Grid container spacing={2.5}>
@@ -914,7 +914,7 @@ export default function HealthcareGCPhillips() {
                                         </Typography>
                                         <Typography variant="h5" color={theme.palette.white[500]} pb={4} sx={{ maxWidth: 800, mx: 'auto' }}>
                                             Schedule a consultation with our team to discuss your organization, the legal
-                                            and operational challenges you are navigating, and whether DBM's Healthcare
+                                            and operational challenges you are navigating, and whether DBM&apos;s Healthcare
                                             General Counsel program is the right fit.
                                         </Typography>
                                         <Button
