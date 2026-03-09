@@ -21,11 +21,15 @@ import HealingIcon from '@mui/icons-material/Healing';
 import SpaIcon from '@mui/icons-material/Spa';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import DevicesIcon from '@mui/icons-material/Devices';
+import GavelIcon from '@mui/icons-material/Gavel';
+import GroupsIcon from '@mui/icons-material/Groups';
+import BalanceIcon from '@mui/icons-material/Balance';
+import ShieldIcon from '@mui/icons-material/Shield';
+import BarChartIcon from '@mui/icons-material/BarChart';
 import Main from '@/layouts/Main';
 import Container from 'components/core/Container';
 import GradientCard from 'components/core/GradientCard';
 import { CldImage } from 'next-cloudinary';
-import useTeam from '@/hooks/useTeam';
 
 const CONTACT_URL = 'https://outlook.office.com/book/ShawnPhillips@dbmlegalservices.com/s/bZQj8jMzz0WU2GByJdozkg2?ismsaljsauthenabled';
 const PHONE = '(646) 809-8408';
@@ -138,22 +142,27 @@ const includedItems = [
 
 const differentiators = [
     {
+        icon: GavelIcon,
         title: 'Embedded General Counsel',
         description: 'Shawn Phillips brings the perspective of a former health system General Counsel and serves as a proactive, strategic advisor to your leadership team.'
     },
     {
+        icon: GroupsIcon,
         title: 'One Relationship, Full Team Access',
         description: 'Your engagement is led by Shawn, with seamless access to the broader DBM team when specialized support is needed.'
     },
     {
+        icon: BalanceIcon,
         title: 'Big Law-Caliber Counsel, Structured for Value',
         description: 'DBM combines top-tier transactional and regulatory experience with a subscription model designed to deliver sophisticated counsel in a more efficient, cost-conscious format.'
     },
     {
+        icon: ShieldIcon,
         title: 'Proactive, Not Reactive',
         description: 'We identify issues early, monitor regulatory developments, and help clients address legal risk before it disrupts operations.'
     },
     {
+        icon: BarChartIcon,
         title: 'Transparency and Scalability',
         description: 'Clear monthly reporting, predictable pricing, and flexible capacity allow your legal support to grow alongside your organization.'
     }
@@ -201,25 +210,29 @@ const testimonials = [
         quote: 'Working with Shawn helped me navigate the transition between fellowship training and clinical practice. Shawn provided a thorough and assertive approach that succeeded in executing the contract I deserve, and that made all the difference in my job satisfaction. Don\'t go to anyone else!',
         name: 'Tyler MacRae, DPM, AACFAS',
         title: 'Foot and Ankle Surgery',
-        organization: 'St. Jude Orthopedics and Sports Medicine'
+        organization: 'St. Jude Orthopedics and Sports Medicine',
+        avatar: '3_jwp5xl'
     },
     {
         quote: 'Shawn\'s reputation is impeccable for physician contract law. My colleagues and I have benefited from his counsel in the past. There was no question that he was my choice when I needed help with my recent contract review and negotiation. I was very happy with the outcome.',
         name: 'Scott Sauer',
         title: 'Orthopedic Surgeon, Foot and Ankle Specialist',
-        organization: 'Roper St. Francis Healthcare'
+        organization: 'Roper St. Francis Healthcare',
+        avatar: '1_ejraid'
     },
     {
         quote: 'Shawn provided me first-class and timely physician contract analysis that allowed me to confidently accept a new job offer in a new state. I felt well educated and extremely prepared for talks with my future employer. He truly masters the intricacies of health care systems and operations.',
         name: 'Brian Goldberg, M.D.',
         title: 'Orthopaedics',
-        organization: 'Rothman Orthopaedics Florida'
+        organization: 'Rothman Orthopaedics Florida',
+        avatar: '2_jwqnk1'
     },
     {
         quote: 'Shawn brings a rare blend of legal expertise and deep understanding of the healthcare landscape, making complex issues clear and manageable. His thoughtful, physician-centered approach has earned the trust of dozens of physicians I know. He\'s exactly the kind of advocate every physician wants in their corner.',
         name: 'Eiran Mandelker, M.D.',
         title: 'Medical Officer',
-        organization: 'FDA'
+        organization: 'FDA',
+        avatar: '4_mabwum'
     }
 ];
 
@@ -230,8 +243,6 @@ const HERO_TRUST_POINTS = ['Former Hospital General Counsel', 'Full DBM Team Acc
 export default function HealthcareGCPhillips() {
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'), { defaultMatches: true });
-    const { team } = useTeam();
-    const shawn = team.find((member) => member.name === 'Shawn Phillips');
 
     return (
         <>
@@ -321,8 +332,15 @@ export default function HealthcareGCPhillips() {
 
                             {/* ========== 2. INTRODUCTION ========== */}
                             <Stack spacing={4}>
-                                <GradientCard data-aos="fade-right" data-aos-delay="0">
-                                    <Box p={{ xs: 3, md: 5 }}>
+                                <Box
+                                    data-aos="fade-right"
+                                    sx={{
+                                        borderTop: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        borderBottom: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        py: { xs: 6, md: 8 },
+                                        px: { xs: 0, md: 1 }
+                                    }}
+                                >
                                         <Typography
                                             variant="h3"
                                             fontWeight="bold"
@@ -362,8 +380,7 @@ export default function HealthcareGCPhillips() {
                                             focused on protecting your organization, strengthening compliance, and supporting
                                             sustainable growth.
                                         </Typography>
-                                    </Box>
-                                </GradientCard>
+                                </Box>
 
                                 {/* ========== 3. MEET YOUR GENERAL COUNSEL ========== */}
                                 <GradientCard data-aos="fade-up" data-aos-delay="50">
@@ -401,29 +418,18 @@ export default function HealthcareGCPhillips() {
                                                             }
                                                         }}
                                                     >
-                                                        {shawn && shawn.image ? (
-                                                            <CldImage
-                                                                src={shawn.image}
-                                                                fill={true}
-                                                                priority={true}
-                                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                                                alt="Shawn Phillips - Senior Partner, Healthcare General Counsel at DBM Legal Services"
-                                                                style={{ objectFit: 'cover', objectPosition: 'top center' }}
-                                                            />
-                                                        ) : (
-                                                            <Box
-                                                                sx={{
-                                                                    position: 'absolute',
-                                                                    inset: 0,
-                                                                    backgroundColor: theme.palette.black[400],
-                                                                    display: 'flex',
-                                                                    alignItems: 'center',
-                                                                    justifyContent: 'center'
-                                                                }}
-                                                            >
-                                                                <Typography color="text.secondary">Loading...</Typography>
-                                                            </Box>
-                                                        )}
+                                                        <CldImage
+                                                            src="IMG_0883-CV_1_fqqhft"
+                                                            fill={true}
+                                                            priority={true}
+                                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                            alt="Shawn Phillips - Senior Partner, Healthcare General Counsel at DBM Legal Services"
+                                                            style={{
+                                                                objectFit: 'cover',
+                                                                objectPosition: 'center 15%',
+                                                                filter: 'brightness(0.93) saturate(0.82) contrast(1.05)'
+                                                            }}
+                                                        />
                                                     </Box>
                                                     <Typography variant="h5" fontWeight={700}>
                                                         Shawn Phillips
@@ -534,17 +540,37 @@ export default function HealthcareGCPhillips() {
                                                     >
                                                         &ldquo;{t.quote}&rdquo;
                                                     </Typography>
-                                                    <Box sx={{ borderTop: `1px solid ${alpha(theme.palette.white[700], 0.3)}`, pt: 2 }}>
-                                                        <Typography variant="subtitle2" fontWeight={700} color={theme.palette.white[100]}>
-                                                            {t.name}
-                                                        </Typography>
-                                                        <Typography variant="caption" color="primary" display="block">
-                                                            {t.title}
-                                                        </Typography>
-                                                        <Typography variant="caption" color={theme.palette.white[500]} display="block">
-                                                            {t.organization}
-                                                        </Typography>
-                                                    </Box>
+                                                    <Stack direction="row" spacing={2} alignItems="center" sx={{ borderTop: `1px solid ${alpha(theme.palette.white[700], 0.3)}`, pt: 2 }}>
+                                                        <Box
+                                                            sx={{
+                                                                width: 48,
+                                                                height: 48,
+                                                                borderRadius: '50%',
+                                                                overflow: 'hidden',
+                                                                flexShrink: 0,
+                                                                border: `2px solid ${alpha(theme.palette.primary.main, 0.4)}`
+                                                            }}
+                                                        >
+                                                            <CldImage
+                                                                src={t.avatar}
+                                                                width={48}
+                                                                height={48}
+                                                                alt={t.name}
+                                                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                            />
+                                                        </Box>
+                                                        <Box>
+                                                            <Typography variant="subtitle2" fontWeight={700} color={theme.palette.white[100]}>
+                                                                {t.name}
+                                                            </Typography>
+                                                            <Typography variant="caption" color="primary" display="block">
+                                                                {t.title}
+                                                            </Typography>
+                                                            <Typography variant="caption" color={theme.palette.white[500]} display="block">
+                                                                {t.organization}
+                                                            </Typography>
+                                                        </Box>
+                                                    </Stack>
                                                 </Box>
                                             </Grid>
                                         ))}
@@ -606,94 +632,100 @@ export default function HealthcareGCPhillips() {
                                 </GradientCard>
 
                                 {/* ========== 5. WHO WE SERVE — Redesigned ========== */}
-                                <GradientCard data-aos="fade-up" data-aos-delay="50">
-                                    <Box p={{ xs: 3, md: 5 }}>
-                                        <Box mb={5} textAlign="center">
-                                            <Chip
-                                                label="OUR CLIENTELE"
-                                                size="small"
-                                                sx={{
-                                                    backgroundColor: alpha(theme.palette.primary.main, 0.15),
-                                                    color: theme.palette.primary.main,
-                                                    fontWeight: 700,
-                                                    letterSpacing: 1.5,
-                                                    fontSize: '0.65rem',
-                                                    mb: 2,
-                                                    borderRadius: 1
-                                                }}
-                                            />
-                                            <Typography variant="h3" fontWeight="bold" color={theme.palette.white[100]} pb={1}>
-                                                Who We Serve
-                                            </Typography>
-                                            <Typography variant="h5" color={theme.palette.white[500]} sx={{ maxWidth: 680, mx: 'auto' }}>
-                                                Built for healthcare organizations at every stage of growth
-                                            </Typography>
-                                        </Box>
-                                        <Grid container spacing={2.5} justifyContent="center">
-                                            {clientTypes.map((category, index) => {
-                                                const CategoryIcon = categoryIcons[index];
-                                                return (
-                                                <Grid item xs={12} sm={6} md={4} key={category.title} data-aos="fade-up" data-aos-delay={index * 40}>
-                                                    <Box
-                                                        sx={{
-                                                            backgroundColor: alpha(theme.palette.white[100], 0.04),
-                                                            border: `1px solid ${alpha(theme.palette.white[700], 0.5)}`,
-                                                            borderRadius: 2,
-                                                            p: 3,
-                                                            height: '100%',
-                                                            display: 'flex',
-                                                            flexDirection: 'column',
-                                                            gap: 2,
-                                                            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                                            '&:hover': {
-                                                                transform: 'translateY(-3px)',
-                                                                boxShadow: `0 6px 20px ${alpha(theme.palette.primary.main, 0.1)}`
-                                                            }
-                                                        }}
-                                                    >
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                                                            <Box
-                                                                sx={{
-                                                                    width: 36,
-                                                                    height: 36,
-                                                                    borderRadius: 1.5,
-                                                                    backgroundColor: alpha(theme.palette.primary.main, 0.15),
-                                                                    display: 'flex',
-                                                                    alignItems: 'center',
-                                                                    justifyContent: 'center',
-                                                                    flexShrink: 0
-                                                                }}
-                                                            >
-                                                                <CategoryIcon sx={{ color: theme.palette.primary.main, fontSize: 18 }} />
-                                                            </Box>
-                                                            <Typography variant="subtitle1" fontWeight={700} color={theme.palette.white[100]} sx={{ lineHeight: 1.3 }}>
-                                                                {category.title}
-                                                            </Typography>
-                                                        </Box>
-                                                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
-                                                            {category.items.map((item, i) => (
-                                                                <Chip
-                                                                    key={i}
-                                                                    label={item}
-                                                                    size="small"
-                                                                    sx={{
-                                                                        backgroundColor: alpha(theme.palette.white[700], 0.12),
-                                                                        color: theme.palette.white[500],
-                                                                        fontSize: '0.7rem',
-                                                                        height: 24,
-                                                                        borderRadius: 1,
-                                                                        '& .MuiChip-label': { px: 1 }
-                                                                    }}
-                                                                />
-                                                            ))}
-                                                        </Box>
-                                                    </Box>
-                                                </Grid>
-                                                );
-                                            })}
-                                        </Grid>
+                                <Box
+                                    data-aos="fade-up"
+                                    sx={{
+                                        borderTop: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        borderBottom: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        py: { xs: 6, md: 8 },
+                                        px: { xs: 0, md: 1 }
+                                    }}
+                                >
+                                    <Box mb={5} textAlign="center">
+                                        <Chip
+                                            label="OUR CLIENTELE"
+                                            size="small"
+                                            sx={{
+                                                backgroundColor: alpha(theme.palette.primary.main, 0.15),
+                                                color: theme.palette.primary.main,
+                                                fontWeight: 700,
+                                                letterSpacing: 1.5,
+                                                fontSize: '0.65rem',
+                                                mb: 2,
+                                                borderRadius: 1
+                                            }}
+                                        />
+                                        <Typography variant="h3" fontWeight="bold" color={theme.palette.white[100]} pb={1}>
+                                            Who We Serve
+                                        </Typography>
+                                        <Typography variant="h5" color={theme.palette.white[500]} sx={{ maxWidth: 680, mx: 'auto' }}>
+                                            Built for healthcare organizations at every stage of growth
+                                        </Typography>
                                     </Box>
-                                </GradientCard>
+                                    <Grid container spacing={2.5} justifyContent="center">
+                                        {clientTypes.map((category, index) => {
+                                            const CategoryIcon = categoryIcons[index];
+                                            return (
+                                            <Grid item xs={12} sm={6} md={4} key={category.title} data-aos="fade-up" data-aos-delay={index * 40}>
+                                                <Box
+                                                    sx={{
+                                                        backgroundColor: alpha(theme.palette.white[100], 0.04),
+                                                        border: `1px solid ${alpha(theme.palette.white[700], 0.5)}`,
+                                                        borderRadius: 2,
+                                                        p: 3,
+                                                        height: '100%',
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        gap: 2,
+                                                        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                                                        '&:hover': {
+                                                            transform: 'translateY(-3px)',
+                                                            boxShadow: `0 6px 20px ${alpha(theme.palette.primary.main, 0.1)}`
+                                                        }
+                                                    }}
+                                                >
+                                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                                                        <Box
+                                                            sx={{
+                                                                width: 36,
+                                                                height: 36,
+                                                                borderRadius: 1.5,
+                                                                backgroundColor: alpha(theme.palette.primary.main, 0.15),
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'center',
+                                                                flexShrink: 0
+                                                            }}
+                                                        >
+                                                            <CategoryIcon sx={{ color: theme.palette.primary.main, fontSize: 18 }} />
+                                                        </Box>
+                                                        <Typography variant="subtitle1" fontWeight={700} color={theme.palette.white[100]} sx={{ lineHeight: 1.3 }}>
+                                                            {category.title}
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+                                                        {category.items.map((item, i) => (
+                                                            <Chip
+                                                                key={i}
+                                                                label={item}
+                                                                size="small"
+                                                                sx={{
+                                                                    backgroundColor: alpha(theme.palette.white[700], 0.12),
+                                                                    color: theme.palette.white[500],
+                                                                    fontSize: '0.7rem',
+                                                                    height: 24,
+                                                                    borderRadius: 1,
+                                                                    '& .MuiChip-label': { px: 1 }
+                                                                }}
+                                                            />
+                                                        ))}
+                                                    </Box>
+                                                </Box>
+                                            </Grid>
+                                            );
+                                        })}
+                                    </Grid>
+                                </Box>
 
                                 {/* ========== 6. SUBSCRIPTION PRICING ========== */}
                                 <GradientCard data-aos="fade-right" data-aos-delay="50">
@@ -848,64 +880,86 @@ export default function HealthcareGCPhillips() {
                                             What sets our Healthcare General Counsel program apart from traditional outside counsel.
                                         </Typography>
                                     </Box>
-                                    <Grid container spacing={2.5} justifyContent="center">
+                                    <Stack divider={<Divider sx={{ borderColor: alpha(theme.palette.white[700], 0.15) }} />}>
                                         {differentiators.map((item, index) => (
-                                            <Grid item xs={12} sm={6} md={4} key={item.title} data-aos="fade-up" data-aos-delay={index * 40}>
-                                                <Box
-                                                    sx={{
-                                                        borderLeft: `3px solid ${alpha(theme.palette.primary.main, 0.6)}`,
-                                                        pl: 2.5,
-                                                        py: 0.5,
-                                                        height: '100%'
-                                                    }}
-                                                >
-                                                    <Typography variant="h6" fontWeight={700} color={theme.palette.white[100]} pb={0.75}>
-                                                        {item.title}
-                                                    </Typography>
-                                                    <Typography variant="body2" color={theme.palette.white[500]} sx={{ lineHeight: 1.8 }}>
+                                            <Grid
+                                                container
+                                                key={item.title}
+                                                spacing={{ xs: 1, md: 4 }}
+                                                alignItems="flex-start"
+                                                data-aos="fade-up"
+                                                data-aos-delay={index * 40}
+                                                py={3}
+                                            >
+                                                <Grid item xs={12} md={4}>
+                                                    <Stack direction="row" spacing={2} alignItems="flex-start">
+                                                        <Box
+                                                            sx={{
+                                                                width: 38,
+                                                                height: 38,
+                                                                borderRadius: 1.5,
+                                                                backgroundColor: alpha(theme.palette.primary.main, 0.12),
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'center',
+                                                                flexShrink: 0,
+                                                                mt: 0.25
+                                                            }}
+                                                        >
+                                                            <item.icon sx={{ color: theme.palette.primary.main, fontSize: 20 }} />
+                                                        </Box>
+                                                        <Typography variant="h6" fontWeight={700} color={theme.palette.white[100]} sx={{ lineHeight: 1.4 }}>
+                                                            {item.title}
+                                                        </Typography>
+                                                    </Stack>
+                                                </Grid>
+                                                <Grid item xs={12} md={8}>
+                                                    <Typography variant="body1" color={theme.palette.white[500]} sx={{ lineHeight: 1.8 }}>
                                                         {item.description}
                                                     </Typography>
-                                                </Box>
+                                                </Grid>
                                             </Grid>
                                         ))}
-                                    </Grid>
+                                    </Stack>
                                 </Box>
 
                                 {/* ========== 8. FAQ ========== */}
-                                <Box data-aos="fade-up" sx={{ py: { xs: 4, md: 6 }, px: { xs: 0, md: 1 } }}>
-                                    <Typography
-                                        variant="h3"
-                                        fontWeight="bold"
-                                        pb={4}
-                                        sx={{
-                                            textDecoration: 'underline',
-                                            textDecorationColor: alpha(theme.palette.primary.main, 1.0)
-                                        }}
-                                    >
-                                        Frequently Asked Questions
-                                    </Typography>
-                                    {faqs.map((faq) => (
-                                        <Box pb={2} key={faq.question}>
-                                            <Accordion sx={{ backgroundColor: theme.palette.white[100] }}>
-                                                <AccordionSummary
-                                                    expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}
-                                                >
-                                                    <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
-                                                        {faq.question}
-                                                    </Typography>
-                                                </AccordionSummary>
-                                                <AccordionDetails>
-                                                    <Typography color={theme.palette.black[500]}>
-                                                        {faq.answer}
-                                                        {faq.bookingUrl && (
-                                                            <> <a href={faq.bookingUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}>{faq.bookingLabel || 'Schedule with Shawn'}</a></>
-                                                        )}
-                                                    </Typography>
-                                                </AccordionDetails>
-                                            </Accordion>
-                                        </Box>
-                                    ))}
-                                </Box>
+                                <GradientCard data-aos="fade-up">
+                                    <Box p={{ xs: 3, md: 5 }}>
+                                        <Typography
+                                            variant="h3"
+                                            fontWeight="bold"
+                                            pb={4}
+                                            sx={{
+                                                textDecoration: 'underline',
+                                                textDecorationColor: alpha(theme.palette.primary.main, 1.0)
+                                            }}
+                                        >
+                                            Frequently Asked Questions
+                                        </Typography>
+                                        {faqs.map((faq) => (
+                                            <Box pb={2} key={faq.question}>
+                                                <Accordion sx={{ backgroundColor: theme.palette.white[100] }}>
+                                                    <AccordionSummary
+                                                        expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}
+                                                    >
+                                                        <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
+                                                            {faq.question}
+                                                        </Typography>
+                                                    </AccordionSummary>
+                                                    <AccordionDetails>
+                                                        <Typography color={theme.palette.black[500]}>
+                                                            {faq.answer}
+                                                            {faq.bookingUrl && (
+                                                                <> <a href={faq.bookingUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}>{faq.bookingLabel || 'Schedule with Shawn'}</a></>
+                                                            )}
+                                                        </Typography>
+                                                    </AccordionDetails>
+                                                </Accordion>
+                                            </Box>
+                                        ))}
+                                    </Box>
+                                </GradientCard>
                             </Stack>
 
                             {/* ========== 9. FINAL CTA ========== */}
