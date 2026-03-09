@@ -196,6 +196,33 @@ const faqs = [
     }
 ];
 
+const testimonials = [
+    {
+        quote: 'Working with Shawn helped me navigate the transition between fellowship training and clinical practice. Shawn provided a thorough and assertive approach that succeeded in executing the contract I deserve, and that made all the difference in my job satisfaction. Don\'t go to anyone else!',
+        name: 'Tyler MacRae, DPM, AACFAS',
+        title: 'Foot and Ankle Surgery',
+        organization: 'St. Jude Orthopedics and Sports Medicine'
+    },
+    {
+        quote: 'Shawn\'s reputation is impeccable for physician contract law. My colleagues and I have benefited from his counsel in the past. There was no question that he was my choice when I needed help with my recent contract review and negotiation. I was very happy with the outcome.',
+        name: 'Scott Sauer',
+        title: 'Orthopedic Surgeon, Foot and Ankle Specialist',
+        organization: 'Roper St. Francis Healthcare'
+    },
+    {
+        quote: 'Shawn provided me first-class and timely physician contract analysis that allowed me to confidently accept a new job offer in a new state. I felt well educated and extremely prepared for talks with my future employer. He truly masters the intricacies of health care systems and operations.',
+        name: 'Brian Goldberg, M.D.',
+        title: 'Orthopaedics',
+        organization: 'Rothman Orthopaedics Florida'
+    },
+    {
+        quote: 'Shawn brings a rare blend of legal expertise and deep understanding of the healthcare landscape, making complex issues clear and manageable. His thoughtful, physician-centered approach has earned the trust of dozens of physicians I know. He\'s exactly the kind of advocate every physician wants in their corner.',
+        name: 'Eiran Mandelker, M.D.',
+        title: 'Medical Officer',
+        organization: 'FDA'
+    }
+];
+
 const categoryIcons = [LocalHospitalIcon, HealingIcon, SpaIcon, ApartmentIcon, DevicesIcon];
 
 const HERO_TRUST_POINTS = ['Former Hospital General Counsel', 'Full DBM Team Access', 'Transparent Monthly Pricing'];
@@ -454,6 +481,75 @@ export default function HealthcareGCPhillips() {
                                         </Grid>
                                     </Box>
                                 </GradientCard>
+
+                                {/* ========== TESTIMONIALS ========== */}
+                                <Box
+                                    data-aos="fade-up"
+                                    sx={{
+                                        borderTop: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        py: { xs: 6, md: 8 },
+                                        px: { xs: 0, md: 1 }
+                                    }}
+                                >
+                                    <Box mb={5} textAlign="center">
+                                        <Chip
+                                            label="CLIENT TESTIMONIALS"
+                                            size="small"
+                                            sx={{
+                                                backgroundColor: alpha(theme.palette.primary.main, 0.15),
+                                                color: theme.palette.primary.main,
+                                                fontWeight: 700,
+                                                letterSpacing: 1.5,
+                                                fontSize: '0.65rem',
+                                                mb: 2,
+                                                borderRadius: 1
+                                            }}
+                                        />
+                                        <Typography variant="h3" fontWeight="bold" color={theme.palette.white[100]} pb={1}>
+                                            Trusted by Physicians Nationwide
+                                        </Typography>
+                                        <Typography variant="h5" color={theme.palette.white[500]} sx={{ maxWidth: 640, mx: 'auto' }}>
+                                            From fellowship transitions to complex negotiations, doctors across the country trust Shawn to get it right.
+                                        </Typography>
+                                    </Box>
+                                    <Grid container spacing={3}>
+                                        {testimonials.map((t, index) => (
+                                            <Grid item xs={12} sm={6} key={index} data-aos="fade-up" data-aos-delay={index * 50}>
+                                                <Box
+                                                    sx={{
+                                                        backgroundColor: alpha(theme.palette.white[100], 0.03),
+                                                        border: `1px solid ${alpha(theme.palette.white[700], 0.3)}`,
+                                                        borderRadius: 2,
+                                                        p: { xs: 3, md: 4 },
+                                                        height: '100%',
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        gap: 2.5
+                                                    }}
+                                                >
+                                                    <Typography
+                                                        variant="body1"
+                                                        color={theme.palette.white[200]}
+                                                        sx={{ lineHeight: 1.8, fontStyle: 'italic', flexGrow: 1 }}
+                                                    >
+                                                        &ldquo;{t.quote}&rdquo;
+                                                    </Typography>
+                                                    <Box sx={{ borderTop: `1px solid ${alpha(theme.palette.white[700], 0.3)}`, pt: 2 }}>
+                                                        <Typography variant="subtitle2" fontWeight={700} color={theme.palette.white[100]}>
+                                                            {t.name}
+                                                        </Typography>
+                                                        <Typography variant="caption" color="primary" display="block">
+                                                            {t.title}
+                                                        </Typography>
+                                                        <Typography variant="caption" color={theme.palette.white[500]} display="block">
+                                                            {t.organization}
+                                                        </Typography>
+                                                    </Box>
+                                                </Box>
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                </Box>
 
                                 {/* ========== 4. HOW WE SUPPORT YOUR PRACTICE — Redesigned ========== */}
                                 <GradientCard data-aos="fade-left" data-aos-delay="50">
