@@ -509,7 +509,7 @@ export default function HealthcareGCPhillips() {
                                             Trusted by Physicians Nationwide
                                         </Typography>
                                         <Typography variant="h5" color={theme.palette.white[500]} sx={{ maxWidth: 640, mx: 'auto' }}>
-                                            From fellowship transitions to complex negotiations, doctors across the country trust Shawn to get it right.
+                                            Healthcare organizations and physicians across the country rely on Shawn Phillips for the counsel they need to protect their practice and move forward with confidence.
                                         </Typography>
                                     </Box>
                                     <Grid container spacing={3}>
