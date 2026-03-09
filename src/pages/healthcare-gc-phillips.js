@@ -127,31 +127,13 @@ const pricingTiers = [
     }
 ];
 
-const includedCategories = [
-    {
-        title: 'Dedicated Counsel',
-        items: [
-            'Dedicated Healthcare General Counsel support from Shawn Phillips',
-            'Access to the full DBM Legal Services team across practice areas'
-        ]
-    },
-    {
-        title: 'Ongoing Strategic and Compliance Support',
-        items: [
-            'Compliance monitoring and regulatory updates',
-            'Strategic business and leadership advisory support',
-            'Regulatory audit preparation and support'
-        ]
-    },
-    {
-        title: 'Day-to-Day Legal Support',
-        items: [
-            'Phone, email, and video consultation access',
-            'Contract drafting, review, and negotiation',
-            'Monthly utilization reports',
-            'Up to 25% of unused hours roll over monthly'
-        ]
-    }
+const includedItems = [
+    'Dedicated General Counsel support from Shawn Phillips',
+    'Access to the full DBM Legal Services team across all practice areas',
+    'Phone, email, and video consultation access',
+    'Monthly utilization reports',
+    'Up to 25% of unused hours roll over each month',
+    'Additional hours billed at your subscription rate — no premium pricing',
 ];
 
 const differentiators = [
@@ -555,7 +537,7 @@ export default function HealthcareGCPhillips() {
                                             {clientTypes.map((category, index) => {
                                                 const CategoryIcon = categoryIcons[index];
                                                 return (
-                                                <Grid item xs={12} sm={6} md={4} key={category.label} data-aos="fade-up" data-aos-delay={index * 40}>
+                                                <Grid item xs={12} sm={6} md={4} key={category.title} data-aos="fade-up" data-aos-delay={index * 40}>
                                                     <Box
                                                         sx={{
                                                             backgroundColor: alpha(theme.palette.white[100], 0.04),
@@ -664,39 +646,10 @@ export default function HealthcareGCPhillips() {
                                                                 /month
                                                             </Typography>
                                                         </Stack>
-                                                        <Typography variant="body2" color={theme.palette.white[500]} pb={2}>
+                                                        <Typography variant="body2" color={theme.palette.white[500]} pb={3}>
                                                             {tier.hours} billable attorney hours per month
                                                         </Typography>
-                                                        <Divider sx={{ borderColor: theme.palette.white[700], mb: 2 }} />
-
-                                                        {/* Key Terms */}
-                                                        <Typography
-                                                            variant="caption"
-                                                            fontWeight={700}
-                                                            color="primary"
-                                                            sx={{ letterSpacing: 1.5, textTransform: 'uppercase', display: 'block', mb: 2 }}
-                                                        >
-                                                            Key Terms
-                                                        </Typography>
-                                                        <Stack spacing={1.75} flexGrow={1}>
-                                                            {tier.keyTerms.map((term, i) => (
-                                                                <Box key={i}>
-                                                                    <Typography
-                                                                        variant="caption"
-                                                                        fontWeight={700}
-                                                                        color={theme.palette.white[100]}
-                                                                        display="block"
-                                                                        sx={{ mb: 0.25 }}
-                                                                    >
-                                                                        {term.label}
-                                                                    </Typography>
-                                                                    <Typography variant="body2" color={theme.palette.white[500]}>
-                                                                        {term.value}
-                                                                    </Typography>
-                                                                </Box>
-                                                            ))}
-                                                        </Stack>
-
+                                                        <Box flexGrow={1} />
                                                         <Button
                                                             variant="outlined"
                                                             color="primary"
@@ -752,42 +705,15 @@ export default function HealthcareGCPhillips() {
                                                     Integrated legal support across DBM Legal Services&apos; full suite of healthcare capabilities.
                                                 </Typography>
                                             </Box>
-                                            <Grid container spacing={2.5}>
-                                                {includedCategories.map((group, index) => (
-                                                    <Grid item xs={12} md={4} key={group.title} data-aos="fade-up" data-aos-delay={index * 40}>
-                                                        <Box
-                                                            sx={{
-                                                                backgroundColor: alpha(theme.palette.white[100], 0.03),
-                                                                border: `1px solid ${alpha(theme.palette.white[700], 0.4)}`,
-                                                                borderRadius: 2,
-                                                                p: 3,
-                                                                height: '100%',
-                                                                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                                                '&:hover': {
-                                                                    transform: 'translateY(-3px)',
-                                                                    boxShadow: `0 6px 20px ${alpha(theme.palette.primary.main, 0.1)}`
-                                                                }
-                                                            }}
-                                                        >
-                                                            <Typography
-                                                                variant="caption"
-                                                                fontWeight={700}
-                                                                color="primary"
-                                                                sx={{ letterSpacing: 1.5, textTransform: 'uppercase', display: 'block', mb: 2 }}
-                                                            >
-                                                                {group.title}
+                                            <Grid container spacing={1.5}>
+                                                {includedItems.map((item, index) => (
+                                                    <Grid item xs={12} sm={6} key={index} data-aos="fade-up" data-aos-delay={index * 30}>
+                                                        <Stack direction="row" spacing={1.5} alignItems="flex-start">
+                                                            <CheckIcon sx={{ color: theme.palette.primary.main, fontSize: 18, mt: 0.2, flexShrink: 0 }} />
+                                                            <Typography variant="body1" color={theme.palette.white[200]} sx={{ lineHeight: 1.6 }}>
+                                                                {item}
                                                             </Typography>
-                                                            <Stack spacing={1.5}>
-                                                                {group.items.map((item, i) => (
-                                                                    <Stack direction="row" spacing={1.5} alignItems="flex-start" key={i}>
-                                                                        <CheckIcon sx={{ color: theme.palette.primary.main, fontSize: 16, mt: 0.3, flexShrink: 0 }} />
-                                                                        <Typography variant="body2" color={theme.palette.white[200]} sx={{ lineHeight: 1.6 }}>
-                                                                            {item}
-                                                                        </Typography>
-                                                                    </Stack>
-                                                                ))}
-                                                            </Stack>
-                                                        </Box>
+                                                        </Stack>
                                                     </Grid>
                                                 ))}
                                             </Grid>
@@ -795,107 +721,95 @@ export default function HealthcareGCPhillips() {
                                     </Box>
                                 </GradientCard>
 
-                                {/* ========== 7. WHY DBM — Redesigned ========== */}
-                                <GradientCard data-aos="fade-left" data-aos-delay="50">
-                                    <Box p={{ xs: 3, md: 5 }}>
-                                        <Box mb={5}>
-                                            <Chip
-                                                label="OUR DIFFERENCE"
-                                                size="small"
-                                                sx={{
-                                                    backgroundColor: alpha(theme.palette.primary.main, 0.15),
-                                                    color: theme.palette.primary.main,
-                                                    fontWeight: 700,
-                                                    letterSpacing: 1.5,
-                                                    fontSize: '0.65rem',
-                                                    mb: 2,
-                                                    borderRadius: 1
-                                                }}
-                                            />
-                                            <Typography variant="h3" fontWeight="bold" color={theme.palette.white[100]} pb={1}>
-                                                Why DBM
-                                            </Typography>
-                                            <Typography variant="h5" color={theme.palette.white[500]} sx={{ maxWidth: 680 }}>
-                                                What sets our Healthcare General Counsel program apart from traditional outside counsel.
-                                            </Typography>
-                                        </Box>
-                                        <Grid container spacing={2.5} justifyContent="center">
-                                            {differentiators.map((item, index) => (
-                                                <Grid item xs={12} sm={6} md={4} key={item.title} data-aos="fade-up" data-aos-delay={index * 40}>
-                                                    <Box
-                                                        sx={{
-                                                            backgroundColor: alpha(theme.palette.white[100], 0.04),
-                                                            border: `1px solid ${alpha(theme.palette.white[700], 0.4)}`,
-                                                            borderRadius: 2,
-                                                            p: 3.5,
-                                                            height: '100%',
-                                                            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                                            '&:hover': {
-                                                                transform: 'translateY(-3px)',
-                                                                boxShadow: `0 6px 20px ${alpha(theme.palette.primary.main, 0.1)}`
-                                                            }
-                                                        }}
-                                                    >
-                                                        <Box
-                                                            sx={{
-                                                                width: 28,
-                                                                height: 3,
-                                                                backgroundColor: theme.palette.primary.main,
-                                                                borderRadius: 2,
-                                                                mb: 2,
-                                                                opacity: 0.8
-                                                            }}
-                                                        />
-                                                        <Typography variant="h6" fontWeight={700} color={theme.palette.white[100]} pb={1}>
-                                                            {item.title}
-                                                        </Typography>
-                                                        <Typography variant="body2" color={theme.palette.white[500]} sx={{ lineHeight: 1.8 }}>
-                                                            {item.description}
-                                                        </Typography>
-                                                    </Box>
-                                                </Grid>
-                                            ))}
-                                        </Grid>
+                                {/* ========== 7. WHY DBM ========== */}
+                                <Box
+                                    data-aos="fade-up"
+                                    sx={{
+                                        borderTop: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        borderBottom: `1px solid ${alpha(theme.palette.white[700], 0.25)}`,
+                                        py: { xs: 6, md: 8 },
+                                        px: { xs: 0, md: 1 }
+                                    }}
+                                >
+                                    <Box mb={5}>
+                                        <Chip
+                                            label="OUR DIFFERENCE"
+                                            size="small"
+                                            sx={{
+                                                backgroundColor: alpha(theme.palette.primary.main, 0.15),
+                                                color: theme.palette.primary.main,
+                                                fontWeight: 700,
+                                                letterSpacing: 1.5,
+                                                fontSize: '0.65rem',
+                                                mb: 2,
+                                                borderRadius: 1
+                                            }}
+                                        />
+                                        <Typography variant="h3" fontWeight="bold" color={theme.palette.white[100]} pb={1}>
+                                            Why DBM
+                                        </Typography>
+                                        <Typography variant="h5" color={theme.palette.white[500]} sx={{ maxWidth: 680 }}>
+                                            What sets our Healthcare General Counsel program apart from traditional outside counsel.
+                                        </Typography>
                                     </Box>
-                                </GradientCard>
+                                    <Grid container spacing={2.5} justifyContent="center">
+                                        {differentiators.map((item, index) => (
+                                            <Grid item xs={12} sm={6} md={4} key={item.title} data-aos="fade-up" data-aos-delay={index * 40}>
+                                                <Box
+                                                    sx={{
+                                                        borderLeft: `3px solid ${alpha(theme.palette.primary.main, 0.6)}`,
+                                                        pl: 2.5,
+                                                        py: 0.5,
+                                                        height: '100%'
+                                                    }}
+                                                >
+                                                    <Typography variant="h6" fontWeight={700} color={theme.palette.white[100]} pb={0.75}>
+                                                        {item.title}
+                                                    </Typography>
+                                                    <Typography variant="body2" color={theme.palette.white[500]} sx={{ lineHeight: 1.8 }}>
+                                                        {item.description}
+                                                    </Typography>
+                                                </Box>
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                </Box>
 
                                 {/* ========== 8. FAQ ========== */}
-                                <GradientCard data-aos="fade-up" data-aos-delay="50">
-                                    <Box p={{ xs: 3, md: 5 }}>
-                                        <Typography
-                                            variant="h3"
-                                            fontWeight="bold"
-                                            pb={3}
-                                            sx={{
-                                                textDecoration: 'underline',
-                                                textDecorationColor: alpha(theme.palette.primary.main, 1.0)
-                                            }}
-                                        >
-                                            Frequently Asked Questions
-                                        </Typography>
-                                        {faqs.map((faq, index) => (
-                                            <Box pb={2} key={faq.question}>
-                                                <Accordion sx={{ backgroundColor: theme.palette.white[100] }}>
-                                                    <AccordionSummary
-                                                        expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}
-                                                    >
-                                                        <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
-                                                            {faq.question}
-                                                        </Typography>
-                                                    </AccordionSummary>
-                                                    <AccordionDetails>
-                                                        <Typography color={theme.palette.black[500]}>
-                                                            {faq.answer}
-                                                            {faq.bookingUrl && (
-                                                                <> <a href={faq.bookingUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}>{faq.bookingLabel || 'Schedule with Shawn'}</a></>
-                                                            )}
-                                                        </Typography>
-                                                    </AccordionDetails>
-                                                </Accordion>
-                                            </Box>
-                                        ))}
-                                    </Box>
-                                </GradientCard>
+                                <Box data-aos="fade-up" sx={{ py: { xs: 4, md: 6 }, px: { xs: 0, md: 1 } }}>
+                                    <Typography
+                                        variant="h3"
+                                        fontWeight="bold"
+                                        pb={4}
+                                        sx={{
+                                            textDecoration: 'underline',
+                                            textDecorationColor: alpha(theme.palette.primary.main, 1.0)
+                                        }}
+                                    >
+                                        Frequently Asked Questions
+                                    </Typography>
+                                    {faqs.map((faq) => (
+                                        <Box pb={2} key={faq.question}>
+                                            <Accordion sx={{ backgroundColor: theme.palette.white[100] }}>
+                                                <AccordionSummary
+                                                    expandIcon={<ArrowDropDownIcon sx={{ color: theme.palette.black[500] }} />}
+                                                >
+                                                    <Typography color={theme.palette.black[500]} variant="h6" fontWeight="bold">
+                                                        {faq.question}
+                                                    </Typography>
+                                                </AccordionSummary>
+                                                <AccordionDetails>
+                                                    <Typography color={theme.palette.black[500]}>
+                                                        {faq.answer}
+                                                        {faq.bookingUrl && (
+                                                            <> <a href={faq.bookingUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}>{faq.bookingLabel || 'Schedule with Shawn'}</a></>
+                                                        )}
+                                                    </Typography>
+                                                </AccordionDetails>
+                                            </Accordion>
+                                        </Box>
+                                    ))}
+                                </Box>
                             </Stack>
 
                             {/* ========== 9. FINAL CTA ========== */}
